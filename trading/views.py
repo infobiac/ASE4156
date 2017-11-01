@@ -12,5 +12,5 @@ def test(request):
     investments = InvestmentBucket.objects.all()
     templist = []
     for investment in investments:
-        templist.append(investment.get_stock_configs())
+        templist.append(investment.get_stock_configs().all())
     return render(request, 'test.html', templist)

@@ -1,8 +1,6 @@
 """
 GraphQL definitions for the Authentication App
 """
-import datetime
-from django.db.models import Q
 from django.contrib.auth.models import User
 from graphene import AbstractType, Argument, Field, Float, Int, List, Mutation, \
     NonNull, ObjectType, String, relay
@@ -35,7 +33,7 @@ class GProfile(DjangoObjectType):
     GraphQL representation of a Profile
     """
     stock_find = List(
-        GStock, args={'text': Argument(NonNull(String)), 'first': Argument(Int)})
+        NonNull(GStock), args={'text': Argument(NonNull(String)), 'first': Argument(Int)})
     invest_suggestions = DjangoFilterConnectionField(
         GInvestmentBucket,
     )
@@ -53,17 +51,17 @@ class GProfile(DjangoObjectType):
         """
         Finds a stock given a case insensitive name
         """
-        query = Stock.objects.filter(name__icontains=args['text'])
+        name = args['text']
         if 'first' in args:
-            query = query[:args['first']]
-        return query
+            return Stock.find_stock(name, args['first'])
+        return Stock.find_stock(name)
 
     @staticmethod
     def resolve_invest_suggestions(_data, _args, context, _info):
         """
         Finds all the investment suggestions available to the user
         """
-        return InvestmentBucket.objects.filter(Q(owner=context.user.profile) | Q(public=True))
+        return InvestmentBucket.accessible_buckets(context.user.profile)
 
 
 class DataPoint(object):
@@ -102,80 +100,43 @@ class GUserBank(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_history(data, args, context, _info):
+    def resolve_history(_data, args, context, _info):
         """
         Builds the financial history for the user
         """
-        start = args['start']
-        end = datetime.datetime.now().strftime("%Y-%m-%d")
-        response = context.plaid.Transactions.get(
-            data.access_token,
-            start_date=start,
-            end_date=end
-        )
-        transactions = response['transactions']
-        value = GUserBank.resolve_balance(data, {}, context, None)
-        value_list = [DataPoint(end, value)]
-        for transaction in transactions:
-            value = value - transaction['amount']
-            if not value_list[-1].date == transaction['date']:
-                value_list.append(DataPoint(transaction['date'], value))
-        return value_list
+        return [
+            DataPoint(date, value)
+            for (date, value)
+            in context.plaid.historical_data(args['start'])
+        ]
 
     @staticmethod
-    def resolve_balance(data, _args, context, _info):
+    def resolve_balance(_data, _args, context, _info):
         """
         Finds the current balance of the user
         """
-        balances = context.plaid.Accounts.balance.get(data.access_token)['accounts']
-        extracted_balances = [((b['balances']['available']
-                                if b['balances']['available'] is not None else
-                                b['balances']['current']) *
-                               (1
-                                if b['subtype'] == 'credit card' else -1))
-                              for b in balances]
-        balance = sum(extracted_balances)
-        return float(balance)
+        return context.plaid.current_balance()
 
     @staticmethod
-    def resolve_name(data, _args, context, _info):
+    def resolve_name(_data, _args, context, _info):
         """
         Returns the name of the bank account
         """
-        name = context.plaid.Accounts.get(data.access_token)['accounts'][0]['name']
-        return name
+        return context.plaid.account_name()
 
     @staticmethod
-    def resolve_income(data, _args, context, _info):
+    def resolve_income(_data, _args, context, _info):
         """
-        Calculates the income a user has per month
+        Returns the income a user has per month
         """
-        start = (datetime.datetime.now() - datetime.timedelta(days=30)).strftime("%Y-%m-%d")
-        end = datetime.datetime.now().strftime("%Y-%m-%d")
-        response = context.plaid.Transactions.get(
-            data.access_token,
-            start_date=start,
-            end_date=end,
-        )
-        transactions = response['transactions']
-        plus = sum(filter(lambda x: x > 0, [tx['amount'] for tx in transactions]))
-        return float(plus)
+        return context.plaid.income(30)
 
     @staticmethod
-    def resolve_outcome(data, _args, context, _info):
+    def resolve_outcome(_data, _args, context, _info):
         """
-        Calculates the expenses a user has
+        Returns the expenditures a user has per month
         """
-        start = (datetime.datetime.now() - datetime.timedelta(days=30)).strftime("%Y-%m-%d")
-        end = datetime.datetime.now().strftime("%Y-%m-%d")
-        response = context.plaid.Transactions.get(
-            data.access_token,
-            start_date=start,
-            end_date=end,
-        )
-        transactions = response['transactions']
-        plus = sum(filter(lambda x: x < 0, [tx['amount'] for tx in transactions]))
-        return float(plus)
+        return context.plaid.expenditure(30)
 
 
 # pylint: disable=no-init

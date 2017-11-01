@@ -1,17 +1,13 @@
 """
 GraphQL definitions for the Stocks App
 """
-from datetime import datetime
-from django.db.models import Q
-from django.db import transaction
+from collections import namedtuple
 from graphene_django import DjangoObjectType
 from graphene import AbstractType, Argument, Boolean, Field, Float, ID, \
     InputObjectType, List, Mutation, NonNull, String, relay
 from graphql_relay.node.node import from_global_id
-from trading.models import TradeStock
 from .models import DailyStockQuote, InvestmentBucket, \
     InvestmentBucketDescription, InvestmentStockConfiguration, Stock
-from .historical import create_new_stock
 
 
 # pylint: disable=too-few-public-methods
@@ -73,7 +69,7 @@ class GInvestmentBucket(DjangoObjectType):
         """
         Returns the *current* stocks in the bucket
         """
-        return data.stocks.filter(end=None)
+        return data.get_stock_configs()
 
 
 class GInvestmentStockConfiguration(DjangoObjectType):
@@ -116,22 +112,14 @@ class GStock(DjangoObjectType):
         """
         Finds the stock quotes for the stock within a time range
         """
-        return (DailyStockQuote
-                .objects
-                .filter(stock_id=data.id)
-                .filter(date__gte=args['start'])
-                .filter(date__lte=args['end'])
-                .order_by('-date'))
+        return data.quote_in_range(args['start'], args['end'])
 
     @staticmethod
     def resolve_trades(stock, _args, context, _info):
         """
         We need to apply permission checks to trades
         """
-        return (TradeStock
-                .objects
-                .filter(stock_id=stock.id)
-                .filter(account__profile_id=context.user.profile.id))
+        return stock.trades_for_profile(context.user.profile)
 
 
 class AddStock(Mutation):
@@ -151,7 +139,8 @@ class AddStock(Mutation):
         """
         Creates a Stock and saves it to the DB
         """
-        return AddStock(stock=create_new_stock(args['ticker'], args['name']))
+        stock = Stock.create_new_stock(args['ticker'], args['name'])
+        return AddStock(stock=stock)
 
 
 class AddBucket(Mutation):
@@ -172,50 +161,13 @@ class AddBucket(Mutation):
         """
         Creates a new InvestmentBucket and saves it to the DB
         """
-        bucket = InvestmentBucket(
+        bucket = InvestmentBucket.create_new_bucket(
             name=args['name'],
             public=args['public'],
             owner=context.user.profile,
             available=args['investment'],
         )
-        bucket.save()
         return AddBucket(bucket=bucket)
-
-
-class AddStockToBucket(Mutation):
-    """
-    Adds a new stock to a specific bucket and returns the bucket
-    """
-    class Input(object):
-        """
-        We need the ticker, bucket and quantity to create the connection
-        """
-        stock_id = NonNull(ID)
-        bucket_id = NonNull(ID)
-        quantity = NonNull(Float)
-    bucket = Field(lambda: GInvestmentBucket)
-
-    @staticmethod
-    def mutate(_self, args, context, _info):
-        """
-        Adds a new stock to a specific bucket
-        """
-        with transaction.atomic():
-            bucket = InvestmentBucket.objects.get(id=from_global_id(args['bucket_id'])[1])
-            if not bucket.owner.id == context.user.profile.id:
-                raise Exception("You don't own the bucket!")
-            stock = Stock.objects.get(id=from_global_id(args['stock_id'])[1])
-            quantity = args['quantity']
-            investment = InvestmentStockConfiguration(
-                bucket=bucket,
-                stock=stock,
-                quantity=quantity
-            )
-            bucket.available = bucket.available - stock.latest_quote().value * quantity
-            bucket.save()
-            investment.save()
-        bucket.refresh_from_db()
-        return AddStockToBucket(bucket=bucket)
 
 
 class AddAttributeToInvestment(Mutation):
@@ -241,12 +193,7 @@ class AddAttributeToInvestment(Mutation):
         )
         if not bucket or (not bucket.owner.id == context.user.profile.id):
             raise Exception("You don't own the bucket!")
-        attribute = InvestmentBucketDescription(
-            text=args['desc'],
-            bucket=bucket,
-            is_good=args['is_good'],
-        )
-        attribute.save()
+        attribute = bucket.add_attribute(args['desc'], args['is_good'])
         return AddAttributeToInvestment(bucket_attr=attribute)
 
 
@@ -274,9 +221,8 @@ class EditAttribute(Mutation):
         if not bucket_attr:
             raise Exception("You don't own the bucket!")
         else:
-            bucket_attr = bucket_attr[0]
-        bucket_attr.text = args['desc']
-        bucket_attr.save()
+            bucket_attr = bucket_attr.get()
+        bucket_attr.change_description(args['desc'])
         return EditAttribute(bucket_attr=bucket_attr)
 
 
@@ -308,6 +254,12 @@ class DeleteAttribute(Mutation):
         return DeleteAttribute(is_ok=True)
 
 
+Config = namedtuple(
+    "Config",
+    ["id", "quantity"],
+)
+
+
 class EditConfiguration(Mutation):
     """
     Mutation to change the stock configuration of a bucket
@@ -326,52 +278,21 @@ class EditConfiguration(Mutation):
         This performs the actual mutation by removing the old configuration and
         then writing the new one
         """
-        with transaction.atomic():
-            bucket = InvestmentBucket.objects.get(
-                id=from_global_id(args['id_value'])[1],
-                owner=context.user.profile,
+        bucket = InvestmentBucket.objects.get(
+            id=from_global_id(args['id_value'])[1],
+            owner=context.user.profile,
+        )
+        if not bucket or (not bucket.owner.id == context.user.profile.id):
+            raise Exception("You don't own the bucket!")
+        new_config = [
+            Config(
+                id=from_global_id(c['id_value'])[1],
+                quantity=c['quantity'],
             )
-            configs = InvestmentStockConfiguration.objects.filter(
-                bucket=bucket,
-                end=None,
-            ).all()
-            for config in configs:
-                quote_query = DailyStockQuote.objects.filter(
-                    stock__id=config.stock_id
-                )
-                quote = quote_query.order_by('-date')[0]
-                bucket.available = (
-                    bucket.available +
-                    quote.value *
-                    config.quantity
-                )
-
-            InvestmentStockConfiguration.objects.filter(
-                bucket=bucket,
-                end=None,
-            ).update(end=datetime.now())
-
-            new_configs = []
-            for new_config in args['config']:
-                quote = DailyStockQuote.objects.filter(
-                    stock__id=from_global_id(new_config['id_value'])[1],
-                ).order_by('-date')[0]
-                bucket.available = (
-                    bucket.available -
-                    quote.value *
-                    new_config['quantity']
-                )
-                new_configs.append(
-                    InvestmentStockConfiguration(
-                        stock_id=quote.stock_id,
-                        quantity=new_config['quantity'],
-                        bucket=bucket,
-                        start=datetime.now()
-                    )
-                )
-            InvestmentStockConfiguration.objects.bulk_create(new_configs)
-            bucket.save()
-
+            for c
+            in args['config']
+        ]
+        bucket.change_config(new_config)
         return EditConfiguration(bucket=bucket)
 
 
@@ -390,9 +311,11 @@ class Query(AbstractType):
         if not context.user.is_authenticated():
             return None
 
-        return InvestmentBucket.objects.filter(
-            Q(public=True) | Q(owner=context.user.profile)).get(
-                id=from_global_id(args['id'])[1])
+        return InvestmentBucket.accessible_buckets(
+            context.user.profile
+        ).get(
+            id=from_global_id(args['id'])[1]
+        )
 
 # pylint: enable=too-few-public-methods
 # pylint: enable=no-init

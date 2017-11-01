@@ -10,7 +10,7 @@ snapshots = Snapshot()
 snapshots['test_big_gql 1'] = {
     'data': {
         'viewer': {
-            'id': 'R1VzZXI6MTI=',
+            'id': 'R1VzZXI6MTE=',
             'profile': {
                 'investSuggestions': {
                     'edges': [
@@ -28,7 +28,7 @@ snapshots['test_big_gql 1'] = {
                                         }
                                     ]
                                 },
-                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6OA==',
+                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6Nw==',
                                 'isOwner': True,
                                 'name': 'i1',
                                 'public': False,
@@ -37,7 +37,7 @@ snapshots['test_big_gql 1'] = {
                                         {
                                             'node': {
                                                 'end': None,
-                                                'id': 'R0ludmVzdG1lbnRTdG9ja0NvbmZpZ3VyYXRpb246NA==',
+                                                'id': 'R0ludmVzdG1lbnRTdG9ja0NvbmZpZ3VyYXRpb246Mw==',
                                                 'quantity': 1.0,
                                                 'start': '2017-05-09',
                                                 'stock': {
@@ -56,7 +56,7 @@ snapshots['test_big_gql 1'] = {
                 },
                 'stockFind': [
                     {
-                        'id': 'R1N0b2NrOjU=',
+                        'id': 'R1N0b2NrOjQ=',
                         'quoteInRange': [
                             {
                                 'date': '2017-05-10',
@@ -126,31 +126,6 @@ snapshots['test_mutation_add_bucket 1'] = {
                 'isOwner': True,
                 'name': 'Test 1',
                 'public': True
-            }
-        }
-    }
-}
-
-snapshots['test_mutation_add_stock_to_bucket 1'] = {
-    'data': {
-        'addStockToBucket': {
-            'bucket': {
-                'available': 65.0,
-                'isOwner': True,
-                'name': 'i1',
-                'public': False,
-                'stocks': {
-                    'edges': [
-                        {
-                            'node': {
-                                'quantity': 3.5,
-                                'stock': {
-                                    'ticker': 'GOOGL'
-                                }
-                            }
-                        }
-                    ]
-                }
             }
         }
     }
@@ -240,23 +215,6 @@ snapshots['test_mutation_attribute_permission 3'] = {
             'locations': [
                 {
                     'column': 11,
-                    'line': 3
-                }
-            ],
-            'message': "You don't own the bucket!"
-        }
-    ]
-}
-
-snapshots['test_mutation_attribute_permission 4'] = {
-    'data': {
-        'addStockToBucket': None
-    },
-    'errors': [
-        {
-            'locations': [
-                {
-                    'column': 15,
                     'line': 3
                 }
             ],

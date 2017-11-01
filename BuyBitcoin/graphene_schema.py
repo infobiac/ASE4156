@@ -30,7 +30,6 @@ class Mutation(graphene.ObjectType):
     add_trading_account = authentication.graphql.AddTradingAccount.Field()
     add_trade = trading.graphql.AddTrade.Field()
     add_stock = stocks.graphql.AddStock.Field()
-    add_stock_to_bucket = stocks.graphql.AddStockToBucket.Field()
     add_attribute_to_bucket = stocks.graphql.AddAttributeToInvestment.Field()
     delete_attribute = stocks.graphql.DeleteAttribute.Field()
     edit_attribute = stocks.graphql.EditAttribute.Field()

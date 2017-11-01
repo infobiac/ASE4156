@@ -1,13 +1,17 @@
 """
 Models keeps track of all the persistent data around stocks
 """
+import datetime
 from datetime import date as os_date
+from django.db.models import Q
 from django.db import models
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.db import transaction
 from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator, MinValueValidator
 from authentication.models import Profile
+from .stock_helper import validate_ticker
 
 
 class Stock(models.Model):
@@ -27,7 +31,7 @@ class Stock(models.Model):
         validators=[MinLengthValidator(
             1,
             message="The ticker should not be empty."
-        )],
+        ), validate_ticker],
     )
 
     def latest_quote(self, date=None):
@@ -41,6 +45,45 @@ class Stock(models.Model):
         if quote_query:
             return quote_query[0]
         return None
+
+    @staticmethod
+    def find_stock(text, first=None):
+        """
+        Finds the stocks that contain >text<
+        """
+        query = Stock.objects.filter(name__icontains=text)
+        if first:
+            query = query[:first]
+        return query
+
+    @staticmethod
+    def create_new_stock(ticker, name):
+        """
+        Creates a new stock
+        """
+        if not validate_ticker(ticker):
+            raise Exception("Invalid Ticker")
+        stock = Stock(name=name, ticker=ticker)
+        stock.save()
+        return stock
+
+    def quote_in_range(self, start=None, end=None):
+        """
+        Returns a list of daily stock quotes in the given timerange
+        """
+        query = self.daily_quote
+        if start:
+            query = query.filter(date__gte=start)
+        if end:
+            query = query.filter(date__lte=end)
+        query = query.order_by('-date')
+        return query
+
+    def trades_for_profile(self, profile):
+        """
+        Returns all trades the user made with this stock
+        """
+        return self.trades.filter(account__profile=profile)
 
     def __str__(self):
         return "{}, {}, {}".format(self.id, self.name, self.ticker)
@@ -96,12 +139,68 @@ class InvestmentBucket(models.Model):
     class Meta(object):
         unique_together = ('name', 'owner')
 
+    @staticmethod
+    def accessible_buckets(profile):
+        """
+        Finds all buckets that the user could view
+        """
+        return InvestmentBucket.objects.filter(Q(owner=profile) | Q(public=True))
+
+    @staticmethod
+    def create_new_bucket(name, public, owner, available=1000.0):
+        """
+        Creates a new InvestmentBucket
+        """
+        bucket = InvestmentBucket(name=name, public=public, owner=owner, available=available)
+        bucket.save()
+        return bucket
+
+    def add_attribute(self, text, is_good=True):
+        """
+        Adds an attribute to an investment bucket
+        """
+        attribute = self.description.create(
+            text=text,
+            is_good=is_good,
+        )
+        return attribute
+
     def get_stock_configs(self):
         """
         Get all associated configs
         """
-        stock_configs = self.stocks.filter(end=None).all()
-        return stock_configs
+        return self.stocks.filter(end=None)
+
+    def _sell_all(self):
+        """
+        Sells all stocks held in the investment bucket
+        """
+        with transaction.atomic():
+            current_configs = self.stocks.filter(end=None)
+            balance_change = 0
+            for conf in current_configs:
+                balance_change += conf.current_value()
+            self.available += balance_change
+            current_configs.update(end=datetime.datetime.now())
+
+    def change_config(self, new_config):
+        """
+        Changes the configuration of the investment bucket to new_config
+        """
+        with transaction.atomic():
+            self._sell_all()
+            for conf in new_config:
+                stock = Stock.objects.get(id=conf.id)
+                quote = stock.latest_quote()
+                self.available -= quote.value * conf.quantity
+                self.stocks.create(
+                    stock=stock,
+                    quantity=conf.quantity,
+                    start=datetime.datetime.now(),
+                )
+            if self.available < 0:
+                raise Exception("Not enough money available")
+            self.save()
 
 
 class InvestmentBucketDescription(models.Model):
@@ -121,6 +220,13 @@ class InvestmentBucketDescription(models.Model):
     class Meta(object):
         unique_together = ('text', 'bucket')
 
+    def change_description(self, text):
+        """
+        Changes the description to the given text
+        """
+        self.text = text
+        self.save()
+
 
 class InvestmentStockConfiguration(models.Model):
     """
@@ -136,6 +242,12 @@ class InvestmentStockConfiguration(models.Model):
     bucket = models.ForeignKey(InvestmentBucket, related_name='stocks')
     start = models.DateField(default=os_date.today, blank=True)
     end = models.DateField(null=True, blank=True)
+
+    def current_value(self):
+        """
+        Returns the current value of the stock configuration
+        """
+        return self.stock.latest_quote().value * self.quantity
 
 
 @receiver(pre_save)

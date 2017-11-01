@@ -35,7 +35,7 @@ class TradeStock(models.Model):
     account = models.ForeignKey(TradingAccount, related_name='trades')
     stock = models.ForeignKey(Stock, related_name='trades')
 
-    def get_value(self):
+    def current_value(self):
         """
         Get value calculates the total value of the trade respecting the date
         """
@@ -48,6 +48,15 @@ class TradeStock(models.Model):
                        .all()[:1]
                        .get())
         return quote_value * self.quantity
+
+    def stock_trade(self, stock, quantity):
+        """
+        Trades a stock for the account
+        """
+        return self.trades.create(
+            quantity=quantity,
+            stock=stock,
+        )
 
     def __str__(self):
         return "{}, {}, {}, {}, {}".format(self.id,

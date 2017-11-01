@@ -107,57 +107,6 @@ def test_mutation_add_bucket(rf, snapshot):
 
 @pytest.mark.django_db(transaction=True)
 # pylint: disable=invalid-name
-def test_mutation_add_stock_to_bucket(rf, snapshot):
-    """
-    This submits a massive graphql query to verify all fields work
-    """
-    # pylint: enable=invalid-name
-    request = rf.post('/graphql', follow=True, secure=True)
-    pw1 = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
-    request.user = User.objects.create(username='testuser1', password=pw1)
-    bucket = InvestmentBucket(name="i1", public=False, available=100, owner=request.user.profile)
-    bucket.save()
-    post_save.disconnect(receiver=create_stock, sender=Stock)
-    stock = Stock(name="Google", ticker="GOOGL")
-    stock.save()
-    DailyStockQuote(value=9, date="2017-05-08", stock=stock).save()
-    DailyStockQuote(value=10, date="2017-05-10", stock=stock).save()
-    DailyStockQuote(value=9, date="2017-05-09", stock=stock).save()
-    client = Client(SCHEMA)
-    executed = client.execute(
-        """
-            mutation {{
-              addStockToBucket(stockId: "{}", bucketId: "{}", quantity: {}) {{
-                bucket {{
-                    available
-                    isOwner
-                    public
-                    name
-                    stocks {{
-                        edges {{
-                            node {{
-                                quantity
-                                stock {{
-                                    ticker
-                                }}
-                            }}
-                        }}
-                    }}
-                }}
-              }}
-            }}
-        """.format(
-            to_global_id("GStock", stock.id),
-            to_global_id("GInvestmentBucket", bucket.id), 3.5
-        ),
-        context_value=request
-    )
-    snapshot.assert_match(executed)
-    assert InvestmentStockConfiguration.objects.count() == 1
-
-
-@pytest.mark.django_db(transaction=True)
-# pylint: disable=invalid-name
 def test_mutation_add_attribute_to_investment(rf, snapshot):
     """
     This submits a massive graphql query to verify all fields work
@@ -234,23 +183,6 @@ def test_mutation_attribute_permission(rf, snapshot):
         }}
     """.format(to_global_id("GInvestmentBucketDescription", attr.id)), context_value=request)
     snapshot.assert_match(executed)
-    executed = client.execute(
-        """
-            mutation {{
-              addStockToBucket(stockId: "{}", bucketId: "{}", quantity: {}) {{
-                bucket {{
-                  id
-                }}
-              }}
-            }}
-        """.format(
-            to_global_id("GStock", 1),
-            to_global_id("GInvestmentBucket", bucket.id), 3.5
-        ),
-        context_value=request
-    )
-    snapshot.assert_match(executed)
-    assert InvestmentBucketDescription.objects.count() == 1
 
 
 @pytest.mark.django_db(transaction=True)

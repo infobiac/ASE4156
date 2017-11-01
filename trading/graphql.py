@@ -2,6 +2,7 @@
 GraphQL definitions for the Trading App
 """
 from graphene_django import DjangoObjectType
+from graphql_relay.node.node import from_global_id
 from graphene import AbstractType, Field, Float, Int, Mutation, relay, String
 from stocks.models import Stock
 from .models import TradeStock, TradingAccount
@@ -26,7 +27,7 @@ class GTrade(DjangoObjectType):
         """
         Returns the value of a trade (see the model)
         """
-        return data.get_value()
+        return data.current_value()
 
 
 class GTradingAccount(DjangoObjectType):
@@ -58,7 +59,7 @@ class AddTrade(Mutation):
         """
         Input to create a trade. Right now it's only ticker and quantity.
         """
-        ticker = String()
+        id_value = String()
         quantity = Int()
         account_name = String()
     trade = Field(lambda: GTrade)
@@ -68,16 +69,11 @@ class AddTrade(Mutation):
         """
         Creates a Trade and saves it to the DB
         """
-        stock = Stock.objects.get(ticker=args['ticker'])
+        stock = Stock.objects.get(id=from_global_id(args['bucket_id'])[1])
         account = TradingAccount.objects.get(
             account_name=args['account_name'],
             profile_id=context.user.profile.id
         )
-        trade = TradeStock(
-            stock=stock,
-            quantity=args['quantity'],
-            account=account
-        )
-        trade.save()
+        trade = account.stock_trade(stock, args['quantity'])
         return AddTrade(trade=trade)
 # pylint: enable=too-few-public-methods
