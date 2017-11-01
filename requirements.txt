@@ -38,6 +38,7 @@ python-dateutil==2.6.1
 pytest-selenium==1.11.1
 python3-openid==3.1.0
 pytz==2017.2
+raven==6.3.0
 requests==2.18.4
 requests-oauthlib==0.8.0
 selenium==3.6.0

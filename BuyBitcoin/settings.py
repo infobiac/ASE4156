@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import logging
 import os
 import dj_database_url
+import raven
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'social_django',
     'webpack_loader',
     'security',
+    'raven.contrib.django.raven_compat',
     # Our apps
     'authentication',
     'stocks',
@@ -173,6 +175,14 @@ WEBPACK_LOADER = {
     }
 }
 
+# Logging
+RVN = 'https://bc5e0edbf2f74dab884001de9cea3069:5c36aea4b7b34c4e851a443c084ea0a5@sentry.io/238477'
+RAVEN_CONFIG = {
+    'dsn': RVN,
+    # If you are using git, you can also automatically configure the
+    # release based on the git info.
+    'release': raven.fetch_git_sha(os.path.dirname(os.pardir)),
+}
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

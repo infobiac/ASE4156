@@ -4,10 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <title>MIWF</title>
+    <script src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="react-app"></div>
+    <script>
+      Raven.config('https://bc5e0edbf2f74dab884001de9cea3069@sentry.io/238477').install()
+    </script>
     {% render_bundle 'main' %}
   </body>
 </html>
