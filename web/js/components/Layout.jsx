@@ -13,8 +13,12 @@ function layout(props: Props) {
   return (
     <MuiThemeProvider theme={theme}>
       <div>
-        <AppBar />
-        {props.children}
+        <div>
+          <AppBar />
+        </div>
+        <div style={{ paddingTop: '60.5px' }}>
+          {props.children}
+        </div>
       </div>
     </MuiThemeProvider>
   );

@@ -56,8 +56,10 @@ class PageTest extends React.Component<{}> {
     return (
       <MuiThemeProvider theme={theme}>
         <div>
-          <AppBar />
-          <div style={{ margin: 10 }}>
+          <div>
+            <AppBar />
+          </div>
+          <div style={{ margin: 10, paddingTop: '70.5px' }}>
             <Grid container spacing={16}>
               <Grid item xs={12} sm={6}>
                 <Grid container spacing={16} align="stretch">

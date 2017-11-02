@@ -34,6 +34,7 @@ const styles = ({
   },
   appBar: {
     color: '#FFF',
+    position: 'fixed',
   },
   logoutButton: {
     color: '#FFF',

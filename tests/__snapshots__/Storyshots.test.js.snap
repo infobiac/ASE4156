@@ -486,86 +486,89 @@ exports[`Storyshots Loading Linear 1`] = `
 
 exports[`Storyshots Page Test page 1`] = `
 <div>
-  <div
-    className="ButtonAppBar-root-1"
-  >
-    <header
-      className="MuiPaper-root-113 MuiPaper-shadow4-119 MuiAppBar-root-106 MuiAppBar-positionStatic-109 MuiAppBar-colorPrimary-111 ButtonAppBar-appBar-5"
+  <div>
+    <div
+      className="ButtonAppBar-root-1"
     >
-      <div
-        className="MuiToolbar-root-140 MuiToolbar-gutters-141"
+      <header
+        className="MuiPaper-root-113 MuiPaper-shadow4-119 MuiAppBar-root-106 MuiAppBar-positionStatic-109 MuiAppBar-colorPrimary-111 ButtonAppBar-appBar-5"
       >
-        <button
-          aria-label="Menu"
-          className="MuiButtonBase-root-151 MuiIconButton-root-142 MuiIconButton-colorContrast-144 ButtonAppBar-menuButton-3"
-          disabled={false}
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          role="button"
-          tabIndex={0}
-          type="button"
+        <div
+          className="MuiToolbar-root-140 MuiToolbar-gutters-141"
         >
-          <span
-            className="MuiIconButton-label-148"
+          <button
+            aria-label="Menu"
+            className="MuiButtonBase-root-151 MuiIconButton-root-142 MuiIconButton-colorContrast-144 ButtonAppBar-menuButton-3"
+            disabled={false}
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+            type="button"
           >
-            <svg
-              aria-hidden="true"
-              className="MuiSvgIcon-root-153 MuiIconButton-icon-149"
-              focusable="false"
-              viewBox="0 0 24 24"
+            <span
+              className="MuiIconButton-label-148"
             >
-              <path
-                d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-              />
-            </svg>
-          </span>
-          <span
-            className="MuiTouchRipple-root-154"
-          />
-        </button>
-        <h1
-          className="MuiTypography-root-161 MuiTypography-headline-166 MuiTypography-colorInherit-180 ButtonAppBar-flex-2"
-        >
-          MIWF
-        </h1>
-        <a
-          className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatContrast-190 ButtonAppBar-logoutButton-6"
-          href="/logout"
-          id="logout"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-        >
-          <span
-            className="MuiButton-label-187"
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-153 MuiIconButton-icon-149"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+                />
+              </svg>
+            </span>
+            <span
+              className="MuiTouchRipple-root-154"
+            />
+          </button>
+          <h1
+            className="MuiTypography-root-161 MuiTypography-headline-166 MuiTypography-colorInherit-180 ButtonAppBar-flex-2"
           >
-            Logout
-          </span>
-          <span
-            className="MuiTouchRipple-root-154"
-          />
-        </a>
-      </div>
-    </header>
+            MIWF
+          </h1>
+          <a
+            className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatContrast-190 ButtonAppBar-logoutButton-6"
+            href="/logout"
+            id="logout"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+          >
+            <span
+              className="MuiButton-label-187"
+            >
+              Logout
+            </span>
+            <span
+              className="MuiTouchRipple-root-154"
+            />
+          </a>
+        </div>
+      </header>
+    </div>
   </div>
   <div
     style={
       Object {
         "margin": 10,
+        "paddingTop": "70.5px",
       }
     }
   >
