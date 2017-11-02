@@ -1,0 +1,664 @@
+ ----------------------
+|Equivalence Partitions|
+ ----------------------
+
+--------------------------
+File: autentication/models
+--------------------------
+Class: Profile
+	Attributes:
+		user:
+			pass:
+				Any foreign key to a userid 
+				Positive partition for user that exists: 1, 9, 3000
+				Really large positive partition (boundary) for user that exists: 650000000
+			fail:
+				Zero partition: 0
+				Null partition: None
+				Positive partition for user that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for user that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+		hasBankLinked:
+			pass: 
+				Boolean partition: True, False
+				Boundary partition: None
+			fail: 
+				String Partition: yes, no, test
+				Int partition: 1234
+	Functions:
+		create_user_profile:
+			created:
+				pass:
+					Boolean partition: True, False
+					Boundary partition: None
+				fail: 
+					String Partition: yes, no, test
+					Int partition: 1234
+			instance:
+				pass:
+					Any userid 
+					Positive partition for user that exists: 1, 9, 3000
+					Really large positive partition (boundary) for user that exists: 650000000
+				fail:
+					Zero partition: 0
+					Positive partition for user that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for user that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+					Null partition: None
+		save_user_profile:
+			instance:
+				pass:
+					Any userid 
+					Positive partition for user that exists: 1, 9, 3000
+					Really large positive partition (boundary) for user that exists: 650000000
+				fail:
+					Zero partition: 0
+					Positive partition for user that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for user that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+					Null partition: None
+Class: UserBank
+	Attributes:
+		user:
+			pass:
+				Any foreign key to a userid 
+				Positive partition for user that exists: 1, 9, 3000
+				Really large positive partition (boundary) for user that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for user that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for user that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+		item_id:
+			pass:
+				Any string under 1000 chars
+				For example: hey, red1, true, false
+			fail:
+				Any string over 1000 chars
+				Null partition: None, ''
+		access_token:
+			pass:
+				Any string under 1000 chars
+				For example: hey, red1, true, false
+			fail:
+				Any string over 1000 chars
+				Null partition: None, ''
+		institution_name:
+			pass:
+				Any string under 1000 chars
+				For example: hey, red1, true, false
+			fail:
+				Any string over 1000 chars
+				Null partition: None, ''
+------------------------------------
+File: autentication/plaid_middleware
+------------------------------------
+Class: PlaidAPI
+	Attributes:
+		client:
+			pass:
+				A valid plaid client (as returned by plaid.client)
+			fail:
+				Anything else
+		access_token:
+			pass:
+				A valid access_token (as returned by plaid.client)
+			fail:
+				Anything else
+	functions:
+		current_balance:
+			No parameters
+		account_name:
+			No parameters
+		historical_data:
+			start:
+				pass: 
+					Valid date instance in yyyy-mm-dd PRIOR to today
+					Date partition: 1995-17-07, 2013-05-18
+					Boundary date partition: 0000-01-01, 2017-11-01 (today)
+				fail:
+					Dates in the future partition: 2030-11-13
+					Invalid date partition: 2016-13-13, 2016-12-32
+					Nondate partition: 2015, january 3rd 2016
+		income:
+			days:
+				pass:
+					Non-negative int
+					Zero partition: 0
+					Non-negative int partition: 1, 35
+					Boundary non-negative int partition: 6500000000
+				fail:
+					Negative int partition: -1, -23
+					Boundary negative-int partition: -650000000000
+					String partition: hi, one
+		expenditure:
+			days:
+				pass:
+					Non-negative int
+					Zero partition: 0
+					Non-negative int partition: 1, 35
+					Boundary non-negative int partition: 6500000000
+				fail:
+					Negative int partition: -1, -23
+					Boundary negative-int partition: -650000000000
+					String partition: hi, one
+-------------------
+File: stocks/models
+-------------------
+Class: Stock
+	Attributes:
+		name: 
+			pass:
+				A non null string 250 chars or less
+				Stock partition: google, apple, toyota
+			fail:
+				String > 250 chars
+				Null partition: None, ''
+		ticker:
+			pass:
+				A non null string 10 chars or less, validated by yahoo
+				Stock partition: GOOG, AAPL
+			fail:
+				String > 10 chars
+				Null partition: None, ''
+	functions:
+		latest_quote:
+			date:
+				pass: 
+					Valid date instance in yyyy-mm-dd PRIOR to today
+					Date partition: 1995-17-07, 2013-05-18
+					Boundary date partition: 0000-01-01, 2017-11-01 (today)
+					None partition: None
+				fail:
+					Dates in the future partition: 2030-11-13
+					Invalid date partition: 2016-13-13, 2016-12-32
+					Nondate partition: 2015, january 3rd 2016
+		find_stock:
+			first:
+				pass:
+					integer shorter than or equal to the length of the text (can be positive or negative)
+				fail:
+					string: a, b, hi
+		create_new_stock:
+			name: 
+				pass:
+					A non null string 250 chars or less
+					Stock partition: google, apple, toyota
+				fail:
+					String > 250 chars
+					Null partition: None, ''
+			ticker:
+				pass:
+					A non null string 10 chars or less, validated by yahoo
+					Stock partition: GOOG, AAPL
+				fail:
+					String > 10 chars
+					Null partition: None, ''
+		quote_in_range:
+			start:
+				pass: 
+					Valid date instance in yyyy-mm-dd PRIOR to today
+					Date partition: 1995-17-07, 2013-05-18
+					Boundary date partition: 0000-01-01, 2017-11-01 (today)
+					None partition: None
+				fail:
+					Dates in the future partition: 2030-11-13
+					Invalid date partition: 2016-13-13, 2016-12-32
+					Nondate partition: 2015, january 3rd 2016
+			end:
+				pass: 
+					Valid date instance in yyyy-mm-dd PRIOR to today but AFTER start
+					Date partition: 1995-17-07, 2013-05-18
+					Boundary date partition: 0000-01-01, 2017-11-01 (today)
+					None partition: None
+				fail:
+					Dates in the future partition: 2030-11-13
+					Invalid date partition: 2016-13-13, 2016-12-32
+					Nondate partition: 2015, january 3rd 2016
+					Date before start date
+		trades_for_profile:
+			profile:
+				pass:
+					A valid profile foreign key
+					Positive partition for user that exists: 1, 9, 3000
+					Really large positive partition (boundary) for user that exists: 650000000
+				fail:
+					Zero partition: 0
+					Null partition: None
+					Positive partition for user that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for user that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+Class: DailyStockQuote:
+	attributes:
+		value:
+			pass:
+				Any positive float or int
+				Zero partition: 0, 0.0
+				Positive int partition: 1, 10000
+				Positive float partition: 1.0, 1000.32
+				Really large positive int partition: 65000000000
+				Really large positive float partition: 6500000000.23234
+			fail:
+				Negative int partition: -1, -10000
+				Negative float partition: -1.0, -1000.32
+				Really large negative int partition: -65000000000
+				Really large negative float partition: -6500000000.23234
+				String partition: hey, three
+				None partition: None
+		date:
+			pass: 
+				Valid date instance in yyyy-mm-dd PRIOR to or equal to today
+				Date partition: 1995-17-07, 2013-05-18
+				Boundary date partition: 0000-01-01, 2017-11-01 (today)
+				None partition: None
+			fail:
+				Dates in the future partition: 2030-11-13
+				Invalid date partition: 2016-13-13, 2016-12-32
+				Nondate partition: 2015, january 3rd 2016
+		stock:
+			pass:
+				A valid stock foreign key
+				Positive partition for stock that exists: 1, 9, 3000
+				Really large positive partition (boundary) for stock that exists: 650000000
+			fail:
+				Zero partition: 0
+				Null partition: None
+				Positive partition for stock that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for stock that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+Class: InvestmentBucket:
+	attributes:
+		name:
+			pass:
+				A non null string 255 chars or less
+				name partition: mybucket, urbucket, ours
+			fail:
+				String > 255 chars
+				Null partition: None, ''
+		owner:
+			pass:
+				A valid profile foreign key
+				Positive partition for user that exists: 1, 9, 3000
+				Really large positive partition (boundary) for user that exists: 650000000
+			fail:
+				Zero partition: 0
+				Null partition: None
+				Positive partition for user that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for user that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+		public:
+			pass: 
+				Boolean partition: True, False
+				Boundary partition: None
+			fail: 
+				String Partition: yes, no, test
+				Int partition: 1234
+		available:
+			pass:
+				Any positive float or int
+				Zero partition: 0, 0.0
+				Positive int partition: 1, 10000
+				Positive float partition: 1.0, 1000.32
+				Really large positive int partition: 65000000000
+				Really large positive float partition: 6500000000.23234
+			fail:
+				Negative int partition: -1, -10000
+				Negative float partition: -1.0, -1000.32
+				Really large negative int partition: -65000000000
+				Really large negative float partition: -6500000000.23234
+				String partition: hey, three
+				None partition: None
+	functions:
+		accessible_buckets:
+			profile:
+				pass:
+					A valid profile foreign key
+					Positive partition for user that exists: 1, 9, 3000
+					Really large positive partition (boundary) for user that exists: 650000000
+				fail:
+					Zero partition: 0
+					Null partition: None
+					Positive partition for user that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for user that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+		create_new_bucket:
+			owner:
+				pass:
+					A valid profile foreign key
+					Positive partition for user that exists: 1, 9, 3000
+					Really large positive partition (boundary) for user that exists: 650000000
+				fail:
+					Zero partition: 0
+					Null partition: None
+					Positive partition for user that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for user that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+			public:
+				pass: 
+					Boolean partition: True, False
+					Boundary partition: None
+				fail: 
+					String Partition: yes, no, test
+					Int partition: 1234
+			name:
+				pass:
+					A non null string 255 chars or less
+					name partition: mybucket, urbucket, ours
+				fail:
+					String > 255 chars
+					Null partition: None, ''
+			available:
+				pass:
+					Any positive float or int
+					Zero partition: 0, 0.0
+					Positive int partition: 1, 10000
+					Positive float partition: 1.0, 1000.32
+					Really large positive int partition: 65000000000
+					Really large positive float partition: 6500000000.23234
+					None partition: None
+				fail:
+					Negative int partition: -1, -10000
+					Negative float partition: -1.0, -1000.32
+					Really large negative int partition: -65000000000
+					Really large negative float partition: -6500000000.23234
+					String partition: hey, three
+		add_attribute:
+			text:
+				pass:
+					A string of length between 3, 255 inclusive
+					name partition: attr1, howdy, red
+				fail:
+					String > 255 chars
+					String < 3 chars
+					Null partition: None, ''
+			is_good:
+				pass: 
+					Boolean partition: True, False
+					Boundary partition: None
+				fail: 
+					String Partition: yes, no, test
+					Int partition: 1234
+		get_stock_configs:
+			No parameters
+		_sell_all:
+			No parameters
+		change_config:
+			new_config: 
+				pass:
+					a list of configuration Foreign keys
+					Positive partition for list of config that exists: [1, 9, 3000]
+					Really large positive partition (boundary) for list of config that exists: [650000000]
+				fail:
+					Zero partition: [0]
+					Null partition: [None]
+					Positive partition for list of config that doesn't exist: [1, 9, 3000]
+					Really large positive partition (boundary) for list of config that doesn't exists: [650000000]
+					Negative partition: [-1, -2342352424242424]
+					String partition: [hi, test]
+		get_quote:
+			date:
+				pass: 
+					Valid date instance in yyyy-mm-dd PRIOR to today
+					Date partition: 1995-17-07, 2013-05-18
+					Boundary date partition: 0000-01-01, 2017-11-01 (today)
+					None partition: None
+				fail:
+					Dates in the future partition: 2030-11-13
+					Invalid date partition: 2016-13-13, 2016-12-32
+					Nondate partition: 2015, january 3rd 2016
+Class: InvestmentBucketDescription
+	Parameters:
+		text:
+			pass:
+				A string of length between 3, 255 inclusive
+				name partition: attr1, howdy, red
+			fail:
+				String > 255 chars
+				String < 3 chars
+				Null partition: None, ''
+		is_good:
+			pass: 
+				Boolean partition: True, False
+				Boundary partition: None
+			fail: 
+				String Partition: yes, no, test
+				Int partition: 1234
+		bucket:
+			pass:
+				Any foreign key to a bucket 
+				Positive partition for bucket that exists: 1, 9, 3000
+				Really large positive partition (boundary) for bucket that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for bucket that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for bucket that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+	functions:
+		change_description:
+			text:
+				pass:
+					A string of length between 3, 255 inclusive
+					name partition: attr1, howdy, red
+				fail:
+					String > 255 chars
+					String < 3 chars
+					Null partition: None, ''
+Class: InvestmentStockConfiguration
+	Parameters:
+		bucket:
+			pass:
+				Any foreign key to a bucket 
+				Positive partition for bucket that exists: 1, 9, 3000
+				Really large positive partition (boundary) for bucket that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for bucket that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for bucket that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+		stock:
+			pass:
+				Any foreign key to a stock 
+				Positive partition for stock that exists: 1, 9, 3000
+				Really large positive partition (boundary) for stock that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for stock that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for stock that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+		start:
+			pass: 
+				Valid date instance in yyyy-mm-dd PRIOR to today
+				Date partition: 1995-17-07, 2013-05-18
+				Boundary date partition: 0000-01-01, 2017-11-01 (today)
+				None partition: None
+			fail:
+				Dates in the future partition: 2030-11-13
+				Invalid date partition: 2016-13-13, 2016-12-32
+				Nondate partition: 2015, january 3rd 2016
+		end:
+			pass: 
+				Valid date instance in yyyy-mm-dd PRIOR to today but AFTER start
+				Date partition: 1995-17-07, 2013-05-18
+				Boundary date partition: 0000-01-01, 2017-11-01 (today)
+				None partition: None
+			fail:
+				Dates in the future partition: 2030-11-13
+				Invalid date partition: 2016-13-13, 2016-12-32
+				Nondate partition: 2015, january 3rd 2016
+				Date before start date
+	functions:
+		current_value:
+			No parameters
+--------------------
+File: trading/models
+--------------------
+Class: TradingAccount
+	Parameters:
+		account_name: 
+			pass:
+				A non null string 50 chars or less
+				name partition: Christophe's account, redblue
+			fail:
+				String > 50 chars
+				Null partition: None, ''
+		profile:
+			pass:
+				A valid profile foreign key
+				Positive partition for user that exists: 1, 9, 3000
+				Really large positive partition (boundary) for user that exists: 650000000
+			fail:
+				Zero partition: 0
+				Null partition: None
+				Positive partition for user that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for user that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+
+Class: TradeStock
+	Parameters:
+		timestamp:
+			pass:
+				A valid timestamp (automatically adds now)
+				Now partition: datetime.now()
+				past partititon: datetime.now() - timedelta(days=N)
+			fail:
+				future partition: datetime.now() + timedelta(days=N)
+				non datetime partition: hey, 5
+		quantity:
+			pass:
+				Any float or int
+				Zero partition: 0, 0.0
+				Positive int partition: 1, 10000
+				Positive float partition: 1.0, 1000.32
+				Really large positive int partition: 65000000000
+				Really large positive float partition: 6500000000.23234
+				Negative int partition: -1, -10000
+				Negative float partition: -1.0, -1000.32
+				Really large negative int partition: -65000000000
+				Really large negative float partition: -6500000000.23234
+			fail:
+				String partition: hey, three
+				None partition: None
+		account:
+			pass:
+				Any foreign key to a TradingAccount 
+				Positive partition for TradingAccount that exists: 1, 9, 3000
+				Really large positive partition (boundary) for TradingAccount that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for TradingAccount that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for TradingAccount that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+		stock:
+			pass:
+				Any foreign key to a stock 
+				Positive partition for stock that exists: 1, 9, 3000
+				Really large positive partition (boundary) for stock that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for stock that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for stock that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+	functions:
+		current_value:
+			no parameters
+		stock_trade:
+			quantity:
+				pass:
+					Any float or int
+					Zero partition: 0, 0.0
+					Positive int partition: 1, 10000
+					Positive float partition: 1.0, 1000.32
+					Really large positive int partition: 65000000000
+					Really large positive float partition: 6500000000.23234
+					Negative int partition: -1, -10000
+					Negative float partition: -1.0, -1000.32
+					Really large negative int partition: -65000000000
+					Really large negative float partition: -6500000000.23234
+				fail:
+					String partition: hey, three
+					None partition: None
+			stock:
+				pass:
+					Any foreign key to a stock 
+					Positive partition for stock that exists: 1, 9, 3000
+					Really large positive partition (boundary) for stock that exists: 650000000
+				fail:
+					Zero partition: 0
+					Positive partition for stock that doesn't exist: 1, 9, 3000
+					Really large positive partition (boundary) for stock that doesn't exists: 650000000
+					Negative partition: -1, -2342352424242424
+					String partition: hi, test
+					Null partition: None
+Class: TradeBucket:
+	parameters:
+		timestamp:
+			pass:
+				A valid timestamp (automatically adds now)
+				Now partition: datetime.now()
+				past partititon: datetime.now() - timedelta(days=N)
+			fail:
+				future partition: datetime.now() + timedelta(days=N)
+				non datetime partition: hey, 5
+		quantity:
+			pass:
+				Any float or int
+				Zero partition: 0, 0.0
+				Positive int partition: 1, 10000
+				Positive float partition: 1.0, 1000.32
+				Really large positive int partition: 65000000000
+				Really large positive float partition: 6500000000.23234
+				Negative int partition: -1, -10000
+				Negative float partition: -1.0, -1000.32
+				Really large negative int partition: -65000000000
+				Really large negative float partition: -6500000000.23234
+			fail:
+				String partition: hey, three
+				None partition: None
+		account:
+			pass:
+				Any foreign key to a TradingAccount 
+				Positive partition for TradingAccount that exists: 1, 9, 3000
+				Really large positive partition (boundary) for TradingAccount that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for TradingAccount that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for TradingAccount that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+		stock:
+			pass:
+				Any foreign key to a stock 
+				Positive partition for stock that exists: 1, 9, 3000
+				Really large positive partition (boundary) for stock that exists: 650000000
+			fail:
+				Zero partition: 0
+				Positive partition for stock that doesn't exist: 1, 9, 3000
+				Really large positive partition (boundary) for stock that doesn't exists: 650000000
+				Negative partition: -1, -2342352424242424
+				String partition: hi, test
+				Null partition: None
+	functions:
+		current_value:
+			no parameters
