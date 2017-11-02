@@ -33,7 +33,7 @@ class PlaidAPI(object):
                                 if b['balances']['available'] is not None else
                                 b['balances']['current']) *
                                (1
-                                if b['subtype'] == 'credit card' else -1))
+                                if b['subtype'] != 'credit card' else -1))
                               for b in balances]
         balance = sum(extracted_balances)
         return float(balance)
