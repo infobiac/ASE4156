@@ -100,10 +100,10 @@ class GUserBank(DjangoObjectType):
     """
     GraphQL representation of a UserBank
     """
-    balance = Float()
-    income = Float()
-    name = String()
-    outcome = Float()
+    balance = NonNull(Float)
+    income = NonNull(Float)
+    name = NonNull(String)
+    outcome = NonNull(Float)
     history = List(GDataPoint, args={'start': Argument(NonNull(String))})
 
     class Meta(object):

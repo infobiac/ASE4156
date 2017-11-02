@@ -1,6 +1,7 @@
 """
 All selenium tests
 """
+import datetime
 import pytest
 from django.contrib.auth.models import User
 from selenium.webdriver.common.by import By
@@ -35,6 +36,24 @@ class ItemMock(object):
 
 class PlaidMock(object):
     Item = ItemMock()
+
+    def current_balance(self):
+        return 100.0
+
+    def account_name(self):
+        return "Account"
+
+    def historical_data(self, *_args, **_kwargs):
+        return [
+            (datetime.datetime.now() - datetime.timedelta(days=7), 200.0),
+            (datetime.datetime.now(), 100.0),
+        ]
+
+    def income(self, *_args, **_kwargs):
+        return 0.0
+
+    def expenditure(self, *_args, **_kwargs):
+        return 0.0
 
 
 def plaid_mock(self, request):
