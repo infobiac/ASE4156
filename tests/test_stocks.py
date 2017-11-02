@@ -58,14 +58,10 @@ class StocksViewTests(TestCase):
         ticker = "xxx"
         name = "Julian"
         data = {'name': name, 'ticker': ticker}
-        threw = False
         # pylint: disable=broad-except
-        try:
-            self.client.post('/stocks/addstock/', data, follow=True, secure=True)
-        except Exception:
-            threw = True
+        req = self.client.post('/stocks/addstock/', data, follow=True, secure=True)
         # pylint: enable=broad-except
-        self.assertEqual(threw, True)
+        self.assertEqual(req.status_code, 500)
         data = DailyStockQuote.objects.all()
         self.assertEqual(len(data), 0)
 
@@ -98,3 +94,35 @@ class StocksViewTests(TestCase):
         stock_data = Stock.objects.filter(id=stock_id)
         self.assertGreater(len(data), 0)
         self.assertEqual(len(stock_data), 1)
+
+    def test_fill_invalid_call(self):
+        """
+        Endpoint only works with GET
+        """
+        request = self.client.post('/stocks/fill/', follow=True, secure=True)
+        self.assertEqual(request.status_code, 405)
+
+    @mock.patch.object(
+        Fetcher,
+        'getHistorical',
+        mock.MagicMock(side_effect=[
+            pd.DataFrame({
+                'Close': [1.76, 2.51],
+                'Date': ["2016-10-08", "2016-10-09"],
+                }),
+            pd.DataFrame({
+                'Close': [2.51, 2.53],
+                'Date': ["2016-10-09", "2016-10-10"],
+                }),
+            pd.DataFrame({
+                'Close': [2.55, 2.58],
+                'Date': ["2016-10-11", "2017-10-12"],
+            })]))
+    @pytest.mark.django_db(transaction=True)
+    def test_fill_stock_data(self):
+        """
+        Filling data for stock
+        """
+        Stock(name="Facebook", ticker="FB").save()
+        request = self.client.get('/stocks/fill/', follow=True, secure=True)
+        self.assertEqual(request.status_code, 200)
