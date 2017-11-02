@@ -104,17 +104,18 @@ class PlaidMiddleware(MiddlewareMixin):
         self.get_response = get_response
 
     def __call__(self, request):
-        bnk = request.user.userbank.all()[:1]
-        if bnk:
-            request.plaid = PlaidAPI(
-                client=plaid.Client(
-                    client_id=PLAID_CLIENT_ID,
-                    secret=PLAID_SECRET,
-                    public_key=PLAID_PUBLIC_KEY,
-                    environment=PLAID_ENV
-                ),
-                access_token=bnk[0].access_token,
-            )
+        if request.user.is_authenticated():
+            bnk = request.user.userbank.all()[:1]
+            if bnk:
+                request.plaid = PlaidAPI(
+                    client=plaid.Client(
+                        client_id=PLAID_CLIENT_ID,
+                        secret=PLAID_SECRET,
+                        public_key=PLAID_PUBLIC_KEY,
+                        environment=PLAID_ENV
+                    ),
+                    access_token=bnk[0].access_token,
+                )
         response = self.get_response(request)
         return response
 # pylint: enable=too-few-public-methods
