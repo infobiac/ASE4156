@@ -2,10 +2,12 @@
 from unittest import mock
 from django.test import TestCase
 from stocks.models import Stock, DailyStockQuote
+from stocks import stock_helper
 import pandas as pd
 from yahoo_historical import Fetcher
 from authentication.plaid_middleware import PlaidMiddleware
 import pytest
+import arrow
 
 
 class StocksViewTests(TestCase):
@@ -126,3 +128,58 @@ class StocksViewTests(TestCase):
         Stock(name="Facebook", ticker="FB").save()
         request = self.client.get('/stocks/fill/', follow=True, secure=True)
         self.assertEqual(request.status_code, 200)
+
+    @mock.patch.object(
+        arrow,
+        'now',
+        mock.MagicMock(return_value=arrow.get(2017, 5, 1))
+    )
+    def test_date_array_from_arrow(self):
+        """
+        Testing converting arrow date to date array for yahoo fetcher
+        """
+        date = arrow.now()
+        date_array = stock_helper.get_date_array_for_fetcher(date)
+        self.assertEqual(len(date_array), 3)
+        self.assertEqual(date_array[0], 2017)
+        self.assertEqual(date_array[1], 5)
+        self.assertEqual(date_array[2], 1)
+
+    @mock.patch.object(
+        arrow,
+        'now',
+        mock.MagicMock(return_value=arrow.get(2015, 5, 1))
+    )
+    @mock.patch.object(
+        Fetcher,
+        'getHistorical',
+        mock.MagicMock(return_value=pd.DataFrame({
+            'Close': [1.5, 2.5],
+            'Date': ["2015-05-01", "2017-05-01"],
+        }))
+    )
+    def test_validate_ticker_real(self):
+        """
+        Testing validation when ticker is valid
+        """
+        ticker = "FB"
+        result = stock_helper.validate_ticker(ticker)
+        self.assertEqual(result, True)
+
+    @mock.patch.object(
+        arrow,
+        'now',
+        mock.MagicMock(return_value=arrow.get(2015, 7, 1))
+    )
+    @mock.patch.object(
+        Fetcher,
+        'getHistorical',
+        mock.MagicMock(side_effect=KeyError('abc'))
+    )
+    def test_validate_ticker_false(self):
+        """
+        Testing validation when ticker is invalid
+        """
+        ticker = 'xxx'
+        result = stock_helper.validate_ticker(ticker)
+        self.assertEqual(result, False)
