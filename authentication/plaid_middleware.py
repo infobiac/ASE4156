@@ -20,6 +20,8 @@ class PlaidAPI(object):
     """
     Wrapper around the plaid API to establish convenience methods
     """
+    balance = None
+
     def __init__(self, client, access_token):
         self.plaid = client
         self.access_token = access_token
@@ -28,6 +30,8 @@ class PlaidAPI(object):
         """
         Returns the current numerical balance of the user
         """
+        if self.balance:
+            return self.balance
         balances = self.plaid.Accounts.balance.get(self.access_token)['accounts']
         extracted_balances = [((b['balances']['available']
                                 if b['balances']['available'] is not None else
@@ -36,7 +40,8 @@ class PlaidAPI(object):
                                 if b['subtype'] != 'credit card' else -1))
                               for b in balances]
         balance = sum(extracted_balances)
-        return float(balance)
+        self.balance = float(balance)
+        return self.balance
 
     def account_name(self):
         """

@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
-import { createFragmentContainer, graphql } from 'react-relay';
+import { createRefetchContainer, graphql } from 'react-relay';
 import { ConnectionHandler } from 'relay-runtime';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
+import LoadMoreIcon from 'material-ui-icons/MoreHoriz';
 
 import type { RelayContext } from 'react-relay';
 
@@ -21,6 +22,7 @@ type Props = {
 type State = {
   showDialog: bool,
   errors: ?Array<Error>,
+  count: number,
 }
 
 class InvestBucketGridRelay extends React.Component<Props, State> {
@@ -29,6 +31,7 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
     this.state = {
       showDialog: false,
       errors: [],
+      count: 2,
     };
   }
   dialogAction = diagState => () => {
@@ -70,6 +73,11 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
       { name, public: publicBucket, investment },
     );
   }
+  loadMore = () => {
+    this.setState(() => ({ count: this.state.count + 3 }), () => {
+      this.props.relay.refetch(() => ({ count: this.state.count }));
+    });
+  }
   render() {
     if (!this.props.profile.investSuggestions) {
       return null;
@@ -87,6 +95,13 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
           <Button fab color="primary" aria-label="add" onClick={this.dialogAction(true)}>
             <AddIcon />
           </Button>
+          {
+            this.props.profile.investSuggestions
+            && this.props.profile.investSuggestions.pageInfo.hasNextPage ?
+              <Button fab color="primary" aria-label="add" onClick={this.loadMore}>
+                <LoadMoreIcon />
+              </Button> : null
+          }
         </Grid>
         {
           this.state.showDialog ?
@@ -102,19 +117,33 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
   }
 }
 
-export default createFragmentContainer(InvestBucketGridRelay, {
+export default createRefetchContainer(InvestBucketGridRelay, {
   profile: graphql`
-    fragment InvestBucketGridRelay_profile on GProfile {
+    fragment InvestBucketGridRelay_profile on GProfile
+    @argumentDefinitions(
+      count: {type: "Int!", defaultValue: 2}
+    ) {
       id
-      investSuggestions(first: 3) @connection(key: "InvestBucketGridRelay_investSuggestions") {
+      investSuggestions(first: $count) @connection(key: "InvestBucketGridRelay_investSuggestions") {
         edges {
           node {
             id
             ...InvestBucketRelay_bucket
           }
         }
+        pageInfo {
+          hasNextPage
+        }
       }
       ...InvestBucketRelay_profile
     }
   `,
-});
+}, graphql`
+  query InvestBucketGridRelayQuery($count: Int!) {
+    viewer {
+      profile {
+        ...InvestBucketGridRelay_profile @arguments(count: $count)
+      }
+    }
+  }
+`);
