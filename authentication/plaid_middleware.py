@@ -104,6 +104,12 @@ class PlaidMiddleware(MiddlewareMixin):
         self.get_response = get_response
 
     def __call__(self, request):
+        request.plaid = plaid.Client(
+            client_id=PLAID_CLIENT_ID,
+            secret=PLAID_SECRET,
+            public_key=PLAID_PUBLIC_KEY,
+            environment=PLAID_ENV
+        )
         if request.user.is_authenticated():
             bnk = request.user.userbank.all()[:1]
             if bnk:
