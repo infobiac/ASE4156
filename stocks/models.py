@@ -40,7 +40,7 @@ class Stock(models.Model):
         """
         quote_query = self.daily_quote
         if date is not None:
-            quote_query = quote_query.filter(date__leq=date)
+            quote_query = quote_query.filter(date__lte=date)
         quote_query = quote_query.order_by('-date')
         if quote_query:
             return quote_query[0]
@@ -165,21 +165,33 @@ class InvestmentBucket(models.Model):
         )
         return attribute
 
-    def get_stock_configs(self):
+    def get_stock_configs(self, date=None):
         """
         Get all associated configs
         """
-        return self.stocks.filter(end=None)
+        if not date:
+            return self.stocks.filter(end=None)
+        return self.stocks.filter(end__gte=date).filter(start__lte=date)
+
+    def current_value(self):
+        """
+        The current value of the investment bucket
+        """
+        return sum([
+            stock.value_on()
+            for stock
+            in self.get_stock_configs()
+        ]) + self.available
 
     def _sell_all(self):
         """
         Sells all stocks held in the investment bucket
         """
         with transaction.atomic():
-            current_configs = self.stocks.filter(end=None)
-            balance_change = 0
+            current_configs = self.get_stock_configs()
+            balance_change = 0.0
             for conf in current_configs:
-                balance_change += conf.current_value()
+                balance_change += conf.value_on()
             self.available += balance_change
             current_configs.update(end=datetime.datetime.now())
 
@@ -201,6 +213,16 @@ class InvestmentBucket(models.Model):
             if self.available < 0:
                 raise Exception("Not enough money available")
             self.save()
+
+    def value_on(self, date):
+        """
+        The value of the bucket on a specific day
+        """
+        return sum([
+            config.value_on(date)
+            for config
+            in self.get_stock_configs(date)
+        ])
 
 
 class InvestmentBucketDescription(models.Model):
@@ -243,11 +265,11 @@ class InvestmentStockConfiguration(models.Model):
     start = models.DateField(default=os_date.today, blank=True)
     end = models.DateField(null=True, blank=True)
 
-    def current_value(self):
+    def value_on(self, date=None):
         """
         Returns the current value of the stock configuration
         """
-        return self.stock.latest_quote().value * self.quantity
+        return self.stock.latest_quote(date).value * self.quantity
 
 
 @receiver(pre_save)

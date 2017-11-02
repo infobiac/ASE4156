@@ -47,7 +47,8 @@ class GInvestmentBucket(DjangoObjectType):
     """
     GraphQL representation of a InvestmentBucket
     """
-    is_owner = Boolean()
+    is_owner = NonNull(Boolean)
+    value = NonNull(Float)
 
     class Meta:
         """
@@ -55,7 +56,7 @@ class GInvestmentBucket(DjangoObjectType):
         """
         model = InvestmentBucket
         interfaces = (relay.Node, )
-        only_fields = ('id', 'name', 'public', 'description', 'stocks', 'available')
+        only_fields = ('id', 'name', 'public', 'description', 'stocks', 'available', 'value')
 
     @staticmethod
     def resolve_is_owner(data, _args, context, _info):
@@ -70,6 +71,13 @@ class GInvestmentBucket(DjangoObjectType):
         Returns the *current* stocks in the bucket
         """
         return data.get_stock_configs()
+
+    @staticmethod
+    def resolve_value(data, _args, _context, _info):
+        """
+        The current value of the investment bucket
+        """
+        return data.current_value()
 
 
 class GInvestmentStockConfiguration(DjangoObjectType):
@@ -251,6 +259,34 @@ class DeleteAttribute(Mutation):
         else:
             bucket_attr = bucket_attr[0]
         bucket_attr.delete()
+        return DeleteAttribute(is_ok=True)
+
+
+class DeleteBucket(Mutation):
+    """
+    Deletes an attribute from a bucket
+    """
+    class Input(object):
+        """
+        We just need the ID to delete it
+        """
+        id_value = NonNull(ID)
+    is_ok = Field(lambda: Boolean)
+
+    @staticmethod
+    def mutate(_self, args, context, _info):
+        """
+        Executes the mutation by deleting the attribute
+        """
+        bucket = InvestmentBucket.objects.filter(
+            id=from_global_id(args['id_value'])[1],
+            owner=context.user.profile,
+        )
+        if not bucket:
+            raise Exception("You don't own the bucket!")
+        else:
+            bucket = bucket[0]
+        bucket.delete()
         return DeleteAttribute(is_ok=True)
 
 

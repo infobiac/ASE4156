@@ -37,13 +37,14 @@ class GProfile(DjangoObjectType):
     invest_suggestions = DjangoFilterConnectionField(
         GInvestmentBucket,
     )
+    selected_acc = NonNull(GTradingAccount)
 
     class Meta(object):
         """
         Meta Model for Profile
         """
         model = Profile
-        only_fields = ('id', 'trading_accounts', 'stock_find')
+        only_fields = ('id', 'trading_accounts', 'selected_acc', 'stock_find')
         interfaces = (relay.Node, )
 
     @staticmethod
@@ -62,6 +63,20 @@ class GProfile(DjangoObjectType):
         Finds all the investment suggestions available to the user
         """
         return InvestmentBucket.accessible_buckets(context.user.profile)
+
+    @staticmethod
+    def resolve_selected_acc(data, _args, _context, _info):
+        """
+        Returns the selected account. For now we just assume the user has only 1
+        """
+        acc = data.trading_accounts.all()[:1]
+        if not acc:
+            acc = data.trading_accounts.create(
+                account_name='default'
+            )
+        else:
+            acc = acc[0]
+        return acc
 
 
 class DataPoint(object):

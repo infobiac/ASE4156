@@ -123,6 +123,7 @@ class PageTest extends React.Component<{}> {
                           editMode: false,
                         }],
                       }}
+                      investFunc={() => {}}
                     />
                   </Grid>
                   <Grid item xs={12} sm={8} lg={4}>
@@ -144,6 +145,7 @@ class PageTest extends React.Component<{}> {
                           editMode: false,
                         }],
                       }}
+                      investFunc={() => {}}
                     />
                   </Grid>
                   <Grid item xs={12} sm={8} lg={4}>
@@ -165,6 +167,7 @@ class PageTest extends React.Component<{}> {
                           editMode: false,
                         }],
                       }}
+                      investFunc={() => {}}
                     />
                   </Grid>
                 </Grid>

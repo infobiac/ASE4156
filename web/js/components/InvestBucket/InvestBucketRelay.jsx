@@ -4,14 +4,23 @@ import PropTypes from 'prop-types';
 import { createRefetchContainer, graphql } from 'react-relay';
 import { ConnectionHandler } from 'relay-runtime';
 import LockIcon from 'material-ui-icons/Lock';
+import Dialog, {
+  DialogContent,
+  DialogTitle,
+  DialogActions,
+  DialogContentText,
+} from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
 
 import type { RelayContext } from 'react-relay';
 
 import InvestBucket from './InvestBucket';
+import InvestPanelRelay from './InvestPanelRelay';
 import InvestCompositionRelay from './InvestCompositionRelay';
 import addDescription from '../../mutations/BucketEdit/AddDescription';
 import editDescription from '../../mutations/BucketEdit/EditDescription';
 import deleteDescription from '../../mutations/BucketEdit/DeleteDescription';
+import deleteBucket from '../../mutations/BucketEdit/DeleteBucket';
 import changeBucketComposition from '../../mutations/BucketEdit/ChangeBucketComposition';
 
 import type { InvestBucketRelay_bucket } from './__generated__/InvestBucketRelay_bucket.graphql';
@@ -25,6 +34,8 @@ type State = {
   compositionDialog: bool,
   editMode: ?string,
   editState: EditObj,
+  deleteConfirm: bool,
+  investDialog: bool,
 }
 type Props = {
   bucket: InvestBucketRelay_bucket,
@@ -43,6 +54,8 @@ class InvestBucketRelay extends React.Component<Props, State> {
       compositionDialog: false,
       editMode: null,
       editState: { shortDesc: '' },
+      deleteConfirm: false,
+      investDialog: false,
     };
   }
   launchEdit = id => () => {
@@ -80,6 +93,24 @@ class InvestBucketRelay extends React.Component<Props, State> {
         config: chunks.map(c => ({ idValue: c.id, quantity: c.quantity })),
         id: this.props.bucket.id,
       },
+    );
+  }
+  deleteBucket = () => {
+    const updater = (store) => {
+      store.delete(this.props.bucket.id);
+    };
+    deleteBucket(
+      updater, updater, (r, error) => {
+        if (error) {
+          this.context.errorDisplay({
+            message: error[0].message,
+          });
+        }
+      },
+    )(
+      this.props.relay.environment,
+    )(
+      { id: this.props.bucket.id },
     );
   }
   render() {
@@ -231,6 +262,33 @@ class InvestBucketRelay extends React.Component<Props, State> {
             /> :
             null
         }
+        {
+          this.state.investDialog ?
+            <InvestPanelRelay
+              bucket={this.props.bucket}
+              profile={this.props.profile}
+              closeFunc={() => this.setState(() => ({ investDialog: false }))}
+            /> : null
+        }
+        <Dialog
+          open={this.state.deleteConfirm}
+          onRequestClose={(() => this.setState(() => ({ deleteConfirm: false })))}
+        >
+          <DialogTitle>{'Are you sure?'}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Are you sure you want to delete the bucket forever?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={(() => this.setState(() => ({ deleteConfirm: false })))} color="primary">
+              Keep it
+            </Button>
+            <Button onClick={this.deleteBucket} color="primary" autoFocus>
+              Delete
+            </Button>
+          </DialogActions>
+        </Dialog>
         <InvestBucket
           title={title}
           attributes={attributes}
@@ -241,6 +299,12 @@ class InvestBucketRelay extends React.Component<Props, State> {
               (() => this.setState(() => ({ compositionDialog: true }))) :
               null
           }
+          deleteFunc={
+            this.props.bucket.isOwner ?
+              (() => this.setState(() => ({ deleteConfirm: true }))) :
+              null
+          }
+          investFunc={() => this.setState(() => ({ investDialog: true }))}
         />
       </div>
     );
@@ -270,11 +334,13 @@ export default createRefetchContainer(InvestBucketRelay, {
         }
       }
       ...InvestCompositionRelay_bucket
+      ...InvestPanelRelay_bucket
     }
   `,
   profile: graphql`
     fragment InvestBucketRelay_profile on GProfile {
       ...InvestCompositionRelay_profile
+      ...InvestPanelRelay_profile
     }
   `,
 }, graphql`

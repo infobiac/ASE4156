@@ -5,6 +5,7 @@ import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import InvestBucket from './InvestBucket';
 import InvestComposition from './InvestComposition';
+import InvestPanel from './InvestPanel';
 
 storiesOf('InvestBucket', module).add('Playground', () => {
   const title = text('Title of the risk section', 'Risk 1');
@@ -46,7 +47,12 @@ storiesOf('InvestBucket', module).add('Playground', () => {
       },
     ],
   };
-  return (<InvestBucket title={title} attributes={riskList} editFunc={action('edit')} />);
+  return (<InvestBucket
+    title={title}
+    attributes={riskList}
+    editFunc={action('edit')}
+    investFunc={() => {}}
+  />);
 });
 
 storiesOf('InvestCompositionDontTest', module).add('Playground', () => {
@@ -88,3 +94,11 @@ storiesOf('InvestCompositionDontTest', module).add('Playground', () => {
     />
   );
 });
+storiesOf('InvestPanelDontTest', module).add('Playground', () => (
+  <InvestPanel
+    bucket={{ name: 'Some bucket', value: 311.45 }}
+    available={555.55}
+    investFunc={action('invest')}
+    cancelFunc={action('cancel')}
+  />
+));

@@ -427,6 +427,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       className="MuiButtonBase-root-52 MuiButton-root-86 MuiButton-flatPrimary-89 MuiButton-dense-87 MuiCardActions-actionSpacing-383"
       disabled={false}
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
@@ -443,31 +444,6 @@ exports[`Storyshots InvestBucket Playground 1`] = `
         className="MuiButton-label-88"
       >
         Invest
-      </span>
-      <span
-        className="MuiTouchRipple-root-55"
-      />
-    </button>
-    <button
-      className="MuiButtonBase-root-52 MuiButton-root-86 MuiButton-flatPrimary-89 MuiButton-dense-87 MuiCardActions-actionSpacing-383"
-      disabled={false}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onKeyDown={[Function]}
-      onKeyUp={[Function]}
-      onMouseDown={[Function]}
-      onMouseLeave={[Function]}
-      onMouseUp={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      role="button"
-      tabIndex={0}
-      type="button"
-    >
-      <span
-        className="MuiButton-label-88"
-      >
-        Learn More
       </span>
       <span
         className="MuiTouchRipple-root-55"
@@ -1051,6 +1027,7 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
                   disabled={false}
                   onBlur={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
@@ -1067,31 +1044,6 @@ exports[`Storyshots Page Test page 1`] = `
                     className="MuiButton-label-187"
                   >
                     Invest
-                  </span>
-                  <span
-                    className="MuiTouchRipple-root-154"
-                  />
-                </button>
-                <button
-                  className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  role="button"
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="MuiButton-label-187"
-                  >
-                    Learn More
                   </span>
                   <span
                     className="MuiTouchRipple-root-154"
@@ -1212,6 +1164,7 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
                   disabled={false}
                   onBlur={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
@@ -1228,31 +1181,6 @@ exports[`Storyshots Page Test page 1`] = `
                     className="MuiButton-label-187"
                   >
                     Invest
-                  </span>
-                  <span
-                    className="MuiTouchRipple-root-154"
-                  />
-                </button>
-                <button
-                  className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  role="button"
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="MuiButton-label-187"
-                  >
-                    Learn More
                   </span>
                   <span
                     className="MuiTouchRipple-root-154"
@@ -1373,6 +1301,7 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
                   disabled={false}
                   onBlur={[Function]}
+                  onClick={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
@@ -1389,31 +1318,6 @@ exports[`Storyshots Page Test page 1`] = `
                     className="MuiButton-label-187"
                   >
                     Invest
-                  </span>
-                  <span
-                    className="MuiTouchRipple-root-154"
-                  />
-                </button>
-                <button
-                  className="MuiButtonBase-root-151 MuiButton-root-185 MuiButton-flatPrimary-188 MuiButton-dense-186 MuiCardActions-actionSpacing-314"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onFocus={[Function]}
-                  onKeyDown={[Function]}
-                  onKeyUp={[Function]}
-                  onMouseDown={[Function]}
-                  onMouseLeave={[Function]}
-                  onMouseUp={[Function]}
-                  onTouchEnd={[Function]}
-                  onTouchStart={[Function]}
-                  role="button"
-                  tabIndex={0}
-                  type="button"
-                >
-                  <span
-                    className="MuiButton-label-187"
-                  >
-                    Learn More
                   </span>
                   <span
                     className="MuiTouchRipple-root-154"

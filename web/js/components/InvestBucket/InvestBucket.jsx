@@ -35,6 +35,8 @@ type Props = {
   editFunc?: ?(text: string, isGood: bool) => void,
   seeMoreFunc?: ?() => void,
   editCompositionFunc?: ?() => void,
+  deleteFunc?: ?() => void,
+  investFunc: () => void,
 }
 
 class InvestBucket extends React.Component <Props, State> {
@@ -170,12 +172,16 @@ class InvestBucket extends React.Component <Props, State> {
           }
         </CardContent>
         <CardActions>
-          <Button dense color="primary">
+          <Button dense color="primary" onClick={this.props.investFunc}>
             Invest
           </Button>
-          <Button dense color="primary">
-            Learn More
-          </Button>
+          {
+            this.props.deleteFunc ? (
+              <Button dense color="primary" onClick={this.props.deleteFunc}>
+                Delete
+              </Button>
+            ) : null
+          }
           {
             this.props.editCompositionFunc ? (
               <Button dense color="primary" onClick={this.props.editCompositionFunc}>
