@@ -21,7 +21,7 @@ const styles = ({
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
-    color: '#FFFF00',
+    color: '#FFF',
   },
   palette: {
     primary: colors,
@@ -33,10 +33,10 @@ const styles = ({
     textColor: green,
   },
   appBar: {
-    color: '#FFFF00',
+    color: '#FFF',
   },
   logoutButton: {
-    color: '#FFFF00',
+    color: '#FFF',
   },
 });
 
