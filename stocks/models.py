@@ -40,11 +40,14 @@ class Stock(models.Model):
         """
         quote_query = self.daily_quote
         if date is not None:
+            date = datetime.datetime.strptime(date, "%Y-%m-%d")
+            if date > datetime.datetime.now():
+                raise Exception("Date is later than now!")
             quote_query = quote_query.filter(date__lte=date)
         quote_query = quote_query.order_by('-date')
         if quote_query:
             return quote_query[0]
-        return None
+        raise Exception("No quote found")
 
     @staticmethod
     def find_stock(text, first=None):
