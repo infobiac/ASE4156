@@ -25,21 +25,23 @@ export default class PersonalStatus extends React.Component < Props > {
     }
     return (
       <Grid container spacing={16} align="stretch">
-        {this.props.bank.balance ? <Grid item xs={12} sm={6}>
+        {this.props.bank.balance == null ? null : <Grid item xs={12} sm={6}>
           <HighlightBox title={'Current balance'} value={this.props.bank.balance.toFixed(2)} />
-        </Grid> : null}
-        {this.props.bank.income ? <Grid item xs={12} sm={6}>
+        </Grid>}
+        {this.props.bank.income == null ? null : <Grid item xs={12} sm={6}>
           <HighlightBox title={'Total Income'} value={this.props.bank.income.toFixed(2)} />
-        </Grid> : null}
-        {this.props.bank.outcome ? <Grid item xs={12} sm={6}>
+        </Grid>}
+        {this.props.bank.outcome == null ? null : <Grid item xs={12} sm={6}>
           <HighlightBox title={'Total Expenditures'} value={this.props.bank.outcome.toFixed(2)} />
-        </Grid> : null}
-        {this.props.bank.income && this.props.bank.outcome ? <Grid item xs={12} sm={6}>
-          <HighlightBox
-            title={'Available money'}
-            value={(this.props.bank.income + this.props.bank.outcome).toFixed(2)}
-          />
-        </Grid> : null}
+        </Grid>}
+        {this.props.bank.income == null && this.props.bank.outcome == null
+          ? null
+          : <Grid item xs={12} sm={6}>
+            <HighlightBox
+              title={'Available money'}
+              value={(this.props.bank.income + this.props.bank.outcome).toFixed(2)}
+            />
+          </Grid>}
       </Grid>
     );
   }
