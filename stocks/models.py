@@ -176,16 +176,6 @@ class InvestmentBucket(models.Model):
             return self.stocks.filter(end=None)
         return self.stocks.filter(end__gte=date).filter(start__lte=date)
 
-    def current_value(self):
-        """
-        The current value of the investment bucket
-        """
-        return sum([
-            stock.value_on()
-            for stock
-            in self.get_stock_configs()
-        ]) + self.available
-
     def _sell_all(self):
         """
         Sells all stocks held in the investment bucket
@@ -217,7 +207,7 @@ class InvestmentBucket(models.Model):
                 raise Exception("Not enough money available")
             self.save()
 
-    def value_on(self, date):
+    def value_on(self, date=None):
         """
         The value of the bucket on a specific day
         """

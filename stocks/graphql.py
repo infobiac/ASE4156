@@ -77,7 +77,7 @@ class GInvestmentBucket(DjangoObjectType):
         """
         The current value of the investment bucket
         """
-        return data.current_value()
+        return data.value_on()
 
 
 class GInvestmentStockConfiguration(DjangoObjectType):
