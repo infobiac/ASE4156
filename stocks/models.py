@@ -41,8 +41,10 @@ class Stock(models.Model):
         quote_query = self.daily_quote
         if date is not None:
             if isinstance(date, str):
-                date = datetime.datetime.strptime(date, "%Y-%m-%d")
-            if date > datetime.datetime.now():
+                date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+            if isinstance(date, datetime.datetime):
+                date = date.date()
+            if date > datetime.datetime.now().date():
                 raise Exception("Date is later than now!")
             quote_query = quote_query.filter(date__lte=date)
         quote_query = quote_query.order_by('-date')
@@ -175,7 +177,7 @@ class InvestmentBucket(models.Model):
         """
         if not date:
             return self.stocks.filter(end=None)
-        return self.stocks.filter(end__gte=date).filter(start__lte=date)
+        return self.stocks.filter(start__lte=date).filter(Q(end__gte=date) | Q(end=None))
 
     def _sell_all(self):
         """
@@ -188,6 +190,7 @@ class InvestmentBucket(models.Model):
                 balance_change += conf.value_on()
             self.available += balance_change
             current_configs.update(end=datetime.datetime.now())
+            self.save()
 
     def change_config(self, new_config):
         """

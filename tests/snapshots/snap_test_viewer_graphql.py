@@ -10,7 +10,7 @@ snapshots = Snapshot()
 snapshots['test_big_gql 1'] = {
     'data': {
         'viewer': {
-            'id': 'R1VzZXI6MTU=',
+            'id': 'R1VzZXI6MjE=',
             'profile': {
                 'investSuggestions': {
                     'edges': [
@@ -21,14 +21,14 @@ snapshots['test_big_gql 1'] = {
                                     'edges': [
                                         {
                                             'node': {
-                                                'id': 'R0ludmVzdG1lbnRCdWNrZXRBdHRyaWJ1dGU6NQ==',
+                                                'id': 'R0ludmVzdG1lbnRCdWNrZXRBdHRyaWJ1dGU6Nw==',
                                                 'isGood': True,
                                                 'text': 'Blabla'
                                             }
                                         }
                                     ]
                                 },
-                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6MTE=',
+                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6MTc=',
                                 'isOwner': True,
                                 'name': 'i1',
                                 'public': False,
@@ -37,7 +37,7 @@ snapshots['test_big_gql 1'] = {
                                         {
                                             'node': {
                                                 'end': None,
-                                                'id': 'R0ludmVzdG1lbnRTdG9ja0NvbmZpZ3VyYXRpb246Mw==',
+                                                'id': 'R0ludmVzdG1lbnRTdG9ja0NvbmZpZ3VyYXRpb246MTI=',
                                                 'quantity': 1.0,
                                                 'start': '2017-05-09',
                                                 'stock': {
@@ -56,7 +56,7 @@ snapshots['test_big_gql 1'] = {
                 },
                 'stockFind': [
                     {
-                        'id': 'R1N0b2NrOjEx',
+                        'id': 'R1N0b2NrOjE1',
                         'quoteInRange': [
                             {
                                 'date': '2017-05-08',
