@@ -10,7 +10,7 @@ snapshots = Snapshot()
 snapshots['test_big_gql 1'] = {
     'data': {
         'viewer': {
-            'id': 'R1VzZXI6MTE=',
+            'id': 'R1VzZXI6MTU=',
             'profile': {
                 'investSuggestions': {
                     'edges': [
@@ -28,7 +28,7 @@ snapshots['test_big_gql 1'] = {
                                         }
                                     ]
                                 },
-                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6Nw==',
+                                'id': 'R0ludmVzdG1lbnRCdWNrZXQ6MTE=',
                                 'isOwner': True,
                                 'name': 'i1',
                                 'public': False,
@@ -56,15 +56,15 @@ snapshots['test_big_gql 1'] = {
                 },
                 'stockFind': [
                     {
-                        'id': 'R1N0b2NrOjg=',
+                        'id': 'R1N0b2NrOjEx',
                         'quoteInRange': [
-                            {
-                                'date': '2017-05-10',
-                                'value': 10.0
-                            },
                             {
                                 'date': '2017-05-08',
                                 'value': 9.0
+                            },
+                            {
+                                'date': '2017-05-10',
+                                'value': 10.0
                             }
                         ]
                     }

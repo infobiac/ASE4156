@@ -40,7 +40,8 @@ class Stock(models.Model):
         """
         quote_query = self.daily_quote
         if date is not None:
-            date = datetime.datetime.strptime(date, "%Y-%m-%d")
+            if isinstance(date, str):
+                date = datetime.datetime.strptime(date, "%Y-%m-%d")
             if date > datetime.datetime.now():
                 raise Exception("Date is later than now!")
             quote_query = quote_query.filter(date__lte=date)
@@ -79,7 +80,7 @@ class Stock(models.Model):
             query = query.filter(date__gte=start)
         if end:
             query = query.filter(date__lte=end)
-        query = query.order_by('-date')
+        query = query.order_by('date')
         return query
 
     def trades_for_profile(self, profile):
