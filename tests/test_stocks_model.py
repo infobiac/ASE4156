@@ -83,6 +83,8 @@ def test_stock_find_stock():
     TestCase.assertCountEqual(None, [stock1, stock2], Stock.find_stock("Name"))
     TestCase.assertCountEqual(None, [stock1], Stock.find_stock("Name1"))
     TestCase.assertCountEqual(None, [stock2], Stock.find_stock("e2"))
+    single_stock_find = Stock.find_stock("", 1)[0]
+    assert single_stock_find == stock1 or single_stock_find == stock2
 
 
 @pytest.mark.django_db(transaction=True)
