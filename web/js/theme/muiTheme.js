@@ -6,7 +6,8 @@ import colors from '../colors/colors';
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: 'Roboto-Light',
+    fontFamily: 'Roboto',
+    fontWeight: 300,
   },
   palette: {
     primary: colors,

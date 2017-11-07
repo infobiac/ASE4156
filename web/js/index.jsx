@@ -5,6 +5,7 @@ import createRender from 'found/lib/createRender';
 import { Resolver } from 'found-relay';
 import { CircularProgress } from 'material-ui/Progress';
 import { MuiThemeProvider } from 'material-ui/styles';
+import Raven from 'raven-js';
 
 
 import React from 'react';
@@ -14,6 +15,7 @@ import routes from './relay/routes';
 import '../css/styles.css';
 import theme from './theme/muiTheme';
 
+Raven.config('https://bc5e0edbf2f74dab884001de9cea3069@sentry.io/238477').install();
 
 const Router = createFarceRouter({
   historyProtocol: new BrowserProtocol(),
