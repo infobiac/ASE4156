@@ -26,19 +26,19 @@ class Home extends React.Component < Props > {
       <div style={{ margin: 10 }}>
         <SnackbarErrorContext>
           <Grid container spacing={16}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               {this.props.viewer.userbank.edges[0]
                 ? <PersonalStatusRelay bank={this.props.viewer.userbank.edges[0].node} />
                 : null}
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <Paper>
                 {this.props.viewer.userbank.edges[0]
                   ? <BankAccountRelay bank={this.props.viewer.userbank.edges[0].node} />
                   : null}
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <InvestBucketGridRelay profile={this.props.viewer.profile} />
             </Grid>
           </Grid>

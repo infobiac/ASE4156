@@ -576,13 +576,13 @@ exports[`Storyshots Page Test page 1`] = `
       className="MuiGrid-typeContainer-199 MuiGrid-spacing-xs-16-214"
     >
       <div
-        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229"
       >
         <div
           className="MuiGrid-typeContainer-199 MuiGrid-spacing-xs-16-214"
         >
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-3-246"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -619,7 +619,7 @@ exports[`Storyshots Page Test page 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-3-246"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -656,7 +656,7 @@ exports[`Storyshots Page Test page 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-3-246"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -693,7 +693,7 @@ exports[`Storyshots Page Test page 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-3-246"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -732,7 +732,7 @@ exports[`Storyshots Page Test page 1`] = `
         </div>
       </div>
       <div
-        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229"
       >
         <div
           className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -757,169 +757,13 @@ exports[`Storyshots Page Test page 1`] = `
         </div>
       </div>
       <div
-        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
+        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229"
       >
         <div
           className="MuiGrid-typeContainer-199 MuiGrid-spacing-xs-16-214"
         >
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
-          >
-            <div
-              className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
-            >
-              <div
-                className="MuiCardContent-root-287 MuiCardHeader-root-282"
-              >
-                <div
-                  className="MuiCardHeader-content-284"
-                >
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-headline-166 MuiCardHeader-title-285"
-                  >
-                    Pumpkin
-                  </span>
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-body1-170 MuiTypography-colorSecondary-182 MuiCardHeader-subheader-286"
-                  />
-                </div>
-              </div>
-              <div
-                className="MuiCardContent-root-287"
-              >
-                <h1>
-                  $13
-                </h1>
-                <hr
-                  className="MuiDivider-root-288 MuiDivider-default-289"
-                />
-                <ul
-                  className="MuiList-root-293 MuiList-padding-294"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
-          >
-            <div
-              className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
-            >
-              <div
-                className="MuiCardContent-root-287 MuiCardHeader-root-282"
-              >
-                <div
-                  className="MuiCardHeader-content-284"
-                >
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-headline-166 MuiCardHeader-title-285"
-                  >
-                    Fixed monthly
-                  </span>
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-body1-170 MuiTypography-colorSecondary-182 MuiCardHeader-subheader-286"
-                  />
-                </div>
-              </div>
-              <div
-                className="MuiCardContent-root-287"
-              >
-                <h1>
-                  $200
-                </h1>
-                <hr
-                  className="MuiDivider-root-288 MuiDivider-default-289"
-                />
-                <ul
-                  className="MuiList-root-293 MuiList-padding-294"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
-          >
-            <div
-              className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
-            >
-              <div
-                className="MuiCardContent-root-287 MuiCardHeader-root-282"
-              >
-                <div
-                  className="MuiCardHeader-content-284"
-                >
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-headline-166 MuiCardHeader-title-285"
-                  >
-                    Invest Income
-                  </span>
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-body1-170 MuiTypography-colorSecondary-182 MuiCardHeader-subheader-286"
-                  />
-                </div>
-              </div>
-              <div
-                className="MuiCardContent-root-287"
-              >
-                <h1>
-                  10%
-                </h1>
-                <hr
-                  className="MuiDivider-root-288 MuiDivider-default-289"
-                />
-                <ul
-                  className="MuiList-root-293 MuiList-padding-294"
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
-          >
-            <div
-              className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
-            >
-              <div
-                className="MuiCardContent-root-287 MuiCardHeader-root-282"
-              >
-                <div
-                  className="MuiCardHeader-content-284"
-                >
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-headline-166 MuiCardHeader-title-285"
-                  >
-                    Expendable cash
-                  </span>
-                  <span
-                    className="MuiTypography-root-161 MuiTypography-body1-170 MuiTypography-colorSecondary-182 MuiCardHeader-subheader-286"
-                  />
-                </div>
-              </div>
-              <div
-                className="MuiCardContent-root-287"
-              >
-                <h1>
-                  5%
-                </h1>
-                <hr
-                  className="MuiDivider-root-288 MuiDivider-default-289"
-                />
-                <ul
-                  className="MuiList-root-293 MuiList-padding-294"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236"
-      >
-        <div
-          className="MuiGrid-typeContainer-199 MuiGrid-spacing-xs-16-214"
-        >
-          <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-8-238 MuiGrid-grid-lg-4-260"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-4-247"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -1056,7 +900,7 @@ exports[`Storyshots Page Test page 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-8-238 MuiGrid-grid-lg-4-260"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-4-247"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"
@@ -1193,7 +1037,7 @@ exports[`Storyshots Page Test page 1`] = `
             </div>
           </div>
           <div
-            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-8-238 MuiGrid-grid-lg-4-260"
+            className="MuiGrid-typeItem-200 MuiGrid-grid-xs-12-229 MuiGrid-grid-sm-6-236 MuiGrid-grid-md-4-247"
           >
             <div
               className="MuiPaper-root-113 MuiPaper-shadow2-117 MuiPaper-rounded-114"

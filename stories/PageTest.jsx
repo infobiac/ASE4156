@@ -61,23 +61,23 @@ class PageTest extends React.Component<{}> {
           </div>
           <div style={{ margin: 10, paddingTop: '70.5px' }}>
             <Grid container spacing={16}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <Grid container spacing={16} align="stretch">
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6} md={3}>
                     <HighlightBox title={'Current balance'} value={'$1300'} />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6} md={3}>
                     <HighlightBox title={'Total Income'} value={'$300'} />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6} md={3}>
                     <HighlightBox title={'Total Expenditures'} value={'$250'} />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={6} md={3}>
                     <HighlightBox title={'Another box'} value={'$1000'} />
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <Paper>
                   <StockGraph
                     title="Portfolio Growth"
@@ -88,25 +88,9 @@ class PageTest extends React.Component<{}> {
                   />
                 </Paper>
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <Grid container spacing={16} align="stretch">
-                  <Grid item xs={12} sm={6}>
-                    <HighlightBox title={'Pumpkin'} value={'$13'} />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <HighlightBox title={'Fixed monthly'} value={'$200'} />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <HighlightBox title={'Invest Income'} value={'10%'} />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <HighlightBox title={'Expendable cash'} value={'5%'} />
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <Grid container spacing={16} align="stretch">
-                  <Grid item xs={12} sm={8} lg={4}>
+                  <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
                       title={'Risk 1'}
                       attributes={{
@@ -128,7 +112,7 @@ class PageTest extends React.Component<{}> {
                       investFunc={() => {}}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={8} lg={4}>
+                  <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
                       title={'Risk 2'}
                       attributes={{
@@ -150,7 +134,7 @@ class PageTest extends React.Component<{}> {
                       investFunc={() => {}}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={8} lg={4}>
+                  <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
                       title={'Risk 3'}
                       attributes={{
