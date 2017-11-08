@@ -299,13 +299,11 @@ def test_big_gql(rf, snapshot):
     executed = client.execute("""
 {
   viewer {
-    id
     username
     profile {
       investSuggestions {
         edges {
           node {
-            id
             name
             public
             available
@@ -313,7 +311,6 @@ def test_big_gql(rf, snapshot):
             description {
               edges {
                 node {
-                  id
                   text
                   isGood
                 }
@@ -322,7 +319,6 @@ def test_big_gql(rf, snapshot):
             stocks {
               edges {
                 node {
-                  id
                   quantity
                   stock {
                     name
@@ -339,7 +335,6 @@ def test_big_gql(rf, snapshot):
         }
       }
       stockFind(text: "GO") {
-        id
         quoteInRange(start: "2017-05-07", end: "2017-05-11") {
           value
           date
