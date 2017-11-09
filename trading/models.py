@@ -107,7 +107,7 @@ class TradingAccount(models.Model):
         return (
             self.trading_balance() +
             sum([
-                bnk.current_balance()
+                bnk.current_balance(True)
                 for bnk
                 in self.profile.user.userbank.all()
             ])
