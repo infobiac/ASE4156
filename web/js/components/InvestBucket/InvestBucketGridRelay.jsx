@@ -89,7 +89,7 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
         i < this.state.count;
         i += 1) {
         emptyFillers.push((
-          <Grid item {...spacing}>
+          <Grid item {...spacing} key={i}>
             <Card>
               <CardHeader title="Loading more buckets" />
               <CardContent>Sit tight!</CardContent>
