@@ -115,43 +115,43 @@ class GUserBank(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_history(_data, args, context, _info):
+    def resolve_history(data, args, _context, _info):
         """
         Builds the financial history for the user
         """
         return [
             DataPoint(date, value)
             for (date, value)
-            in context.plaid.historical_data(args['start'])
+            in data.historical_data(args['start'])
         ]
 
     @staticmethod
-    def resolve_balance(_data, _args, context, _info):
+    def resolve_balance(data, _args, _context, _info):
         """
         Finds the current balance of the user
         """
-        return context.plaid.current_balance()
+        return data.current_balance()
 
     @staticmethod
-    def resolve_name(_data, _args, context, _info):
+    def resolve_name(data, _args, _context, _info):
         """
         Returns the name of the bank account
         """
-        return context.plaid.account_name()
+        return data.account_name()
 
     @staticmethod
-    def resolve_income(_data, _args, context, _info):
+    def resolve_income(data, _args, _context, _info):
         """
         Returns the income a user has per month
         """
-        return context.plaid.income(30)
+        return data.income()
 
     @staticmethod
-    def resolve_outcome(_data, _args, context, _info):
+    def resolve_outcome(data, _args, _context, _info):
         """
         Returns the expenditures a user has per month
         """
-        return context.plaid.expenditure(30)
+        return data.expenditure()
 
 
 # pylint: disable=no-init

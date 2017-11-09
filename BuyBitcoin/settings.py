@@ -61,7 +61,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'authentication.plaid_middleware.PlaidMiddleware',
     'security.middleware.DoNotTrackMiddleware',
     'security.middleware.ContentNoSniff',
 ]

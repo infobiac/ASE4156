@@ -53,11 +53,11 @@ class GTradingAccount(DjangoObjectType):
         return data.total_value()
 
     @staticmethod
-    def resolve_available_cash(data, _args, context, _info):
+    def resolve_available_cash(data, _args, _context, _info):
         """
         Returns the amount of cash the user has available
         """
-        return data.trading_balance() + context.plaid.current_balance()
+        return data.available_cash()
 
 
 # pylint: disable=no-init

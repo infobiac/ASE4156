@@ -60,7 +60,7 @@ class TradingAccount(models.Model):
         """
         Check if you have enough cash to make a trade
         """
-        if self.trading_balance() >= trade_value:
+        if self.available_cash() >= trade_value:
             return True
         return False
 
@@ -68,20 +68,20 @@ class TradingAccount(models.Model):
         """
         Check if you have enough bucket to make a trade
         """
-        return self.available_buckets(bucket) >= -1 * quantity_bucket
+        return self.available_buckets(bucket) >= quantity_bucket
 
     def has_enough_stock(self, stock, quantity_stock):
         """
         Check if you have enough stock to trade
         """
-        return self.available_stocks(stock) > -1 * quantity_stock
+        return self.available_stocks(stock) >= quantity_stock
 
     def trade_bucket(self, bucket, quantity):
         """
         Creates a new trade for the bucket and this account
         """
         if self.has_enough_cash(bucket.value_on() * quantity) and (
-                self.has_enough_bucket(bucket, quantity)):
+                self.has_enough_bucket(bucket, -1 * quantity)):
             return self.buckettrades.create(
                 stock=bucket,
                 quantity=quantity,
@@ -92,13 +92,26 @@ class TradingAccount(models.Model):
         """
         Trades a stock for the account
         """
-        if self.has_enough_cash(stock.latest_quote() * quantity) and (
-                self.has_enough_stock(stock, quantity)):
+        if self.has_enough_cash(stock.latest_quote().value * quantity) and (
+                self.has_enough_stock(stock, -1 * quantity)):
             return self.trades.create(
                 quantity=quantity,
                 stock=stock,
             )
         raise Exception("You don't have the necessary resources!")
+
+    def available_cash(self):
+        """
+        Returns the available cash for the trading account
+        """
+        return (
+            self.trading_balance() +
+            sum([
+                bnk.current_balance()
+                for bnk
+                in self.profile.user.userbank.all()
+            ])
+        )
 
     def __str__(self):
         return "{}, {}, {}".format(self.id, self.account_name, self.profile_id)

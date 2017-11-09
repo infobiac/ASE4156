@@ -4,7 +4,7 @@ Tests Plaid
 import datetime
 from unittest import mock
 import pytest
-import authentication.plaid_middleware as PlaidMiddleware
+import authentication.plaid_wrapper as PlaidMiddleware
 import plaid
 from plaid.api.accounts import Balance, Accounts
 from plaid.api.transactions import Transactions

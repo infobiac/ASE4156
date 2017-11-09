@@ -1,79 +1,21 @@
 """
 All selenium tests
 """
-import datetime
+from unittest import mock
 import pytest
 from django.contrib.auth.models import User
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from BuyBitcoin.urls import EXECUTOR
-from authentication.plaid_middleware import PlaidMiddleware
+from authentication.plaid_wrapper import PlaidAPI
 
 
-# pylint: disable=missing-docstring
-# pylint: disable=no-self-use
-# pylint: disable=too-few-public-methods
-class TokenMock(object):
-    def exchange(self, _token):
-        return {
-            'access_token': '123',
-            'item_id': '3',
-        }
-
-
-class ItemMock(object):
-
-    public_token = TokenMock()
-
-    def get(self, _item):
-        return {
-            'item': {
-                'institution_id': '7'
-            }
-        }
-
-
-class PlaidMock(object):
-    Item = ItemMock()
-
-    def current_balance(self):
-        return 100.0
-
-    def account_name(self):
-        return "Account"
-
-    def historical_data(self, *_args, **_kwargs):
-        return [
-            (datetime.datetime.now() - datetime.timedelta(days=7), 200.0),
-            (datetime.datetime.now(), 100.0),
-        ]
-
-    def income(self, *_args, **_kwargs):
-        return 0.0
-
-    def expenditure(self, *_args, **_kwargs):
-        return 0.0
-
-
-def plaid_mock(self, request):
-    request.plaid = PlaidMock()
-    response = self.get_response(request)
-    return response
-
-
-def setup_module(module):
-    module.plaid = PlaidMiddleware.__call__
-    PlaidMiddleware.__call__ = plaid_mock
-
-
-def teardown_module(module):
-    PlaidMiddleware.__call__ = module.plaid
-# pylint: enable=missing-docstring
-# pylint: enable=no-self-use
-# pylint: enable=too-few-public-methods
-
-
+@mock.patch.object(PlaidAPI, 'current_balance', mock.MagicMock(return_value=0.0))
+@mock.patch.object(PlaidAPI, 'account_name', mock.MagicMock(return_value="Acc Name"))
+@mock.patch.object(PlaidAPI, 'income', mock.MagicMock(return_value=0.0))
+@mock.patch.object(PlaidAPI, 'expenditure', mock.MagicMock(return_value=0.0))
+@mock.patch.object(PlaidAPI, 'historical_data', mock.MagicMock(return_value=None))
 @pytest.mark.django_db(transaction=True)
 def test_signup(selenium, live_server, client):
     """

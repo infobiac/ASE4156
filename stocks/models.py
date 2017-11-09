@@ -219,7 +219,7 @@ class InvestmentBucket(models.Model):
             config.value_on(date)
             for config
             in self.get_stock_configs(date)
-        ])
+        ]) + self.available
 
 
 class InvestmentBucketDescription(models.Model):
