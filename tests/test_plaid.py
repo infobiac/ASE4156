@@ -35,13 +35,13 @@ class PlaidTests(TestCase):
                 {
                     'balances': {'available': 1},
                     'subtype': 'not credit card'
-                    },
+                },
                 {
                     'balances': {'available': 10},
                     'subtype': 'credit card'
-                    }
-                ]
-            })
+                }
+            ]
+        })
     )
     @pytest.mark.django_db(transaction=True)
     @staticmethod
@@ -61,12 +61,12 @@ class PlaidTests(TestCase):
             'accounts': [
                 {
                     'name': 'Test Account',
-                    },
+                },
                 {
                     'name': 'Test Account 2',
-                    }
-                ]
-            })
+                },
+            ]
+        })
     )
     @pytest.mark.django_db(transaction=True)
     @staticmethod
@@ -85,15 +85,19 @@ class PlaidTests(TestCase):
         mock.MagicMock(return_value={
             'transactions': [
                 {
-                    'date': datetime.datetime.now() - datetime.timedelta(days=10),
+                    'date': (
+                        datetime.datetime.now() - datetime.timedelta(days=10)
+                    ).strftime("%Y-%m-%d"),
                     'amount': 100,
-                    },
+                },
                 {
-                    'date': datetime.datetime.now() - datetime.timedelta(days=13),
+                    'date': (
+                        datetime.datetime.now() - datetime.timedelta(days=13)
+                    ).strftime("%Y-%m-%d"),
                     'amount': 1000,
-                    }
-                ]
-            })
+                }
+            ]
+        })
     )
     @mock.patch.object(
         Balance,
@@ -103,13 +107,13 @@ class PlaidTests(TestCase):
                 {
                     'balances': {'available': 1},
                     'subtype': 'not credit card'
-                    },
+                },
                 {
                     'balances': {'available': 10},
                     'subtype': 'credit card'
-                    }
-                ]
-            })
+                }
+            ]
+        })
     )
     @pytest.mark.django_db(transaction=True)
     @staticmethod
@@ -128,11 +132,11 @@ class PlaidTests(TestCase):
             (
                 (datetime.datetime.now() - datetime.timedelta(days=10)).strftime("%Y-%m-%d"),
                 -109.0
-                ),
+            ),
             (
                 (datetime.datetime.now() - datetime.timedelta(days=13)).strftime("%Y-%m-%d"),
                 -1109.0
-                )
+            ),
         ]
 
         assert len(data) == len(mock_data)
@@ -149,23 +153,23 @@ class PlaidTests(TestCase):
             {
                 'date': datetime.datetime.now() - datetime.timedelta(days=10),
                 'amount': -150,
-                },
+            },
             {
                 'date': datetime.datetime.now() - datetime.timedelta(days=13),
                 'amount': 1000,
-                },
+            },
             {
                 'date': datetime.datetime.now() - datetime.timedelta(days=13),
                 'amount': 125,
-                }
-            ]
+            },
+        ]
 
         data_filtered = list(
             filter(lambda x: x['date'] > start_date and x['date'] < end_date,
                    data))
         return {
             'transactions': data_filtered
-            }
+        }
 
     @mock.patch.object(
         Transactions,

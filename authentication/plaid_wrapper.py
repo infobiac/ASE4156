@@ -78,7 +78,7 @@ class PlaidAPI(object):
         for transaction in transactions:
             value = value - transaction['amount']
             if not value_list[-1][0] == transaction['date']:
-                value_list.append((transaction['date'].strftime("%Y-%m-%d"), value))
+                value_list.append((transaction['date'], value))
         return value_list
 
     def income(self, days=30):
