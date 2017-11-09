@@ -22,9 +22,9 @@ class TradingAccount(models.Model):
         """
         pass
 
-    def available_cash(self):
+    def trading_balance(self):
         """
-        The available cash in that account
+        The stock values from account
         """
         stock_val = sum([
             stock.current_value()
@@ -63,7 +63,7 @@ class TradingAccount(models.Model):
         """
         Check if you have enough cash to make a trade
         """
-        if self.available_cash() >= trade_value:
+        if self.trading_balance() >= trade_value:
             return True
         return False
 
