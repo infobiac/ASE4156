@@ -38,26 +38,23 @@ class TradingAccount(models.Model):
         ])
         return stock_val + bucket_val
 
-    @staticmethod
-    def available_buckets(bkt):
+    def available_buckets(self, bkt):
         """
         Find the available buckets that have quantity > 0
         """
-        bucket = TradeBucket.buckettrades.filter(bucket=bkt).annotate(
-            sum_quantity=models.Sum('quantity'))
-        if bucket:
-            return bucket[0].sum_quantity
-        return 0
+        quantity = self.buckettrades.filter(stock=bkt).aggregate(sm=models.Sum('quantity'))['sm']
+        if not quantity:
+            quantity = 0
+        return quantity
 
-    @staticmethod
-    def available_stocks(stk):
+    def available_stocks(self, stk):
         """
         Find available stock
         """
-        stock = TradeStock.trades.filter(stock=stk).annotate(sum_quantity=models.Sum('quantity'))
-        if stock:
-            return stock[0].sum_quantity
-        return 0
+        quantity = self.trades.filter(stock=stk).aggregate(sm=models.Sum('quantity'))['sm']
+        if not quantity:
+            quantity = 0
+        return quantity
 
     def has_enough_cash(self, trade_value):
         """
@@ -71,7 +68,7 @@ class TradingAccount(models.Model):
         """
         Check if you have enough bucket to make a trade
         """
-        return self.available_buckets(bucket) > -1 * quantity_bucket
+        return self.available_buckets(bucket) >= -1 * quantity_bucket
 
     def has_enough_stock(self, stock, quantity_stock):
         """

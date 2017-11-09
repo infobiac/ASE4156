@@ -1,12 +1,12 @@
 """
-Tests the models of the trading app
+Tests the models of the Trading app
 """
 import random
 import string
 import pytest
-from trading.models import TradingAccount, TradeStock
-from stocks.models import Stock
+from stocks.models import InvestmentBucket, Stock
 from django.contrib.auth.models import User
+from trading.models import TradingAccount, TradeStock
 import test_stocks_model as stock_test
 
 
@@ -22,6 +22,27 @@ def teardown_module(module):
     Restore externals
     """
     stock_test.teardown_module(module)
+
+
+@pytest.mark.django_db(transaction=True)
+def test_trading_available_buckets():
+    """
+    Testing TradingAccount.available_buckets()
+    """
+    user = User.objects.create(username='user1', password="a")
+    bucket1 = InvestmentBucket(name='b1', public=False, available=1000, owner=user.profile)
+    bucket2 = InvestmentBucket(name='b2', public=False, available=1000, owner=user.profile)
+    bucket1.save()
+    bucket2.save()
+    acc = user.profile.trading_accounts.create(account_name="acc")
+    assert acc.available_buckets(bucket1) == 0
+    acc.buckettrades.create(quantity=2, stock=bucket1)
+    assert acc.available_buckets(bucket1) == 2
+    acc.buckettrades.create(quantity=4, stock=bucket1)
+    assert acc.available_buckets(bucket2) == 0
+    acc.buckettrades.create(quantity=3, stock=bucket2)
+    assert acc.available_buckets(bucket1) == 6
+    assert acc.available_buckets(bucket2) == 3
 
 
 @pytest.mark.django_db(transaction=True)
