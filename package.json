@@ -89,6 +89,8 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "setupFiles": [
       "<rootDir>/.storybook/jest-setup.js"
     ]
