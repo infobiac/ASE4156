@@ -4,6 +4,9 @@ cache:
   - yarn
 python:
   - "3.6"
+branches:
+  only: 
+    - master
 
 addons:
   firefox: "latest"
