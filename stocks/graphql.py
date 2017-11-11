@@ -3,7 +3,7 @@ GraphQL definitions for the Stocks App
 """
 from collections import namedtuple
 from graphene_django import DjangoObjectType
-from graphene import AbstractType, Argument, Boolean, Field, Float, ID, \
+from graphene import Argument, Boolean, Field, Float, ID, \
     InputObjectType, List, Mutation, NonNull, String, relay
 from graphql_relay.node.node import from_global_id
 from .models import DailyStockQuote, InvestmentBucket, \
@@ -59,21 +59,21 @@ class GInvestmentBucket(DjangoObjectType):
         only_fields = ('id', 'name', 'public', 'description', 'stocks', 'available', 'value')
 
     @staticmethod
-    def resolve_is_owner(data, _args, context, _info):
+    def resolve_is_owner(data, info, **_args):
         """
         Returns whether the user ownes the investment bucket
         """
-        return data.owner.id == context.user.profile.id
+        return data.owner.id == info.context.user.profile.id
 
     @staticmethod
-    def resolve_stocks(data, _args, _context, _info):
+    def resolve_stocks(data, _info, **_args):
         """
         Returns the *current* stocks in the bucket
         """
         return data.get_stock_configs()
 
     @staticmethod
-    def resolve_value(data, _args, _context, _info):
+    def resolve_value(data, _info, **_args):
         """
         The current value of the investment bucket
         """
@@ -109,45 +109,45 @@ class GStock(DjangoObjectType):
         only_fields = ('quote_in_range', 'latest_quote', 'name', 'ticker', 'trades')
 
     @staticmethod
-    def resolve_latest_quote(data, _args, _context, _info):
+    def resolve_latest_quote(data, _info, **_args):
         """
         Returns the most recent stock quote
         """
         return data.latest_quote()
 
     @staticmethod
-    def resolve_quote_in_range(data, args, _context, _info):
+    def resolve_quote_in_range(data, _info, start, end, **_args):
         """
         Finds the stock quotes for the stock within a time range
         """
-        return data.quote_in_range(args['start'], args['end'])
+        return data.quote_in_range(start, end)
 
     @staticmethod
-    def resolve_trades(stock, _args, context, _info):
+    def resolve_trades(stock, info, **_args):
         """
         We need to apply permission checks to trades
         """
-        return stock.trades_for_profile(context.user.profile)
+        return stock.trades_for_profile(info.context.user.profile)
 
 
 class AddStock(Mutation):
     """
     AddStock creates a new Stock that is tracked
     """
-    class Input(object):
+    class Arguments(object):
         """
-        Input to create a stock. We only need the ticker.
+        Arguments to create a stock. We only need the ticker.
         """
         ticker = NonNull(String)
         name = NonNull(String)
     stock = Field(lambda: GStock)
 
     @staticmethod
-    def mutate(_self, args, _context, _info):
+    def mutate(_self, _info, ticker, name, **_args):
         """
         Creates a Stock and saves it to the DB
         """
-        stock = Stock.create_new_stock(args['ticker'], args['name'])
+        stock = Stock.create_new_stock(ticker, name)
         return AddStock(stock=stock)
 
 
@@ -155,7 +155,7 @@ class AddBucket(Mutation):
     """
     Creates a new InvestmentBucket and returns the new bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         We only need the name of the new bucket to create it
         """
@@ -165,15 +165,15 @@ class AddBucket(Mutation):
     bucket = Field(lambda: GInvestmentBucket)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, name, investment, public, **_args):
         """
         Creates a new InvestmentBucket and saves it to the DB
         """
         bucket = InvestmentBucket.create_new_bucket(
-            name=args['name'],
-            public=args['public'],
-            owner=context.user.profile,
-            available=args['investment'],
+            name=name,
+            public=public,
+            owner=info.context.user.profile,
+            available=investment,
         )
         return AddBucket(bucket=bucket)
 
@@ -182,7 +182,7 @@ class AddAttributeToInvestment(Mutation):
     """
     Adds a description to an Investment Bucket and returns the bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         We need the description and the bucket as input
         """
@@ -192,16 +192,16 @@ class AddAttributeToInvestment(Mutation):
     bucket_attr = Field(lambda: GInvestmentBucketAttribute)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, desc, bucket_id, is_good, **_args):
         """
         Executes the mutation to add the attribute
         """
         bucket = InvestmentBucket.objects.get(
-            id=from_global_id(args['bucket_id'])[1],
+            id=from_global_id(bucket_id)[1],
         )
-        if not bucket or (not bucket.owner.id == context.user.profile.id):
+        if not bucket or (not bucket.owner.id == info.context.user.profile.id):
             raise Exception("You don't own the bucket!")
-        attribute = bucket.add_attribute(args['desc'], args['is_good'])
+        attribute = bucket.add_attribute(desc, is_good)
         return AddAttributeToInvestment(bucket_attr=attribute)
 
 
@@ -209,7 +209,7 @@ class EditAttribute(Mutation):
     """
     Allows to edit an attribute description
     """
-    class Input(object):
+    class Arguments(object):
         """
         Description and ID for the mutation
         """
@@ -218,19 +218,19 @@ class EditAttribute(Mutation):
     bucket_attr = Field(lambda: GInvestmentBucketAttribute)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, id_value, desc, **_args):
         """
         Executes the mutation to change the attribute
         """
         bucket_attr = InvestmentBucketDescription.objects.filter(
-            id=from_global_id(args['id_value'])[1],
-            bucket__owner__id=context.user.profile.id,
+            id=from_global_id(id_value)[1],
+            bucket__owner__id=info.context.user.profile.id,
         )
         if not bucket_attr:
             raise Exception("You don't own the bucket!")
         else:
             bucket_attr = bucket_attr.get()
-        bucket_attr.change_description(args['desc'])
+        bucket_attr.change_description(desc)
         return EditAttribute(bucket_attr=bucket_attr)
 
 
@@ -238,7 +238,7 @@ class DeleteAttribute(Mutation):
     """
     Deletes an attribute from a bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         We just need the ID to delete it
         """
@@ -246,13 +246,13 @@ class DeleteAttribute(Mutation):
     is_ok = Field(lambda: Boolean)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, id_value, **_args):
         """
         Executes the mutation by deleting the attribute
         """
         bucket_attr = InvestmentBucketDescription.objects.filter(
-            id=from_global_id(args['id_value'])[1],
-            bucket__owner__id=context.user.profile.id,
+            id=from_global_id(id_value)[1],
+            bucket__owner__id=info.context.user.profile.id,
         )
         if not bucket_attr:
             raise Exception("You don't own the bucket!")
@@ -266,7 +266,7 @@ class DeleteBucket(Mutation):
     """
     Deletes an attribute from a bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         We just need the ID to delete it
         """
@@ -274,13 +274,13 @@ class DeleteBucket(Mutation):
     is_ok = Field(lambda: Boolean)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, id_value, **_args):
         """
         Executes the mutation by deleting the attribute
         """
         bucket = InvestmentBucket.objects.filter(
-            id=from_global_id(args['id_value'])[1],
-            owner=context.user.profile,
+            id=from_global_id(id_value)[1],
+            owner=info.context.user.profile,
         )
         if not bucket:
             raise Exception("You don't own the bucket!")
@@ -300,7 +300,7 @@ class EditConfiguration(Mutation):
     """
     Mutation to change the stock configuration of a bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         As input we take the new configuration and the bucket id
         """
@@ -309,16 +309,16 @@ class EditConfiguration(Mutation):
     bucket = Field(lambda: GInvestmentBucket)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, id_value, config, **_args):
         """
         This performs the actual mutation by removing the old configuration and
         then writing the new one
         """
         bucket = InvestmentBucket.objects.get(
-            id=from_global_id(args['id_value'])[1],
-            owner=context.user.profile,
+            id=from_global_id(id_value)[1],
+            owner=info.context.user.profile,
         )
-        if not bucket or (not bucket.owner.id == context.user.profile.id):
+        if not bucket or (not bucket.owner.id == info.context.user.profile.id):
             raise Exception("You don't own the bucket!")
         new_config = [
             Config(
@@ -326,31 +326,31 @@ class EditConfiguration(Mutation):
                 quantity=c['quantity'],
             )
             for c
-            in args['config']
+            in config
         ]
         bucket.change_config(new_config)
         return EditConfiguration(bucket=bucket)
 
 
 # pylint: disable=no-init
-class Query(AbstractType):
+class Query(object):
     """
     We don't want to have any root queries here
     """
-    invest_bucket = Field(GInvestmentBucket, args={'id': Argument(NonNull(ID))})
+    invest_bucket = Field(GInvestmentBucket, args={'id_value': Argument(NonNull(ID))})
 
     @staticmethod
-    def resolve_invest_bucket(_self, args, context, _info):
+    def resolve_invest_bucket(_self, info, id_value, **_args):
         """
         The viewer represents the current logged in user
         """
-        if not context.user.is_authenticated():
+        if not info.context.user.is_authenticated():
             return None
 
         return InvestmentBucket.accessible_buckets(
-            context.user.profile
+            info.context.user.profile
         ).get(
-            id=from_global_id(args['id'])[1]
+            id=from_global_id(id_value)[1]
         )
 
 # pylint: enable=too-few-public-methods

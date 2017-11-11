@@ -3,7 +3,7 @@ GraphQL definitions for the Trading App
 """
 from graphene_django import DjangoObjectType
 from graphql_relay.node.node import from_global_id
-from graphene import AbstractType, Field, Float, ID, Int, Mutation, NonNull, \
+from graphene import Field, Float, ID, Int, Mutation, NonNull, \
     relay, String
 from stocks.models import InvestmentBucket, Stock
 from .models import TradeStock, TradingAccount
@@ -24,7 +24,7 @@ class GTrade(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_value(data, _args, _context, _info):
+    def resolve_value(data, _info, **_args):
         """
         Returns the value of a trade (see the model)
         """
@@ -46,14 +46,14 @@ class GTradingAccount(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_total_value(data, _args, _context, _info):
+    def resolve_total_value(data, _info, **_args):
         """
         Returns the total value that the account currently holds
         """
         return data.total_value()
 
     @staticmethod
-    def resolve_available_cash(data, _args, _context, _info):
+    def resolve_available_cash(data, _info, **_args):
         """
         Returns the amount of cash the user has available
         """
@@ -61,7 +61,7 @@ class GTradingAccount(DjangoObjectType):
 
 
 # pylint: disable=no-init
-class Query(AbstractType):
+class Query(object):
     """
     We don't want to have any root queries here
     """
@@ -73,9 +73,9 @@ class AddTrade(Mutation):
     """
     AddTrade creates a new Trade for the user and stock
     """
-    class Input(object):
+    class Arguments(object):
         """
-        Input to create a trade. Right now it's only ticker and quantity.
+        Arguments to create a trade. Right now it's only ticker and quantity.
         """
         id_value = NonNull(String)
         quantity = NonNull(Int)
@@ -83,16 +83,16 @@ class AddTrade(Mutation):
     trade = Field(lambda: GTrade)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, id_value, quantity, account_name, **_args):
         """
         Creates a Trade and saves it to the DB
         """
-        stock = Stock.objects.get(id=from_global_id(args['bucket_id'])[1])
+        stock = Stock.objects.get(id=from_global_id(id_value)[1])
         account = TradingAccount.objects.get(
-            account_name=args['account_name'],
-            profile_id=context.user.profile.id
+            account_name=account_name,
+            profile_id=info.context.user.profile.id
         )
-        trade = account.stock_trade(stock, args['quantity'])
+        trade = account.stock_trade(stock, quantity)
         return AddTrade(trade=trade)
 
 
@@ -100,7 +100,7 @@ class InvestBucket(Mutation):
     """
     Invests into the bucket
     """
-    class Input(object):
+    class Arguments(object):
         """
         We need quantity, account id and bucket id
         """
@@ -111,14 +111,17 @@ class InvestBucket(Mutation):
     profile = Field(lambda: Int)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, quantity, trading_acc_id, bucket_id, **_args):
         """
         Creates the trade
         """
-        trading_acc_id = from_global_id(args['trading_acc_id'])[1]
-        bucket_id = from_global_id(args['bucket_id'])[1]
-        trading_acc = TradingAccount.objects.get(id=trading_acc_id, profile=context.user.profile)
+        trading_acc_id = from_global_id(trading_acc_id)[1]
+        bucket_id = from_global_id(bucket_id)[1]
+        trading_acc = TradingAccount.objects.get(
+            id=trading_acc_id,
+            profile=info.context.user.profile,
+        )
         bucket = InvestmentBucket.objects.get(id=bucket_id)
-        trading_acc.trade_bucket(bucket, args['quantity'])
+        trading_acc.trade_bucket(bucket, quantity)
         return InvestBucket(profile=1)
 # pylint: enable=too-few-public-methods

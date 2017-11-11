@@ -2,10 +2,9 @@
 GraphQL definitions for the Authentication App
 """
 from django.contrib.auth.models import User
-from graphene import AbstractType, Argument, Field, Float, Int, List, Mutation, \
+from graphene import Argument, Field, Float, Int, List, Mutation, \
     NonNull, ObjectType, String, relay
-from graphene_django import DjangoObjectType
-from graphene_django.filter import DjangoFilterConnectionField
+from graphene_django import DjangoObjectType, DjangoConnectionField
 from trading.models import TradingAccount
 from trading.graphql import GTradingAccount
 from stocks.graphql import GInvestmentBucket, GStock
@@ -34,7 +33,7 @@ class GProfile(DjangoObjectType):
     """
     stock_find = List(
         NonNull(GStock), args={'text': Argument(NonNull(String)), 'first': Argument(Int)})
-    invest_suggestions = DjangoFilterConnectionField(
+    invest_suggestions = DjangoConnectionField(
         GInvestmentBucket,
     )
     selected_acc = NonNull(GTradingAccount)
@@ -48,24 +47,23 @@ class GProfile(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_stock_find(_self, args, _context, _info):
+    def resolve_stock_find(_self, _info, text, first=None, **_args):
         """
         Finds a stock given a case insensitive name
         """
-        name = args['text']
-        if 'first' in args:
-            return Stock.find_stock(name, args['first'])
-        return Stock.find_stock(name)
+        if first:
+            return Stock.find_stock(text, first)
+        return Stock.find_stock(text)
 
     @staticmethod
-    def resolve_invest_suggestions(_data, _args, context, _info):
+    def resolve_invest_suggestions(_data, info, **_args):
         """
         Finds all the investment suggestions available to the user
         """
-        return InvestmentBucket.accessible_buckets(context.user.profile)
+        return InvestmentBucket.accessible_buckets(info.context.user.profile)
 
     @staticmethod
-    def resolve_selected_acc(data, _args, _context, _info):
+    def resolve_selected_acc(data, _info, **_args):
         """
         Returns the selected account. For now we just assume the user has only 1
         """
@@ -115,39 +113,40 @@ class GUserBank(DjangoObjectType):
         interfaces = (relay.Node, )
 
     @staticmethod
-    def resolve_history(data, args, _context, _info):
+    def resolve_history(data, _info, start, **_args):
         """
         Builds the financial history for the user
         """
+        print(start)
         return [
             DataPoint(date, value)
             for (date, value)
-            in data.historical_data(args['start'])
+            in data.historical_data(start)
         ]
 
     @staticmethod
-    def resolve_balance(data, _args, _context, _info):
+    def resolve_balance(data, _info, **_args):
         """
         Finds the current balance of the user
         """
         return data.current_balance()
 
     @staticmethod
-    def resolve_name(data, _args, _context, _info):
+    def resolve_name(data, _info, **_args):
         """
         Returns the name of the bank account
         """
         return data.account_name()
 
     @staticmethod
-    def resolve_income(data, _args, _context, _info):
+    def resolve_income(data, _info, **_args):
         """
         Returns the income a user has per month
         """
         return data.income()
 
     @staticmethod
-    def resolve_outcome(data, _args, _context, _info):
+    def resolve_outcome(data, _info, **_args):
         """
         Returns the expenditures a user has per month
         """
@@ -155,20 +154,20 @@ class GUserBank(DjangoObjectType):
 
 
 # pylint: disable=no-init
-class Query(AbstractType):
+class Query(object):
     """
     Query represents the entry method for a GraphQL request
     """
     viewer = Field(GUser, )
 
     @staticmethod
-    def resolve_viewer(_self, _args, context, _info):
+    def resolve_viewer(_self, info, **_args):
         """
         The viewer represents the current logged in user
         """
-        if not context.user.is_authenticated():
+        if not info.context.user.is_authenticated():
             return None
-        return context.user
+        return info.context.user
 # pylint: enable=no-init
 
 
@@ -176,21 +175,21 @@ class AddTradingAccount(Mutation):
     """
     AddTradingAccount creates a new TradingAccount for the user
     """
-    class Input(object):
+    class Arguments(object):
         """
-        Input to create a trading account. Right now it's only a name.
+        Arguments to create a trading account. Right now it's only a name.
         """
         name = String()
     account = Field(lambda: GTradingAccount)
 
     @staticmethod
-    def mutate(_self, args, context, _info):
+    def mutate(_self, info, name, **_args):
         """
         Creates a TradingAccount and saves it to the DB
         """
         account = TradingAccount(
-            profile=context.user.profile,
-            account_name=args['name']
+            profile=info.context.user.profile,
+            account_name=name
         )
         account.save()
         return AddTradingAccount(account=account)

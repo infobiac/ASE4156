@@ -345,7 +345,7 @@ export default createRefetchContainer(InvestBucketRelay, {
   `,
 }, graphql`
     query InvestBucketRelayQuery($id: ID!, $first: Int!) {
-      investBucket(id: $id) {
+      investBucket(idValue: $id) {
         ...InvestBucketRelay_bucket @arguments(first: $first)
       }
     }
