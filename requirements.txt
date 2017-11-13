@@ -21,7 +21,7 @@ numpy==1.13.3
 oauthlib==2.0.6
 pandas==0.20.3
 plaid-python==2.0.3
-promise==2.0.2
+promise==2.1
 psycopg2==2.7.3.1
 py==1.4.34
 pycodestyle==2.3.1
