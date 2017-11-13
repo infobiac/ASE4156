@@ -5,9 +5,10 @@ import random
 import string
 from unittest import mock
 import pytest
-from stocks.models import InvestmentBucket, Stock
+from stocks.models import InvestmentBucket, Stock, InvestmentStockConfiguration
+from stocks.models import InvestmentBucketDescription
 from django.contrib.auth.models import User
-from trading.models import TradingAccount, TradeStock
+from trading.models import TradingAccount, TradeStock, TradeBucket
 import test_stocks_model as stock_test
 
 
@@ -31,7 +32,7 @@ def test_trading_acc_av_stk():
     """
     Test available stocks
     """
-    user = User.objects.create(username='christophe', password="iscool")
+    user = user_helper()
     trading_account = user.profile.trading_accounts.create(
         account_name="spesh"
     )
@@ -60,7 +61,7 @@ def test_has_enough_bucket():
     """
     Test has enough bucket
     """
-    user = User.objects.create(username='christophe', password="iscool")
+    user = user_helper()
     trading_account = user.profile.trading_accounts.create(
         account_name="spesh"
     )
@@ -85,7 +86,7 @@ def test_has_enough_stock():
     """
     Test has enough stock
     """
-    user = User.objects.create(username='christophe', password="iscool")
+    user = user_helper()
     trading_account = user.profile.trading_accounts.create(
         account_name="spesh"
     )
@@ -115,7 +116,7 @@ def test_trading_acc_trade_bucket():
     """
     Test trade bucket
     """
-    user = User.objects.create(username='christophe', password="iscool")
+    user = user_helper()
     trading_account = user.profile.trading_accounts.create(
         account_name="spesh"
     )
@@ -137,7 +138,7 @@ def test_trading_acc_trade_stock():
     """
     Test trade stock
     """
-    user = User.objects.create(username='christophe', password="iscool")
+    user = user_helper()
     trading_account = user.profile.trading_accounts.create(
         account_name="spesh"
     )
@@ -162,7 +163,7 @@ def test_trading_available_buckets():
     """
     Testing TradingAccount.available_buckets()
     """
-    user = User.objects.create(username='user1', password="a")
+    user = user_helper()
     bucket1 = InvestmentBucket(name='b1', public=False, available=1000, owner=user.profile)
     bucket2 = InvestmentBucket(name='b2', public=False, available=1000, owner=user.profile)
     bucket1.save()
@@ -183,10 +184,7 @@ def test_trading_trading_balance():
     """
     Testing available_cash for a Trading Account
     """
-    pwd = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
-    user = User.objects.create(username='user', password=pwd)
-    account = TradingAccount(profile=user.profile, account_name="testAccount")
-    account.save()
+    account = account_helper()
 
     value_of_stock1 = 3
     stock1 = Stock.create_new_stock(
@@ -216,3 +214,152 @@ def test_trading_trading_balance():
     TradeStock(quantity=quantity2, account=account, stock=stock2).save()
     value = account.trading_balance()
     assert value == -value_of_stock1 + -value_of_stock2 * quantity2
+
+
+@pytest.mark.django_db(transaction=True)
+def test_tradestock_current_value():
+    """
+    Tests TradeStock.current_value()
+    """
+    account = account_helper()
+
+    value_of_stock1 = 3
+    stock1 = Stock.create_new_stock(
+        name="Name1X",
+        ticker="TKRC"
+    )
+    stock1.daily_quote.create(
+        value=value_of_stock1,
+        date="2016-06-03"
+    )
+
+    quantity = 3
+    current_value = TradeStock(quantity=quantity, account=account, stock=stock1).current_value()
+    assert current_value == -value_of_stock1 * quantity
+
+
+@pytest.mark.django_db(transaction=True)
+def test_tradebucket_current_value():
+    """
+    Tests TradeBucket.current_value()
+    """
+    account = account_helper()
+
+    value_of_stock1 = 3
+    stock1 = Stock.create_new_stock(
+        name="Name1X",
+        ticker="TKRC"
+    )
+    stock1.daily_quote.create(
+        value=value_of_stock1,
+        date="2016-06-03"
+    )
+
+    invest_bucket = InvestmentBucket(
+        name="Bucket Test",
+        public=True,
+        owner=account.profile,
+        available=1
+        )
+    invest_bucket.save()
+    InvestmentStockConfiguration(
+        quantity=1,
+        stock=stock1,
+        bucket=invest_bucket,
+        start="2016-07-11",
+        end="2016-06-10",
+    ).save()
+    quantity = 4
+    trade_bucket = TradeBucket(quantity=quantity, account=account, stock=invest_bucket)
+    trade_bucket.save()
+    assert trade_bucket.current_value() == -quantity
+
+
+@pytest.mark.django_db(transaction=True)
+def test_investmentbucket_value_on():
+    """
+    Tests InvestmentBucket.value_on()
+    """
+    user = user_helper()
+
+    value_of_stock1 = 3
+    stock = Stock.create_new_stock(
+        name="Name1X",
+        ticker="TKRC"
+    )
+    stock.daily_quote.create(
+        value=value_of_stock1,
+        date="2016-06-03"
+    )
+    available = 3
+    bucket = InvestmentBucket(
+        name="Bucket Test",
+        public=True,
+        owner=user.profile,
+        available=available
+        )
+    bucket.save()
+
+    InvestmentStockConfiguration(
+        quantity=1,
+        stock=stock,
+        bucket=bucket,
+        start="2016-06-08",
+        end="2016-06-10",
+    ).save()
+
+    assert bucket.value_on() == available
+    assert bucket.value_on(date="2016-06-08") == available + value_of_stock1
+    assert bucket.value_on(date="2016-07-19") == available
+
+
+@pytest.mark.django_db(transaction=True)
+def test_investmentbucket_descrip():
+    """
+    Tests InvestmentBucketDescription.change_description()
+    """
+    user = user_helper()
+
+    value_of_stock1 = 3
+    stock1 = Stock.create_new_stock(
+        name="Name1X",
+        ticker="TKRC"
+    )
+    stock1.daily_quote.create(
+        value=value_of_stock1,
+        date="2016-06-03"
+    )
+    available = 3
+    bucket = InvestmentBucket(
+        name="Bucket Test",
+        public=True,
+        owner=user.profile,
+        available=available
+        )
+    bucket.save()
+    description = InvestmentBucketDescription(text="fladshjfdsa", is_good=True, bucket=bucket)
+    description.save()
+    description.change_description(text="changed")
+    assert description.text == "changed"
+
+
+@pytest.fixture
+def user_helper():
+    """
+    Helper function for testing
+    """
+    pwd = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
+    user = User.objects.create(username='user', password=pwd)
+    return user
+
+
+@pytest.fixture
+def account_helper():
+    """
+    Helper function for testing
+    """
+    pwd = ''.join(random.choices(string.ascii_uppercase + string.digits, k=9))
+    user = User.objects.create(username='user', password=pwd)
+    account = TradingAccount(profile=user.profile, account_name="testAccount")
+    account.save()
+    return account
