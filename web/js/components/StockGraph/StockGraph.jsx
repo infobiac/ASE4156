@@ -27,12 +27,10 @@ class StockGraph extends React.Component <Props> {
   static propTypes = {
     quotes: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
-      data: PropTypes.arrayOf(
-        PropTypes.shape({
-          date: PropTypes.instanceOf(Date).isRequired,
-          value: PropTypes.number.isRequired,
-        }).isRequired,
-      ).isRequired,
+      data: PropTypes.arrayOf(PropTypes.shape({
+        date: PropTypes.instanceOf(Date).isRequired,
+        value: PropTypes.number.isRequired,
+      }).isRequired).isRequired,
     }).isRequired).isRequired,
     id: PropTypes.string,
     compare: PropTypes.oneOf(['ABSOLUTE', 'PERCENT']),
@@ -79,8 +77,7 @@ class StockGraph extends React.Component <Props> {
     }).sort((a, b) => a[0] - b[0])
       .map(d => ([
         new Date(parseInt(d[0], 10)), ...d.slice(1),
-      ]))
-    ;
+      ]));
     if (graphData.length === 0) {
       return <div>No data</div>;
     }
@@ -93,7 +90,7 @@ class StockGraph extends React.Component <Props> {
       };
     }
     return (
-      <div className={'my-pretty-chart-container'}>
+      <div className="my-pretty-chart-container">
         <Chart
           width="100%"
           height={this.props.height}

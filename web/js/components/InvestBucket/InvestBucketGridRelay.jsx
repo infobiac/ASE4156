@@ -67,11 +67,7 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
           this.dialogAction(false)();
         }
       },
-    )(
-      this.props.relay.environment,
-    )(
-      { name, public: publicBucket, investment },
-    );
+    )(this.props.relay.environment)({ name, public: publicBucket, investment });
   }
   loadMore = () => {
     this.setState(() => ({ count: this.state.count + 3 }), () => {

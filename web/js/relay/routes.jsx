@@ -6,8 +6,8 @@ import { graphql } from 'react-relay';
 import Home from '../pages/Home';
 import Layout from '../components/Layout';
 
-export default makeRouteConfig(
-  <Route path="/" Component={Layout} >
+export default makeRouteConfig((
+  <Route path="/" Component={Layout}>
     <Route
       path="/home"
       Component={Home}
@@ -19,5 +19,5 @@ export default makeRouteConfig(
         }
       `}
     />
-  </Route>,
-);
+  </Route>
+));

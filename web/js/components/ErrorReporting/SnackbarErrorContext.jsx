@@ -22,7 +22,7 @@ export default class SnackbarErrorContext extends React.Component<Props, State> 
     super();
     this.state = {
       errorMessages: {},
-      nextErrorId: 0,
+      nextErrorId: 0, // eslint-disable-line react/no-unused-state
     };
   }
   getChildContext() {
@@ -41,7 +41,7 @@ export default class SnackbarErrorContext extends React.Component<Props, State> 
   }
   closeDisplay = (id: string) => () => {
     this.setState((state) => {
-      const errorMessages = state.errorMessages;
+      const { errorMessages } = state;
       delete errorMessages[id];
       return {
         errorMessages,
@@ -49,21 +49,23 @@ export default class SnackbarErrorContext extends React.Component<Props, State> 
     });
   }
   render() {
-    return (<div>
-      {
-        Object.keys(this.state.errorMessages).map(e => (
-          <Snackbar
-            open
-            key={e}
-            action={<Button color="accent" dense onClick={this.closeDisplay(e)}>Close</Button>}
-            autoHideDuration={4000}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-            onRequestClose={this.closeDisplay(e)}
-            {...this.state.errorMessages[e]}
-          />
-        ))
+    return (
+      <div>
+        {
+          Object.keys(this.state.errorMessages).map(e => (
+            <Snackbar
+              open
+              key={e}
+              action={<Button color="accent" dense onClick={this.closeDisplay(e)}>Close</Button>}
+              autoHideDuration={4000}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              onRequestClose={this.closeDisplay(e)}
+              {...this.state.errorMessages[e]}
+            />
+          ))
       }
-      {this.props.children}
-    </div>);
+        {this.props.children}
+      </div>
+    );
   }
 }

@@ -138,17 +138,11 @@ class InvestBucket extends React.Component <Props, State> {
             {this.props.attributes
               ? (
                 this.props.attributes.good ?
-                  this.props.attributes.good.map(
-                    g => InvestBucket.renderAttr(g, true),
-                  ) :
+                  this.props.attributes.good.map(g => InvestBucket.renderAttr(g, true)) :
                   []
-              ).concat(
-                this.props.attributes.bad ?
-                  this.props.attributes.bad.map(
-                    b => InvestBucket.renderAttr(b, false),
-                  ) :
-                  [],
-              ) : null
+              ).concat(this.props.attributes.bad ?
+                  this.props.attributes.bad.map(b => InvestBucket.renderAttr(b, false)) :
+                  []) : null
             }
             {
               this.props.seeMoreFunc ?

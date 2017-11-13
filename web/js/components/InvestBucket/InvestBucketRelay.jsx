@@ -82,36 +82,24 @@ class InvestBucketRelay extends React.Component<Props, State> {
       store.get(this.props.bucket.id).setValue(data.getValue('available'), 'available');
       store.get(this.props.bucket.id).setLinkedRecord(data.getLinkedRecord('stocks'), 'stocks');
     };
-    changeBucketComposition(
-      updater, null, (r, e) => this.context.errorDisplay({
-        message: e ? e[0].message : 'Composition successfully changed',
-      }),
-    )(
-      this.props.relay.environment,
-    )(
-      {
-        config: chunks.map(c => ({ idValue: c.id, quantity: c.quantity })),
-        id: this.props.bucket.id,
-      },
-    );
+    changeBucketComposition(updater, null, (r, e) => this.context.errorDisplay({
+      message: e ? e[0].message : 'Composition successfully changed',
+    }))(this.props.relay.environment)({
+      config: chunks.map(c => ({ idValue: c.id, quantity: c.quantity })),
+      id: this.props.bucket.id,
+    });
   }
   deleteBucket = () => {
     const updater = (store) => {
       store.delete(this.props.bucket.id);
     };
-    deleteBucket(
-      updater, updater, (r, error) => {
-        if (error) {
-          this.context.errorDisplay({
-            message: error[0].message,
-          });
-        }
-      },
-    )(
-      this.props.relay.environment,
-    )(
-      { id: this.props.bucket.id },
-    );
+    deleteBucket(updater, updater, (r, error) => {
+      if (error) {
+        this.context.errorDisplay({
+          message: error[0].message,
+        });
+      }
+    })(this.props.relay.environment)({ id: this.props.bucket.id });
   }
   render() {
     let data;
@@ -130,7 +118,7 @@ class InvestBucketRelay extends React.Component<Props, State> {
       if (!item || !item.node || !item.node.id) {
         return all;
       }
-      const id = item.node.id;
+      const { id } = item.node;
       if (this.props.bucket.isOwner) {
         if (id === this.state.editMode) {
           textAttr.onKeyPress = (e) => {
@@ -138,19 +126,13 @@ class InvestBucketRelay extends React.Component<Props, State> {
               this.setState(() => ({
                 editMode: null,
               }), () => {
-                editDescription(
-                  null, null, (r, error) => {
-                    if (error) {
-                      this.context.errorDisplay({
-                        message: error[0].message,
-                      });
-                    }
-                  },
-                )(
-                  this.props.relay.environment,
-                )(
-                  { text: this.state.editState.shortDesc, id },
-                );
+                editDescription(null, null, (r, error) => {
+                  if (error) {
+                    this.context.errorDisplay({
+                      message: error[0].message,
+                    });
+                  }
+                })(this.props.relay.environment)({ text: this.state.editState.shortDesc, id });
               });
             }
           };
@@ -170,19 +152,13 @@ class InvestBucketRelay extends React.Component<Props, State> {
               const updater = (store) => {
                 store.delete(id);
               };
-              deleteDescription(
-                updater, updater, (r, error) => {
-                  if (error) {
-                    this.context.errorDisplay({
-                      message: error[0].message,
-                    });
-                  }
-                },
-              )(
-                this.props.relay.environment,
-              )(
-                { id },
-              );
+              deleteDescription(updater, updater, (r, error) => {
+                if (error) {
+                  this.context.errorDisplay({
+                    message: error[0].message,
+                  });
+                }
+              })(this.props.relay.environment)({ id });
             });
           };
           extra = this.state.editState;
@@ -220,19 +196,13 @@ class InvestBucketRelay extends React.Component<Props, State> {
         );
         ConnectionHandler.insertEdgeAfter(connection, newEdge);
       };
-      editFunc = (text, isGood) => addDescription(
-        updater, updater, (r, error) => {
-          if (error) {
-            this.context.errorDisplay({
-              message: error[0].message,
-            });
-          }
-        },
-      )(
-        this.props.relay.environment,
-      )(
-        { text, bucketId: this.props.bucket.id, isGood },
-      );
+      editFunc = (text, isGood) => addDescription(updater, updater, (r, error) => {
+        if (error) {
+          this.context.errorDisplay({
+            message: error[0].message,
+          });
+        }
+      })(this.props.relay.environment)({ text, bucketId: this.props.bucket.id, isGood });
     }
     let seeMoreFunc = null;
     if (this.props.bucket.description && this.props.bucket.description.pageInfo.hasNextPage) {
@@ -242,8 +212,8 @@ class InvestBucketRelay extends React.Component<Props, State> {
           () => this.props.relay.refetch(() => ({
             id: this.props.bucket.id,
             first: this.state.itemCount,
-          })))
-        ;
+          })),
+        );
       };
     }
     let title = this.props.bucket.name;
@@ -274,7 +244,7 @@ class InvestBucketRelay extends React.Component<Props, State> {
           open={this.state.deleteConfirm}
           onRequestClose={(() => this.setState(() => ({ deleteConfirm: false })))}
         >
-          <DialogTitle>{'Are you sure?'}</DialogTitle>
+          <DialogTitle>Are you sure?</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Are you sure you want to delete the bucket forever?
@@ -349,5 +319,4 @@ export default createRefetchContainer(InvestBucketRelay, {
         ...InvestBucketRelay_bucket @arguments(first: $first)
       }
     }
-  `,
-);
+  `);

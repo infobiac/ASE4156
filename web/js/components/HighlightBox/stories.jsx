@@ -18,8 +18,8 @@ storiesOf('HighlightBox', module).add('Playground', () => (
 ));
 
 storiesOf('HighlightBox', module).add('Account Total', () => (<HighlightBox
-  title={'Account Total'}
-  value={'$7,749.34'}
+  title="Account Total"
+  value="$7,749.34"
   secondaryInfo={[
     {
       value: '$7,000.00',
@@ -29,8 +29,8 @@ storiesOf('HighlightBox', module).add('Account Total', () => (<HighlightBox
 />));
 
 storiesOf('HighlightBox', module).add('Annulized Percentage Return', () => (<HighlightBox
-  title={'Annulized Percentage Return'}
-  value={'3.75%'}
+  title="Annulized Percentage Return"
+  value="3.75%"
   secondaryInfo={[
     {
       value: '$774.90',

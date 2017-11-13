@@ -24,11 +24,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?DeleteBucketMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: DeleteBucketMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: DeleteBucketMutationVariables) => {
   const optimisticResponse = {
     deleteBucket: {
       ok: true,

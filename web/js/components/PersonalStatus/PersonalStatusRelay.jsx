@@ -9,4 +9,5 @@ export default createFragmentContainer(PersonalStatus, {
       income
       outcome
     }
-` });
+`,
+});

@@ -51,7 +51,7 @@ class InvestComposition extends React.Component<Props, State> {
     return addition[0];
   }
   addStock = () => {
-    const chunks = this.props.chunks;
+    const { chunks } = this.props;
     const addition = this.props.suggestions.filter(x => x.name === this.state.suggestionText);
     if (addition.length === 0) {
       return;
@@ -73,7 +73,7 @@ class InvestComposition extends React.Component<Props, State> {
       }
     }
     if (diff > 0 && diff < prevIntervals.length) {
-      const chunks = this.props.chunks;
+      const { chunks } = this.props;
       const cPrev = chunks[diff - 1];
       cPrev.quantity = (intervals[diff] - intervals[diff - 1]) / chunks[diff - 1].value;
       chunks[diff - 1] = cPrev;
@@ -87,9 +87,7 @@ class InvestComposition extends React.Component<Props, State> {
   }
   calculateAvailable = () =>
     this.props.total
-    - this.props.chunks.reduce(
-      (sum, c) => sum + (c.value * c.quantity), 0,
-    )
+    - this.props.chunks.reduce((sum, c) => sum + (c.value * c.quantity), 0)
   deleteChunk = (id: string) => () => {
     const chunks = [...this.props.chunks];
     let index = -1;
@@ -114,38 +112,38 @@ class InvestComposition extends React.Component<Props, State> {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell padding={'dense'}>Delete</TableCell>
-                <TableCell padding={'dense'}>Name</TableCell>
-                <TableCell padding={'dense'}>Quantity</TableCell>
-                <TableCell padding={'dense'}>Value</TableCell>
-                <TableCell padding={'dense'}>Total Value</TableCell>
+                <TableCell padding="dense">Delete</TableCell>
+                <TableCell padding="dense">Name</TableCell>
+                <TableCell padding="dense">Quantity</TableCell>
+                <TableCell padding="dense">Value</TableCell>
+                <TableCell padding="dense">Total Value</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {
                 this.props.chunks.map(c => (
                   <TableRow key={c.id}>
-                    <TableCell padding={'dense'}>
+                    <TableCell padding="dense">
                       <IconButton onClick={this.deleteChunk(c.id)}>
                         <DeleteIcon />
                       </IconButton>
                     </TableCell>
-                    <TableCell padding={'dense'}>
+                    <TableCell padding="dense">
                       {c.name}
                     </TableCell>
-                    <TableCell padding={'dense'} numeric>{c.quantity.toFixed(2)}</TableCell>
-                    <TableCell padding={'dense'} numeric>{c.value}</TableCell>
-                    <TableCell padding={'dense'} numeric>{(c.quantity * c.value).toFixed(2)}</TableCell>
+                    <TableCell padding="dense" numeric>{c.quantity.toFixed(2)}</TableCell>
+                    <TableCell padding="dense" numeric>{c.value}</TableCell>
+                    <TableCell padding="dense" numeric>{(c.quantity * c.value).toFixed(2)}</TableCell>
                   </TableRow>
                 ))
               }
               <TableRow>
-                <TableCell padding={'dense'}>
+                <TableCell padding="dense">
                   <IconButton onClick={this.addStock}>
                     <AddIcon />
                   </IconButton>
                 </TableCell>
-                <TableCell padding={'dense'}>
+                <TableCell padding="dense">
                   <Autocomplete
                     getItemValue={item => item.name}
                     items={this.props.suggestions}
@@ -157,9 +155,11 @@ class InvestComposition extends React.Component<Props, State> {
                     }
                     }
                     renderItem={(item, isHighlighted) =>
-                      (<Paper style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-                        {item.name}
-                      </Paper>)
+                      (
+                        <Paper style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                          {item.name}
+                        </Paper>
+                      )
                     }
                     value={this.state.suggestionText}
                     onChange={(e) => {
@@ -175,22 +175,22 @@ class InvestComposition extends React.Component<Props, State> {
                     }}
                   />
                 </TableCell>
-                <TableCell padding={'dense'}>
+                <TableCell padding="dense">
                   {selectedStock ? (available / selectedStock.value).toFixed(2) : null}
                 </TableCell>
-                <TableCell padding={'dense'}>
+                <TableCell padding="dense">
                   {selectedStock ? selectedStock.value : null}
                 </TableCell>
-                <TableCell padding={'dense'}>
+                <TableCell padding="dense">
                   {selectedStock ? available.toFixed(2) : null}
                 </TableCell>
               </TableRow>
               <TableRow>
-                <TableCell padding={'dense'} />
-                <TableCell padding={'dense'}>Available</TableCell>
-                <TableCell padding={'dense'} />
-                <TableCell padding={'dense'} />
-                <TableCell padding={'dense'} numeric>{available.toFixed(2)}</TableCell>
+                <TableCell padding="dense" />
+                <TableCell padding="dense">Available</TableCell>
+                <TableCell padding="dense" />
+                <TableCell padding="dense" />
+                <TableCell padding="dense" numeric>{available.toFixed(2)}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

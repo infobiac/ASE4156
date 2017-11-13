@@ -56,8 +56,8 @@ class InvestComposition extends React.Component<Props, State> {
         <DialogTitle>Invest into bucket</DialogTitle>
         <DialogContent>
           <StockGraph
-            id={'chart'}
-            title={'Test Chart'}
+            id="chart"
+            title="Test Chart"
             quotes={values}
           />
           <Slider
@@ -69,24 +69,24 @@ class InvestComposition extends React.Component<Props, State> {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell padding={'dense'}>Name</TableCell>
-                <TableCell padding={'dense'}>Quantity</TableCell>
-                <TableCell padding={'dense'}>Value</TableCell>
-                <TableCell padding={'dense'}>Total Value</TableCell>
+                <TableCell padding="dense">Name</TableCell>
+                <TableCell padding="dense">Quantity</TableCell>
+                <TableCell padding="dense">Value</TableCell>
+                <TableCell padding="dense">Total Value</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell padding={'dense'}>{this.props.bucket.name}</TableCell>
-                <TableCell padding={'dense'}>{quantity.toFixed(2)}</TableCell>
-                <TableCell padding={'dense'}>{this.props.bucket.value}</TableCell>
-                <TableCell padding={'dense'}>{this.state.investedAmount}</TableCell>
+                <TableCell padding="dense">{this.props.bucket.name}</TableCell>
+                <TableCell padding="dense">{quantity.toFixed(2)}</TableCell>
+                <TableCell padding="dense">{this.props.bucket.value}</TableCell>
+                <TableCell padding="dense">{this.state.investedAmount}</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell padding={'dense'}>Available</TableCell>
-                <TableCell padding={'dense'} />
-                <TableCell padding={'dense'} />
-                <TableCell padding={'dense'}>{(this.props.available - this.state.investedAmount).toFixed(2)}</TableCell>
+                <TableCell padding="dense">Available</TableCell>
+                <TableCell padding="dense" />
+                <TableCell padding="dense" />
+                <TableCell padding="dense">{(this.props.available - this.state.investedAmount).toFixed(2)}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

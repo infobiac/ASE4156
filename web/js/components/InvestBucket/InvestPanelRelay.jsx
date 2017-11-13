@@ -23,23 +23,17 @@ class InvestPanelRelay extends React.Component<Props, State> {
     const updater = () => {
       // TODO (neitsch): Implement this
     };
-    InvestMutation(
-      updater, updater, (r, error) => {
-        if (error) {
-          this.context.errorDisplay({
-            message: error[0].message,
-          });
-        }
-      },
-    )(
-      this.props.relay.environment,
-    )(
-      {
-        quantity,
-        tradingAccId: this.props.profile.selectedAcc.id,
-        bucketId: this.props.bucket.id,
-      },
-    );
+    InvestMutation(updater, updater, (r, error) => {
+      if (error) {
+        this.context.errorDisplay({
+          message: error[0].message,
+        });
+      }
+    })(this.props.relay.environment)({
+      quantity,
+      tradingAccId: this.props.profile.selectedAcc.id,
+      bucketId: this.props.bucket.id,
+    });
   }
   render() {
     return (<InvestPanel

@@ -26,11 +26,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?ChangeBucketCompositionMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: ChangeBucketCompositionMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: ChangeBucketCompositionMutationVariables) => {
   const optimisticResponse = {
     editConfiguration: {
       bucket: {

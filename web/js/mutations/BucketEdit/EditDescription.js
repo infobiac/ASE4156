@@ -26,11 +26,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?EditDescriptionMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: EditDescriptionMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: EditDescriptionMutationVariables) => {
   const optimisticResponse = {
     editAttribute: {
       bucketAttr: {

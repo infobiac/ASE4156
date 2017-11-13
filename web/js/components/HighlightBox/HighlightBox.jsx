@@ -18,12 +18,10 @@ class HighlightBox extends React.Component<Props> {
   static propTypes = {
     title: PropTypes.node.isRequired,
     value: PropTypes.node.isRequired,
-    secondaryInfo: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.node.isRequired,
-        text: PropTypes.node.isRequired,
-      }),
-    ),
+    secondaryInfo: PropTypes.arrayOf(PropTypes.shape({
+      value: PropTypes.node.isRequired,
+      text: PropTypes.node.isRequired,
+    })),
   }
   static defaultProps = {
     secondaryInfo: [],
@@ -43,7 +41,8 @@ class HighlightBox extends React.Component<Props> {
                 </ListItem>
               ))
               : null
-            }</List>
+            }
+          </List>
         </CardContent>
       </Card>
     );

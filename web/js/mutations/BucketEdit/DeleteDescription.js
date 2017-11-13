@@ -24,11 +24,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?DeleteDescriptionMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: DeleteDescriptionMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: DeleteDescriptionMutationVariables) => {
   const optimisticResponse = {
     deleteAttribute: {
       ok: true,

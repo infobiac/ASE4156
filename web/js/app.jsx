@@ -14,7 +14,7 @@ export default class App extends React.Component <*> {
     return (
       <QueryRenderer
         environment={environment}
-        query={graphql ` query appQuery { viewer { username ...StockSearchView_user ...Home_viewer } } `}
+        query={graphql` query appQuery { viewer { username ...StockSearchView_user ...Home_viewer } } `}
         render={({ error, props }) => {
           if (error) {
             return <div>{error.message}</div>;

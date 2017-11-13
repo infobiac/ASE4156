@@ -27,11 +27,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?CreateBucketMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: CreateBucketMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: CreateBucketMutationVariables) => {
   const optimisticResponse = {
     addBucket: {
       bucket: {

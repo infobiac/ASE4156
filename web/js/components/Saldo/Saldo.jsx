@@ -34,12 +34,10 @@ class Saldo extends React.Component <*> {
   static propTypes = {
     t: PropTypes.func,
     currency: PropTypes.string,
-    values: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        value: PropTypes.number.isRequired,
-      }),
-    ),
+    values: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })),
     showTotal: PropTypes.bool,
   };
   collectRow = () => (
@@ -63,7 +61,8 @@ class Saldo extends React.Component <*> {
         <Comp style={{
           textAlign: 'right',
         }}
-        >{formatMoney(this.props.currency, value.value)}</Comp>
+        >{formatMoney(this.props.currency, value.value)}
+        </Comp>
       </TableRow>
     );
   }
@@ -93,7 +92,7 @@ class Saldo extends React.Component <*> {
     }
     const button = (<Button raised>
       Sell Shares
-    </Button>);
+                    </Button>);
     return this.renderCard(this.valueRows(this.props.values), collectRow, button);
   }
 }

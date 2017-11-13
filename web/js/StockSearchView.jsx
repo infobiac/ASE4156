@@ -55,7 +55,7 @@ class StockSearchView extends React.Component<Props, State> {
   }
   handleChange = fieldName => (e) => {
     e.preventDefault();
-    const state = this.state;
+    const { state } = this;
     state[fieldName] = e.target.value;
     this.setState(state, this.setStateCallback);
   }
@@ -75,7 +75,7 @@ class StockSearchView extends React.Component<Props, State> {
     }) : null)).filter(stock => stock && stock.data.length > 0);
     return (
       <div>
-        <StockGraph quotes={quotes} compare={'PERCENT'} />
+        <StockGraph quotes={quotes} compare="PERCENT" />
         <table style={{
           border: '1px solid black',
         }}
@@ -99,7 +99,8 @@ class StockSearchView extends React.Component<Props, State> {
                       .reduce((s, v) => s + v, 0)
                     / stock.quoteInRange.leng
                   ).toFixed(2)
-                }</td>
+                }
+                </td>
                 <td><StockGraph
                   id={stock.id}
                   quotes={[{
@@ -110,7 +111,8 @@ class StockSearchView extends React.Component<Props, State> {
                     })),
                   },
                   ]}
-                /></td>
+                />
+                </td>
               </tr>
             ))
             }
@@ -141,7 +143,7 @@ class StockSearchView extends React.Component<Props, State> {
 }
 
 export default createRefetchContainer(StockSearchView, {
-  user: graphql `
+  user: graphql`
     fragment StockSearchView_user on GUser
     @argumentDefinitions(
       text: {type: "String!", defaultValue: ""},
@@ -160,7 +162,7 @@ export default createRefetchContainer(StockSearchView, {
       }
     }
   `,
-}, graphql `
+}, graphql`
   query StockSearchViewQuery($text: String!, $start: String!, $end: String!) {
     viewer {
       ...StockSearchView_user @arguments(text: $text, start: $start, end: $end)

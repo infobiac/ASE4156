@@ -64,16 +64,16 @@ class PageTest extends React.Component<{}> {
               <Grid item xs={12}>
                 <Grid container spacing={16} align="stretch">
                   <Grid item xs={12} sm={6} md={3}>
-                    <HighlightBox title={'Current balance'} value={'$1300'} />
+                    <HighlightBox title="Current balance" value="$1300" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={3}>
-                    <HighlightBox title={'Total Income'} value={'$300'} />
+                    <HighlightBox title="Total Income" value="$300" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={3}>
-                    <HighlightBox title={'Total Expenditures'} value={'$250'} />
+                    <HighlightBox title="Total Expenditures" value="$250" />
                   </Grid>
                   <Grid item xs={12} sm={6} md={3}>
-                    <HighlightBox title={'Another box'} value={'$1000'} />
+                    <HighlightBox title="Another box" value="$1000" />
                   </Grid>
                 </Grid>
               </Grid>
@@ -82,8 +82,8 @@ class PageTest extends React.Component<{}> {
                   <StockGraph
                     title="Portfolio Growth"
                     height="450px"
-                    id={'chart'}
-                    compare={'ABSOLUTE'}
+                    id="chart"
+                    compare="ABSOLUTE"
                     quotes={values}
                   />
                 </Paper>
@@ -92,7 +92,7 @@ class PageTest extends React.Component<{}> {
                 <Grid container spacing={16} align="stretch">
                   <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
-                      title={'Risk 1'}
+                      title="Risk 1"
                       attributes={{
                         good: [{
                           id: '1',
@@ -114,7 +114,7 @@ class PageTest extends React.Component<{}> {
                   </Grid>
                   <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
-                      title={'Risk 2'}
+                      title="Risk 2"
                       attributes={{
                         good: [{
                           id: '1',
@@ -136,7 +136,7 @@ class PageTest extends React.Component<{}> {
                   </Grid>
                   <Grid item xs={12} sm={6} md={4}>
                     <InvestBucket
-                      title={'Risk 3'}
+                      title="Risk 3"
                       attributes={{
                         good: [{
                           id: '1',

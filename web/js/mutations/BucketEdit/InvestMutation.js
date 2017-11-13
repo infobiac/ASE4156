@@ -32,11 +32,7 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?InvestMutationMutationResponse, errors: ?[Error]) => void,
-) => (
-  environment: RelayEnvironment,
-) => (
-  variables: InvestMutationMutationVariables,
-) => {
+) => (environment: RelayEnvironment) => (variables: InvestMutationMutationVariables) => {
   const optimisticResponse = {
     invest: {
       profile: 0.0,

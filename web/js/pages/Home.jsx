@@ -48,7 +48,8 @@ class Home extends React.Component < Props > {
   }
 }
 
-export default createFragmentContainer(Home, { viewer: graphql `
+export default createFragmentContainer(Home, {
+  viewer: graphql`
     fragment Home_viewer on GUser {
       profile {
         ...InvestBucketGridRelay_profile
@@ -62,4 +63,5 @@ export default createFragmentContainer(Home, { viewer: graphql `
         }
       }
     }
-` });
+`,
+});
