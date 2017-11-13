@@ -34,7 +34,7 @@ install:
   - yarn install
 script:
   - flake8 .
-  - find . ! -path "./node_modules/*" ! -path "./env/*" ! -path "*/migrations/*" ! -path "*/snapshots/*" -iname "*.py" | xargs pylint --load-plugins pylint_django
+  - find . ! -path "./doc/*" ! -path "./node_modules/*" ! -path "./env/*" ! -path "*/migrations/*" ! -path "*/snapshots/*" -iname "*.py" | xargs pylint --load-plugins pylint_django
   - yarn run test -- --ci
   - pytest --driver Firefox --reuse-db --cov=.
   - codecov
