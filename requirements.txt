@@ -18,7 +18,7 @@ idna==2.6
 iso8601==0.1.12
 mccabe==0.6.1
 numpy==1.13.1
-oauthlib==2.0.3
+oauthlib==2.0.6
 pandas==0.20.3
 plaid-python==2.0.3
 promise==2.0.2
