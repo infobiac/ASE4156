@@ -73,7 +73,7 @@
     "style-loader": "^0.19.0",
     "typeface-roboto": "0.0.41",
     "url-loader": "^0.6.2",
-    "webpack": "^3.6.0",
+    "webpack": "^3.8.1",
     "webpack-bundle-tracker": "^0.2.0",
     "whatwg-fetch": "^2.0.3"
   },
