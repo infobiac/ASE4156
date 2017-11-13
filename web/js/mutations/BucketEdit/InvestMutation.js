@@ -23,7 +23,9 @@ const mutation = graphql`
       tradingAccId: $tradingAccId,
       bucketId: $bucketId,
     ) {
-       profile
+       tradingAccount {
+         availableCash
+       }
     }
   }
 `;
@@ -35,7 +37,9 @@ export default (
 ) => (environment: RelayEnvironment) => (variables: InvestMutationMutationVariables) => {
   const optimisticResponse = {
     invest: {
-      profile: 0.0,
+      tradingAccount: {
+        availableCash: 0.0,
+      },
     },
   };
   commitMutation(environment, {

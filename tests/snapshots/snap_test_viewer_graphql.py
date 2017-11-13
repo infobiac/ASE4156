@@ -45,7 +45,8 @@ snapshots['test_big_gql 1'] = {
                                             }
                                         }
                                     ]
-                                }
+                                },
+                                'value': 110.0
                             }
                         }
                     ]
@@ -88,7 +89,8 @@ snapshots['test_big_gql 1'] = {
                                                             }
                                                         ]
                                                     }
-                                                }
+                                                },
+                                                'value': -10.0
                                             }
                                         }
                                     ]
@@ -216,4 +218,39 @@ snapshots['test_mutation_attribute_permission 3'] = {
             'message': "You don't own the bucket!"
         }
     ]
+}
+
+snapshots['test_mutation_add_trade 1'] = {
+    'data': {
+        'addTrade': {
+            'trade': {
+                'account': {
+                    'accountName': 'Test 1'
+                },
+                'quantity': 2.0,
+                'stock': {
+                    'ticker': 'GOOGL'
+                },
+                'value': -18.0
+            }
+        }
+    }
+}
+
+snapshots['test_mutation_add_bucket_trade 1'] = {
+    'data': {
+        'invest': {
+            'tradingAccount': {
+                'availableCash': -200.0
+            }
+        }
+    }
+}
+
+snapshots['test_mutation_delete_bucket 1'] = {
+    'data': {
+        'deleteBucket': {
+            'isOk': True
+        }
+    }
 }

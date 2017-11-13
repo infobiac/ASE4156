@@ -6,7 +6,7 @@ from graphql_relay.node.node import from_global_id
 from graphene import Field, Float, ID, Int, Mutation, NonNull, \
     relay, String
 from stocks.models import InvestmentBucket, Stock
-from .models import TradeStock, TradingAccount
+from .models import TradeBucket, TradeStock, TradingAccount
 
 
 # pylint: disable=too-few-public-methods
@@ -21,6 +21,27 @@ class GTrade(DjangoObjectType):
         Meta Model for Trade
         """
         model = TradeStock
+        interfaces = (relay.Node, )
+
+    @staticmethod
+    def resolve_value(data, _info, **_args):
+        """
+        Returns the value of a trade (see the model)
+        """
+        return data.current_value()
+
+
+class GInvestmentBucketTrade(DjangoObjectType):
+    """
+    Exposing the whole Trade object to GraphQL
+    """
+    value = Float()
+
+    class Meta(object):
+        """
+        Meta Model for Trade
+        """
+        model = TradeBucket
         interfaces = (relay.Node, )
 
     @staticmethod
@@ -92,7 +113,7 @@ class AddTrade(Mutation):
             account_name=account_name,
             profile_id=info.context.user.profile.id
         )
-        trade = account.stock_trade(stock, quantity)
+        trade = account.trade_stock(stock, quantity)
         return AddTrade(trade=trade)
 
 
@@ -108,7 +129,7 @@ class InvestBucket(Mutation):
         trading_acc_id = NonNull(ID)
         bucket_id = NonNull(ID)
 
-    profile = Field(lambda: Int)
+    trading_account = Field(lambda: GTradingAccount)
 
     @staticmethod
     def mutate(_self, info, quantity, trading_acc_id, bucket_id, **_args):
@@ -123,5 +144,5 @@ class InvestBucket(Mutation):
         )
         bucket = InvestmentBucket.objects.get(id=bucket_id)
         trading_acc.trade_bucket(bucket, quantity)
-        return InvestBucket(profile=1)
+        return InvestBucket(trading_account=trading_acc)
 # pylint: enable=too-few-public-methods
