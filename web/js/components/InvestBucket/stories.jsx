@@ -96,7 +96,12 @@ storiesOf('InvestCompositionDontTest', module).add('Playground', () => {
 });
 storiesOf('InvestPanelDontTest', module).add('Playground', () => (
   <InvestPanel
-    bucket={{ name: 'Some bucket', value: 311.45 }}
+    bucket={{
+      name: 'Some bucket',
+      value: 311.45,
+      ownedAmount: 30,
+      history: [{ date: new Date('2017-03-03'), value: 200 }],
+    }}
     available={555.55}
     investFunc={action('invest')}
     cancelFunc={action('cancel')}

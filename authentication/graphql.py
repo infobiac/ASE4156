@@ -3,11 +3,11 @@ GraphQL definitions for the Authentication App
 """
 from django.contrib.auth.models import User
 from graphene import Argument, Field, Float, Int, List, Mutation, \
-    NonNull, ObjectType, String, relay
+    NonNull, String, relay
 from graphene_django import DjangoObjectType, DjangoConnectionField
 from trading.models import TradingAccount
 from trading.graphql import GTradingAccount
-from stocks.graphql import GInvestmentBucket, GStock
+from stocks.graphql import GInvestmentBucket, GStock, GDataPoint, DataPoint
 from stocks.models import InvestmentBucket, Stock
 from .models import Profile, UserBank
 
@@ -67,31 +67,7 @@ class GProfile(DjangoObjectType):
         """
         Returns the selected account. For now we just assume the user has only 1
         """
-        acc = data.trading_accounts.all()[:1]
-        if not acc:
-            acc = data.trading_accounts.create(
-                account_name='default'
-            )
-        else:
-            acc = acc[0]
-        return acc
-
-
-class DataPoint(object):
-    """
-    Dummy class to represent a date / value DataPoint
-    """
-    def __init__(self, date, value):
-        self.date = date
-        self.value = value
-
-
-class GDataPoint(ObjectType):
-    """
-    GraphQL definition of the DataPoint above
-    """
-    date = String()
-    value = Float()
+        return data.default_acc()
 
 
 class GUserBank(DjangoObjectType):

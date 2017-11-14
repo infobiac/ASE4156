@@ -20,10 +20,22 @@ type State = {}
 
 class InvestPanelRelay extends React.Component<Props, State> {
   investFunc = (quantity) => {
-    const updater = () => {
-      // TODO (neitsch): Implement this
+    const optimisticResponse = {
+      invest: {
+        tradingAccount: {
+          id: this.props.profile.selectedAcc.id,
+          availableCash: (
+            this.props.profile.selectedAcc.availableCash
+            - (quantity * this.props.bucket.value)
+          ),
+        },
+        bucket: {
+          id: this.props.bucket.id,
+          ownedAmount: this.props.bucket.ownedAmount + quantity,
+        },
+      },
     };
-    InvestMutation(updater, updater, (r, error) => {
+    InvestMutation(null, null, (r, error) => {
       if (error) {
         this.context.errorDisplay({
           message: error[0].message,
@@ -33,11 +45,15 @@ class InvestPanelRelay extends React.Component<Props, State> {
       quantity,
       tradingAccId: this.props.profile.selectedAcc.id,
       bucketId: this.props.bucket.id,
-    });
+    }, optimisticResponse);
   }
   render() {
+    const bucket = {
+      ...this.props.bucket,
+      history: this.props.bucket.history.map(dp => ({ ...dp, date: new Date(dp.date) })),
+    };
     return (<InvestPanel
-      bucket={this.props.bucket}
+      bucket={bucket}
       available={this.props.profile.selectedAcc.availableCash}
       cancelFunc={this.props.closeFunc}
       investFunc={this.investFunc}
@@ -51,6 +67,11 @@ export default createFragmentContainer(InvestPanelRelay, {
       id
       name
       value
+      ownedAmount
+      history {
+        date
+        value
+      }
     }
   `,
   profile: graphql`

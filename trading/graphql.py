@@ -5,6 +5,7 @@ from graphene_django import DjangoObjectType
 from graphql_relay.node.node import from_global_id
 from graphene import Field, Float, ID, Int, Mutation, NonNull, \
     relay, String
+from stocks.graphql import GInvestmentBucket
 from stocks.models import InvestmentBucket, Stock
 from .models import TradeBucket, TradeStock, TradingAccount
 
@@ -130,6 +131,7 @@ class InvestBucket(Mutation):
         bucket_id = NonNull(ID)
 
     trading_account = Field(lambda: GTradingAccount)
+    bucket = Field(lambda: GInvestmentBucket)
 
     @staticmethod
     def mutate(_self, info, quantity, trading_acc_id, bucket_id, **_args):
@@ -144,5 +146,5 @@ class InvestBucket(Mutation):
         )
         bucket = InvestmentBucket.objects.get(id=bucket_id)
         trading_acc.trade_bucket(bucket, quantity)
-        return InvestBucket(trading_account=trading_acc)
+        return InvestBucket(trading_account=trading_acc, bucket=bucket)
 # pylint: enable=too-few-public-methods

@@ -23,9 +23,14 @@ const mutation = graphql`
       tradingAccId: $tradingAccId,
       bucketId: $bucketId,
     ) {
-       tradingAccount {
-         availableCash
-       }
+      tradingAccount {
+        id
+        availableCash
+      }
+      bucket {
+        id
+        ownedAmount
+      }
     }
   }
 `;
@@ -34,20 +39,14 @@ export default (
   updater?: ?(store: RecordSourceSelectorProxy, data: SelectorData) => void,
   optimisticUpdater?: ?(store: RecordSourceSelectorProxy) => void,
   onCompleted?: ?(response: ?InvestMutationMutationResponse, errors: ?[Error]) => void,
-) => (environment: RelayEnvironment) => (variables: InvestMutationMutationVariables) => {
-  const optimisticResponse = {
-    invest: {
-      tradingAccount: {
-        availableCash: 0.0,
-      },
-    },
-  };
+) => (environment: RelayEnvironment) => (
+  variables: InvestMutationMutationVariables,
+  optimisticResponse?: ?InvestMutationMutationResponse,
+) => {
   commitMutation(environment, {
     mutation,
     variables,
-    updater,
     optimisticResponse,
-    optimisticUpdater,
     onCompleted,
   });
 };
