@@ -242,7 +242,6 @@ def test_mutation_delete_bucket(rf, snapshot):
         }}
     """.format(to_global_id("GInvestmentBucket", bucket.id)), context_value=request)
     snapshot.assert_match(executed)
-    print(executed)
     assert InvestmentBucket.objects.count() == 0
 
 

@@ -117,7 +117,6 @@ class GUserBank(DjangoObjectType):
         """
         Builds the financial history for the user
         """
-        print(start)
         return [
             DataPoint(date, value)
             for (date, value)
