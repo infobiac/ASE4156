@@ -16,13 +16,15 @@ import AddIcon from 'material-ui-icons/Add';
 import Button from 'material-ui/Button';
 import 'rc-slider/assets/index.css';
 
-type ChunkList = Array<{id: string, quantity: number, value: number, name: string}>;
+type Chunk = {id: string, quantity: number, value: number, name: string};
+type ChunkList = Array<Chunk>;
+type Suggestion = {id: string, name: string, value: number};
 type Props = {
   chunks: ChunkList,
   total: number,
   chunkUpdate: ChunkList => void,
   suggestionFieldChange: string => void,
-  suggestions: Array<{id: string, name: string, value: number}>,
+  suggestions: Array<Suggestion>,
   saveFunc: () => void,
   cancelFunc: () => void,
 }
@@ -36,6 +38,42 @@ class InvestComposition extends React.Component<Props, State> {
       all.push(all[all.length - 1] + (v.value * v.quantity));
       return all;
     }, [0]);
+  }
+  static renderTableHeader() {
+    return (
+      <TableHead>
+        <TableRow>
+          <TableCell padding="dense">Delete</TableCell>
+          <TableCell padding="dense">Name</TableCell>
+          <TableCell padding="dense">Quantity</TableCell>
+          <TableCell padding="dense">Value</TableCell>
+          <TableCell padding="dense">Total Value</TableCell>
+        </TableRow>
+      </TableHead>
+    );
+  }
+  static renderActions(cancel, save) {
+    return (
+      <DialogActions>
+        <Button onClick={cancel} color="primary">
+          Cancel
+        </Button>
+        <Button onClick={save} color="primary">
+          Save
+        </Button>
+      </DialogActions>
+    );
+  }
+  static renderCurrentAvailable(available) {
+    return (
+      <TableRow>
+        <TableCell padding="dense" />
+        <TableCell padding="dense">Available</TableCell>
+        <TableCell padding="dense" />
+        <TableCell padding="dense" />
+        <TableCell padding="dense" numeric>{available.toFixed(2)}</TableCell>
+      </TableRow>
+    );
   }
   constructor() {
     super();
@@ -101,100 +139,100 @@ class InvestComposition extends React.Component<Props, State> {
     }
     this.props.chunkUpdate(chunks);
   }
+  renderChunk = (c: Chunk) => (
+    <TableRow key={c.id}>
+      <TableCell padding="dense">
+        <IconButton id="delete-chunk" onClick={this.deleteChunk(c.id)}>
+          <DeleteIcon />
+        </IconButton>
+      </TableCell>
+      <TableCell padding="dense">
+        {c.name}
+      </TableCell>
+      <TableCell padding="dense" numeric>{c.quantity.toFixed(2)}</TableCell>
+      <TableCell padding="dense" numeric>{c.value}</TableCell>
+      <TableCell padding="dense" numeric>{(c.quantity * c.value).toFixed(2)}</TableCell>
+    </TableRow>
+  )
+  renderNewStockNameField = () => (
+    <Autocomplete
+      id="select-stock"
+      getItemValue={item => item.name}
+      items={this.props.suggestions}
+      renderInput={(props: {ref: any}) => {
+        const { ref, ...rest } = props;
+        return (
+          <TextField inputRef={ref} {...rest} />
+        );
+      }
+      }
+      renderItem={(item, isHighlighted) =>
+        (
+          <Paper style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+            {item.name}
+          </Paper>
+        )
+      }
+      value={this.state.suggestionText}
+      onChange={(e) => {
+          const text = e.target.value;
+        this.setState(() => ({
+            suggestionText: text,
+        }), () => this.props.suggestionFieldChange(text));
+      }}
+      onSelect={(val) => {
+        this.setState(() => ({
+            suggestionText: val,
+        }), () => this.props.suggestionFieldChange(val));
+      }}
+    />
+  )
+  renderAddStockRow = (selectedStock: ?Suggestion, available: number) => (
+    <TableRow>
+      <TableCell padding="dense">
+        <IconButton id="add-stock" onClick={this.addStock}>
+          <AddIcon />
+        </IconButton>
+      </TableCell>
+      <TableCell padding="dense">
+        {this.renderNewStockNameField()}
+      </TableCell>
+      <TableCell padding="dense">
+        {selectedStock ? (available / selectedStock.value).toFixed(2) : null}
+      </TableCell>
+      <TableCell padding="dense">
+        {selectedStock ? selectedStock.value : null}
+      </TableCell>
+      <TableCell padding="dense">
+        {selectedStock ? available.toFixed(2) : null}
+      </TableCell>
+    </TableRow>
+  )
   render() {
     const values = InvestComposition.makeIntervals(this.props.chunks);
     const available = this.calculateAvailable();
     const selectedStock = this.selectedStock();
+    const rowsCurrentStock = this.props.chunks.map(this.renderChunk);
     return (
       <Dialog open>
         <DialogTitle>Edit Composition</DialogTitle>
         <DialogContent>
           <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell padding="dense">Delete</TableCell>
-                <TableCell padding="dense">Name</TableCell>
-                <TableCell padding="dense">Quantity</TableCell>
-                <TableCell padding="dense">Value</TableCell>
-                <TableCell padding="dense">Total Value</TableCell>
-              </TableRow>
-            </TableHead>
+            {InvestComposition.renderTableHeader()}
             <TableBody>
               {
-                this.props.chunks.map(c => (
-                  <TableRow key={c.id}>
-                    <TableCell padding="dense">
-                      <IconButton onClick={this.deleteChunk(c.id)}>
-                        <DeleteIcon />
-                      </IconButton>
-                    </TableCell>
-                    <TableCell padding="dense">
-                      {c.name}
-                    </TableCell>
-                    <TableCell padding="dense" numeric>{c.quantity.toFixed(2)}</TableCell>
-                    <TableCell padding="dense" numeric>{c.value}</TableCell>
-                    <TableCell padding="dense" numeric>{(c.quantity * c.value).toFixed(2)}</TableCell>
-                  </TableRow>
-                ))
+                rowsCurrentStock
               }
-              <TableRow>
-                <TableCell padding="dense">
-                  <IconButton onClick={this.addStock}>
-                    <AddIcon />
-                  </IconButton>
-                </TableCell>
-                <TableCell padding="dense">
-                  <Autocomplete
-                    getItemValue={item => item.name}
-                    items={this.props.suggestions}
-                    renderInput={(props) => {
-                      const { ref, ...rest } = props;
-                      return (
-                        <TextField inputRef={ref} {...rest} />
-                      );
-                    }
-                    }
-                    renderItem={(item, isHighlighted) =>
-                      (
-                        <Paper style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-                          {item.name}
-                        </Paper>
-                      )
-                    }
-                    value={this.state.suggestionText}
-                    onChange={(e) => {
-                      const text = e.target.value;
-                      this.setState(() => ({
-                        suggestionText: text,
-                      }), () => this.props.suggestionFieldChange(text));
-                    }}
-                    onSelect={(val) => {
-                      this.setState(() => ({
-                        suggestionText: val,
-                      }), () => this.props.suggestionFieldChange(val));
-                    }}
-                  />
-                </TableCell>
-                <TableCell padding="dense">
-                  {selectedStock ? (available / selectedStock.value).toFixed(2) : null}
-                </TableCell>
-                <TableCell padding="dense">
-                  {selectedStock ? selectedStock.value : null}
-                </TableCell>
-                <TableCell padding="dense">
-                  {selectedStock ? available.toFixed(2) : null}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell padding="dense" />
-                <TableCell padding="dense">Available</TableCell>
-                <TableCell padding="dense" />
-                <TableCell padding="dense" />
-                <TableCell padding="dense" numeric>{available.toFixed(2)}</TableCell>
-              </TableRow>
+              {
+                this.renderAddStockRow(selectedStock, available)
+              }
+              {
+                InvestComposition.renderCurrentAvailable(available)
+              }
             </TableBody>
           </Table>
           <Range
+            id="range"
             pushable={false}
             onChange={this.intervalUpdate}
             count={this.props.chunks.length}
@@ -203,14 +241,7 @@ class InvestComposition extends React.Component<Props, State> {
             step={0.01}
           />
         </DialogContent>
-        <DialogActions>
-          <Button onClick={this.props.cancelFunc} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={this.props.saveFunc} color="primary">
-            Save
-          </Button>
-        </DialogActions>
+        {InvestComposition.renderActions(this.props.cancelFunc, this.props.saveFunc)}
       </Dialog>
     );
   }

@@ -17,6 +17,11 @@ storiesOf('HighlightBox', module).add('Playground', () => (
   />
 ));
 
+storiesOf('HighlightBox', module).add('Simple', () => (<HighlightBox
+  title="Stuff"
+  value="More stuff"
+/>));
+
 storiesOf('HighlightBox', module).add('Account Total', () => (<HighlightBox
   title="Account Total"
   value="$7,749.34"

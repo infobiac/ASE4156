@@ -113,7 +113,7 @@ class InvestBucket extends React.Component <Props, State> {
   launchEdit = (mode: bool) => () => this.setState(() => ({ editMode: mode }))
   editField = () => (
     <ListItem>
-      <ListItemIcon onClick={() => this.setState(state => ({ editGood: !state.editGood }))}>
+      <ListItemIcon id="good-or-bad" onClick={() => this.setState(state => ({ editGood: !state.editGood }))}>
         {this.state.editGood ? <TrendingUpIcon /> : <TrendingDownIcon />}
       </ListItemIcon>
       <TextField
@@ -135,31 +135,26 @@ class InvestBucket extends React.Component <Props, State> {
         <CardHeader title={this.props.title} />
         <CardContent>
           <List>
-            {this.props.attributes
-              ? (
-                this.props.attributes.good ?
-                  this.props.attributes.good.map(g => InvestBucket.renderAttr(g, true)) :
-                  []
-              ).concat(this.props.attributes.bad ?
-                  this.props.attributes.bad.map(b => InvestBucket.renderAttr(b, false)) :
-                  []) : null
+            {
+              this.props.attributes.good.map(g => InvestBucket.renderAttr(g, true))
+              .concat(this.props.attributes.bad.map(b => InvestBucket.renderAttr(b, false)))
             }
             {
               this.props.seeMoreFunc ?
                 <ListItem key="seeMore">
-                  <Button onClick={this.props.seeMoreFunc}>More</Button>
+                  <Button id="more" onClick={this.props.seeMoreFunc}>More</Button>
                 </ListItem>
-                : null
+              : null
             }
             {
               this.state.editMode ?
                 this.editField()
-                : null
+              : null
             }
           </List>
           {
             this.props.editFunc && !this.state.editMode ? (
-              <Button fab color="primary" aria-label="add" onClick={this.launchEdit(true)}>
+              <Button fab id="launch-edit" color="primary" aria-label="add" onClick={this.launchEdit(true)}>
                 <AddIcon />
               </Button>
             ) : null
@@ -171,14 +166,14 @@ class InvestBucket extends React.Component <Props, State> {
           </Button>
           {
             this.props.deleteFunc ? (
-              <Button dense color="primary" onClick={this.props.deleteFunc}>
+              <Button dense id="delete" color="primary" onClick={this.props.deleteFunc}>
                 Delete
               </Button>
             ) : null
           }
           {
             this.props.editCompositionFunc ? (
-              <Button dense color="primary" onClick={this.props.editCompositionFunc}>
+              <Button dense id="edit-comp" color="primary" onClick={this.props.editCompositionFunc}>
                 Composition
               </Button>
             ) : null

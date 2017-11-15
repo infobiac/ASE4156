@@ -55,6 +55,7 @@ class InvestComposition extends React.Component<Props, State> {
           />
           <Slider
             value={totalValue}
+            id="invest-amount-slider"
             onChange={investedAmount => this.setState(() => ({
               investedAmount: investedAmount - ownedValue,
             }))}
@@ -100,8 +101,8 @@ class InvestComposition extends React.Component<Props, State> {
           </Table>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.props.cancelFunc}>Cancel</Button>
-          <Button onClick={() => this.props.investFunc(additionalQuantity)}>
+          <Button id="cancel" onClick={this.props.cancelFunc}>Cancel</Button>
+          <Button id="save" onClick={() => this.props.investFunc(additionalQuantity)}>
             Invest
           </Button>
         </DialogActions>

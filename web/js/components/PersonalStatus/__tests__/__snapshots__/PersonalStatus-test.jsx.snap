@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalStatus renders 1`] = `
+<withStyles(GridWrapper)
+  align="stretch"
+  container={true}
+  id="personal-status"
+  spacing={16}
+>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={null}
+      title="Current balance"
+      value="1.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={null}
+      title="Total Income"
+      value="2.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={null}
+      title="Total Expenditures"
+      value="4.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={null}
+      title="Available money"
+      value="6.00"
+    />
+  </withStyles(GridWrapper)>
+</withStyles(GridWrapper)>
+`;

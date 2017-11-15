@@ -21,10 +21,10 @@ class HighlightBox extends React.Component<Props> {
     secondaryInfo: PropTypes.arrayOf(PropTypes.shape({
       value: PropTypes.node.isRequired,
       text: PropTypes.node.isRequired,
-    })),
+    }).isRequired),
   }
   static defaultProps = {
-    secondaryInfo: [],
+    secondaryInfo: null,
   }
   render() {
     return (
@@ -34,7 +34,8 @@ class HighlightBox extends React.Component<Props> {
           <h1>{this.props.value}</h1>
           <Divider />
           <List>
-            {this.props.secondaryInfo
+            {
+              this.props.secondaryInfo
               ? this.props.secondaryInfo.map(secondary => (
                 <ListItem key={secondary.text}>
                   <ListItemText>{`${secondary.value} ${secondary.text}`}</ListItemText>

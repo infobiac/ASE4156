@@ -254,6 +254,42 @@ exports[`Storyshots HighlightBox Playground 1`] = `
 </div>
 `;
 
+exports[`Storyshots HighlightBox Simple 1`] = `
+<div
+  className="MuiPaper-root-14 MuiPaper-shadow2-18 MuiPaper-rounded-15"
+>
+  <div
+    className="MuiCardContent-root-105 MuiCardHeader-root-100"
+  >
+    <div
+      className="MuiCardHeader-content-102"
+    >
+      <span
+        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-103"
+      >
+        Stuff
+      </span>
+      <span
+        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-104"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root-105"
+  >
+    <h1>
+      More stuff
+    </h1>
+    <hr
+      className="MuiDivider-root-338 MuiDivider-default-339"
+    />
+    <ul
+      className="MuiList-root-343 MuiList-padding-344"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots InvestBucket Playground 1`] = `
 <div
   className="MuiPaper-root-14 MuiPaper-shadow2-18 MuiPaper-rounded-15"
@@ -387,6 +423,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       aria-label="add"
       className="MuiButtonBase-root-52 MuiButton-root-86 MuiButton-raised-93 MuiButton-fab-99 MuiButton-raisedPrimary-95"
       disabled={false}
+      id="launch-edit"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}

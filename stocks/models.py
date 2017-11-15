@@ -2,8 +2,8 @@
 Models keeps track of all the persistent data around stocks
 """
 import datetime
-import math
 from datetime import date as os_date
+import math
 from django.db.models import Q
 from django.db import models
 from django.db.models.signals import pre_save
@@ -220,7 +220,7 @@ class InvestmentBucket(models.Model):
         for config in self.get_stock_configs(date):
             try:
                 values.append(config.value_on(date))
-            except Exception:
+            except Exception:  # pylint: disable=broad-except
                 pass
         return sum(values) + self.available
 

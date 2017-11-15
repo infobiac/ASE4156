@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvestBucket add attribute 1`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List)>
+      <withStyles(ListItem)>
+        <withStyles(ListItemIcon)
+          id="good-or-bad"
+          onClick={[Function]}
+        >
+          <pure(TrendingUp) />
+        </withStyles(ListItemIcon)>
+        <TextField
+          autoFocus={true}
+          fullWidth={true}
+          id="name"
+          label="New Attribute"
+          margin="dense"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          required={false}
+          select={false}
+          type="text"
+          value=""
+        />
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket add attribute 2`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List)>
+      <withStyles(ListItem)>
+        <withStyles(ListItemIcon)
+          id="good-or-bad"
+          onClick={[Function]}
+        >
+          <pure(TrendingUp) />
+        </withStyles(ListItemIcon)>
+        <TextField
+          autoFocus={true}
+          fullWidth={true}
+          id="name"
+          label="New Attribute"
+          margin="dense"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          required={false}
+          select={false}
+          type="text"
+          value="some text"
+        />
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket add attribute 3`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List)>
+      <withStyles(ListItem)>
+        <withStyles(ListItemIcon)
+          id="good-or-bad"
+          onClick={[Function]}
+        >
+          <pure(TrendingDown) />
+        </withStyles(ListItemIcon)>
+        <TextField
+          autoFocus={true}
+          fullWidth={true}
+          id="name"
+          label="New Attribute"
+          margin="dense"
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          required={false}
+          select={false}
+          type="text"
+          value="some text"
+        />
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket add attribute 4`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List) />
+    <withStyles(Button)
+      aria-label="add"
+      color="primary"
+      fab={true}
+      id="launch-edit"
+      onClick={[Function]}
+    >
+      <pure(Add) />
+    </withStyles(Button)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket displays bad attributes 1`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List)>
+      <withStyles(ListItem)
+        key="1"
+      >
+        <withStyles(ListItemIcon)>
+          <pure(TrendingDown) />
+        </withStyles(ListItemIcon)>
+        <withStyles(ListItemText)
+          autoFocus={true}
+          key="1"
+          primary="Attr"
+        />
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket displays good attributes 1`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List)>
+      <withStyles(ListItem)
+        key="1"
+      >
+        <withStyles(ListItemIcon)>
+          <pure(TrendingUp) />
+        </withStyles(ListItemIcon)>
+        <withStyles(ListItemText)
+          autoFocus={true}
+          key="1"
+          primary="Attr"
+        />
+      </withStyles(ListItem)>
+    </withStyles(List)>
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
+
+exports[`InvestBucket renders 1`] = `
+<Card
+  raised={false}
+>
+  <withStyles(CardHeader)
+    title="Random"
+  />
+  <withStyles(CardContent)>
+    <withStyles(List) />
+  </withStyles(CardContent)>
+  <withStyles(CardActions)>
+    <withStyles(Button)
+      color="primary"
+      dense={true}
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(CardActions)>
+</Card>
+`;
