@@ -95,6 +95,11 @@
       "enzyme-to-json/serializer"
     ],
     "coverageDirectory": "./coverage/",
+    "collectCoverageFrom" : [
+      "web/js/**/*.{js,jsx}",
+      "!**/__generated__/**",
+      "!web/**/{stories,index}.{js,jsx}"
+    ],
     "collectCoverage": true,
     "setupFiles": [
       "<rootDir>/.storybook/raf.js",
