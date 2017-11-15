@@ -113,9 +113,6 @@ class TradingAccount(models.Model):
             ])
         )
 
-    def __str__(self):
-        return "{}, {}, {}".format(self.id, self.account_name, self.profile_id)
-
 
 class TradeStock(models.Model):
     """
@@ -132,13 +129,6 @@ class TradeStock(models.Model):
         """
         quote_value = self.stock.latest_quote(self.timestamp).value
         return quote_value * (-1 * self.quantity)
-
-    def __str__(self):
-        return "{}, {}, {}, {}, {}".format(self.id,
-                                           self.timestamp,
-                                           self.quantity,
-                                           self.account_id,
-                                           self.stock_id)
 
 
 class TradeBucket(models.Model):

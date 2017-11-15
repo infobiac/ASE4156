@@ -31,9 +31,6 @@ class Profile(models.Model):
             acc = acc[0]
         return acc
 
-    def __str__(self):
-        return "{}, {}, {}".format(self.id, self.user_id, self.has_bank_linked)
-
 
 @receiver(post_save, sender=User)
 def create_user_profile(instance, created, **_):
@@ -122,6 +119,3 @@ class UserBank(models.Model):
                 self.expenditure_field = exp
                 self.save()
         return exp
-
-    def __str__(self):
-        return "IDs:{}, {}, Institution: {}. ".format(self.institution_name, self.id, self.user_id)

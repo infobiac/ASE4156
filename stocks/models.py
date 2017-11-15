@@ -92,9 +92,6 @@ class Stock(models.Model):
         """
         return self.trades.filter(account__profile=profile)
 
-    def __str__(self):
-        return "{}, {}, {}".format(self.id, self.name, self.ticker)
-
 
 class DailyStockQuote(models.Model):
     """
@@ -115,12 +112,6 @@ class DailyStockQuote(models.Model):
         We use this to define our uniqueness constraint
         """
         unique_together = ('stock', 'date',)
-
-    def __str__(self):
-        return "{}, {}, {}, {}".format(self.id,
-                                       self.value,
-                                       self.date,
-                                       self.stock_id)
 
 
 class InvestmentBucket(models.Model):
