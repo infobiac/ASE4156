@@ -11,6 +11,6 @@ def home(request):
     """
     Serves the home page
     """
-    if request.user.profile.has_bank_linked is not True:
+    if not request.user.userbank.exists():
         return HttpResponseRedirect('/setup_bank')
     return render(request, "home.html", {})

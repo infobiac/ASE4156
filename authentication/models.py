@@ -17,8 +17,6 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name='profile'
     )
-    has_bank_linked = models.NullBooleanField(
-        blank=True, default=False, null=True)
 
     def default_acc(self):
         """
