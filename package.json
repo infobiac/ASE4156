@@ -91,6 +91,7 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "setupFiles": [

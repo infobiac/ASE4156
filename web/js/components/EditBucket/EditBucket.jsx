@@ -84,7 +84,7 @@ export default class EditBucket extends React.Component<Props, State> {
             <TextField
               autoFocus
               margin="dense"
-              id="name"
+              id="investment"
               label="Investment"
               type="text"
               value={this.state.investment.toFixed(2)}
@@ -94,8 +94,10 @@ export default class EditBucket extends React.Component<Props, State> {
           </FormGroup>
           <FormGroup row>
             <FormControlLabel
+              id="publicContainer"
               control={
                 <Checkbox
+                  id="public"
                   checked={this.state.public}
                   onChange={this.clickCheckbox}
                 />
@@ -105,10 +107,10 @@ export default class EditBucket extends React.Component<Props, State> {
           </FormGroup>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.props.cancel} color="primary">
+          <Button id="cancel" onClick={this.props.cancel} color="primary">
             Cancel
           </Button>
-          <Button onClick={this.save} color="primary">
+          <Button id="save" onClick={this.save} color="primary">
             Save
           </Button>
         </DialogActions>

@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditBucket cancels 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Subscribe
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      Create a new risk bucket that people can invest in
+    </withStyles(DialogContentText)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="name"
+        label="Bucket name"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value=""
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="investment"
+        label="Investment"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="1000.00"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <withStyles(FormControlLabel)
+        control={
+          <withStyles(Checkbox)
+            checked={false}
+            id="public"
+            onChange={[Function]}
+          />
+        }
+        id="publicContainer"
+        label="Public"
+      />
+    </withStyles(FormGroup)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      id="save"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`EditBucket change public 1`] = `
+<Checkbox
+  checked={false}
+  classes={
+    Object {
+      "checked": "MuiCheckbox-checked-2",
+      "default": "MuiCheckbox-default-1",
+      "disabled": "MuiCheckbox-disabled-3",
+    }
+  }
+  id="public"
+  indeterminate={false}
+  indeterminateIcon={<pure(IndeterminateCheckBox) />}
+  onChange={[Function]}
+/>
+`;
+
+exports[`EditBucket displays error 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Subscribe
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      Create a new risk bucket that people can invest in
+    </withStyles(DialogContentText)>
+    <withStyles(DialogContentText)
+      key="messed up"
+    >
+      messed up
+    </withStyles(DialogContentText)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="name"
+        label="Bucket name"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value=""
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="investment"
+        label="Investment"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="1000.00"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <withStyles(FormControlLabel)
+        control={
+          <withStyles(Checkbox)
+            checked={false}
+            id="public"
+            onChange={[Function]}
+          />
+        }
+        id="publicContainer"
+        label="Public"
+      />
+    </withStyles(FormGroup)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      id="save"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`EditBucket enter investment 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Subscribe
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      Create a new risk bucket that people can invest in
+    </withStyles(DialogContentText)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="name"
+        label="Bucket name"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value=""
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="investment"
+        label="Investment"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="200.00"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <withStyles(FormControlLabel)
+        control={
+          <withStyles(Checkbox)
+            checked={false}
+            id="public"
+            onChange={[Function]}
+          />
+        }
+        id="publicContainer"
+        label="Public"
+      />
+    </withStyles(FormGroup)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      id="save"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`EditBucket enter name 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Subscribe
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      Create a new risk bucket that people can invest in
+    </withStyles(DialogContentText)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="name"
+        label="Bucket name"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="bucketName"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="investment"
+        label="Investment"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="1000.00"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <withStyles(FormControlLabel)
+        control={
+          <withStyles(Checkbox)
+            checked={false}
+            id="public"
+            onChange={[Function]}
+          />
+        }
+        id="publicContainer"
+        label="Public"
+      />
+    </withStyles(FormGroup)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      id="save"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`EditBucket renders 1`] = `
+<withStyles(Dialog)
+  onRequestClose={[Function]}
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Subscribe
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(DialogContentText)>
+      Create a new risk bucket that people can invest in
+    </withStyles(DialogContentText)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="name"
+        label="Bucket name"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value=""
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <TextField
+        autoFocus={true}
+        fullWidth={true}
+        id="investment"
+        label="Investment"
+        margin="dense"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        type="text"
+        value="1000.00"
+      />
+    </withStyles(FormGroup)>
+    <withStyles(FormGroup)
+      row={true}
+    >
+      <withStyles(FormControlLabel)
+        control={
+          <withStyles(Checkbox)
+            checked={false}
+            id="public"
+            onChange={[Function]}
+          />
+        }
+        id="publicContainer"
+        label="Public"
+      />
+    </withStyles(FormGroup)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      id="save"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
