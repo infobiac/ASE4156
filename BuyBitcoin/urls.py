@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^logout$', authentication.views.logout),
     url(r'^admin/', admin.site.urls),
     url('', include('social_django.urls', namespace='social')),
-    url(r'^home$', web.views.home),
+    url(r'^home/?.*$', web.views.home),
     url(r'^graphql', graphene_django.views.GraphQLView.as_view(
         graphiql=True,
         executor=EXECUTOR,

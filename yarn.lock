@@ -3188,6 +3188,12 @@ eslint-module-utils@^2.1.1:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
+eslint-plugin-flowtype@^2.39.1:
+  version "2.39.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.39.1.tgz#b5624622a0388bcd969f4351131232dcb9649cd5"
+  dependencies:
+    lodash "^4.15.0"
+
 eslint-plugin-import@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.8.0.tgz#fa1b6ef31fcb3c501c09859c1b86f1fc5b986894"
@@ -7034,18 +7040,18 @@ rc-trigger@^2.2.2:
     rc-animate "2.x"
     rc-util "^4.2.0"
 
-rc-util@4.x, rc-util@^4.0.4:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.1.0.tgz#3f0012409bdd91caf16bac9428f41ca12e3d9c9b"
+rc-util@4.x, rc-util@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.2.0.tgz#dacec50735675a211f1c94571306a90e8b97248f"
   dependencies:
     add-dom-event-listener "1.x"
     babel-runtime "6.x"
     prop-types "^15.5.10"
     shallowequal "^0.2.2"
 
-rc-util@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.2.0.tgz#dacec50735675a211f1c94571306a90e8b97248f"
+rc-util@^4.0.4:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.1.0.tgz#3f0012409bdd91caf16bac9428f41ca12e3d9c9b"
   dependencies:
     add-dom-event-listener "1.x"
     babel-runtime "6.x"
@@ -7315,15 +7321,7 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-test-renderer@^16.0.0-0:
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.0.tgz#33a1d3ce896311e0dd1547649b1456ffa7fda415"
-  dependencies:
-    fbjs "^0.8.16"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
-react-test-renderer@^16.1.1:
+react-test-renderer@^16.0.0-0, react-test-renderer@^16.1.1:
   version "16.1.1"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.1.tgz#a05184688d564be799f212449262525d1e350537"
   dependencies:

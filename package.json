@@ -41,6 +41,7 @@
     "enzyme-adapter-react-16": "^1.0.4",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^4.11.0",
+    "eslint-plugin-flowtype": "^2.39.1",
     "farce": "0.2.3",
     "file-loader": "^1.1.5",
     "flow-bin": "^0.56.0",
@@ -91,9 +92,11 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "coverageDirectory": "./coverage/",
-    "collectCoverageFrom" : [
+    "collectCoverageFrom": [
       "web/js/**/*.{js,jsx}",
       "!**/__generated__/**",
       "!web/**/{stories,index}.{js,jsx}"

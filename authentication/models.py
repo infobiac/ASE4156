@@ -78,7 +78,7 @@ class UserBank(models.Model):
         """
         return self.plaid().historical_data(*args, **kwargs)
 
-    def current_balance(self, update=False):
+    def current_balance(self, update=True):
         """
         Returns the current balance
         """
@@ -87,7 +87,7 @@ class UserBank(models.Model):
             self.save()
         return self.current_balance_field
 
-    def account_name(self, update=False):
+    def account_name(self, update=True):
         """
         Returns the account name
         """
@@ -96,7 +96,7 @@ class UserBank(models.Model):
             self.save()
         return self.account_name_field
 
-    def income(self, days=30, update=False):
+    def income(self, days=30, update=True):
         """
         Returns the income in the given timespan
         """
@@ -108,7 +108,7 @@ class UserBank(models.Model):
                 self.save()
         return inc
 
-    def expenditure(self, days=30, update=False):
+    def expenditure(self, days=30, update=True):
         """
         Returns the expenditures in the given timespan
         """

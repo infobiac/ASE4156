@@ -215,12 +215,16 @@ class InvestmentBucket(models.Model):
                 pass
         return sum(values) + self.available
 
-    def historical(self):
+    def historical(self, count=None, skip=None):
         """
         Fetches the historical value of the bucket.
         """
         res = []
-        for i in range(30):
+        if count is None:
+            count = 30
+        if skip is None:
+            skip = 0
+        for i in range(skip, count + skip):
             date = datetime.datetime.now().date() - datetime.timedelta(days=i)
             res.append((date, self.value_on(date)))
         return res

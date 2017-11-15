@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import PropTypes from 'prop-types';
+import { routerShape } from 'found';
 import { createRefetchContainer, graphql } from 'react-relay';
 import { ConnectionHandler } from 'relay-runtime';
 import LockIcon from 'material-ui-icons/Lock';
@@ -15,47 +16,39 @@ import Button from 'material-ui/Button';
 import type { RelayContext } from 'react-relay';
 
 import InvestBucket from './InvestBucket';
-import InvestPanelRelay from './InvestPanelRelay';
-import InvestCompositionRelay from './InvestCompositionRelay';
 import addDescription from '../../mutations/BucketEdit/AddDescription';
 import editDescription from '../../mutations/BucketEdit/EditDescription';
 import deleteDescription from '../../mutations/BucketEdit/DeleteDescription';
 import deleteBucket from '../../mutations/BucketEdit/DeleteBucket';
-import changeBucketComposition from '../../mutations/BucketEdit/ChangeBucketComposition';
 
 import type { InvestBucketRelay_bucket } from './__generated__/InvestBucketRelay_bucket.graphql';
-import type { InvestBucketRelay_profile } from './__generated__/InvestBucketRelay_profile.graphql';
 
 type EditObj = {
   shortDesc: string,
 }
 type State = {
   itemCount: number,
-  compositionDialog: bool,
   editMode: ?string,
   editState: EditObj,
   deleteConfirm: bool,
-  investDialog: bool,
 }
 type Props = {
   bucket: InvestBucketRelay_bucket,
-  profile: InvestBucketRelay_profile,
   relay: RelayContext,
 }
 
 class InvestBucketRelay extends React.Component<Props, State> {
   static contextTypes = {
     errorDisplay: PropTypes.func.isRequired,
+    router: routerShape.isRequired,
   };
   constructor() {
     super();
     this.state = {
       itemCount: 2,
-      compositionDialog: false,
       editMode: null,
       editState: { shortDesc: '' },
       deleteConfirm: false,
-      investDialog: false,
     };
   }
   launchEdit = id => () => {
@@ -73,20 +66,6 @@ class InvestBucketRelay extends React.Component<Props, State> {
           shortDesc: item.node.text,
         },
       };
-    });
-  }
-  saveChunks = (chunks) => {
-    const updater = (store) => {
-      const data = store.getRootField('editConfiguration').getLinkedRecord('bucket');
-      store.getRoot().copyFieldsFrom(data);
-      store.get(this.props.bucket.id).setValue(data.getValue('available'), 'available');
-      store.get(this.props.bucket.id).setLinkedRecord(data.getLinkedRecord('stocks'), 'stocks');
-    };
-    changeBucketComposition(updater, null, (r, e) => this.context.errorDisplay({
-      message: e ? e[0].message : 'Composition successfully changed',
-    }))(this.props.relay.environment)({
-      config: chunks.map(c => ({ idValue: c.id, quantity: c.quantity })),
-      id: this.props.bucket.id,
     });
   }
   deleteBucket = () => {
@@ -222,24 +201,6 @@ class InvestBucketRelay extends React.Component<Props, State> {
     }
     return (
       <div>
-        {
-          this.state.compositionDialog ?
-            <InvestCompositionRelay
-              close={() => this.setState(() => ({ compositionDialog: false }))}
-              bucket={this.props.bucket}
-              save={this.saveChunks}
-              profile={this.props.profile}
-            /> :
-            null
-        }
-        {
-          this.state.investDialog ?
-            <InvestPanelRelay
-              bucket={this.props.bucket}
-              profile={this.props.profile}
-              closeFunc={() => this.setState(() => ({ investDialog: false }))}
-            /> : null
-        }
         <Dialog
           open={this.state.deleteConfirm}
           onRequestClose={(() => this.setState(() => ({ deleteConfirm: false })))}
@@ -266,7 +227,7 @@ class InvestBucketRelay extends React.Component<Props, State> {
           seeMoreFunc={seeMoreFunc}
           editCompositionFunc={
             this.props.bucket.isOwner ?
-              (() => this.setState(() => ({ compositionDialog: true }))) :
+              (() => this.context.router.replace(`/home/composition/${this.props.bucket.id}`)) :
               null
           }
           deleteFunc={
@@ -274,7 +235,7 @@ class InvestBucketRelay extends React.Component<Props, State> {
               (() => this.setState(() => ({ deleteConfirm: true }))) :
               null
           }
-          investFunc={() => this.setState(() => ({ investDialog: true }))}
+          investFunc={() => this.context.router.replace(`/home/invest/${this.props.bucket.id}`)}
         />
       </div>
     );
@@ -303,14 +264,6 @@ export default createRefetchContainer(InvestBucketRelay, {
           hasNextPage
         }
       }
-      ...InvestCompositionRelay_bucket
-      ...InvestPanelRelay_bucket
-    }
-  `,
-  profile: graphql`
-    fragment InvestBucketRelay_profile on GProfile {
-      ...InvestCompositionRelay_profile
-      ...InvestPanelRelay_profile
     }
   `,
 }, graphql`

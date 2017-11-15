@@ -79,7 +79,7 @@ class GTradingAccount(DjangoObjectType):
         """
         Returns the amount of cash the user has available
         """
-        return data.available_cash()
+        return data.available_cash(False)
 
 
 # pylint: disable=no-init

@@ -104,28 +104,28 @@ class GUserBank(DjangoObjectType):
         """
         Finds the current balance of the user
         """
-        return data.current_balance()
+        return data.current_balance(False)
 
     @staticmethod
     def resolve_name(data, _info, **_args):
         """
         Returns the name of the bank account
         """
-        return data.account_name()
+        return data.account_name(False)
 
     @staticmethod
     def resolve_income(data, _info, **_args):
         """
         Returns the income a user has per month
         """
-        return data.income()
+        return data.income(False)
 
     @staticmethod
     def resolve_outcome(data, _info, **_args):
         """
         Returns the expenditures a user has per month
         """
-        return data.expenditure()
+        return data.expenditure(False)
 
 
 # pylint: disable=no-init

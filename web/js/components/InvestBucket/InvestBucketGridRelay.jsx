@@ -158,7 +158,6 @@ export default createRefetchContainer(InvestBucketGridRelay, {
           hasNextPage
         }
       }
-      ...InvestBucketRelay_profile
     }
   `,
 }, graphql`

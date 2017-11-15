@@ -4,3 +4,4 @@ assets
 webpack.config.js
 BuyBitcoin/staticfiles
 doc
+coverage

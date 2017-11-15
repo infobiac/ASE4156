@@ -26,7 +26,7 @@ type State = {
   investedAmount: number,
 }
 
-class InvestComposition extends React.Component<Props, State> {
+class InvestPanel extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -110,4 +110,4 @@ class InvestComposition extends React.Component<Props, State> {
   }
 }
 
-export default InvestComposition;
+export default InvestPanel;

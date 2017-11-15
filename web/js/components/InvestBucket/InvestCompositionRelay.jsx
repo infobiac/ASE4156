@@ -1,10 +1,13 @@
 // @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import { createRefetchContainer, graphql } from 'react-relay';
+import { routerShape } from 'found';
 
 import type { RelayContext } from 'react-relay';
 
 import InvestComposition from './InvestComposition';
+import changeBucketComposition from '../../mutations/BucketEdit/ChangeBucketComposition';
 
 import type { InvestCompositionRelay_bucket } from './__generated__/InvestCompositionRelay_bucket.graphql';
 import type { InvestCompositionRelay_profile } from './__generated__/InvestCompositionRelay_profile.graphql';
@@ -20,14 +23,16 @@ type Props = {
   bucket: InvestCompositionRelay_bucket,
   profile: InvestCompositionRelay_profile,
   relay: RelayContext,
-  save: ChunkList => void,
-  close: () => void,
 }
 type State = {
   chunks: ChunkList,
 }
 
 class InvestCompositionRelay extends React.Component<Props, State> {
+  static contextTypes = {
+    errorDisplay: PropTypes.func.isRequired,
+    router: routerShape.isRequired,
+  };
   constructor(props) {
     super();
     this.state = {
@@ -39,12 +44,26 @@ class InvestCompositionRelay extends React.Component<Props, State> {
       })),
     };
   }
+  saveChunks = (chunks) => {
+    const updater = (store) => {
+      const data = store.getRootField('editConfiguration').getLinkedRecord('bucket');
+      store.getRoot().copyFieldsFrom(data);
+      store.get(this.props.bucket.id).setValue(data.getValue('available'), 'available');
+      store.get(this.props.bucket.id).setLinkedRecord(data.getLinkedRecord('stocks'), 'stocks');
+    };
+    changeBucketComposition(updater, null, (r, e) => this.context.errorDisplay({
+      message: e ? e[0].message : 'Composition successfully changed',
+    }))(this.props.relay.environment)({
+      config: chunks.map(c => ({ idValue: c.id, quantity: c.quantity })),
+      id: this.props.bucket.id,
+    });
+  }
   save = () => {
-    this.props.save(this.state.chunks);
-    this.props.close();
+    this.saveChunks(this.state.chunks);
+    this.cancel();
   }
   cancel = () => {
-    this.props.close();
+    this.context.router.replace('/home');
   }
   updateChunks = chunks => this.setState(() => ({ chunks }))
   render() {
@@ -91,6 +110,7 @@ class InvestCompositionRelay extends React.Component<Props, State> {
 export default createRefetchContainer(InvestCompositionRelay, {
   bucket: graphql`
     fragment InvestCompositionRelay_bucket on GInvestmentBucket {
+      id
       available
       stocks {
         edges {

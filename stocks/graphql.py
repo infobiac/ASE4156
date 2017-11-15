@@ -3,7 +3,7 @@ GraphQL definitions for the Stocks App
 """
 from collections import namedtuple
 from graphene_django import DjangoObjectType
-from graphene import Argument, Boolean, Field, Float, ID, \
+from graphene import Argument, Boolean, Field, Float, ID, Int, \
     InputObjectType, List, Mutation, NonNull, ObjectType, String, relay
 from graphql_relay.node.node import from_global_id
 from .models import DailyStockQuote, InvestmentBucket, \
@@ -24,8 +24,8 @@ class GDataPoint(ObjectType):
     """
     GraphQL definition of the DataPoint above
     """
-    date = String()
-    value = Float()
+    date = NonNull(String)
+    value = NonNull(Float)
 
 
 class GInvestmentBucketConfigurationUpdate(InputObjectType):
@@ -67,7 +67,7 @@ class GInvestmentBucket(DjangoObjectType):
     is_owner = NonNull(Boolean)
     owned_amount = NonNull(Float)
     value = NonNull(Float)
-    history = NonNull(List(GDataPoint))
+    history = NonNull(List(NonNull(GDataPoint)), args={'count': Int(), 'skip': Int()})
 
     class Meta:
         """
@@ -115,14 +115,14 @@ class GInvestmentBucket(DjangoObjectType):
         return info.context.user.profile.default_acc().available_buckets(data)
 
     @staticmethod
-    def resolve_history(data, _info, **_args):
+    def resolve_history(data, _info, count=None, skip=None, **_args):
         """
         Returns the historic data for the bucket
         """
         return [
             DataPoint(date, value)
             for (date, value)
-            in data.historical()
+            in data.historical(skip=skip, count=count)
         ]
 
 
