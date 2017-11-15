@@ -2,6 +2,7 @@
 Models keeps track of all the persistent data around stocks
 """
 import datetime
+import math
 from datetime import date as os_date
 from django.db.models import Q
 from django.db import models
@@ -215,11 +216,13 @@ class InvestmentBucket(models.Model):
         """
         The value of the bucket on a specific day
         """
-        return sum([
-            config.value_on(date)
-            for config
-            in self.get_stock_configs(date)
-        ]) + self.available
+        values = []
+        for config in self.get_stock_configs(date):
+            try:
+                values.append(config.value_on(date))
+            except Exception:
+                pass
+        return sum(values) + self.available
 
     def historical(self):
         """
@@ -276,7 +279,10 @@ class InvestmentStockConfiguration(models.Model):
         """
         Returns the current value of the stock configuration
         """
-        return self.stock.latest_quote(date).value * self.quantity
+        value = self.stock.latest_quote(date).value * self.quantity
+        if math.isnan(value):
+            raise Exception("Not able to calculate value")
+        return value
 
 
 @receiver(pre_save)
