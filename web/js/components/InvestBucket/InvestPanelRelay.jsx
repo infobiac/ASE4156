@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { graphql, createFragmentContainer } from 'react-relay';
+import PropTypes from 'prop-types';
 
 import type { RelayContext } from 'react-relay';
 
@@ -19,6 +20,9 @@ type Props = {
 type State = {}
 
 class InvestPanelRelay extends React.Component<Props, State> {
+  static contextTypes = {
+    errorDisplay: PropTypes.func.isRequired,
+  };
   investFunc = (quantity) => {
     const optimisticResponse = {
       invest: {
@@ -40,6 +44,11 @@ class InvestPanelRelay extends React.Component<Props, State> {
         this.context.errorDisplay({
           message: error[0].message,
         });
+      } else {
+        this.context.errorDisplay({
+          message: `Successfully ${quantity > 0 ? 'bought' : 'sold'} the bucket!`,
+        });
+        this.props.closeFunc();
       }
     })(this.props.relay.environment)({
       quantity,
