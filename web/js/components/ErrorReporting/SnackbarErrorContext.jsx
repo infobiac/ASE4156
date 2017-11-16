@@ -56,7 +56,7 @@ export default class SnackbarErrorContext extends React.Component<Props, State> 
             <Snackbar
               open
               key={e}
-              action={<Button color="accent" dense onClick={this.closeDisplay(e)}>Close</Button>}
+              action={<Button id="close" color="accent" dense onClick={this.closeDisplay(e)}>Close</Button>}
               autoHideDuration={4000}
               anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
               onRequestClose={this.closeDisplay(e)}

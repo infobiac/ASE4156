@@ -1,0 +1,850 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SnackbarErrorContext renders 1`] = `
+<div>
+  <TestFixture />
+</div>
+`;
+
+exports[`SnackbarErrorContext reports 1`] = `
+<SnackbarErrorContext>
+  <div>
+    <TestFixture>
+      <div>
+        <input
+          id="test-click"
+          onClick={[Function]}
+        />
+      </div>
+    </TestFixture>
+  </div>
+</SnackbarErrorContext>
+`;
+
+exports[`SnackbarErrorContext reports 2`] = `
+<SnackbarErrorContext>
+  <div>
+    <withStyles(Snackbar)
+      action={
+        <withStyles(Button)
+          color="accent"
+          dense={true}
+          id="close"
+          onClick={[Function]}
+        >
+          Close
+        </withStyles(Button)>
+      }
+      anchorOrigin={
+        Object {
+          "horizontal": "left",
+          "vertical": "bottom",
+        }
+      }
+      autoHideDuration={4000}
+      id="sample"
+      key="0"
+      message="test"
+      onRequestClose={[Function]}
+      open={true}
+    >
+      <Snackbar
+        action={
+          <withStyles(Button)
+            color="accent"
+            dense={true}
+            id="close"
+            onClick={[Function]}
+          >
+            Close
+          </withStyles(Button)>
+        }
+        anchorOrigin={
+          Object {
+            "horizontal": "left",
+            "vertical": "bottom",
+          }
+        }
+        autoHideDuration={4000}
+        classes={
+          Object {
+            "anchorBottomCenter": "MuiSnackbar-anchorBottomCenter-3",
+            "anchorBottomLeft": "MuiSnackbar-anchorBottomLeft-7",
+            "anchorBottomRight": "MuiSnackbar-anchorBottomRight-5",
+            "anchorTopCenter": "MuiSnackbar-anchorTopCenter-2",
+            "anchorTopLeft": "MuiSnackbar-anchorTopLeft-6",
+            "anchorTopRight": "MuiSnackbar-anchorTopRight-4",
+            "root": "MuiSnackbar-root-1",
+          }
+        }
+        id="sample"
+        message="test"
+        onRequestClose={[Function]}
+        open={true}
+        transitionDuration={
+          Object {
+            "enter": 225,
+            "exit": 195,
+          }
+        }
+      >
+        <EventListener
+          onBlur={[Function]}
+          onFocus={[Function]}
+          target="window"
+        >
+          <ClickAwayListener
+            onClickAway={[Function]}
+          >
+            <EventListener
+              onMouseup={[Function]}
+              onTouchend={[Function]}
+              target="document"
+            >
+              <div
+                className="MuiSnackbar-root-1 MuiSnackbar-anchorBottomLeft-7"
+                id="sample"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                <withTheme(Slide)
+                  direction="up"
+                  in={true}
+                  onExited={[Function]}
+                  transitionAppear={true}
+                  transitionDuration={
+                    Object {
+                      "enter": 225,
+                      "exit": 195,
+                    }
+                  }
+                >
+                  <Slide
+                    direction="up"
+                    in={true}
+                    onExited={[Function]}
+                    theme={
+                      Object {
+                        "breakpoints": Object {
+                          "between": [Function],
+                          "down": [Function],
+                          "keys": Array [
+                            "xs",
+                            "sm",
+                            "md",
+                            "lg",
+                            "xl",
+                          ],
+                          "only": [Function],
+                          "up": [Function],
+                          "values": Object {
+                            "lg": 1280,
+                            "md": 960,
+                            "sm": 600,
+                            "xl": 1920,
+                            "xs": 360,
+                          },
+                          "width": [Function],
+                        },
+                        "direction": "ltr",
+                        "mixins": Object {
+                          "gutters": [Function],
+                          "toolbar": Object {
+                            "@media (min-width:0px) and (orientation: landscape)": Object {
+                              "minHeight": 48,
+                            },
+                            "@media (min-width:600px)": Object {
+                              "minHeight": 64,
+                            },
+                            "minHeight": 56,
+                          },
+                        },
+                        "palette": Object {
+                          "action": Object {
+                            "active": "rgba(0, 0, 0, 0.54)",
+                            "disabled": "rgba(0, 0, 0, 0.26)",
+                          },
+                          "background": Object {
+                            "appBar": "#f5f5f5",
+                            "contentFrame": "#eeeeee",
+                            "default": "#fafafa",
+                            "paper": "#fff",
+                          },
+                          "common": Object {
+                            "black": "#000",
+                            "darkBlack": "rgba(0, 0, 0, 0.87)",
+                            "darkWhite": "rgba(255, 255, 255, 0.87)",
+                            "faintBlack": "rgba(0, 0, 0, 0.12)",
+                            "fullBlack": "rgba(0, 0, 0, 1)",
+                            "fullWhite": "rgba(255, 255, 255, 1)",
+                            "lightBlack": "rgba(0, 0, 0, 0.54)",
+                            "lightWhite": "rgba(255, 255, 255, 0.54)",
+                            "minBlack": "rgba(0, 0, 0, 0.26)",
+                            "transparent": "rgba(0, 0, 0, 0)",
+                            "white": "#fff",
+                          },
+                          "error": Object {
+                            "100": "#ffcdd2",
+                            "200": "#ef9a9a",
+                            "300": "#e57373",
+                            "400": "#ef5350",
+                            "50": "#ffebee",
+                            "500": "#f44336",
+                            "600": "#e53935",
+                            "700": "#d32f2f",
+                            "800": "#c62828",
+                            "900": "#b71c1c",
+                            "A100": "#ff8a80",
+                            "A200": "#ff5252",
+                            "A400": "#ff1744",
+                            "A700": "#d50000",
+                            "contrastDefaultColor": "light",
+                          },
+                          "getContrastText": [Function],
+                          "grey": Object {
+                            "100": "#f5f5f5",
+                            "200": "#eeeeee",
+                            "300": "#e0e0e0",
+                            "400": "#bdbdbd",
+                            "50": "#fafafa",
+                            "500": "#9e9e9e",
+                            "600": "#757575",
+                            "700": "#616161",
+                            "800": "#424242",
+                            "900": "#212121",
+                            "A100": "#d5d5d5",
+                            "A200": "#aaaaaa",
+                            "A400": "#303030",
+                            "A700": "#616161",
+                            "contrastDefaultColor": "dark",
+                          },
+                          "input": Object {
+                            "bottomLine": "rgba(0, 0, 0, 0.42)",
+                            "disabled": "rgba(0, 0, 0, 0.42)",
+                            "helperText": "rgba(0, 0, 0, 0.54)",
+                            "inputText": "rgba(0, 0, 0, 0.87)",
+                            "labelText": "rgba(0, 0, 0, 0.54)",
+                          },
+                          "primary": Object {
+                            "100": "#c5cae9",
+                            "200": "#9fa8da",
+                            "300": "#7986cb",
+                            "400": "#5c6bc0",
+                            "50": "#e8eaf6",
+                            "500": "#3f51b5",
+                            "600": "#3949ab",
+                            "700": "#303f9f",
+                            "800": "#283593",
+                            "900": "#1a237e",
+                            "A100": "#8c9eff",
+                            "A200": "#536dfe",
+                            "A400": "#3d5afe",
+                            "A700": "#304ffe",
+                            "contrastDefaultColor": "light",
+                          },
+                          "secondary": Object {
+                            "100": "#f8bbd0",
+                            "200": "#f48fb1",
+                            "300": "#f06292",
+                            "400": "#ec407a",
+                            "50": "#fce4ec",
+                            "500": "#e91e63",
+                            "600": "#d81b60",
+                            "700": "#c2185b",
+                            "800": "#ad1457",
+                            "900": "#880e4f",
+                            "A100": "#ff80ab",
+                            "A200": "#ff4081",
+                            "A400": "#f50057",
+                            "A700": "#c51162",
+                            "contrastDefaultColor": "light",
+                          },
+                          "shades": Object {
+                            "dark": Object {
+                              "action": Object {
+                                "active": "rgba(255, 255, 255, 1)",
+                                "disabled": "rgba(255, 255, 255, 0.3)",
+                              },
+                              "background": Object {
+                                "appBar": "#212121",
+                                "contentFrame": "#212121",
+                                "default": "#303030",
+                                "paper": "#424242",
+                              },
+                              "input": Object {
+                                "bottomLine": "rgba(255, 255, 255, 0.7)",
+                                "disabled": "rgba(255, 255, 255, 0.5)",
+                                "helperText": "rgba(255, 255, 255, 0.7)",
+                                "inputText": "rgba(255, 255, 255, 1)",
+                                "labelText": "rgba(255, 255, 255, 0.7)",
+                              },
+                              "text": Object {
+                                "disabled": "rgba(255, 255, 255, 0.5)",
+                                "divider": "rgba(255, 255, 255, 0.12)",
+                                "hint": "rgba(255, 255, 255, 0.5)",
+                                "icon": "rgba(255, 255, 255, 0.5)",
+                                "lightDivider": "rgba(255, 255, 255, 0.075)",
+                                "primary": "rgba(255, 255, 255, 1)",
+                                "secondary": "rgba(255, 255, 255, 0.7)",
+                              },
+                            },
+                            "light": Object {
+                              "action": Object {
+                                "active": "rgba(0, 0, 0, 0.54)",
+                                "disabled": "rgba(0, 0, 0, 0.26)",
+                              },
+                              "background": Object {
+                                "appBar": "#f5f5f5",
+                                "contentFrame": "#eeeeee",
+                                "default": "#fafafa",
+                                "paper": "#fff",
+                              },
+                              "input": Object {
+                                "bottomLine": "rgba(0, 0, 0, 0.42)",
+                                "disabled": "rgba(0, 0, 0, 0.42)",
+                                "helperText": "rgba(0, 0, 0, 0.54)",
+                                "inputText": "rgba(0, 0, 0, 0.87)",
+                                "labelText": "rgba(0, 0, 0, 0.54)",
+                              },
+                              "text": Object {
+                                "disabled": "rgba(0, 0, 0, 0.38)",
+                                "divider": "rgba(0, 0, 0, 0.12)",
+                                "hint": "rgba(0, 0, 0, 0.38)",
+                                "icon": "rgba(0, 0, 0, 0.38)",
+                                "lightDivider": "rgba(0, 0, 0, 0.075)",
+                                "primary": "rgba(0, 0, 0, 0.87)",
+                                "secondary": "rgba(0, 0, 0, 0.54)",
+                              },
+                            },
+                          },
+                          "text": Object {
+                            "disabled": "rgba(0, 0, 0, 0.38)",
+                            "divider": "rgba(0, 0, 0, 0.12)",
+                            "hint": "rgba(0, 0, 0, 0.38)",
+                            "icon": "rgba(0, 0, 0, 0.38)",
+                            "lightDivider": "rgba(0, 0, 0, 0.075)",
+                            "primary": "rgba(0, 0, 0, 0.87)",
+                            "secondary": "rgba(0, 0, 0, 0.54)",
+                          },
+                          "type": "light",
+                        },
+                        "shadows": Array [
+                          "none",
+                          "0px 1px 3px 0px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 2px 1px -1px rgba(0, 0, 0, 0.12)",
+                          "0px 1px 5px 0px rgba(0, 0, 0, 0.2),0px 2px 2px 0px rgba(0, 0, 0, 0.14),0px 3px 1px -2px rgba(0, 0, 0, 0.12)",
+                          "0px 1px 8px 0px rgba(0, 0, 0, 0.2),0px 3px 4px 0px rgba(0, 0, 0, 0.14),0px 3px 3px -2px rgba(0, 0, 0, 0.12)",
+                          "0px 2px 4px -1px rgba(0, 0, 0, 0.2),0px 4px 5px 0px rgba(0, 0, 0, 0.14),0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
+                          "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 5px 8px 0px rgba(0, 0, 0, 0.14),0px 1px 14px 0px rgba(0, 0, 0, 0.12)",
+                          "0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)",
+                          "0px 4px 5px -2px rgba(0, 0, 0, 0.2),0px 7px 10px 1px rgba(0, 0, 0, 0.14),0px 2px 16px 1px rgba(0, 0, 0, 0.12)",
+                          "0px 5px 5px -3px rgba(0, 0, 0, 0.2),0px 8px 10px 1px rgba(0, 0, 0, 0.14),0px 3px 14px 2px rgba(0, 0, 0, 0.12)",
+                          "0px 5px 6px -3px rgba(0, 0, 0, 0.2),0px 9px 12px 1px rgba(0, 0, 0, 0.14),0px 3px 16px 2px rgba(0, 0, 0, 0.12)",
+                          "0px 6px 6px -3px rgba(0, 0, 0, 0.2),0px 10px 14px 1px rgba(0, 0, 0, 0.14),0px 4px 18px 3px rgba(0, 0, 0, 0.12)",
+                          "0px 6px 7px -4px rgba(0, 0, 0, 0.2),0px 11px 15px 1px rgba(0, 0, 0, 0.14),0px 4px 20px 3px rgba(0, 0, 0, 0.12)",
+                          "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 12px 17px 2px rgba(0, 0, 0, 0.14),0px 5px 22px 4px rgba(0, 0, 0, 0.12)",
+                          "0px 7px 8px -4px rgba(0, 0, 0, 0.2),0px 13px 19px 2px rgba(0, 0, 0, 0.14),0px 5px 24px 4px rgba(0, 0, 0, 0.12)",
+                          "0px 7px 9px -4px rgba(0, 0, 0, 0.2),0px 14px 21px 2px rgba(0, 0, 0, 0.14),0px 5px 26px 4px rgba(0, 0, 0, 0.12)",
+                          "0px 8px 9px -5px rgba(0, 0, 0, 0.2),0px 15px 22px 2px rgba(0, 0, 0, 0.14),0px 6px 28px 5px rgba(0, 0, 0, 0.12)",
+                          "0px 8px 10px -5px rgba(0, 0, 0, 0.2),0px 16px 24px 2px rgba(0, 0, 0, 0.14),0px 6px 30px 5px rgba(0, 0, 0, 0.12)",
+                          "0px 8px 11px -5px rgba(0, 0, 0, 0.2),0px 17px 26px 2px rgba(0, 0, 0, 0.14),0px 6px 32px 5px rgba(0, 0, 0, 0.12)",
+                          "0px 9px 11px -5px rgba(0, 0, 0, 0.2),0px 18px 28px 2px rgba(0, 0, 0, 0.14),0px 7px 34px 6px rgba(0, 0, 0, 0.12)",
+                          "0px 9px 12px -6px rgba(0, 0, 0, 0.2),0px 19px 29px 2px rgba(0, 0, 0, 0.14),0px 7px 36px 6px rgba(0, 0, 0, 0.12)",
+                          "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 20px 31px 3px rgba(0, 0, 0, 0.14),0px 8px 38px 7px rgba(0, 0, 0, 0.12)",
+                          "0px 10px 13px -6px rgba(0, 0, 0, 0.2),0px 21px 33px 3px rgba(0, 0, 0, 0.14),0px 8px 40px 7px rgba(0, 0, 0, 0.12)",
+                          "0px 10px 14px -6px rgba(0, 0, 0, 0.2),0px 22px 35px 3px rgba(0, 0, 0, 0.14),0px 8px 42px 7px rgba(0, 0, 0, 0.12)",
+                          "0px 11px 14px -7px rgba(0, 0, 0, 0.2),0px 23px 36px 3px rgba(0, 0, 0, 0.14),0px 9px 44px 8px rgba(0, 0, 0, 0.12)",
+                          "0px 11px 15px -7px rgba(0, 0, 0, 0.2),0px 24px 38px 3px rgba(0, 0, 0, 0.14),0px 9px 46px 8px rgba(0, 0, 0, 0.12)",
+                        ],
+                        "spacing": Object {
+                          "unit": 8,
+                        },
+                        "transitions": Object {
+                          "create": [Function],
+                          "duration": Object {
+                            "complex": 375,
+                            "enteringScreen": 225,
+                            "leavingScreen": 195,
+                            "short": 250,
+                            "shorter": 200,
+                            "shortest": 150,
+                            "standard": 300,
+                          },
+                          "easing": Object {
+                            "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+                            "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+                            "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+                            "sharp": "cubic-bezier(0.4, 0, 0.6, 1)",
+                          },
+                          "getAutoHeightDuration": [Function],
+                        },
+                        "typography": Object {
+                          "body1": Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "0.875rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.46429em",
+                          },
+                          "body2": Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "0.875rem",
+                            "fontWeight": 500,
+                            "lineHeight": "1.71429em",
+                          },
+                          "button": Object {
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": 14,
+                            "fontWeight": 500,
+                            "textTransform": "uppercase",
+                          },
+                          "caption": Object {
+                            "color": "rgba(0, 0, 0, 0.54)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "0.75rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.375em",
+                          },
+                          "display1": Object {
+                            "color": "rgba(0, 0, 0, 0.54)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "2.125rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.20588em",
+                            "marginLeft": "-.04em",
+                          },
+                          "display2": Object {
+                            "color": "rgba(0, 0, 0, 0.54)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "2.8125rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.06667em",
+                            "marginLeft": "-.04em",
+                          },
+                          "display3": Object {
+                            "color": "rgba(0, 0, 0, 0.54)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "3.5rem",
+                            "fontWeight": 400,
+                            "letterSpacing": "-.02em",
+                            "lineHeight": "1.30357em",
+                            "marginLeft": "-.04em",
+                          },
+                          "display4": Object {
+                            "color": "rgba(0, 0, 0, 0.54)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "7rem",
+                            "fontWeight": 300,
+                            "letterSpacing": "-.04em",
+                            "lineHeight": "1.14286em",
+                            "marginLeft": "-.06em",
+                          },
+                          "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                          "fontSize": 14,
+                          "fontWeightLight": 300,
+                          "fontWeightMedium": 500,
+                          "fontWeightRegular": 400,
+                          "headline": Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "1.5rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.35417em",
+                          },
+                          "subheading": Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "1rem",
+                            "fontWeight": 400,
+                            "lineHeight": "1.5em",
+                          },
+                          "title": Object {
+                            "color": "rgba(0, 0, 0, 0.87)",
+                            "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
+                            "fontSize": "1.3125rem",
+                            "fontWeight": 500,
+                            "lineHeight": "1.16667em",
+                          },
+                        },
+                        "zIndex": Object {
+                          "appBar": 1100,
+                          "dialog": 1500,
+                          "dialogOverlay": 1400,
+                          "drawerOverlay": 1200,
+                          "layer": 2000,
+                          "menu": 1000,
+                          "mobileStepper": 900,
+                          "navDrawer": 1300,
+                          "popover": 2100,
+                          "snackbar": 2900,
+                          "tooltip": 3000,
+                        },
+                      }
+                    }
+                    transitionAppear={true}
+                    transitionDuration={
+                      Object {
+                        "enter": 225,
+                        "exit": 195,
+                      }
+                    }
+                  >
+                    <Transition
+                      direction="up"
+                      in={true}
+                      onEnter={[Function]}
+                      onEntering={[Function]}
+                      onExit={[Function]}
+                      onExited={[Function]}
+                      timeout={
+                        Object {
+                          "enter": 225,
+                          "exit": 195,
+                        }
+                      }
+                      transitionAppear={true}
+                      unmountOnExit={false}
+                    >
+                      <withStyles(SnackbarContent)
+                        action={
+                          <withStyles(Button)
+                            color="accent"
+                            dense={true}
+                            id="close"
+                            onClick={[Function]}
+                          >
+                            Close
+                          </withStyles(Button)>
+                        }
+                        className=""
+                        direction="up"
+                        message="test"
+                      >
+                        <SnackbarContent
+                          action={
+                            <withStyles(Button)
+                              color="accent"
+                              dense={true}
+                              id="close"
+                              onClick={[Function]}
+                            >
+                              Close
+                            </withStyles(Button)>
+                          }
+                          className=""
+                          classes={
+                            Object {
+                              "action": "MuiSnackbarContent-action-10",
+                              "message": "MuiSnackbarContent-message-9",
+                              "root": "MuiSnackbarContent-root-8",
+                            }
+                          }
+                          direction="up"
+                          message="test"
+                        >
+                          <withStyles(Paper)
+                            className="MuiSnackbarContent-root-8"
+                            component={[Function]}
+                            direction="up"
+                            elevation={6}
+                            headlineMapping={
+                              Object {
+                                "body1": "div",
+                              }
+                            }
+                            role="alertdialog"
+                            square={true}
+                          >
+                            <Paper
+                              className="MuiSnackbarContent-root-8"
+                              classes={
+                                Object {
+                                  "root": "MuiPaper-root-11",
+                                  "rounded": "MuiPaper-rounded-12",
+                                  "shadow0": "MuiPaper-shadow0-13",
+                                  "shadow1": "MuiPaper-shadow1-14",
+                                  "shadow10": "MuiPaper-shadow10-23",
+                                  "shadow11": "MuiPaper-shadow11-24",
+                                  "shadow12": "MuiPaper-shadow12-25",
+                                  "shadow13": "MuiPaper-shadow13-26",
+                                  "shadow14": "MuiPaper-shadow14-27",
+                                  "shadow15": "MuiPaper-shadow15-28",
+                                  "shadow16": "MuiPaper-shadow16-29",
+                                  "shadow17": "MuiPaper-shadow17-30",
+                                  "shadow18": "MuiPaper-shadow18-31",
+                                  "shadow19": "MuiPaper-shadow19-32",
+                                  "shadow2": "MuiPaper-shadow2-15",
+                                  "shadow20": "MuiPaper-shadow20-33",
+                                  "shadow21": "MuiPaper-shadow21-34",
+                                  "shadow22": "MuiPaper-shadow22-35",
+                                  "shadow23": "MuiPaper-shadow23-36",
+                                  "shadow24": "MuiPaper-shadow24-37",
+                                  "shadow3": "MuiPaper-shadow3-16",
+                                  "shadow4": "MuiPaper-shadow4-17",
+                                  "shadow5": "MuiPaper-shadow5-18",
+                                  "shadow6": "MuiPaper-shadow6-19",
+                                  "shadow7": "MuiPaper-shadow7-20",
+                                  "shadow8": "MuiPaper-shadow8-21",
+                                  "shadow9": "MuiPaper-shadow9-22",
+                                }
+                              }
+                              component={[Function]}
+                              direction="up"
+                              elevation={6}
+                              headlineMapping={
+                                Object {
+                                  "body1": "div",
+                                }
+                              }
+                              role="alertdialog"
+                              square={true}
+                            >
+                              <withStyles(Typography)
+                                className="MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                direction="up"
+                                headlineMapping={
+                                  Object {
+                                    "body1": "div",
+                                  }
+                                }
+                                role="alertdialog"
+                              >
+                                <Typography
+                                  align="inherit"
+                                  className="MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                  classes={
+                                    Object {
+                                      "alignCenter": "MuiTypography-alignCenter-51",
+                                      "alignJustify": "MuiTypography-alignJustify-53",
+                                      "alignLeft": "MuiTypography-alignLeft-50",
+                                      "alignRight": "MuiTypography-alignRight-52",
+                                      "body1": "MuiTypography-body1-47",
+                                      "body2": "MuiTypography-body2-46",
+                                      "button": "MuiTypography-button-49",
+                                      "caption": "MuiTypography-caption-48",
+                                      "colorAccent": "MuiTypography-colorAccent-60",
+                                      "colorError": "MuiTypography-colorError-61",
+                                      "colorInherit": "MuiTypography-colorInherit-57",
+                                      "colorPrimary": "MuiTypography-colorPrimary-58",
+                                      "colorSecondary": "MuiTypography-colorSecondary-59",
+                                      "display1": "MuiTypography-display1-42",
+                                      "display2": "MuiTypography-display2-41",
+                                      "display3": "MuiTypography-display3-40",
+                                      "display4": "MuiTypography-display4-39",
+                                      "gutterBottom": "MuiTypography-gutterBottom-55",
+                                      "headline": "MuiTypography-headline-43",
+                                      "noWrap": "MuiTypography-noWrap-54",
+                                      "paragraph": "MuiTypography-paragraph-56",
+                                      "root": "MuiTypography-root-38",
+                                      "subheading": "MuiTypography-subheading-45",
+                                      "title": "MuiTypography-title-44",
+                                    }
+                                  }
+                                  color="default"
+                                  direction="up"
+                                  gutterBottom={false}
+                                  headlineMapping={
+                                    Object {
+                                      "body1": "div",
+                                    }
+                                  }
+                                  noWrap={false}
+                                  paragraph={false}
+                                  role="alertdialog"
+                                  type="body1"
+                                >
+                                  <div
+                                    className="MuiTypography-root-38 MuiTypography-body1-47 MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                    direction="up"
+                                    role="alertdialog"
+                                  >
+                                    <div
+                                      className="MuiSnackbarContent-message-9"
+                                    >
+                                      test
+                                    </div>
+                                    <div
+                                      className="MuiSnackbarContent-action-10"
+                                    >
+                                      <withStyles(Button)
+                                        color="accent"
+                                        dense={true}
+                                        id="close"
+                                        onClick={[Function]}
+                                      >
+                                        <Button
+                                          classes={
+                                            Object {
+                                              ".MuiButton-fab-75:active": "MuiButton-fab-75:active",
+                                              ".MuiButton-flatAccent-66:hover": "MuiButton-flatAccent-66:hover",
+                                              ".MuiButton-flatContrast-67:hover": "MuiButton-flatContrast-67:hover",
+                                              ".MuiButton-flatPrimary-65:hover": "MuiButton-flatPrimary-65:hover",
+                                              ".MuiButton-raised-69.MuiButton-disabled-74": "MuiButton-raised-69.MuiButton-disabled-74",
+                                              ".MuiButton-raised-69.MuiButton-keyboardFocused-70": "MuiButton-raised-69.MuiButton-keyboardFocused-70",
+                                              ".MuiButton-raised-69:active": "MuiButton-raised-69:active",
+                                              ".MuiButton-raised-69:hover": "MuiButton-raised-69:hover",
+                                              ".MuiButton-raised-69:hover.MuiButton-disabled-74": "MuiButton-raised-69:hover.MuiButton-disabled-74",
+                                              ".MuiButton-raisedAccent-72:hover": "MuiButton-raisedAccent-72:hover",
+                                              ".MuiButton-raisedPrimary-71:hover": "MuiButton-raisedPrimary-71:hover",
+                                              ".MuiButton-root-62:hover": "MuiButton-root-62:hover",
+                                              ".MuiButton-root-62:hover.MuiButton-disabled-74": "MuiButton-root-62:hover.MuiButton-disabled-74",
+                                              "colorInherit": "MuiButton-colorInherit-68",
+                                              "dense": "MuiButton-dense-63",
+                                              "disabled": "MuiButton-disabled-74",
+                                              "fab": "MuiButton-fab-75",
+                                              "flatAccent": "MuiButton-flatAccent-66",
+                                              "flatContrast": "MuiButton-flatContrast-67",
+                                              "flatPrimary": "MuiButton-flatPrimary-65",
+                                              "keyboardFocused": "MuiButton-keyboardFocused-70",
+                                              "label": "MuiButton-label-64",
+                                              "raised": "MuiButton-raised-69",
+                                              "raisedAccent": "MuiButton-raisedAccent-72",
+                                              "raisedContrast": "MuiButton-raisedContrast-73",
+                                              "raisedPrimary": "MuiButton-raisedPrimary-71",
+                                              "root": "MuiButton-root-62",
+                                            }
+                                          }
+                                          color="accent"
+                                          dense={true}
+                                          disableFocusRipple={false}
+                                          disableRipple={false}
+                                          disabled={false}
+                                          fab={false}
+                                          id="close"
+                                          onClick={[Function]}
+                                          raised={false}
+                                          type="button"
+                                        >
+                                          <withStyles(ButtonBase)
+                                            className="MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                            disableRipple={false}
+                                            disabled={false}
+                                            focusRipple={true}
+                                            id="close"
+                                            keyboardFocusedClassName="MuiButton-keyboardFocused-70"
+                                            onClick={[Function]}
+                                            type="button"
+                                          >
+                                            <ButtonBase
+                                              centerRipple={false}
+                                              className="MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                              classes={
+                                                Object {
+                                                  "disabled": "MuiButtonBase-disabled-77",
+                                                  "root": "MuiButtonBase-root-76",
+                                                }
+                                              }
+                                              disableRipple={false}
+                                              disabled={false}
+                                              focusRipple={true}
+                                              id="close"
+                                              keyboardFocusedClassName="MuiButton-keyboardFocused-70"
+                                              onClick={[Function]}
+                                              tabIndex={0}
+                                              type="button"
+                                            >
+                                              <button
+                                                className="MuiButtonBase-root-76 MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                                disabled={false}
+                                                id="close"
+                                                onBlur={[Function]}
+                                                onClick={[Function]}
+                                                onFocus={[Function]}
+                                                onKeyDown={[Function]}
+                                                onKeyUp={[Function]}
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchEnd={[Function]}
+                                                onTouchStart={[Function]}
+                                                role="button"
+                                                tabIndex={0}
+                                                type="button"
+                                              >
+                                                <span
+                                                  className="MuiButton-label-64"
+                                                >
+                                                  Close
+                                                </span>
+                                                <withStyles(TouchRipple)
+                                                  center={false}
+                                                  innerRef={[Function]}
+                                                >
+                                                  <TouchRipple
+                                                    center={false}
+                                                    classes={
+                                                      Object {
+                                                        "0%": "%",
+                                                        "100%": "00%",
+                                                        "50%": "0%",
+                                                        "ripple": "MuiTouchRipple-ripple-82",
+                                                        "rippleFast": "MuiTouchRipple-rippleFast-84",
+                                                        "rippleVisible": "MuiTouchRipple-rippleVisible-83",
+                                                        "root": "MuiTouchRipple-root-78",
+                                                        "wrapper": "MuiTouchRipple-wrapper-79",
+                                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-80",
+                                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-81",
+                                                      }
+                                                    }
+                                                  >
+                                                    <TransitionGroup
+                                                      childFactory={[Function]}
+                                                      className="MuiTouchRipple-root-78"
+                                                      component="span"
+                                                      enter={true}
+                                                      exit={true}
+                                                    >
+                                                      <span
+                                                        className="MuiTouchRipple-root-78"
+                                                      />
+                                                    </TransitionGroup>
+                                                  </TouchRipple>
+                                                </withStyles(TouchRipple)>
+                                              </button>
+                                            </ButtonBase>
+                                          </withStyles(ButtonBase)>
+                                        </Button>
+                                      </withStyles(Button)>
+                                    </div>
+                                  </div>
+                                </Typography>
+                              </withStyles(Typography)>
+                            </Paper>
+                          </withStyles(Paper)>
+                        </SnackbarContent>
+                      </withStyles(SnackbarContent)>
+                    </Transition>
+                  </Slide>
+                </withTheme(Slide)>
+              </div>
+            </EventListener>
+          </ClickAwayListener>
+        </EventListener>
+      </Snackbar>
+    </withStyles(Snackbar)>
+    <TestFixture>
+      <div>
+        <input
+          id="test-click"
+          onClick={[Function]}
+        />
+      </div>
+    </TestFixture>
+  </div>
+</SnackbarErrorContext>
+`;
+
+exports[`SnackbarErrorContext reports 3`] = `
+<SnackbarErrorContext>
+  <div>
+    <TestFixture>
+      <div>
+        <input
+          id="test-click"
+          onClick={[Function]}
+        />
+      </div>
+    </TestFixture>
+  </div>
+</SnackbarErrorContext>
+`;
