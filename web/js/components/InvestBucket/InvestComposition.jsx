@@ -134,6 +134,7 @@ class InvestComposition extends React.Component<Props, State> {
         index = ii;
       }
     }
+    /* istanbul ignore next */
     if (index >= 0) {
       chunks.splice(index, 1);
     }
@@ -142,7 +143,7 @@ class InvestComposition extends React.Component<Props, State> {
   renderChunk = (c: Chunk) => (
     <TableRow key={c.id}>
       <TableCell padding="dense">
-        <IconButton id="delete-chunk" onClick={this.deleteChunk(c.id)}>
+        <IconButton id={`delete-chunk-${c.id}`} onClick={this.deleteChunk(c.id)}>
           <DeleteIcon />
         </IconButton>
       </TableCell>

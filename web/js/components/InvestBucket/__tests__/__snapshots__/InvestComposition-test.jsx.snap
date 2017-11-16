@@ -237,7 +237,7 @@ exports[`InvestComposition add stock 2`] = `
             padding="dense"
           >
             <withStyles(IconButton)
-              id="delete-chunk"
+              id="delete-chunk-1"
               onClick={[Function]}
             >
               <pure(DeleteForever) />
@@ -412,6 +412,38 @@ exports[`InvestComposition add stock 2`] = `
     </withStyles(Button)>
   </withStyles(DialogActions)>
 </withStyles(Dialog)>
+`;
+
+exports[`InvestComposition assert suggestion render 1`] = `
+<TextField
+  inputRef={null}
+  required={false}
+  select={false}
+/>
+`;
+
+exports[`InvestComposition assert text render 1`] = `
+<withStyles(Paper)
+  style={
+    Object {
+      "background": "lightgray",
+    }
+  }
+>
+  testname
+</withStyles(Paper)>
+`;
+
+exports[`InvestComposition assert text render 2`] = `
+<withStyles(Paper)
+  style={
+    Object {
+      "background": "white",
+    }
+  }
+>
+  testname
+</withStyles(Paper)>
 `;
 
 exports[`InvestComposition render 1`] = `
