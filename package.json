@@ -16,11 +16,13 @@
     "test": "yarn run relay && yarn run eslint && flow && jest"
   },
   "dependencies": {
-    "@storybook/addon-actions": "^3.2.15",
-    "@storybook/addon-knobs": "^3.2.15",
+    "@storybook/addon-actions": "^3.2.16",
+    "@storybook/addon-knobs": "^3.2.16",
     "@storybook/addon-links": "^3.2.16",
-    "@storybook/addon-storyshots": "^3.2.15",
-    "@storybook/react": "^3.2.15",
+    "@storybook/addon-storyshots": "^3.2.16",
+    "@storybook/addons": "^3.2.16",
+    "@storybook/channels": "^3.2.16",
+    "@storybook/react": "^3.2.16",
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.2",
