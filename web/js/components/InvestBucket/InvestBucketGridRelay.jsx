@@ -5,7 +5,7 @@ import { ConnectionHandler } from 'relay-runtime';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
 import Card, { CardHeader, CardContent, CardActions } from 'material-ui/Card';
-import VisibilitySensor from 'react-visibility-sensor';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import type { RelayContext } from 'react-relay';
 
@@ -105,37 +105,45 @@ class InvestBucketGridRelay extends React.Component<Props, State> {
         </CardActions>
       </Card>);
     return (
-      <Grid container spacing={16} align="stretch">
-        <Grid item {...spacing}>
-          {createMoreBucket}
-        </Grid>
-        {
-          this.props.profile.investSuggestions ?
-            this.props.profile.investSuggestions.edges.map(b => (b && b.node ? (
-              <Grid item {...spacing} key={b.node.id}>
-                <InvestBucketRelay profile={this.props.profile} bucket={b.node} />
-              </Grid>
-            ) : null)) : null
+      <InfiniteScroll
+        loadMore={this.loadMore}
+        hasMore={
+          this.props.profile.investSuggestions
+          && this.props.profile.investSuggestions.pageInfo.hasNextPage
         }
-        {emptyFillers}
-        <Grid item {...spacing}>
+      >
+        <Grid container spacing={16} align="stretch">
+          <Grid item {...spacing}>
+            {createMoreBucket}
+          </Grid>
           {
-            this.props.profile.investSuggestions
-            && this.props.profile.investSuggestions.pageInfo.hasNextPage ?
-              <VisibilitySensor onChange={v => v && this.loadMore()} />
+            this.props.profile.investSuggestions ?
+              this.props.profile.investSuggestions.edges.map(b => (b && b.node ? (
+                <Grid item {...spacing} key={b.node.id}>
+                  <InvestBucketRelay profile={this.props.profile} bucket={b.node} />
+                </Grid>
+              ) : null)) : null
+          }
+          {emptyFillers}
+          <Grid item {...spacing}>
+            {
+              this.props.profile.investSuggestions
+              && this.props.profile.investSuggestions.pageInfo.hasNextPage ?
+                <div onChange={v => v && this.loadMore()} />
               : createMoreBucket
+            }
+          </Grid>
+          {
+            this.state.showDialog ?
+              <EditBucket
+                save={this.dialogSave}
+                cancel={this.dialogAction(false)}
+                errors={this.state.errors}
+              /> :
+            null
           }
         </Grid>
-        {
-          this.state.showDialog ?
-            <EditBucket
-              save={this.dialogSave}
-              cancel={this.dialogAction(false)}
-              errors={this.state.errors}
-            /> :
-            null
-        }
-      </Grid>
+      </InfiniteScroll>
     );
   }
 }
