@@ -15,6 +15,7 @@ module.exports = {
   plugins: [
     new BundleTracker({filename: "./webpack-stats.json"}),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin({PRODUCTION: JSON.stringify(false)})
   ],
 
   module: {

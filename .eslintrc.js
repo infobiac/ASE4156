@@ -15,6 +15,7 @@ module.exports = {
       "SyntheticEvent": true,
       "SyntheticInputEvent": true,
       "$ReadOnlyArray": true,
+      "PRODUCTION": true,
     },
     "rules": {
       "react/prefer-stateless-function": "off",

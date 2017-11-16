@@ -30,13 +30,13 @@ class Home extends React.Component < Props > {
         <SnackbarErrorContext>
           <Grid container spacing={16}>
             <Grid item xs={12}>
-              {this.props.viewer.userbank.edges[0]
+              {this.props.viewer.userbank.edges[0] && this.props.viewer.userbank.edges[0].node
                 ? <PersonalStatusRelay bank={this.props.viewer.userbank.edges[0].node} />
                 : null}
             </Grid>
             <Grid item xs={12}>
               <Paper>
-                {this.props.viewer.userbank.edges[0]
+                {this.props.viewer.userbank.edges[0] && this.props.viewer.userbank.edges[0].node
                   ? <BankAccountRelay bank={this.props.viewer.userbank.edges[0].node} />
                   : null}
               </Paper>

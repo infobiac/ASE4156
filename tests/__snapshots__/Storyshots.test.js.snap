@@ -119,6 +119,12 @@ exports[`Storyshots Cards Simple card 1`] = `
 </div>
 `;
 
+exports[`Storyshots Empty Data Playground 1`] = `
+<div>
+  No data
+</div>
+`;
+
 exports[`Storyshots HighlightBox Account Total 1`] = `
 <div
   className="MuiPaper-root-14 MuiPaper-shadow2-18 MuiPaper-rounded-15"
@@ -1368,6 +1374,162 @@ exports[`Storyshots Saldo Playground 1`] = `
         className="MuiTouchRipple-root-55"
       />
     </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Saldo Without total 1`] = `
+<div
+  className="MuiPaper-root-14 MuiPaper-shadow2-18 MuiPaper-rounded-15"
+>
+  <div
+    className="MuiCardContent-root-105 MuiCardHeader-root-100"
+  >
+    <div
+      className="MuiCardHeader-content-102"
+    >
+      <span
+        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-103"
+      >
+        Saldo
+      </span>
+      <span
+        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-104"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiCardContent-root-105"
+  >
+    <table
+      className="MuiTable-root-323"
+    >
+      <tbody
+        className="MuiTableBody-root-324"
+      >
+        <tr
+          className="MuiTableRow-root-325"
+        >
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+          >
+            investedSharesValue
+          </td>
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+            style={
+              Object {
+                "textAlign": "right",
+              }
+            }
+          >
+            $700.00
+          </td>
+        </tr>
+        <tr
+          className="MuiTableRow-root-325"
+        >
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+          >
+            earnedSharesValue
+          </td>
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+            style={
+              Object {
+                "textAlign": "right",
+              }
+            }
+          >
+            $74.93
+          </td>
+        </tr>
+        <tr
+          className="MuiTableRow-root-325"
+        >
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+          >
+            bonusSharesValue
+          </td>
+          <td
+            className="MuiTableCell-root-331 withStyles-TableCell--root-330 MuiTableCell-paddingDefault-334"
+            style={
+              Object {
+                "textAlign": "right",
+              }
+            }
+          >
+            $0.00
+          </td>
+        </tr>
+        <tr
+          className="MuiTableRow-root-325"
+        >
+          <td
+            className="MuiTableCell-root-331 MuiTableCell-paddingDefault-334"
+          >
+            reinvestedSharesValue
+          </td>
+          <td
+            className="MuiTableCell-root-331 MuiTableCell-paddingDefault-334"
+            style={
+              Object {
+                "textAlign": "right",
+              }
+            }
+          >
+            $0.00
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button
+      className="MuiButtonBase-root-52 MuiButton-root-86 MuiButton-raised-93"
+      disabled={false}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label-88"
+      >
+        Sell Shares
+      </span>
+      <span
+        className="MuiTouchRipple-root-55"
+      />
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Simple Percent Playground 1`] = `
+<div
+  className="my-pretty-chart-container"
+>
+  <div
+    id="chart"
+    style={
+      Object {
+        "height": "400px",
+        "width": "100%",
+      }
+    }
+  >
+    <div>
+      Rendering Chart
+    </div>
   </div>
 </div>
 `;

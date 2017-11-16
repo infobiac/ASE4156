@@ -78,7 +78,7 @@ class GUserBank(DjangoObjectType):
     income = NonNull(Float)
     name = NonNull(String)
     outcome = NonNull(Float)
-    history = List(GDataPoint, args={'start': Argument(NonNull(String))})
+    history = NonNull(List(NonNull(GDataPoint)), args={'start': Argument(NonNull(String))})
 
     class Meta(object):
         """

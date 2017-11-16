@@ -11,15 +11,12 @@ type Props = {
 
 class BankAccountRelay extends React.Component<Props> {
   render() {
-    if (!this.props.bank || !this.props.bank.name || !this.props.bank.history) {
-      return null;
-    }
     const quotes: any = [{
       name: this.props.bank.name,
-      data: this.props.bank.history.map(dp => (dp && dp.date && dp.value ? ({
+      data: this.props.bank.history.map(dp => ({
         ...dp,
         date: new Date(dp.date),
-      }) : null)).filter(x => !!x),
+      })),
     }];
     return <StockGraph id="BAR" compare="ABSOLUTE" title="Your account history" quotes={quotes} />;
   }
