@@ -70,12 +70,14 @@ class InvestPanelRelay extends React.Component<Props, State> {
         return newStuff;
       }),
     };
-    return (<InvestPanel
-      bucket={bucket}
-      available={this.props.profile.selectedAcc.availableCash}
-      cancelFunc={this.close}
-      investFunc={this.investFunc}
-    />);
+    return (
+      <InvestPanel
+        bucket={bucket}
+        available={this.props.profile.selectedAcc.availableCash}
+        cancelFunc={this.close}
+        investFunc={this.investFunc}
+      />
+    );
   }
 }
 

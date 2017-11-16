@@ -36,12 +36,12 @@ class InvestCompositionRelay extends React.Component<Props, State> {
   constructor(props) {
     super();
     this.state = {
-      chunks: props.bucket.stocks.edges.map(s => ({
+      chunks: props.bucket.stocks.edges.map(s => (s && s.node && s.node.stock.latestQuote ? ({
         id: s.node.stock.id,
         quantity: s.node.quantity,
         value: s.node.stock.latestQuote.value,
         name: s.node.stock.name,
-      })),
+      }) : null)).filter(x => !!x),
     };
   }
   saveChunks = (chunks) => {
@@ -68,10 +68,7 @@ class InvestCompositionRelay extends React.Component<Props, State> {
   updateChunks = chunks => this.setState(() => ({ chunks }))
   render() {
     if (
-      !this.props.profile ||
       !this.props.profile.investSearch ||
-      !this.props.bucket.available ||
-      !this.props.bucket ||
       !this.props.bucket.stocks
     ) {
       return null;
