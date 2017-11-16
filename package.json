@@ -38,7 +38,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.7",
     "enzyme": "^3.1.1",
-    "enzyme-adapter-react-16": "^1.0.4",
+    "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.2.2",
     "eslint": "^4.11.0",
     "eslint-plugin-flowtype": "^2.39.1",
@@ -99,7 +99,8 @@
     "collectCoverageFrom": [
       "web/js/**/*.{js,jsx}",
       "!**/__generated__/**",
-      "!web/**/{stories,index}.{js,jsx}"
+      "!web/**/{stories,index}.{js,jsx}",
+      "!web/js/relay/*.{js,jsx}"
     ],
     "collectCoverage": true,
     "setupFiles": [
