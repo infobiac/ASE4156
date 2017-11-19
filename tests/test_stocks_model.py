@@ -324,7 +324,7 @@ def test_bucket_change_config():
 
 
 @pytest.mark.django_db(transaction=True)
-def test_bucket_value_on():
+def test_stock_config_value_on():
     """
     Tests InvestmentStockConfiguration.value_on()
     """
@@ -352,3 +352,40 @@ def test_bucket_value_on():
     with pytest.raises(Exception):
         config.value_on("2016-06-01")
     assert config.value_on("2016-06-08") == quantity * value
+
+
+@pytest.mark.django_db(transaction=True)
+def test_bucket_historical():
+    """
+    Tests InvestmentBucket.historical()
+    """
+    user = User.objects.create(username='user1', password="a")
+    stock = Stock(
+        name="Name1X",
+        ticker="TKRC"
+    )
+    stock.save()
+    value = [3, 5, 7, 2]
+    skip = 2
+    for idx, val in enumerate(value):
+        stock.daily_quote.create(
+            value=val,
+            date=datetime.datetime.now().date() - datetime.timedelta(days=idx+2)
+        )
+    available = 2
+    bucket = InvestmentBucket(name="bucket", public=True, owner=user.profile, available=available)
+    bucket.save()
+    quantity = 3
+    config = InvestmentStockConfiguration(
+        quantity=quantity,
+        stock=stock,
+        bucket=bucket,
+        start=datetime.datetime.now().date() - datetime.timedelta(days=len(value)+2)
+        )
+    config.save()
+    historical = bucket.historical(count=len(value), skip=skip)
+    for idx, val in enumerate(value):
+        assert historical[idx] == (
+            datetime.datetime.now().date() - datetime.timedelta(days=idx+2),
+            val * quantity + available
+            )
