@@ -55,4 +55,4 @@ def get_access_token(request):
             expenditure_field=plaid.expenditure(),
         )
         return HttpResponse(status=201)
-    return HttpResponse("Please don't sniff urls")
+    return HttpResponse(status=403)

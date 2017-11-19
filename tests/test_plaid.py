@@ -6,8 +6,9 @@ from unittest import mock
 import pytest
 import authentication.plaid_wrapper as PlaidMiddleware
 import plaid
-from plaid.api.accounts import Balance, Accounts
 from plaid.api.transactions import Transactions
+from plaid_test_decorators import mock_plaid_balance, \
+    mock_plaid_accounts, mock_plaid_transactions
 
 
 def setup_module(cls):
@@ -22,22 +23,7 @@ def teardown_module(cls):
     plaid.__init__ = cls.original_init_method
 
 
-@mock.patch.object(
-    Balance,
-    'get',
-    mock.MagicMock(return_value={
-        'accounts': [
-            {
-                'balances': {'available': 1},
-                'subtype': 'not credit card'
-            },
-            {
-                'balances': {'available': 10},
-                'subtype': 'credit card'
-            }
-        ]
-    })
-)
+@mock_plaid_balance
 @pytest.mark.django_db(transaction=True)
 def test_current_balance():
     '''
@@ -47,22 +33,10 @@ def test_current_balance():
     user = PlaidMiddleware.PlaidAPI(access_token='', client=client)
     balance = user.current_balance()
     assert balance == -9.0
+    assert balance == -9.0
 
 
-@mock.patch.object(
-    Accounts,
-    'get',
-    mock.MagicMock(return_value={
-        'accounts': [
-            {
-                'name': 'Test Account',
-            },
-            {
-                'name': 'Test Account 2',
-            },
-        ]
-    })
-)
+@mock_plaid_accounts
 @pytest.mark.django_db(transaction=True)
 def test_account_name():
     '''
@@ -94,22 +68,7 @@ def test_account_name():
         ]
     })
 )
-@mock.patch.object(
-    Balance,
-    'get',
-    mock.MagicMock(return_value={
-        'accounts': [
-            {
-                'balances': {'available': 1},
-                'subtype': 'not credit card'
-            },
-            {
-                'balances': {'available': 10},
-                'subtype': 'credit card'
-            }
-        ]
-    })
-)
+@mock_plaid_balance
 @pytest.mark.django_db(transaction=True)
 def test_historical_data():
     '''
@@ -137,40 +96,7 @@ def test_historical_data():
     assert data == mock_data
 
 
-def transactions_side(_, start_date, end_date):
-    '''
-    Helper function for mocking Transactions get
-    '''
-    start_date = datetime.datetime.strptime(start_date, "%Y-%m-%d")
-    end_date = datetime.datetime.strptime(end_date, "%Y-%m-%d")
-    data = [
-        {
-            'date': datetime.datetime.now() - datetime.timedelta(days=10),
-            'amount': -150,
-        },
-        {
-            'date': datetime.datetime.now() - datetime.timedelta(days=13),
-            'amount': 1000,
-        },
-        {
-            'date': datetime.datetime.now() - datetime.timedelta(days=13),
-            'amount': 125,
-        },
-    ]
-
-    data_filtered = list(
-        filter(lambda x: x['date'] > start_date and x['date'] < end_date,
-               data))
-    return {
-        'transactions': data_filtered
-    }
-
-
-@mock.patch.object(
-    Transactions,
-    'get',
-    mock.MagicMock(side_effect=transactions_side)
-)
+@mock_plaid_transactions
 @pytest.mark.django_db(transaction=True)
 def test_income():
     '''
@@ -186,11 +112,7 @@ def test_income():
     assert income3 == 0
 
 
-@mock.patch.object(
-    Transactions,
-    'get',
-    mock.MagicMock(side_effect=transactions_side)
-)
+@mock_plaid_transactions
 @pytest.mark.django_db(transaction=True)
 def test_expenditure():
     '''
@@ -198,7 +120,7 @@ def test_expenditure():
     '''
     client = plaid.Client(client_id='', secret='', public_key='', environment='')
     user = PlaidMiddleware.PlaidAPI(access_token='', client=client)
-    income = user.expenditure()
-    assert income == -150
-    income2 = user.expenditure(days=5)
-    assert income2 == 0.0
+    expenditure = user.expenditure()
+    assert expenditure == -150
+    expenditure2 = user.expenditure(days=5)
+    assert expenditure2 == 0.0
