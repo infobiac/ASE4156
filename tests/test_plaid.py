@@ -33,7 +33,9 @@ def test_current_balance():
     user = PlaidMiddleware.PlaidAPI(access_token='', client=client)
     balance = user.current_balance()
     assert balance == -9.0
-    assert balance == -9.0
+    user.balance = 10
+    balance = user.current_balance()
+    assert balance == 10
 
 
 @mock_plaid_accounts
@@ -105,7 +107,7 @@ def test_income():
     client = plaid.Client(client_id='', secret='', public_key='', environment='')
     user = PlaidMiddleware.PlaidAPI(access_token='', client=client)
     income = user.income()
-    assert income == 1125.0
+    assert income == 1135.0
     income2 = user.income(days=13)
     assert income2 == 1125.0
     income3 = user.income(days=11)

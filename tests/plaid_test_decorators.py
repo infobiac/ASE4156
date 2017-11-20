@@ -70,6 +70,10 @@ def transactions_side(_, start_date, end_date):
             'date': datetime.datetime.now() - datetime.timedelta(days=13),
             'amount': 125,
         },
+        {
+            'date': datetime.datetime.now() - datetime.timedelta(days=20),
+            'amount': 10,
+        },
     ]
 
     data_filtered = list(

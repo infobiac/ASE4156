@@ -88,6 +88,7 @@ def test_user_bank_income():
     ub1.save()
     assert ub1.income(update=False) == 30
     assert ub1.income(days=13) == 1125.0
+    assert ub1.income() == 1135.0
 
 
 @mock_plaid_transactions
