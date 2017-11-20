@@ -5,3 +5,4 @@ omit =
     */migrations/*
     env/*
     */apps.py
+    tests/*
