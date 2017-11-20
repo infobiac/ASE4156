@@ -417,6 +417,7 @@ def test_big_gql(rf, snapshot):
       investSuggestions {
         edges {
           node {
+            ownedAmount
             value
             name
             public
@@ -429,6 +430,10 @@ def test_big_gql(rf, snapshot):
                   isGood
                 }
               }
+            }
+            history(count: 3) {
+              date
+              value
             }
             stocks {
               edges {
@@ -448,11 +453,14 @@ def test_big_gql(rf, snapshot):
           }
         }
       }
-      stockFind(text: "GO") {
+      stockFind(text: "GO", first: 1) {
         quoteInRange(start: "2017-05-07", end: "2017-05-11") {
           value
           date
         }
+      }
+      selectedAcc {
+        accountName
       }
       tradingAccounts {
         edges {
