@@ -28,15 +28,12 @@ snapshots['test_big_gql 1'] = {
                                 },
                                 'history': [
                                     {
-                                        'date': '2017-11-20',
                                         'value': 110.0
                                     },
                                     {
-                                        'date': '2017-11-19',
                                         'value': 110.0
                                     },
                                     {
-                                        'date': '2017-11-18',
                                         'value': 110.0
                                     }
                                 ],

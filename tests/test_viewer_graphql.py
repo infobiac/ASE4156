@@ -432,7 +432,6 @@ def test_big_gql(rf, snapshot):
               }
             }
             history(count: 3) {
-              date
               value
             }
             stocks {
