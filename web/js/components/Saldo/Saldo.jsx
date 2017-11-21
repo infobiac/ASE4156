@@ -90,9 +90,11 @@ class Saldo extends React.Component <*> {
     if (this.props.showTotal) {
       collectRow = this.collectRow();
     }
-    const button = (<Button raised>
-      Sell Shares
-                    </Button>);
+    const button = (
+      <Button raised>
+        Sell Shares
+      </Button>
+    );
     return this.renderCard(this.valueRows(this.props.values), collectRow, button);
   }
 }
