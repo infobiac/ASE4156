@@ -10,43 +10,8 @@ exports[`Storyshots AppBar Main app bar 1`] = `
     <div
       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
     >
-      <button
-        aria-label="Menu"
-        className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-        disabled={false}
-        onBlur={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchStart={[Function]}
-        role="button"
-        tabIndex={0}
-        type="button"
-      >
-        <span
-          className="MuiIconButton-label-49"
-        >
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-            focusable="false"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-            />
-          </svg>
-        </span>
-        <span
-          className="MuiTouchRipple-root-55"
-        />
-      </button>
       <h1
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
       >
         MIWF
       </h1>
@@ -54,7 +19,7 @@ exports[`Storyshots AppBar Main app bar 1`] = `
         <button
           aria-haspopup="true"
           aria-owns={null}
-          className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+          className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
           disabled={false}
           id="menu-appbar-button"
           onBlur={[Function]}
@@ -72,11 +37,11 @@ exports[`Storyshots AppBar Main app bar 1`] = `
           type="button"
         >
           <span
-            className="MuiIconButton-label-49"
+            className="MuiIconButton-label-73"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
               focusable="false"
               viewBox="0 0 24 24"
             >
@@ -86,7 +51,7 @@ exports[`Storyshots AppBar Main app bar 1`] = `
             </svg>
           </span>
           <span
-            className="MuiTouchRipple-root-55"
+            className="MuiTouchRipple-root-79"
           />
         </button>
       </div>
@@ -118,12 +83,12 @@ exports[`Storyshots Cards Simple card 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Title
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -152,12 +117,12 @@ exports[`Storyshots HighlightBox Account Total 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Account Total
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -197,12 +162,12 @@ exports[`Storyshots HighlightBox Annulized Percentage Return 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Annulized Percentage Return
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -242,12 +207,12 @@ exports[`Storyshots HighlightBox Playground 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Account Total
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -287,12 +252,12 @@ exports[`Storyshots HighlightBox Simple 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Stuff
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -323,12 +288,12 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Risk 1
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -344,7 +309,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-54 MuiListItemIcon-root-370"
+          className="MuiSvgIcon-root-78 MuiListItemIcon-root-370"
           focusable="false"
           onClick={[Function]}
           viewBox="0 0 24 24"
@@ -359,7 +324,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
           onClick={[Function]}
         >
           <h3
-            className="MuiTypography-root-62 MuiTypography-subheading-69 MuiListItemText-text-368"
+            className="MuiTypography-root-43 MuiTypography-subheading-50 MuiListItemText-text-368"
           >
             Good to get started
           </h3>
@@ -371,7 +336,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-54 MuiListItemIcon-root-370"
+          className="MuiSvgIcon-root-78 MuiListItemIcon-root-370"
           focusable="false"
           onClick={[Function]}
           viewBox="0 0 24 24"
@@ -419,7 +384,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-54 MuiListItemIcon-root-370"
+          className="MuiSvgIcon-root-78 MuiListItemIcon-root-370"
           focusable="false"
           onClick={[Function]}
           viewBox="0 0 24 24"
@@ -434,7 +399,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
           onClick={[Function]}
         >
           <h3
-            className="MuiTypography-root-62 MuiTypography-subheading-69 MuiListItemText-text-368"
+            className="MuiTypography-root-43 MuiTypography-subheading-50 MuiListItemText-text-368"
           >
             Low reward
           </h3>
@@ -443,7 +408,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
     </ul>
     <button
       aria-label="add"
-      className="MuiButtonBase-root-52 MuiButton-root-332 MuiButton-raised-339 MuiButton-fab-345 MuiButton-raisedPrimary-341"
+      className="MuiButtonBase-root-76 MuiButton-root-332 MuiButton-raised-339 MuiButton-fab-345 MuiButton-raisedPrimary-341"
       disabled={false}
       id="launch-edit"
       onBlur={[Function]}
@@ -465,7 +430,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
       >
         <svg
           aria-hidden="true"
-          className="MuiSvgIcon-root-54"
+          className="MuiSvgIcon-root-78"
           focusable="false"
           viewBox="0 0 24 24"
         >
@@ -475,7 +440,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
         </svg>
       </span>
       <span
-        className="MuiTouchRipple-root-55"
+        className="MuiTouchRipple-root-79"
       />
     </button>
   </div>
@@ -483,7 +448,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
     className="MuiCardActions-root-390"
   >
     <button
-      className="MuiButtonBase-root-52 MuiButton-root-332 MuiButton-flatPrimary-335 MuiButton-dense-333 MuiCardActions-actionSpacing-391"
+      className="MuiButtonBase-root-76 MuiButton-root-332 MuiButton-flatPrimary-335 MuiButton-dense-333 MuiCardActions-actionSpacing-391"
       disabled={false}
       onBlur={[Function]}
       onClick={[Function]}
@@ -505,7 +470,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
         Invest
       </span>
       <span
-        className="MuiTouchRipple-root-55"
+        className="MuiTouchRipple-root-79"
       />
     </button>
   </div>
@@ -555,43 +520,8 @@ exports[`Storyshots Page Test page 1`] = `
         <div
           className="MuiToolbar-root-130 MuiToolbar-gutters-131"
         >
-          <button
-            aria-label="Menu"
-            className="MuiButtonBase-root-141 MuiIconButton-root-132 MuiIconButton-colorContrast-134 ButtonAppBar-menuButton-3"
-            disabled={false}
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            role="button"
-            tabIndex={0}
-            type="button"
-          >
-            <span
-              className="MuiIconButton-label-138"
-            >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-143 MuiIconButton-icon-139"
-                focusable="false"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                />
-              </svg>
-            </span>
-            <span
-              className="MuiTouchRipple-root-144"
-            />
-          </button>
           <h1
-            className="MuiTypography-root-151 MuiTypography-headline-156 MuiTypography-colorInherit-170 ButtonAppBar-flex-2"
+            className="MuiTypography-root-132 MuiTypography-headline-137 MuiTypography-colorInherit-151 ButtonAppBar-flex-2"
           >
             MIWF
           </h1>
@@ -599,7 +529,7 @@ exports[`Storyshots Page Test page 1`] = `
             <button
               aria-haspopup="true"
               aria-owns={null}
-              className="MuiButtonBase-root-141 MuiIconButton-root-132 MuiIconButton-colorContrast-134"
+              className="MuiButtonBase-root-165 MuiIconButton-root-156 MuiIconButton-colorContrast-158"
               disabled={false}
               id="menu-appbar-button"
               onBlur={[Function]}
@@ -617,11 +547,11 @@ exports[`Storyshots Page Test page 1`] = `
               type="button"
             >
               <span
-                className="MuiIconButton-label-138"
+                className="MuiIconButton-label-162"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-143 MuiIconButton-icon-139"
+                  className="MuiSvgIcon-root-167 MuiIconButton-icon-163"
                   focusable="false"
                   viewBox="0 0 24 24"
                 >
@@ -631,7 +561,7 @@ exports[`Storyshots Page Test page 1`] = `
                 </svg>
               </span>
               <span
-                className="MuiTouchRipple-root-144"
+                className="MuiTouchRipple-root-168"
               />
             </button>
           </div>
@@ -669,12 +599,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Current balance
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -706,12 +636,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Total Income
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -743,12 +673,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Total Expenditures
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -780,12 +710,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Another box
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -850,12 +780,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Risk 1
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -871,7 +801,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -884,7 +814,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         Good to get started
                       </h3>
@@ -896,7 +826,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -909,7 +839,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         Low risk
                       </h3>
@@ -921,7 +851,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -934,7 +864,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         Low reward
                       </h3>
@@ -946,7 +876,7 @@ exports[`Storyshots Page Test page 1`] = `
                 className="MuiCardActions-root-293"
               >
                 <button
-                  className="MuiButtonBase-root-141 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
+                  className="MuiButtonBase-root-165 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -968,7 +898,7 @@ exports[`Storyshots Page Test page 1`] = `
                     Invest
                   </span>
                   <span
-                    className="MuiTouchRipple-root-144"
+                    className="MuiTouchRipple-root-168"
                   />
                 </button>
               </div>
@@ -987,12 +917,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Risk 2
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -1008,7 +938,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1021,7 +951,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         Allows you to take more risk
                       </h3>
@@ -1033,7 +963,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1046,7 +976,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         Pays significant rewards
                       </h3>
@@ -1058,7 +988,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1071,7 +1001,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         You might lose some money
                       </h3>
@@ -1083,7 +1013,7 @@ exports[`Storyshots Page Test page 1`] = `
                 className="MuiCardActions-root-293"
               >
                 <button
-                  className="MuiButtonBase-root-141 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
+                  className="MuiButtonBase-root-165 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1105,7 +1035,7 @@ exports[`Storyshots Page Test page 1`] = `
                     Invest
                   </span>
                   <span
-                    className="MuiTouchRipple-root-144"
+                    className="MuiTouchRipple-root-168"
                   />
                 </button>
               </div>
@@ -1124,12 +1054,12 @@ exports[`Storyshots Page Test page 1`] = `
                   className="MuiCardHeader-content-264"
                 >
                   <span
-                    className="MuiTypography-root-151 MuiTypography-headline-156 MuiCardHeader-title-265"
+                    className="MuiTypography-root-132 MuiTypography-headline-137 MuiCardHeader-title-265"
                   >
                     Risk 3
                   </span>
                   <span
-                    className="MuiTypography-root-151 MuiTypography-body1-160 MuiTypography-colorSecondary-172 MuiCardHeader-subheader-266"
+                    className="MuiTypography-root-132 MuiTypography-body1-141 MuiTypography-colorSecondary-153 MuiCardHeader-subheader-266"
                   />
                 </div>
               </div>
@@ -1145,7 +1075,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1158,7 +1088,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         $$$
                       </h3>
@@ -1170,7 +1100,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1183,7 +1113,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         More $$$
                       </h3>
@@ -1195,7 +1125,7 @@ exports[`Storyshots Page Test page 1`] = `
                   >
                     <svg
                       aria-hidden="true"
-                      className="MuiSvgIcon-root-143 MuiListItemIcon-root-287"
+                      className="MuiSvgIcon-root-167 MuiListItemIcon-root-287"
                       focusable="false"
                       viewBox="0 0 24 24"
                     >
@@ -1208,7 +1138,7 @@ exports[`Storyshots Page Test page 1`] = `
                       className="MuiListItemText-root-288"
                     >
                       <h3
-                        className="MuiTypography-root-151 MuiTypography-subheading-158 MuiListItemText-text-291"
+                        className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
                       >
                         You're fucking insane of you invest in this
                       </h3>
@@ -1220,7 +1150,7 @@ exports[`Storyshots Page Test page 1`] = `
                 className="MuiCardActions-root-293"
               >
                 <button
-                  className="MuiButtonBase-root-141 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
+                  className="MuiButtonBase-root-165 MuiButton-root-295 MuiButton-flatPrimary-298 MuiButton-dense-296 MuiCardActions-actionSpacing-294"
                   disabled={false}
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1242,7 +1172,7 @@ exports[`Storyshots Page Test page 1`] = `
                     Invest
                   </span>
                   <span
-                    className="MuiTouchRipple-root-144"
+                    className="MuiTouchRipple-root-168"
                   />
                 </button>
               </div>
@@ -1266,12 +1196,12 @@ exports[`Storyshots Saldo Playground 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Saldo
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -1382,7 +1312,7 @@ exports[`Storyshots Saldo Playground 1`] = `
       </tbody>
     </table>
     <button
-      className="MuiButtonBase-root-52 MuiButton-root-332 MuiButton-raised-339"
+      className="MuiButtonBase-root-76 MuiButton-root-332 MuiButton-raised-339"
       disabled={false}
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1403,7 +1333,7 @@ exports[`Storyshots Saldo Playground 1`] = `
         Sell Shares
       </span>
       <span
-        className="MuiTouchRipple-root-55"
+        className="MuiTouchRipple-root-79"
       />
     </button>
   </div>
@@ -1421,12 +1351,12 @@ exports[`Storyshots Saldo Without total 1`] = `
       className="MuiCardHeader-content-92"
     >
       <span
-        className="MuiTypography-root-62 MuiTypography-headline-67 MuiCardHeader-title-93"
+        className="MuiTypography-root-43 MuiTypography-headline-48 MuiCardHeader-title-93"
       >
         Saldo
       </span>
       <span
-        className="MuiTypography-root-62 MuiTypography-body1-71 MuiTypography-colorSecondary-83 MuiCardHeader-subheader-94"
+        className="MuiTypography-root-43 MuiTypography-body1-52 MuiTypography-colorSecondary-64 MuiCardHeader-subheader-94"
       />
     </div>
   </div>
@@ -1518,7 +1448,7 @@ exports[`Storyshots Saldo Without total 1`] = `
       </tbody>
     </table>
     <button
-      className="MuiButtonBase-root-52 MuiButton-root-332 MuiButton-raised-339"
+      className="MuiButtonBase-root-76 MuiButton-root-332 MuiButton-raised-339"
       disabled={false}
       onBlur={[Function]}
       onFocus={[Function]}
@@ -1539,7 +1469,7 @@ exports[`Storyshots Saldo Without total 1`] = `
         Sell Shares
       </span>
       <span
-        className="MuiTouchRipple-root-55"
+        className="MuiTouchRipple-root-79"
       />
     </button>
   </div>

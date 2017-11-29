@@ -96,149 +96,6 @@ exports[`AppBar close menu 1`] = `
                     <div
                       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
                     >
-                      <withStyles(IconButton)
-                        aria-label="Menu"
-                        className="ButtonAppBar-menuButton-3"
-                        color="contrast"
-                      >
-                        <IconButton
-                          aria-label="Menu"
-                          className="ButtonAppBar-menuButton-3"
-                          classes={
-                            Object {
-                              "colorAccent": "MuiIconButton-colorAccent-44",
-                              "colorContrast": "MuiIconButton-colorContrast-45",
-                              "colorInherit": "MuiIconButton-colorInherit-47",
-                              "colorPrimary": "MuiIconButton-colorPrimary-46",
-                              "disabled": "MuiIconButton-disabled-48",
-                              "icon": "MuiIconButton-icon-50",
-                              "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                              "label": "MuiIconButton-label-49",
-                              "root": "MuiIconButton-root-43",
-                            }
-                          }
-                          color="contrast"
-                          disableRipple={false}
-                          disabled={false}
-                        >
-                          <withStyles(ButtonBase)
-                            aria-label="Menu"
-                            centerRipple={true}
-                            className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                            disableRipple={false}
-                            disabled={false}
-                            keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                          >
-                            <ButtonBase
-                              aria-label="Menu"
-                              centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-53",
-                                  "root": "MuiButtonBase-root-52",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={false}
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                              tabIndex={0}
-                              type="button"
-                            >
-                              <button
-                                aria-label="Menu"
-                                className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                role="button"
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <span
-                                  className="MuiIconButton-label-49"
-                                >
-                                  <pure(Menu)
-                                    className="MuiIconButton-icon-50"
-                                    key=".0"
-                                  >
-                                    <Menu
-                                      className="MuiIconButton-icon-50"
-                                    >
-                                      <withStyles(SvgIcon)
-                                        className="MuiIconButton-icon-50"
-                                      >
-                                        <SvgIcon
-                                          className="MuiIconButton-icon-50"
-                                          classes={
-                                            Object {
-                                              "root": "MuiSvgIcon-root-54",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <svg
-                                            aria-hidden="true"
-                                            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-                                            focusable="false"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                            />
-                                          </svg>
-                                        </SvgIcon>
-                                      </withStyles(SvgIcon)>
-                                    </Menu>
-                                  </pure(Menu)>
-                                </span>
-                                <withStyles(TouchRipple)
-                                  center={true}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={true}
-                                    classes={
-                                      Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
-                                        "ripple": "MuiTouchRipple-ripple-59",
-                                        "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                        "root": "MuiTouchRipple-root-55",
-                                        "wrapper": "MuiTouchRipple-wrapper-56",
-                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-55"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-55"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </withStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </withStyles(ButtonBase)>
-                        </IconButton>
-                      </withStyles(IconButton)>
                       <withStyles(Typography)
                         className="ButtonAppBar-flex-2"
                         color="inherit"
@@ -249,30 +106,30 @@ exports[`AppBar close menu 1`] = `
                           className="ButtonAppBar-flex-2"
                           classes={
                             Object {
-                              "alignCenter": "MuiTypography-alignCenter-75",
-                              "alignJustify": "MuiTypography-alignJustify-77",
-                              "alignLeft": "MuiTypography-alignLeft-74",
-                              "alignRight": "MuiTypography-alignRight-76",
-                              "body1": "MuiTypography-body1-71",
-                              "body2": "MuiTypography-body2-70",
-                              "button": "MuiTypography-button-73",
-                              "caption": "MuiTypography-caption-72",
-                              "colorAccent": "MuiTypography-colorAccent-84",
-                              "colorError": "MuiTypography-colorError-85",
-                              "colorInherit": "MuiTypography-colorInherit-81",
-                              "colorPrimary": "MuiTypography-colorPrimary-82",
-                              "colorSecondary": "MuiTypography-colorSecondary-83",
-                              "display1": "MuiTypography-display1-66",
-                              "display2": "MuiTypography-display2-65",
-                              "display3": "MuiTypography-display3-64",
-                              "display4": "MuiTypography-display4-63",
-                              "gutterBottom": "MuiTypography-gutterBottom-79",
-                              "headline": "MuiTypography-headline-67",
-                              "noWrap": "MuiTypography-noWrap-78",
-                              "paragraph": "MuiTypography-paragraph-80",
-                              "root": "MuiTypography-root-62",
-                              "subheading": "MuiTypography-subheading-69",
-                              "title": "MuiTypography-title-68",
+                              "alignCenter": "MuiTypography-alignCenter-56",
+                              "alignJustify": "MuiTypography-alignJustify-58",
+                              "alignLeft": "MuiTypography-alignLeft-55",
+                              "alignRight": "MuiTypography-alignRight-57",
+                              "body1": "MuiTypography-body1-52",
+                              "body2": "MuiTypography-body2-51",
+                              "button": "MuiTypography-button-54",
+                              "caption": "MuiTypography-caption-53",
+                              "colorAccent": "MuiTypography-colorAccent-65",
+                              "colorError": "MuiTypography-colorError-66",
+                              "colorInherit": "MuiTypography-colorInherit-62",
+                              "colorPrimary": "MuiTypography-colorPrimary-63",
+                              "colorSecondary": "MuiTypography-colorSecondary-64",
+                              "display1": "MuiTypography-display1-47",
+                              "display2": "MuiTypography-display2-46",
+                              "display3": "MuiTypography-display3-45",
+                              "display4": "MuiTypography-display4-44",
+                              "gutterBottom": "MuiTypography-gutterBottom-60",
+                              "headline": "MuiTypography-headline-48",
+                              "noWrap": "MuiTypography-noWrap-59",
+                              "paragraph": "MuiTypography-paragraph-61",
+                              "root": "MuiTypography-root-43",
+                              "subheading": "MuiTypography-subheading-50",
+                              "title": "MuiTypography-title-49",
                             }
                           }
                           color="inherit"
@@ -295,7 +152,7 @@ exports[`AppBar close menu 1`] = `
                           type="headline"
                         >
                           <h1
-                            className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+                            className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
                           >
                             MIWF
                           </h1>
@@ -314,15 +171,15 @@ exports[`AppBar close menu 1`] = `
                             aria-owns={null}
                             classes={
                               Object {
-                                "colorAccent": "MuiIconButton-colorAccent-44",
-                                "colorContrast": "MuiIconButton-colorContrast-45",
-                                "colorInherit": "MuiIconButton-colorInherit-47",
-                                "colorPrimary": "MuiIconButton-colorPrimary-46",
-                                "disabled": "MuiIconButton-disabled-48",
-                                "icon": "MuiIconButton-icon-50",
-                                "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                                "label": "MuiIconButton-label-49",
-                                "root": "MuiIconButton-root-43",
+                                "colorAccent": "MuiIconButton-colorAccent-68",
+                                "colorContrast": "MuiIconButton-colorContrast-69",
+                                "colorInherit": "MuiIconButton-colorInherit-71",
+                                "colorPrimary": "MuiIconButton-colorPrimary-70",
+                                "disabled": "MuiIconButton-disabled-72",
+                                "icon": "MuiIconButton-icon-74",
+                                "keyboardFocused": "MuiIconButton-keyboardFocused-75",
+                                "label": "MuiIconButton-label-73",
+                                "root": "MuiIconButton-root-67",
                               }
                             }
                             color="contrast"
@@ -335,29 +192,29 @@ exports[`AppBar close menu 1`] = `
                               aria-haspopup="true"
                               aria-owns={null}
                               centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               disableRipple={false}
                               disabled={false}
                               id="menu-appbar-button"
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                               onClick={[Function]}
                             >
                               <ButtonBase
                                 aria-haspopup="true"
                                 aria-owns={null}
                                 centerRipple={true}
-                                className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-53",
-                                    "root": "MuiButtonBase-root-52",
+                                    "disabled": "MuiButtonBase-disabled-77",
+                                    "root": "MuiButtonBase-root-76",
                                   }
                                 }
                                 disableRipple={false}
                                 disabled={false}
                                 focusRipple={false}
                                 id="menu-appbar-button"
-                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                                 onClick={[Function]}
                                 tabIndex={0}
                                 type="button"
@@ -365,7 +222,7 @@ exports[`AppBar close menu 1`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns={null}
-                                  className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   disabled={false}
                                   id="menu-appbar-button"
                                   onBlur={[Function]}
@@ -383,30 +240,30 @@ exports[`AppBar close menu 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="MuiIconButton-label-49"
+                                    className="MuiIconButton-label-73"
                                   >
                                     <pure(AccountCircle)
-                                      className="MuiIconButton-icon-50"
+                                      className="MuiIconButton-icon-74"
                                       key=".0"
                                     >
                                       <AccountCircle
-                                        className="MuiIconButton-icon-50"
+                                        className="MuiIconButton-icon-74"
                                       >
                                         <withStyles(SvgIcon)
-                                          className="MuiIconButton-icon-50"
+                                          className="MuiIconButton-icon-74"
                                         >
                                           <SvgIcon
-                                            className="MuiIconButton-icon-50"
+                                            className="MuiIconButton-icon-74"
                                             classes={
                                               Object {
-                                                "root": "MuiSvgIcon-root-54",
+                                                "root": "MuiSvgIcon-root-78",
                                               }
                                             }
                                             viewBox="0 0 24 24"
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
@@ -430,25 +287,25 @@ exports[`AppBar close menu 1`] = `
                                           "0%": "%",
                                           "100%": "00%",
                                           "50%": "0%",
-                                          "ripple": "MuiTouchRipple-ripple-59",
-                                          "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                          "root": "MuiTouchRipple-root-55",
-                                          "wrapper": "MuiTouchRipple-wrapper-56",
-                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                          "ripple": "MuiTouchRipple-ripple-83",
+                                          "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                          "root": "MuiTouchRipple-root-79",
+                                          "wrapper": "MuiTouchRipple-wrapper-80",
+                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-55"
+                                        className="MuiTouchRipple-root-79"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-55"
+                                          className="MuiTouchRipple-root-79"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -1055,149 +912,6 @@ exports[`AppBar close menu 2`] = `
                     <div
                       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
                     >
-                      <withStyles(IconButton)
-                        aria-label="Menu"
-                        className="ButtonAppBar-menuButton-3"
-                        color="contrast"
-                      >
-                        <IconButton
-                          aria-label="Menu"
-                          className="ButtonAppBar-menuButton-3"
-                          classes={
-                            Object {
-                              "colorAccent": "MuiIconButton-colorAccent-44",
-                              "colorContrast": "MuiIconButton-colorContrast-45",
-                              "colorInherit": "MuiIconButton-colorInherit-47",
-                              "colorPrimary": "MuiIconButton-colorPrimary-46",
-                              "disabled": "MuiIconButton-disabled-48",
-                              "icon": "MuiIconButton-icon-50",
-                              "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                              "label": "MuiIconButton-label-49",
-                              "root": "MuiIconButton-root-43",
-                            }
-                          }
-                          color="contrast"
-                          disableRipple={false}
-                          disabled={false}
-                        >
-                          <withStyles(ButtonBase)
-                            aria-label="Menu"
-                            centerRipple={true}
-                            className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                            disableRipple={false}
-                            disabled={false}
-                            keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                          >
-                            <ButtonBase
-                              aria-label="Menu"
-                              centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-53",
-                                  "root": "MuiButtonBase-root-52",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={false}
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                              tabIndex={0}
-                              type="button"
-                            >
-                              <button
-                                aria-label="Menu"
-                                className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                role="button"
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <span
-                                  className="MuiIconButton-label-49"
-                                >
-                                  <pure(Menu)
-                                    className="MuiIconButton-icon-50"
-                                    key=".0"
-                                  >
-                                    <Menu
-                                      className="MuiIconButton-icon-50"
-                                    >
-                                      <withStyles(SvgIcon)
-                                        className="MuiIconButton-icon-50"
-                                      >
-                                        <SvgIcon
-                                          className="MuiIconButton-icon-50"
-                                          classes={
-                                            Object {
-                                              "root": "MuiSvgIcon-root-54",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <svg
-                                            aria-hidden="true"
-                                            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-                                            focusable="false"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                            />
-                                          </svg>
-                                        </SvgIcon>
-                                      </withStyles(SvgIcon)>
-                                    </Menu>
-                                  </pure(Menu)>
-                                </span>
-                                <withStyles(TouchRipple)
-                                  center={true}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={true}
-                                    classes={
-                                      Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
-                                        "ripple": "MuiTouchRipple-ripple-59",
-                                        "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                        "root": "MuiTouchRipple-root-55",
-                                        "wrapper": "MuiTouchRipple-wrapper-56",
-                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-55"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-55"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </withStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </withStyles(ButtonBase)>
-                        </IconButton>
-                      </withStyles(IconButton)>
                       <withStyles(Typography)
                         className="ButtonAppBar-flex-2"
                         color="inherit"
@@ -1208,30 +922,30 @@ exports[`AppBar close menu 2`] = `
                           className="ButtonAppBar-flex-2"
                           classes={
                             Object {
-                              "alignCenter": "MuiTypography-alignCenter-75",
-                              "alignJustify": "MuiTypography-alignJustify-77",
-                              "alignLeft": "MuiTypography-alignLeft-74",
-                              "alignRight": "MuiTypography-alignRight-76",
-                              "body1": "MuiTypography-body1-71",
-                              "body2": "MuiTypography-body2-70",
-                              "button": "MuiTypography-button-73",
-                              "caption": "MuiTypography-caption-72",
-                              "colorAccent": "MuiTypography-colorAccent-84",
-                              "colorError": "MuiTypography-colorError-85",
-                              "colorInherit": "MuiTypography-colorInherit-81",
-                              "colorPrimary": "MuiTypography-colorPrimary-82",
-                              "colorSecondary": "MuiTypography-colorSecondary-83",
-                              "display1": "MuiTypography-display1-66",
-                              "display2": "MuiTypography-display2-65",
-                              "display3": "MuiTypography-display3-64",
-                              "display4": "MuiTypography-display4-63",
-                              "gutterBottom": "MuiTypography-gutterBottom-79",
-                              "headline": "MuiTypography-headline-67",
-                              "noWrap": "MuiTypography-noWrap-78",
-                              "paragraph": "MuiTypography-paragraph-80",
-                              "root": "MuiTypography-root-62",
-                              "subheading": "MuiTypography-subheading-69",
-                              "title": "MuiTypography-title-68",
+                              "alignCenter": "MuiTypography-alignCenter-56",
+                              "alignJustify": "MuiTypography-alignJustify-58",
+                              "alignLeft": "MuiTypography-alignLeft-55",
+                              "alignRight": "MuiTypography-alignRight-57",
+                              "body1": "MuiTypography-body1-52",
+                              "body2": "MuiTypography-body2-51",
+                              "button": "MuiTypography-button-54",
+                              "caption": "MuiTypography-caption-53",
+                              "colorAccent": "MuiTypography-colorAccent-65",
+                              "colorError": "MuiTypography-colorError-66",
+                              "colorInherit": "MuiTypography-colorInherit-62",
+                              "colorPrimary": "MuiTypography-colorPrimary-63",
+                              "colorSecondary": "MuiTypography-colorSecondary-64",
+                              "display1": "MuiTypography-display1-47",
+                              "display2": "MuiTypography-display2-46",
+                              "display3": "MuiTypography-display3-45",
+                              "display4": "MuiTypography-display4-44",
+                              "gutterBottom": "MuiTypography-gutterBottom-60",
+                              "headline": "MuiTypography-headline-48",
+                              "noWrap": "MuiTypography-noWrap-59",
+                              "paragraph": "MuiTypography-paragraph-61",
+                              "root": "MuiTypography-root-43",
+                              "subheading": "MuiTypography-subheading-50",
+                              "title": "MuiTypography-title-49",
                             }
                           }
                           color="inherit"
@@ -1254,7 +968,7 @@ exports[`AppBar close menu 2`] = `
                           type="headline"
                         >
                           <h1
-                            className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+                            className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
                           >
                             MIWF
                           </h1>
@@ -1273,15 +987,15 @@ exports[`AppBar close menu 2`] = `
                             aria-owns="menu-appbar"
                             classes={
                               Object {
-                                "colorAccent": "MuiIconButton-colorAccent-44",
-                                "colorContrast": "MuiIconButton-colorContrast-45",
-                                "colorInherit": "MuiIconButton-colorInherit-47",
-                                "colorPrimary": "MuiIconButton-colorPrimary-46",
-                                "disabled": "MuiIconButton-disabled-48",
-                                "icon": "MuiIconButton-icon-50",
-                                "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                                "label": "MuiIconButton-label-49",
-                                "root": "MuiIconButton-root-43",
+                                "colorAccent": "MuiIconButton-colorAccent-68",
+                                "colorContrast": "MuiIconButton-colorContrast-69",
+                                "colorInherit": "MuiIconButton-colorInherit-71",
+                                "colorPrimary": "MuiIconButton-colorPrimary-70",
+                                "disabled": "MuiIconButton-disabled-72",
+                                "icon": "MuiIconButton-icon-74",
+                                "keyboardFocused": "MuiIconButton-keyboardFocused-75",
+                                "label": "MuiIconButton-label-73",
+                                "root": "MuiIconButton-root-67",
                               }
                             }
                             color="contrast"
@@ -1294,29 +1008,29 @@ exports[`AppBar close menu 2`] = `
                               aria-haspopup="true"
                               aria-owns="menu-appbar"
                               centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               disableRipple={false}
                               disabled={false}
                               id="menu-appbar-button"
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                               onClick={[Function]}
                             >
                               <ButtonBase
                                 aria-haspopup="true"
                                 aria-owns="menu-appbar"
                                 centerRipple={true}
-                                className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-53",
-                                    "root": "MuiButtonBase-root-52",
+                                    "disabled": "MuiButtonBase-disabled-77",
+                                    "root": "MuiButtonBase-root-76",
                                   }
                                 }
                                 disableRipple={false}
                                 disabled={false}
                                 focusRipple={false}
                                 id="menu-appbar-button"
-                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                                 onClick={[Function]}
                                 tabIndex={0}
                                 type="button"
@@ -1324,7 +1038,7 @@ exports[`AppBar close menu 2`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns="menu-appbar"
-                                  className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   disabled={false}
                                   id="menu-appbar-button"
                                   onBlur={[Function]}
@@ -1342,30 +1056,30 @@ exports[`AppBar close menu 2`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="MuiIconButton-label-49"
+                                    className="MuiIconButton-label-73"
                                   >
                                     <pure(AccountCircle)
-                                      className="MuiIconButton-icon-50"
+                                      className="MuiIconButton-icon-74"
                                       key=".0"
                                     >
                                       <AccountCircle
-                                        className="MuiIconButton-icon-50"
+                                        className="MuiIconButton-icon-74"
                                       >
                                         <withStyles(SvgIcon)
-                                          className="MuiIconButton-icon-50"
+                                          className="MuiIconButton-icon-74"
                                         >
                                           <SvgIcon
-                                            className="MuiIconButton-icon-50"
+                                            className="MuiIconButton-icon-74"
                                             classes={
                                               Object {
-                                                "root": "MuiSvgIcon-root-54",
+                                                "root": "MuiSvgIcon-root-78",
                                               }
                                             }
                                             viewBox="0 0 24 24"
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
@@ -1389,25 +1103,25 @@ exports[`AppBar close menu 2`] = `
                                           "0%": "%",
                                           "100%": "00%",
                                           "50%": "0%",
-                                          "ripple": "MuiTouchRipple-ripple-59",
-                                          "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                          "root": "MuiTouchRipple-root-55",
-                                          "wrapper": "MuiTouchRipple-wrapper-56",
-                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                          "ripple": "MuiTouchRipple-ripple-83",
+                                          "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                          "root": "MuiTouchRipple-root-79",
+                                          "wrapper": "MuiTouchRipple-wrapper-80",
+                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-55"
+                                        className="MuiTouchRipple-root-79"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-55"
+                                          className="MuiTouchRipple-root-79"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -1422,18 +1136,18 @@ exports[`AppBar close menu 2`] = `
                             <button
                               aria-haspopup="true"
                               aria-owns="menu-appbar"
-                              class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               id="menu-appbar-button"
                               role="button"
                               tabindex="0"
                               type="button"
                             >
                               <span
-                                class="MuiIconButton-label-49"
+                                class="MuiIconButton-label-73"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                  class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                   focusable="false"
                                   viewBox="0 0 24 24"
                                 >
@@ -1443,7 +1157,7 @@ exports[`AppBar close menu 2`] = `
                                 </svg>
                               </span>
                               <span
-                                class="MuiTouchRipple-root-55"
+                                class="MuiTouchRipple-root-79"
                               />
                             </button>
                           }
@@ -1468,18 +1182,18 @@ exports[`AppBar close menu 2`] = `
                               <button
                                 aria-haspopup="true"
                                 aria-owns="menu-appbar"
-                                class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 id="menu-appbar-button"
                                 role="button"
                                 tabindex="0"
                                 type="button"
                               >
                                 <span
-                                  class="MuiIconButton-label-49"
+                                  class="MuiIconButton-label-73"
                                 >
                                   <svg
                                     aria-hidden="true"
-                                    class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                    class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                     focusable="false"
                                     viewBox="0 0 24 24"
                                   >
@@ -1489,7 +1203,7 @@ exports[`AppBar close menu 2`] = `
                                   </svg>
                                 </span>
                                 <span
-                                  class="MuiTouchRipple-root-55"
+                                  class="MuiTouchRipple-root-79"
                                 />
                               </button>
                             }
@@ -1878,18 +1592,18 @@ exports[`AppBar close menu 2`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns="menu-appbar"
-                                  class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   id="menu-appbar-button"
                                   role="button"
                                   tabindex="0"
                                   type="button"
                                 >
                                   <span
-                                    class="MuiIconButton-label-49"
+                                    class="MuiIconButton-label-73"
                                   >
                                     <svg
                                       aria-hidden="true"
-                                      class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                      class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                       focusable="false"
                                       viewBox="0 0 24 24"
                                     >
@@ -1899,7 +1613,7 @@ exports[`AppBar close menu 2`] = `
                                     </svg>
                                   </span>
                                   <span
-                                    class="MuiTouchRipple-root-55"
+                                    class="MuiTouchRipple-root-79"
                                   />
                                 </button>
                               }
@@ -1928,18 +1642,18 @@ exports[`AppBar close menu 2`] = `
                                   <button
                                     aria-haspopup="true"
                                     aria-owns="menu-appbar"
-                                    class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                    class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                     id="menu-appbar-button"
                                     role="button"
                                     tabindex="0"
                                     type="button"
                                   >
                                     <span
-                                      class="MuiIconButton-label-49"
+                                      class="MuiIconButton-label-73"
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                        class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                         focusable="false"
                                         viewBox="0 0 24 24"
                                       >
@@ -1949,7 +1663,7 @@ exports[`AppBar close menu 2`] = `
                                       </svg>
                                     </span>
                                     <span
-                                      class="MuiTouchRipple-root-55"
+                                      class="MuiTouchRipple-root-79"
                                     />
                                   </button>
                                 }
@@ -2987,8 +2701,8 @@ exports[`AppBar close menu 2`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -3004,7 +2718,7 @@ exports[`AppBar close menu 2`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="overview"
                                                                           onBlur={[Function]}
@@ -3032,25 +2746,25 @@ exports[`AppBar close menu 2`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
@@ -3140,8 +2854,8 @@ exports[`AppBar close menu 2`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -3157,7 +2871,7 @@ exports[`AppBar close menu 2`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="logout"
                                                                           onBlur={[Function]}
@@ -3185,25 +2899,25 @@ exports[`AppBar close menu 2`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
@@ -3343,149 +3057,6 @@ exports[`AppBar close menu 3`] = `
                     <div
                       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
                     >
-                      <withStyles(IconButton)
-                        aria-label="Menu"
-                        className="ButtonAppBar-menuButton-3"
-                        color="contrast"
-                      >
-                        <IconButton
-                          aria-label="Menu"
-                          className="ButtonAppBar-menuButton-3"
-                          classes={
-                            Object {
-                              "colorAccent": "MuiIconButton-colorAccent-44",
-                              "colorContrast": "MuiIconButton-colorContrast-45",
-                              "colorInherit": "MuiIconButton-colorInherit-47",
-                              "colorPrimary": "MuiIconButton-colorPrimary-46",
-                              "disabled": "MuiIconButton-disabled-48",
-                              "icon": "MuiIconButton-icon-50",
-                              "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                              "label": "MuiIconButton-label-49",
-                              "root": "MuiIconButton-root-43",
-                            }
-                          }
-                          color="contrast"
-                          disableRipple={false}
-                          disabled={false}
-                        >
-                          <withStyles(ButtonBase)
-                            aria-label="Menu"
-                            centerRipple={true}
-                            className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                            disableRipple={false}
-                            disabled={false}
-                            keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                          >
-                            <ButtonBase
-                              aria-label="Menu"
-                              centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-53",
-                                  "root": "MuiButtonBase-root-52",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={false}
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                              tabIndex={0}
-                              type="button"
-                            >
-                              <button
-                                aria-label="Menu"
-                                className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                role="button"
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <span
-                                  className="MuiIconButton-label-49"
-                                >
-                                  <pure(Menu)
-                                    className="MuiIconButton-icon-50"
-                                    key=".0"
-                                  >
-                                    <Menu
-                                      className="MuiIconButton-icon-50"
-                                    >
-                                      <withStyles(SvgIcon)
-                                        className="MuiIconButton-icon-50"
-                                      >
-                                        <SvgIcon
-                                          className="MuiIconButton-icon-50"
-                                          classes={
-                                            Object {
-                                              "root": "MuiSvgIcon-root-54",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <svg
-                                            aria-hidden="true"
-                                            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-                                            focusable="false"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                            />
-                                          </svg>
-                                        </SvgIcon>
-                                      </withStyles(SvgIcon)>
-                                    </Menu>
-                                  </pure(Menu)>
-                                </span>
-                                <withStyles(TouchRipple)
-                                  center={true}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={true}
-                                    classes={
-                                      Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
-                                        "ripple": "MuiTouchRipple-ripple-59",
-                                        "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                        "root": "MuiTouchRipple-root-55",
-                                        "wrapper": "MuiTouchRipple-wrapper-56",
-                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-55"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-55"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </withStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </withStyles(ButtonBase)>
-                        </IconButton>
-                      </withStyles(IconButton)>
                       <withStyles(Typography)
                         className="ButtonAppBar-flex-2"
                         color="inherit"
@@ -3496,30 +3067,30 @@ exports[`AppBar close menu 3`] = `
                           className="ButtonAppBar-flex-2"
                           classes={
                             Object {
-                              "alignCenter": "MuiTypography-alignCenter-75",
-                              "alignJustify": "MuiTypography-alignJustify-77",
-                              "alignLeft": "MuiTypography-alignLeft-74",
-                              "alignRight": "MuiTypography-alignRight-76",
-                              "body1": "MuiTypography-body1-71",
-                              "body2": "MuiTypography-body2-70",
-                              "button": "MuiTypography-button-73",
-                              "caption": "MuiTypography-caption-72",
-                              "colorAccent": "MuiTypography-colorAccent-84",
-                              "colorError": "MuiTypography-colorError-85",
-                              "colorInherit": "MuiTypography-colorInherit-81",
-                              "colorPrimary": "MuiTypography-colorPrimary-82",
-                              "colorSecondary": "MuiTypography-colorSecondary-83",
-                              "display1": "MuiTypography-display1-66",
-                              "display2": "MuiTypography-display2-65",
-                              "display3": "MuiTypography-display3-64",
-                              "display4": "MuiTypography-display4-63",
-                              "gutterBottom": "MuiTypography-gutterBottom-79",
-                              "headline": "MuiTypography-headline-67",
-                              "noWrap": "MuiTypography-noWrap-78",
-                              "paragraph": "MuiTypography-paragraph-80",
-                              "root": "MuiTypography-root-62",
-                              "subheading": "MuiTypography-subheading-69",
-                              "title": "MuiTypography-title-68",
+                              "alignCenter": "MuiTypography-alignCenter-56",
+                              "alignJustify": "MuiTypography-alignJustify-58",
+                              "alignLeft": "MuiTypography-alignLeft-55",
+                              "alignRight": "MuiTypography-alignRight-57",
+                              "body1": "MuiTypography-body1-52",
+                              "body2": "MuiTypography-body2-51",
+                              "button": "MuiTypography-button-54",
+                              "caption": "MuiTypography-caption-53",
+                              "colorAccent": "MuiTypography-colorAccent-65",
+                              "colorError": "MuiTypography-colorError-66",
+                              "colorInherit": "MuiTypography-colorInherit-62",
+                              "colorPrimary": "MuiTypography-colorPrimary-63",
+                              "colorSecondary": "MuiTypography-colorSecondary-64",
+                              "display1": "MuiTypography-display1-47",
+                              "display2": "MuiTypography-display2-46",
+                              "display3": "MuiTypography-display3-45",
+                              "display4": "MuiTypography-display4-44",
+                              "gutterBottom": "MuiTypography-gutterBottom-60",
+                              "headline": "MuiTypography-headline-48",
+                              "noWrap": "MuiTypography-noWrap-59",
+                              "paragraph": "MuiTypography-paragraph-61",
+                              "root": "MuiTypography-root-43",
+                              "subheading": "MuiTypography-subheading-50",
+                              "title": "MuiTypography-title-49",
                             }
                           }
                           color="inherit"
@@ -3542,7 +3113,7 @@ exports[`AppBar close menu 3`] = `
                           type="headline"
                         >
                           <h1
-                            className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+                            className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
                           >
                             MIWF
                           </h1>
@@ -3561,15 +3132,15 @@ exports[`AppBar close menu 3`] = `
                             aria-owns={null}
                             classes={
                               Object {
-                                "colorAccent": "MuiIconButton-colorAccent-44",
-                                "colorContrast": "MuiIconButton-colorContrast-45",
-                                "colorInherit": "MuiIconButton-colorInherit-47",
-                                "colorPrimary": "MuiIconButton-colorPrimary-46",
-                                "disabled": "MuiIconButton-disabled-48",
-                                "icon": "MuiIconButton-icon-50",
-                                "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                                "label": "MuiIconButton-label-49",
-                                "root": "MuiIconButton-root-43",
+                                "colorAccent": "MuiIconButton-colorAccent-68",
+                                "colorContrast": "MuiIconButton-colorContrast-69",
+                                "colorInherit": "MuiIconButton-colorInherit-71",
+                                "colorPrimary": "MuiIconButton-colorPrimary-70",
+                                "disabled": "MuiIconButton-disabled-72",
+                                "icon": "MuiIconButton-icon-74",
+                                "keyboardFocused": "MuiIconButton-keyboardFocused-75",
+                                "label": "MuiIconButton-label-73",
+                                "root": "MuiIconButton-root-67",
                               }
                             }
                             color="contrast"
@@ -3582,29 +3153,29 @@ exports[`AppBar close menu 3`] = `
                               aria-haspopup="true"
                               aria-owns={null}
                               centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               disableRipple={false}
                               disabled={false}
                               id="menu-appbar-button"
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                               onClick={[Function]}
                             >
                               <ButtonBase
                                 aria-haspopup="true"
                                 aria-owns={null}
                                 centerRipple={true}
-                                className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-53",
-                                    "root": "MuiButtonBase-root-52",
+                                    "disabled": "MuiButtonBase-disabled-77",
+                                    "root": "MuiButtonBase-root-76",
                                   }
                                 }
                                 disableRipple={false}
                                 disabled={false}
                                 focusRipple={false}
                                 id="menu-appbar-button"
-                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                                 onClick={[Function]}
                                 tabIndex={0}
                                 type="button"
@@ -3612,7 +3183,7 @@ exports[`AppBar close menu 3`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns={null}
-                                  className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   disabled={false}
                                   id="menu-appbar-button"
                                   onBlur={[Function]}
@@ -3630,30 +3201,30 @@ exports[`AppBar close menu 3`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="MuiIconButton-label-49"
+                                    className="MuiIconButton-label-73"
                                   >
                                     <pure(AccountCircle)
-                                      className="MuiIconButton-icon-50"
+                                      className="MuiIconButton-icon-74"
                                       key=".0"
                                     >
                                       <AccountCircle
-                                        className="MuiIconButton-icon-50"
+                                        className="MuiIconButton-icon-74"
                                       >
                                         <withStyles(SvgIcon)
-                                          className="MuiIconButton-icon-50"
+                                          className="MuiIconButton-icon-74"
                                         >
                                           <SvgIcon
-                                            className="MuiIconButton-icon-50"
+                                            className="MuiIconButton-icon-74"
                                             classes={
                                               Object {
-                                                "root": "MuiSvgIcon-root-54",
+                                                "root": "MuiSvgIcon-root-78",
                                               }
                                             }
                                             viewBox="0 0 24 24"
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
@@ -3677,25 +3248,25 @@ exports[`AppBar close menu 3`] = `
                                           "0%": "%",
                                           "100%": "00%",
                                           "50%": "0%",
-                                          "ripple": "MuiTouchRipple-ripple-59",
-                                          "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                          "root": "MuiTouchRipple-root-55",
-                                          "wrapper": "MuiTouchRipple-wrapper-56",
-                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                          "ripple": "MuiTouchRipple-ripple-83",
+                                          "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                          "root": "MuiTouchRipple-root-79",
+                                          "wrapper": "MuiTouchRipple-wrapper-80",
+                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-55"
+                                        className="MuiTouchRipple-root-79"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-55"
+                                          className="MuiTouchRipple-root-79"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -5163,8 +4734,8 @@ exports[`AppBar close menu 3`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -5180,7 +4751,7 @@ exports[`AppBar close menu 3`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="overview"
                                                                           onBlur={[Function]}
@@ -5208,25 +4779,25 @@ exports[`AppBar close menu 3`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
@@ -5316,8 +4887,8 @@ exports[`AppBar close menu 3`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -5333,7 +4904,7 @@ exports[`AppBar close menu 3`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="logout"
                                                                           onBlur={[Function]}
@@ -5361,25 +4932,25 @@ exports[`AppBar close menu 3`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
@@ -5519,149 +5090,6 @@ exports[`AppBar logout 1`] = `
                     <div
                       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
                     >
-                      <withStyles(IconButton)
-                        aria-label="Menu"
-                        className="ButtonAppBar-menuButton-3"
-                        color="contrast"
-                      >
-                        <IconButton
-                          aria-label="Menu"
-                          className="ButtonAppBar-menuButton-3"
-                          classes={
-                            Object {
-                              "colorAccent": "MuiIconButton-colorAccent-44",
-                              "colorContrast": "MuiIconButton-colorContrast-45",
-                              "colorInherit": "MuiIconButton-colorInherit-47",
-                              "colorPrimary": "MuiIconButton-colorPrimary-46",
-                              "disabled": "MuiIconButton-disabled-48",
-                              "icon": "MuiIconButton-icon-50",
-                              "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                              "label": "MuiIconButton-label-49",
-                              "root": "MuiIconButton-root-43",
-                            }
-                          }
-                          color="contrast"
-                          disableRipple={false}
-                          disabled={false}
-                        >
-                          <withStyles(ButtonBase)
-                            aria-label="Menu"
-                            centerRipple={true}
-                            className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                            disableRipple={false}
-                            disabled={false}
-                            keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                          >
-                            <ButtonBase
-                              aria-label="Menu"
-                              centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-53",
-                                  "root": "MuiButtonBase-root-52",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={false}
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                              tabIndex={0}
-                              type="button"
-                            >
-                              <button
-                                aria-label="Menu"
-                                className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                role="button"
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <span
-                                  className="MuiIconButton-label-49"
-                                >
-                                  <pure(Menu)
-                                    className="MuiIconButton-icon-50"
-                                    key=".0"
-                                  >
-                                    <Menu
-                                      className="MuiIconButton-icon-50"
-                                    >
-                                      <withStyles(SvgIcon)
-                                        className="MuiIconButton-icon-50"
-                                      >
-                                        <SvgIcon
-                                          className="MuiIconButton-icon-50"
-                                          classes={
-                                            Object {
-                                              "root": "MuiSvgIcon-root-54",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <svg
-                                            aria-hidden="true"
-                                            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-                                            focusable="false"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                            />
-                                          </svg>
-                                        </SvgIcon>
-                                      </withStyles(SvgIcon)>
-                                    </Menu>
-                                  </pure(Menu)>
-                                </span>
-                                <withStyles(TouchRipple)
-                                  center={true}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={true}
-                                    classes={
-                                      Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
-                                        "ripple": "MuiTouchRipple-ripple-59",
-                                        "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                        "root": "MuiTouchRipple-root-55",
-                                        "wrapper": "MuiTouchRipple-wrapper-56",
-                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-55"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-55"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </withStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </withStyles(ButtonBase)>
-                        </IconButton>
-                      </withStyles(IconButton)>
                       <withStyles(Typography)
                         className="ButtonAppBar-flex-2"
                         color="inherit"
@@ -5672,30 +5100,30 @@ exports[`AppBar logout 1`] = `
                           className="ButtonAppBar-flex-2"
                           classes={
                             Object {
-                              "alignCenter": "MuiTypography-alignCenter-75",
-                              "alignJustify": "MuiTypography-alignJustify-77",
-                              "alignLeft": "MuiTypography-alignLeft-74",
-                              "alignRight": "MuiTypography-alignRight-76",
-                              "body1": "MuiTypography-body1-71",
-                              "body2": "MuiTypography-body2-70",
-                              "button": "MuiTypography-button-73",
-                              "caption": "MuiTypography-caption-72",
-                              "colorAccent": "MuiTypography-colorAccent-84",
-                              "colorError": "MuiTypography-colorError-85",
-                              "colorInherit": "MuiTypography-colorInherit-81",
-                              "colorPrimary": "MuiTypography-colorPrimary-82",
-                              "colorSecondary": "MuiTypography-colorSecondary-83",
-                              "display1": "MuiTypography-display1-66",
-                              "display2": "MuiTypography-display2-65",
-                              "display3": "MuiTypography-display3-64",
-                              "display4": "MuiTypography-display4-63",
-                              "gutterBottom": "MuiTypography-gutterBottom-79",
-                              "headline": "MuiTypography-headline-67",
-                              "noWrap": "MuiTypography-noWrap-78",
-                              "paragraph": "MuiTypography-paragraph-80",
-                              "root": "MuiTypography-root-62",
-                              "subheading": "MuiTypography-subheading-69",
-                              "title": "MuiTypography-title-68",
+                              "alignCenter": "MuiTypography-alignCenter-56",
+                              "alignJustify": "MuiTypography-alignJustify-58",
+                              "alignLeft": "MuiTypography-alignLeft-55",
+                              "alignRight": "MuiTypography-alignRight-57",
+                              "body1": "MuiTypography-body1-52",
+                              "body2": "MuiTypography-body2-51",
+                              "button": "MuiTypography-button-54",
+                              "caption": "MuiTypography-caption-53",
+                              "colorAccent": "MuiTypography-colorAccent-65",
+                              "colorError": "MuiTypography-colorError-66",
+                              "colorInherit": "MuiTypography-colorInherit-62",
+                              "colorPrimary": "MuiTypography-colorPrimary-63",
+                              "colorSecondary": "MuiTypography-colorSecondary-64",
+                              "display1": "MuiTypography-display1-47",
+                              "display2": "MuiTypography-display2-46",
+                              "display3": "MuiTypography-display3-45",
+                              "display4": "MuiTypography-display4-44",
+                              "gutterBottom": "MuiTypography-gutterBottom-60",
+                              "headline": "MuiTypography-headline-48",
+                              "noWrap": "MuiTypography-noWrap-59",
+                              "paragraph": "MuiTypography-paragraph-61",
+                              "root": "MuiTypography-root-43",
+                              "subheading": "MuiTypography-subheading-50",
+                              "title": "MuiTypography-title-49",
                             }
                           }
                           color="inherit"
@@ -5718,7 +5146,7 @@ exports[`AppBar logout 1`] = `
                           type="headline"
                         >
                           <h1
-                            className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+                            className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
                           >
                             MIWF
                           </h1>
@@ -5737,15 +5165,15 @@ exports[`AppBar logout 1`] = `
                             aria-owns={null}
                             classes={
                               Object {
-                                "colorAccent": "MuiIconButton-colorAccent-44",
-                                "colorContrast": "MuiIconButton-colorContrast-45",
-                                "colorInherit": "MuiIconButton-colorInherit-47",
-                                "colorPrimary": "MuiIconButton-colorPrimary-46",
-                                "disabled": "MuiIconButton-disabled-48",
-                                "icon": "MuiIconButton-icon-50",
-                                "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                                "label": "MuiIconButton-label-49",
-                                "root": "MuiIconButton-root-43",
+                                "colorAccent": "MuiIconButton-colorAccent-68",
+                                "colorContrast": "MuiIconButton-colorContrast-69",
+                                "colorInherit": "MuiIconButton-colorInherit-71",
+                                "colorPrimary": "MuiIconButton-colorPrimary-70",
+                                "disabled": "MuiIconButton-disabled-72",
+                                "icon": "MuiIconButton-icon-74",
+                                "keyboardFocused": "MuiIconButton-keyboardFocused-75",
+                                "label": "MuiIconButton-label-73",
+                                "root": "MuiIconButton-root-67",
                               }
                             }
                             color="contrast"
@@ -5758,29 +5186,29 @@ exports[`AppBar logout 1`] = `
                               aria-haspopup="true"
                               aria-owns={null}
                               centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               disableRipple={false}
                               disabled={false}
                               id="menu-appbar-button"
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                               onClick={[Function]}
                             >
                               <ButtonBase
                                 aria-haspopup="true"
                                 aria-owns={null}
                                 centerRipple={true}
-                                className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-53",
-                                    "root": "MuiButtonBase-root-52",
+                                    "disabled": "MuiButtonBase-disabled-77",
+                                    "root": "MuiButtonBase-root-76",
                                   }
                                 }
                                 disableRipple={false}
                                 disabled={false}
                                 focusRipple={false}
                                 id="menu-appbar-button"
-                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                                 onClick={[Function]}
                                 tabIndex={0}
                                 type="button"
@@ -5788,7 +5216,7 @@ exports[`AppBar logout 1`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns={null}
-                                  className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   disabled={false}
                                   id="menu-appbar-button"
                                   onBlur={[Function]}
@@ -5806,30 +5234,30 @@ exports[`AppBar logout 1`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="MuiIconButton-label-49"
+                                    className="MuiIconButton-label-73"
                                   >
                                     <pure(AccountCircle)
-                                      className="MuiIconButton-icon-50"
+                                      className="MuiIconButton-icon-74"
                                       key=".0"
                                     >
                                       <AccountCircle
-                                        className="MuiIconButton-icon-50"
+                                        className="MuiIconButton-icon-74"
                                       >
                                         <withStyles(SvgIcon)
-                                          className="MuiIconButton-icon-50"
+                                          className="MuiIconButton-icon-74"
                                         >
                                           <SvgIcon
-                                            className="MuiIconButton-icon-50"
+                                            className="MuiIconButton-icon-74"
                                             classes={
                                               Object {
-                                                "root": "MuiSvgIcon-root-54",
+                                                "root": "MuiSvgIcon-root-78",
                                               }
                                             }
                                             viewBox="0 0 24 24"
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
@@ -5853,25 +5281,25 @@ exports[`AppBar logout 1`] = `
                                           "0%": "%",
                                           "100%": "00%",
                                           "50%": "0%",
-                                          "ripple": "MuiTouchRipple-ripple-59",
-                                          "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                          "root": "MuiTouchRipple-root-55",
-                                          "wrapper": "MuiTouchRipple-wrapper-56",
-                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                          "ripple": "MuiTouchRipple-ripple-83",
+                                          "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                          "root": "MuiTouchRipple-root-79",
+                                          "wrapper": "MuiTouchRipple-wrapper-80",
+                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-55"
+                                        className="MuiTouchRipple-root-79"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-55"
+                                          className="MuiTouchRipple-root-79"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -6478,149 +5906,6 @@ exports[`AppBar logout 2`] = `
                     <div
                       className="MuiToolbar-root-41 MuiToolbar-gutters-42"
                     >
-                      <withStyles(IconButton)
-                        aria-label="Menu"
-                        className="ButtonAppBar-menuButton-3"
-                        color="contrast"
-                      >
-                        <IconButton
-                          aria-label="Menu"
-                          className="ButtonAppBar-menuButton-3"
-                          classes={
-                            Object {
-                              "colorAccent": "MuiIconButton-colorAccent-44",
-                              "colorContrast": "MuiIconButton-colorContrast-45",
-                              "colorInherit": "MuiIconButton-colorInherit-47",
-                              "colorPrimary": "MuiIconButton-colorPrimary-46",
-                              "disabled": "MuiIconButton-disabled-48",
-                              "icon": "MuiIconButton-icon-50",
-                              "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                              "label": "MuiIconButton-label-49",
-                              "root": "MuiIconButton-root-43",
-                            }
-                          }
-                          color="contrast"
-                          disableRipple={false}
-                          disabled={false}
-                        >
-                          <withStyles(ButtonBase)
-                            aria-label="Menu"
-                            centerRipple={true}
-                            className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                            disableRipple={false}
-                            disabled={false}
-                            keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                          >
-                            <ButtonBase
-                              aria-label="Menu"
-                              centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                              classes={
-                                Object {
-                                  "disabled": "MuiButtonBase-disabled-53",
-                                  "root": "MuiButtonBase-root-52",
-                                }
-                              }
-                              disableRipple={false}
-                              disabled={false}
-                              focusRipple={false}
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
-                              tabIndex={0}
-                              type="button"
-                            >
-                              <button
-                                aria-label="Menu"
-                                className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45 ButtonAppBar-menuButton-3"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onFocus={[Function]}
-                                onKeyDown={[Function]}
-                                onKeyUp={[Function]}
-                                onMouseDown={[Function]}
-                                onMouseLeave={[Function]}
-                                onMouseUp={[Function]}
-                                onTouchEnd={[Function]}
-                                onTouchStart={[Function]}
-                                role="button"
-                                tabIndex={0}
-                                type="button"
-                              >
-                                <span
-                                  className="MuiIconButton-label-49"
-                                >
-                                  <pure(Menu)
-                                    className="MuiIconButton-icon-50"
-                                    key=".0"
-                                  >
-                                    <Menu
-                                      className="MuiIconButton-icon-50"
-                                    >
-                                      <withStyles(SvgIcon)
-                                        className="MuiIconButton-icon-50"
-                                      >
-                                        <SvgIcon
-                                          className="MuiIconButton-icon-50"
-                                          classes={
-                                            Object {
-                                              "root": "MuiSvgIcon-root-54",
-                                            }
-                                          }
-                                          viewBox="0 0 24 24"
-                                        >
-                                          <svg
-                                            aria-hidden="true"
-                                            className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
-                                            focusable="false"
-                                            viewBox="0 0 24 24"
-                                          >
-                                            <path
-                                              d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-                                            />
-                                          </svg>
-                                        </SvgIcon>
-                                      </withStyles(SvgIcon)>
-                                    </Menu>
-                                  </pure(Menu)>
-                                </span>
-                                <withStyles(TouchRipple)
-                                  center={true}
-                                  innerRef={[Function]}
-                                >
-                                  <TouchRipple
-                                    center={true}
-                                    classes={
-                                      Object {
-                                        "0%": "%",
-                                        "100%": "00%",
-                                        "50%": "0%",
-                                        "ripple": "MuiTouchRipple-ripple-59",
-                                        "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                        "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                        "root": "MuiTouchRipple-root-55",
-                                        "wrapper": "MuiTouchRipple-wrapper-56",
-                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
-                                      }
-                                    }
-                                  >
-                                    <TransitionGroup
-                                      childFactory={[Function]}
-                                      className="MuiTouchRipple-root-55"
-                                      component="span"
-                                      enter={true}
-                                      exit={true}
-                                    >
-                                      <span
-                                        className="MuiTouchRipple-root-55"
-                                      />
-                                    </TransitionGroup>
-                                  </TouchRipple>
-                                </withStyles(TouchRipple)>
-                              </button>
-                            </ButtonBase>
-                          </withStyles(ButtonBase)>
-                        </IconButton>
-                      </withStyles(IconButton)>
                       <withStyles(Typography)
                         className="ButtonAppBar-flex-2"
                         color="inherit"
@@ -6631,30 +5916,30 @@ exports[`AppBar logout 2`] = `
                           className="ButtonAppBar-flex-2"
                           classes={
                             Object {
-                              "alignCenter": "MuiTypography-alignCenter-75",
-                              "alignJustify": "MuiTypography-alignJustify-77",
-                              "alignLeft": "MuiTypography-alignLeft-74",
-                              "alignRight": "MuiTypography-alignRight-76",
-                              "body1": "MuiTypography-body1-71",
-                              "body2": "MuiTypography-body2-70",
-                              "button": "MuiTypography-button-73",
-                              "caption": "MuiTypography-caption-72",
-                              "colorAccent": "MuiTypography-colorAccent-84",
-                              "colorError": "MuiTypography-colorError-85",
-                              "colorInherit": "MuiTypography-colorInherit-81",
-                              "colorPrimary": "MuiTypography-colorPrimary-82",
-                              "colorSecondary": "MuiTypography-colorSecondary-83",
-                              "display1": "MuiTypography-display1-66",
-                              "display2": "MuiTypography-display2-65",
-                              "display3": "MuiTypography-display3-64",
-                              "display4": "MuiTypography-display4-63",
-                              "gutterBottom": "MuiTypography-gutterBottom-79",
-                              "headline": "MuiTypography-headline-67",
-                              "noWrap": "MuiTypography-noWrap-78",
-                              "paragraph": "MuiTypography-paragraph-80",
-                              "root": "MuiTypography-root-62",
-                              "subheading": "MuiTypography-subheading-69",
-                              "title": "MuiTypography-title-68",
+                              "alignCenter": "MuiTypography-alignCenter-56",
+                              "alignJustify": "MuiTypography-alignJustify-58",
+                              "alignLeft": "MuiTypography-alignLeft-55",
+                              "alignRight": "MuiTypography-alignRight-57",
+                              "body1": "MuiTypography-body1-52",
+                              "body2": "MuiTypography-body2-51",
+                              "button": "MuiTypography-button-54",
+                              "caption": "MuiTypography-caption-53",
+                              "colorAccent": "MuiTypography-colorAccent-65",
+                              "colorError": "MuiTypography-colorError-66",
+                              "colorInherit": "MuiTypography-colorInherit-62",
+                              "colorPrimary": "MuiTypography-colorPrimary-63",
+                              "colorSecondary": "MuiTypography-colorSecondary-64",
+                              "display1": "MuiTypography-display1-47",
+                              "display2": "MuiTypography-display2-46",
+                              "display3": "MuiTypography-display3-45",
+                              "display4": "MuiTypography-display4-44",
+                              "gutterBottom": "MuiTypography-gutterBottom-60",
+                              "headline": "MuiTypography-headline-48",
+                              "noWrap": "MuiTypography-noWrap-59",
+                              "paragraph": "MuiTypography-paragraph-61",
+                              "root": "MuiTypography-root-43",
+                              "subheading": "MuiTypography-subheading-50",
+                              "title": "MuiTypography-title-49",
                             }
                           }
                           color="inherit"
@@ -6677,7 +5962,7 @@ exports[`AppBar logout 2`] = `
                           type="headline"
                         >
                           <h1
-                            className="MuiTypography-root-62 MuiTypography-headline-67 MuiTypography-colorInherit-81 ButtonAppBar-flex-2"
+                            className="MuiTypography-root-43 MuiTypography-headline-48 MuiTypography-colorInherit-62 ButtonAppBar-flex-2"
                           >
                             MIWF
                           </h1>
@@ -6696,15 +5981,15 @@ exports[`AppBar logout 2`] = `
                             aria-owns="menu-appbar"
                             classes={
                               Object {
-                                "colorAccent": "MuiIconButton-colorAccent-44",
-                                "colorContrast": "MuiIconButton-colorContrast-45",
-                                "colorInherit": "MuiIconButton-colorInherit-47",
-                                "colorPrimary": "MuiIconButton-colorPrimary-46",
-                                "disabled": "MuiIconButton-disabled-48",
-                                "icon": "MuiIconButton-icon-50",
-                                "keyboardFocused": "MuiIconButton-keyboardFocused-51",
-                                "label": "MuiIconButton-label-49",
-                                "root": "MuiIconButton-root-43",
+                                "colorAccent": "MuiIconButton-colorAccent-68",
+                                "colorContrast": "MuiIconButton-colorContrast-69",
+                                "colorInherit": "MuiIconButton-colorInherit-71",
+                                "colorPrimary": "MuiIconButton-colorPrimary-70",
+                                "disabled": "MuiIconButton-disabled-72",
+                                "icon": "MuiIconButton-icon-74",
+                                "keyboardFocused": "MuiIconButton-keyboardFocused-75",
+                                "label": "MuiIconButton-label-73",
+                                "root": "MuiIconButton-root-67",
                               }
                             }
                             color="contrast"
@@ -6717,29 +6002,29 @@ exports[`AppBar logout 2`] = `
                               aria-haspopup="true"
                               aria-owns="menu-appbar"
                               centerRipple={true}
-                              className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               disableRipple={false}
                               disabled={false}
                               id="menu-appbar-button"
-                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                              keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                               onClick={[Function]}
                             >
                               <ButtonBase
                                 aria-haspopup="true"
                                 aria-owns="menu-appbar"
                                 centerRipple={true}
-                                className="MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                className="MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 classes={
                                   Object {
-                                    "disabled": "MuiButtonBase-disabled-53",
-                                    "root": "MuiButtonBase-root-52",
+                                    "disabled": "MuiButtonBase-disabled-77",
+                                    "root": "MuiButtonBase-root-76",
                                   }
                                 }
                                 disableRipple={false}
                                 disabled={false}
                                 focusRipple={false}
                                 id="menu-appbar-button"
-                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-51"
+                                keyboardFocusedClassName="MuiIconButton-keyboardFocused-75"
                                 onClick={[Function]}
                                 tabIndex={0}
                                 type="button"
@@ -6747,7 +6032,7 @@ exports[`AppBar logout 2`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns="menu-appbar"
-                                  className="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  className="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   disabled={false}
                                   id="menu-appbar-button"
                                   onBlur={[Function]}
@@ -6765,30 +6050,30 @@ exports[`AppBar logout 2`] = `
                                   type="button"
                                 >
                                   <span
-                                    className="MuiIconButton-label-49"
+                                    className="MuiIconButton-label-73"
                                   >
                                     <pure(AccountCircle)
-                                      className="MuiIconButton-icon-50"
+                                      className="MuiIconButton-icon-74"
                                       key=".0"
                                     >
                                       <AccountCircle
-                                        className="MuiIconButton-icon-50"
+                                        className="MuiIconButton-icon-74"
                                       >
                                         <withStyles(SvgIcon)
-                                          className="MuiIconButton-icon-50"
+                                          className="MuiIconButton-icon-74"
                                         >
                                           <SvgIcon
-                                            className="MuiIconButton-icon-50"
+                                            className="MuiIconButton-icon-74"
                                             classes={
                                               Object {
-                                                "root": "MuiSvgIcon-root-54",
+                                                "root": "MuiSvgIcon-root-78",
                                               }
                                             }
                                             viewBox="0 0 24 24"
                                           >
                                             <svg
                                               aria-hidden="true"
-                                              className="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                              className="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                               focusable="false"
                                               viewBox="0 0 24 24"
                                             >
@@ -6812,25 +6097,25 @@ exports[`AppBar logout 2`] = `
                                           "0%": "%",
                                           "100%": "00%",
                                           "50%": "0%",
-                                          "ripple": "MuiTouchRipple-ripple-59",
-                                          "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                          "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                          "root": "MuiTouchRipple-root-55",
-                                          "wrapper": "MuiTouchRipple-wrapper-56",
-                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                          "ripple": "MuiTouchRipple-ripple-83",
+                                          "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                          "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                          "root": "MuiTouchRipple-root-79",
+                                          "wrapper": "MuiTouchRipple-wrapper-80",
+                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                         }
                                       }
                                     >
                                       <TransitionGroup
                                         childFactory={[Function]}
-                                        className="MuiTouchRipple-root-55"
+                                        className="MuiTouchRipple-root-79"
                                         component="span"
                                         enter={true}
                                         exit={true}
                                       >
                                         <span
-                                          className="MuiTouchRipple-root-55"
+                                          className="MuiTouchRipple-root-79"
                                         />
                                       </TransitionGroup>
                                     </TouchRipple>
@@ -6845,18 +6130,18 @@ exports[`AppBar logout 2`] = `
                             <button
                               aria-haspopup="true"
                               aria-owns="menu-appbar"
-                              class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                              class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                               id="menu-appbar-button"
                               role="button"
                               tabindex="0"
                               type="button"
                             >
                               <span
-                                class="MuiIconButton-label-49"
+                                class="MuiIconButton-label-73"
                               >
                                 <svg
                                   aria-hidden="true"
-                                  class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                  class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                   focusable="false"
                                   viewBox="0 0 24 24"
                                 >
@@ -6866,7 +6151,7 @@ exports[`AppBar logout 2`] = `
                                 </svg>
                               </span>
                               <span
-                                class="MuiTouchRipple-root-55"
+                                class="MuiTouchRipple-root-79"
                               />
                             </button>
                           }
@@ -6891,18 +6176,18 @@ exports[`AppBar logout 2`] = `
                               <button
                                 aria-haspopup="true"
                                 aria-owns="menu-appbar"
-                                class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                 id="menu-appbar-button"
                                 role="button"
                                 tabindex="0"
                                 type="button"
                               >
                                 <span
-                                  class="MuiIconButton-label-49"
+                                  class="MuiIconButton-label-73"
                                 >
                                   <svg
                                     aria-hidden="true"
-                                    class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                    class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                     focusable="false"
                                     viewBox="0 0 24 24"
                                   >
@@ -6912,7 +6197,7 @@ exports[`AppBar logout 2`] = `
                                   </svg>
                                 </span>
                                 <span
-                                  class="MuiTouchRipple-root-55"
+                                  class="MuiTouchRipple-root-79"
                                 />
                               </button>
                             }
@@ -7301,18 +6586,18 @@ exports[`AppBar logout 2`] = `
                                 <button
                                   aria-haspopup="true"
                                   aria-owns="menu-appbar"
-                                  class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                  class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                   id="menu-appbar-button"
                                   role="button"
                                   tabindex="0"
                                   type="button"
                                 >
                                   <span
-                                    class="MuiIconButton-label-49"
+                                    class="MuiIconButton-label-73"
                                   >
                                     <svg
                                       aria-hidden="true"
-                                      class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                      class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                       focusable="false"
                                       viewBox="0 0 24 24"
                                     >
@@ -7322,7 +6607,7 @@ exports[`AppBar logout 2`] = `
                                     </svg>
                                   </span>
                                   <span
-                                    class="MuiTouchRipple-root-55"
+                                    class="MuiTouchRipple-root-79"
                                   />
                                 </button>
                               }
@@ -7351,18 +6636,18 @@ exports[`AppBar logout 2`] = `
                                   <button
                                     aria-haspopup="true"
                                     aria-owns="menu-appbar"
-                                    class="MuiButtonBase-root-52 MuiIconButton-root-43 MuiIconButton-colorContrast-45"
+                                    class="MuiButtonBase-root-76 MuiIconButton-root-67 MuiIconButton-colorContrast-69"
                                     id="menu-appbar-button"
                                     role="button"
                                     tabindex="0"
                                     type="button"
                                   >
                                     <span
-                                      class="MuiIconButton-label-49"
+                                      class="MuiIconButton-label-73"
                                     >
                                       <svg
                                         aria-hidden="true"
-                                        class="MuiSvgIcon-root-54 MuiIconButton-icon-50"
+                                        class="MuiSvgIcon-root-78 MuiIconButton-icon-74"
                                         focusable="false"
                                         viewBox="0 0 24 24"
                                       >
@@ -7372,7 +6657,7 @@ exports[`AppBar logout 2`] = `
                                       </svg>
                                     </span>
                                     <span
-                                      class="MuiTouchRipple-root-55"
+                                      class="MuiTouchRipple-root-79"
                                     />
                                   </button>
                                 }
@@ -8410,8 +7695,8 @@ exports[`AppBar logout 2`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -8427,7 +7712,7 @@ exports[`AppBar logout 2`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="overview"
                                                                           onBlur={[Function]}
@@ -8455,25 +7740,25 @@ exports[`AppBar logout 2`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
@@ -8563,8 +7848,8 @@ exports[`AppBar logout 2`] = `
                                                                         className="MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                         classes={
                                                                           Object {
-                                                                            "disabled": "MuiButtonBase-disabled-53",
-                                                                            "root": "MuiButtonBase-root-52",
+                                                                            "disabled": "MuiButtonBase-disabled-77",
+                                                                            "root": "MuiButtonBase-root-76",
                                                                           }
                                                                         }
                                                                         component="li"
@@ -8580,7 +7865,7 @@ exports[`AppBar logout 2`] = `
                                                                         type="button"
                                                                       >
                                                                         <li
-                                                                          className="MuiButtonBase-root-52 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
+                                                                          className="MuiButtonBase-root-76 MuiListItem-root-98 MuiListItem-gutters-105 MuiListItem-button-106 MuiListItem-default-101 MuiMenuItem-root-96"
                                                                           disabled={false}
                                                                           id="logout"
                                                                           onBlur={[Function]}
@@ -8608,25 +7893,25 @@ exports[`AppBar logout 2`] = `
                                                                                   "0%": "%",
                                                                                   "100%": "00%",
                                                                                   "50%": "0%",
-                                                                                  "ripple": "MuiTouchRipple-ripple-59",
-                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-61",
-                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-60",
-                                                                                  "root": "MuiTouchRipple-root-55",
-                                                                                  "wrapper": "MuiTouchRipple-wrapper-56",
-                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-57",
-                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-58",
+                                                                                  "ripple": "MuiTouchRipple-ripple-83",
+                                                                                  "rippleFast": "MuiTouchRipple-rippleFast-85",
+                                                                                  "rippleVisible": "MuiTouchRipple-rippleVisible-84",
+                                                                                  "root": "MuiTouchRipple-root-79",
+                                                                                  "wrapper": "MuiTouchRipple-wrapper-80",
+                                                                                  "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-81",
+                                                                                  "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-82",
                                                                                 }
                                                                               }
                                                                             >
                                                                               <TransitionGroup
                                                                                 childFactory={[Function]}
-                                                                                className="MuiTouchRipple-root-55"
+                                                                                className="MuiTouchRipple-root-79"
                                                                                 component="span"
                                                                                 enter={true}
                                                                                 exit={true}
                                                                               >
                                                                                 <span
-                                                                                  className="MuiTouchRipple-root-55"
+                                                                                  className="MuiTouchRipple-root-79"
                                                                                 />
                                                                               </TransitionGroup>
                                                                             </TouchRipple>
