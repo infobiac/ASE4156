@@ -8,6 +8,13 @@ from django.contrib.auth.decorators import login_required
 from authentication.plaid_wrapper import PlaidAPI
 
 
+def idx(_request):
+    """
+    Redirect / to home
+    """
+    return HttpResponseRedirect('/home')
+
+
 def login(request):
     """
     Dummy function to render login page

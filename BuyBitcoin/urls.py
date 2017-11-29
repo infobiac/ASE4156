@@ -24,6 +24,7 @@ import stocks.historical
 EXECUTOR = ThreadExecutor()
 # pylint: disable=invalid-name
 urlpatterns = [
+    url(r'^/?$', authentication.views.idx),
     url(r'^login$', authentication.views.login),
     url(r'^logout$', authentication.views.logout),
     url(r'^admin/', admin.site.urls),

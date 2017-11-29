@@ -32,7 +32,7 @@ def test_signup(selenium, live_server, client):
         'secure': False,
         'path': '/',
     })
-    selenium.get('%s%s' % (live_server, '/home'))
+    selenium.get('%s%s' % (live_server, '/'))
     selenium.implicitly_wait(30)
     test = selenium.find_element_by_id('link-button')
     test.click()
