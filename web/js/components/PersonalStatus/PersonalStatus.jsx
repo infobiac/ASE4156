@@ -6,9 +6,11 @@ import HighlightBox from '../HighlightBox';
 
 import type { PersonalStatusRelay_bank }
   from './__generated__/PersonalStatusRelay_bank.graphql';
+import type { PersonalStatusRelay_account } from './__generated__/PersonalStatusRelay_account.graphql';
 
 type Props = {
   bank: PersonalStatusRelay_bank,
+  account: PersonalStatusRelay_account
 }
 
 const spacing = { xs: 12, sm: 6, md: 3 };
@@ -25,7 +27,14 @@ export default class PersonalStatus extends React.Component < Props > {
     return (
       <Grid container spacing={16} align="stretch" id="personal-status">
         <Grid item {...spacing}>
-          <HighlightBox title="Current balance" value={this.props.bank.balance.toFixed(2)} />
+          <HighlightBox
+            title="Current balance"
+            value={this.props.bank.balance.toFixed(2)}
+            secondaryInfo={[{
+              text: this.props.account.accountName,
+              value: this.props.account.totalValue.toFixed(2),
+            }]}
+          />
         </Grid>
         <Grid item {...spacing}>
           <HighlightBox title="Total Income" value={this.props.bank.income.toFixed(2)} />
@@ -37,6 +46,10 @@ export default class PersonalStatus extends React.Component < Props > {
           <HighlightBox
             title="Available money"
             value={(this.props.bank.income + this.props.bank.outcome).toFixed(2)}
+            secondaryInfo={[{
+              text: this.props.account.accountName,
+              value: this.props.account.availableCash.toFixed(2),
+            }]}
           />
         </Grid>
       </Grid>

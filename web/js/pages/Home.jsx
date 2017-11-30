@@ -30,8 +30,16 @@ class Home extends React.Component < Props > {
         <SnackbarErrorContext>
           <Grid container spacing={16}>
             <Grid item xs={12}>
-              {this.props.viewer.userbank.edges[0] && this.props.viewer.userbank.edges[0].node
-                ? <PersonalStatusRelay bank={this.props.viewer.userbank.edges[0].node} />
+              {
+                this.props.viewer.userbank.edges[0]
+                && this.props.viewer.userbank.edges[0].node
+                && this.props.viewer.profile
+                ? (
+                  <PersonalStatusRelay
+                    bank={this.props.viewer.userbank.edges[0].node}
+                    account={this.props.viewer.profile.selectedAcc}
+                  />
+                )
                 : null}
             </Grid>
             <Grid item xs={12}>
@@ -61,6 +69,9 @@ export default createFragmentContainer(Home, {
     fragment Home_viewer on GUser {
       profile {
         ...InvestBucketGridRelay_profile
+        selectedAcc {
+          ...PersonalStatusRelay_account
+        }
       }
       userbank {
         edges {

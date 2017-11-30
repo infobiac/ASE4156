@@ -10,4 +10,11 @@ export default createFragmentContainer(PersonalStatus, {
       outcome
     }
 `,
+  account: graphql`
+    fragment PersonalStatusRelay_account on GTradingAccount {
+      totalValue
+      accountName
+      availableCash
+    }
+  `,
 });

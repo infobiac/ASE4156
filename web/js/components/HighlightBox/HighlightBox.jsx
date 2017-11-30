@@ -27,6 +27,14 @@ class HighlightBox extends React.Component<Props> {
     secondaryInfo: null,
   }
   render() {
+    let secondaryInfo = null;
+    if (this.props.secondaryInfo) {
+      secondaryInfo = this.props.secondaryInfo.map(secondary => (
+        <ListItem key={secondary.text}>
+          <ListItemText primary={`${secondary.value} ${secondary.text}`} />
+        </ListItem>
+      ));
+    }
     return (
       <Card>
         <CardHeader title={this.props.title} />
@@ -35,13 +43,7 @@ class HighlightBox extends React.Component<Props> {
           <Divider />
           <List>
             {
-              this.props.secondaryInfo
-              ? this.props.secondaryInfo.map(secondary => (
-                <ListItem key={secondary.text}>
-                  <ListItemText>{`${secondary.value} ${secondary.text}`}</ListItemText>
-                </ListItem>
-              ))
-              : null
+              secondaryInfo
             }
           </List>
         </CardContent>

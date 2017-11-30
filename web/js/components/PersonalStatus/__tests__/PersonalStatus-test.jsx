@@ -8,7 +8,10 @@ describe('PersonalStatus', () => {
   });
   it('renders', () => {
     const comp = shallow((
-      <PersonalStatus bank={{ balance: 1.0, income: 2.0, outcome: 4.0 }} />
+      <PersonalStatus
+        bank={{ balance: 1.0, income: 2.0, outcome: 4.0 }}
+        account={{ availableCash: 200.0, totalValue: 100.0, accountName: 'test' }}
+      />
     ));
     expect(comp).toMatchSnapshot();
   });

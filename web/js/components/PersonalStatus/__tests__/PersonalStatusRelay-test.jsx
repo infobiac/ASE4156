@@ -42,6 +42,15 @@ describe('PersonalStatusRelay', () => {
               PersonalStatusRelay_bank: {},
             },
           }}
+          account={{
+            totalValue: 3.33,
+            availableCash: 4.44,
+            accountName: 'Some Name',
+            __id: '2',
+            __fragments: {
+              PersonalStatusRelay_account: {},
+            },
+          }}
         />
       ), ctx(),
     );

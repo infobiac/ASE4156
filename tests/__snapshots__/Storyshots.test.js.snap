@@ -144,7 +144,13 @@ exports[`Storyshots HighlightBox Account Total 1`] = `
       >
         <div
           className="MuiListItemText-root-365"
-        />
+        >
+          <h3
+            className="MuiTypography-root-43 MuiTypography-subheading-50 MuiListItemText-text-368"
+          >
+            $7,000.00 Invested Total
+          </h3>
+        </div>
       </li>
     </ul>
   </div>
@@ -189,7 +195,13 @@ exports[`Storyshots HighlightBox Annulized Percentage Return 1`] = `
       >
         <div
           className="MuiListItemText-root-365"
-        />
+        >
+          <h3
+            className="MuiTypography-root-43 MuiTypography-subheading-50 MuiListItemText-text-368"
+          >
+            $774.90 Total Shares Owneed
+          </h3>
+        </div>
       </li>
     </ul>
   </div>
@@ -234,7 +246,13 @@ exports[`Storyshots HighlightBox Playground 1`] = `
       >
         <div
           className="MuiListItemText-root-365"
-        />
+        >
+          <h3
+            className="MuiTypography-root-43 MuiTypography-subheading-50 MuiListItemText-text-368"
+          >
+            $7,000.00 Invested Total
+          </h3>
+        </div>
       </li>
     </ul>
   </div>

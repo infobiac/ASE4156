@@ -14,7 +14,14 @@ exports[`PersonalStatus renders 1`] = `
     xs={12}
   >
     <HighlightBox
-      secondaryInfo={null}
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "test",
+            "value": "100.00",
+          },
+        ]
+      }
       title="Current balance"
       value="1.00"
     />
@@ -50,7 +57,14 @@ exports[`PersonalStatus renders 1`] = `
     xs={12}
   >
     <HighlightBox
-      secondaryInfo={null}
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "test",
+            "value": "200.00",
+          },
+        ]
+      }
       title="Available money"
       value="6.00"
     />
