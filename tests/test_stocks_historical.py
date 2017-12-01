@@ -2,7 +2,7 @@
 from unittest import mock
 from django.test import TestCase
 from stocks.models import Stock, DailyStockQuote
-from stocks import stock_helper
+from stocks import stock_helper, historical
 import pandas as pd
 from yahoo_historical import Fetcher
 import pytest
@@ -118,6 +118,11 @@ class StocksViewTests(TestCase):
                 'Close': [2.55, 2.58],
                 'Date': ["2016-10-11", "2017-10-12"],
             })]))
+    @mock.patch.object(
+        historical,
+        'fill',
+        mock.MagicMock(return_value=None)
+        )
     @pytest.mark.django_db(transaction=True)
     def test_fill_stock_data(self):
         """
@@ -181,3 +186,43 @@ class StocksViewTests(TestCase):
         ticker = 'xxx'
         result = stock_helper.validate_ticker(ticker)
         self.assertEqual(result, False)
+
+    @mock.patch.object(
+        Fetcher,
+        'getHistorical',
+        mock.MagicMock(side_effect=[
+            pd.DataFrame({
+                'Close': [1.76, 2.51],
+                'Date': ["2017-10-08", "2017-10-09"],
+                }),
+            pd.DataFrame({
+                'Close': [2.51, 2.53],
+                'Date': ["2017-10-09", "2017-10-10"],
+                }),
+            pd.DataFrame({
+                'Close': [2.55, 2.58],
+                'Date': ["2017-10-11", "2017-10-12"],
+            }),
+            pd.DataFrame({
+                'Close': [2.55, 2.58],
+                'Date': ["2017-10-12", "2017-10-13"],
+            })]))
+    @mock.patch.object(
+        arrow,
+        'now',
+        mock.MagicMock(side_effect=[
+            arrow.get(2017, 10, 8),
+            arrow.get(2017, 10, 9),
+            arrow.get(2017, 10, 10),
+            arrow.get(2017, 10, 11)
+            ]))
+    def test_back_fill_helper(self):
+        """
+        Testing fill helper
+        """
+        stock = Stock(name="Facebook", ticker="FB")
+        stock.save()
+        historical.fill()
+        stock_db = DailyStockQuote.objects.values('stock_id')[0]
+        data = DailyStockQuote.objects.filter(stock_id=stock_db['stock_id'])
+        self.assertEqual(4, len(data))

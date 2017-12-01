@@ -1,4 +1,5 @@
 """This module is for loading historical data for stocks"""
+import threading
 from yahoo_historical import Fetcher
 import arrow
 from django.db.models.signals import post_save
@@ -51,24 +52,30 @@ def create_stock(instance, created, **_):
 
 
 def fill_stocks(request):
-    """Function that fills stock data for missing days"""
+    """Function that fills stock data for missing days via GET"""
     if request.method == "GET":
-        stock_id_field = 'stock_id'
-        stock_ticker = 'stock__ticker'
-        date = 'date'
-        data = DailyStockQuote.objects.values(stock_ticker, stock_id_field).annotate(date=Max(date))
-        for stock in data:
-            last_date = arrow.get(stock[date]).replace(days=+1)
-            last_date = get_date_array_for_fetcher(last_date)
-            now = get_date_array_for_fetcher(arrow.now())
-            ticker = stock[stock_ticker]
-            stock_id = stock[stock_id_field]
-            fetcher = Fetcher(ticker, last_date, now)
-            history = fetcher.getHistorical()
-            save_stock_quote_from_fetcher(history, stock_id)
-        msg = "Filling data for {0} stocks".format(len(data))
-        return HttpResponse(msg, status=200)
+        thread = threading.Thread(target=fill)
+        thread.start()
+        return HttpResponse("Filling Data...", status=200)
     return HttpResponse("405 Method Not Allowed", status=405)
+
+
+def fill():
+    """Function that fills stock data for missing days"""
+    stock_id_field = 'stock_id'
+    stock_ticker = 'stock__ticker'
+    date = 'date'
+    now = arrow.now()
+    data = DailyStockQuote.objects.values(stock_ticker, stock_id_field).annotate(date=Max(date))
+    for stock in data:
+        last_date = arrow.get(stock[date]).replace(days=+1)
+        last_date = get_date_array_for_fetcher(last_date)
+        now = get_date_array_for_fetcher(now)
+        ticker = stock[stock_ticker]
+        stock_id = stock[stock_id_field]
+        fetcher = Fetcher(ticker, last_date, now)
+        history = fetcher.getHistorical()
+        save_stock_quote_from_fetcher(history, stock_id)
 
 
 def save_stock_quote_from_fetcher(fetcher_history, stock_id):
