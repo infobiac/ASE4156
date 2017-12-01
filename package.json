@@ -64,7 +64,7 @@
     "react": "^16.2.0",
     "react-addons-shallow-compare": "^15.6.0",
     "react-autocomplete": "^1.7.2",
-    "react-dates": "^15.2.1",
+    "react-dates": "^15.3.0",
     "react-dom": "^16.2.0",
     "react-google-charts": "^1.5.5",
     "react-i18next": "^7.0.2",
