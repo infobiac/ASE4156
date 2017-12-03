@@ -353,6 +353,26 @@ def test_stock_config_value_on():
     with pytest.raises(Exception):
         config.value_on("2016-06-01")
     assert config.value_on("2016-06-08") == quantity * value
+    mock_quote = namedtuple('mock_quote', 'value')
+    with mock.patch.object(
+        Stock,
+        "latest_quote",
+        mock.MagicMock(
+            return_value=mock_quote(float('NaN'))
+            )):
+        with pytest.raises(Exception):
+            config.value_on()
+
+
+@pytest.mark.django_db(transaction=True)
+def test_bucket_value_on():
+    """
+    Tests to see if bucket properly handles exception
+    """
+    user = User.objects.create(username='user1', password="a")
+    bucket = InvestmentBucket(name="bucket", public=True, owner=user.profile, available=10)
+    bucket.save()
+    assert bucket.value_on("2016-06-01") == 10
 
 
 @pytest.mark.django_db(transaction=True)
@@ -389,4 +409,32 @@ def test_bucket_historical():
         assert historical[idx] == (
             datetime.datetime.now().date() - datetime.timedelta(days=idx+2),
             val * quantity + available
+            )
+    stock2 = Stock(
+        name="Name2X",
+        ticker="Testes"
+    )
+    stock2.save()
+    value = list(range(1, 31))
+    for val in value:
+        idx = val - 1
+        stock2.daily_quote.create(
+            value=val,
+            date=datetime.datetime.now().date() - datetime.timedelta(days=idx)
+        )
+    bucket2 = InvestmentBucket(name="bucket2", public=True, owner=user.profile, available=0)
+    bucket2.save()
+    config2 = InvestmentStockConfiguration(
+        quantity=1,
+        stock=stock2,
+        bucket=bucket2,
+        start=datetime.datetime.now().date() - datetime.timedelta(days=len(value))
+        )
+    config2.save()
+    historical2 = bucket2.historical()
+    for val in value:
+        idx = val - 1
+        assert historical2[idx] == (
+            datetime.datetime.now().date() - datetime.timedelta(days=idx),
+            val
             )
