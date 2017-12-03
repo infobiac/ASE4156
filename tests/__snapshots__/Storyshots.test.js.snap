@@ -339,6 +339,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
         <div
           autoFocus={true}
           className="MuiListItemText-root-365"
+          id="attr"
           onClick={[Function]}
         >
           <h3
@@ -414,6 +415,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
         <div
           autoFocus={true}
           className="MuiListItemText-root-365"
+          id="attr"
           onClick={[Function]}
         >
           <h3
@@ -830,6 +832,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -855,6 +858,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -880,6 +884,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -967,6 +972,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -992,6 +998,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -1017,6 +1024,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -1104,6 +1112,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -1129,6 +1138,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"
@@ -1154,6 +1164,7 @@ exports[`Storyshots Page Test page 1`] = `
                     <div
                       autoFocus={true}
                       className="MuiListItemText-root-288"
+                      id="attr"
                     >
                       <h3
                         className="MuiTypography-root-132 MuiTypography-subheading-139 MuiListItemText-text-291"

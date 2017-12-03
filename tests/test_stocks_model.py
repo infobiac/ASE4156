@@ -29,6 +29,7 @@ def teardown_module(module):
     """
     Restore externals
     """
+    post_save.connect(receiver=create_stock, sender=Stock)
     Fetcher.__init__ = module.original_init_method
     Fetcher.getHistorical = module.original_getHistorical_method
 

@@ -416,6 +416,7 @@ exports[`InvestComposition add stock 2`] = `
 
 exports[`InvestComposition assert suggestion render 1`] = `
 <TextField
+  id="stockname"
   inputRef={null}
   required={false}
   select={false}

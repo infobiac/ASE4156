@@ -8,6 +8,9 @@
   </head>
 
   <body>
+    <form>
+      {% csrf_token %}
+    </form>
     <div id="react-app"></div>
     {% render_bundle 'main' %}
   </body>

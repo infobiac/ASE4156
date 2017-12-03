@@ -163,7 +163,7 @@ class InvestComposition extends React.Component<Props, State> {
       renderInput={(props: {ref: any}) => {
         const { ref, ...rest } = props;
         return (
-          <TextField inputRef={ref} {...rest} />
+          <TextField id="stockname" inputRef={ref} {...rest} />
         );
       }
       }

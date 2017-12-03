@@ -180,6 +180,7 @@ exports[`InvestBucket displays bad attributes 1`] = `
         </withStyles(ListItemIcon)>
         <withStyles(ListItemText)
           autoFocus={true}
+          id="attr"
           key="1"
           primary="Attr"
         />
@@ -215,6 +216,7 @@ exports[`InvestBucket displays good attributes 1`] = `
         </withStyles(ListItemIcon)>
         <withStyles(ListItemText)
           autoFocus={true}
+          id="attr"
           key="1"
           primary="Attr"
         />

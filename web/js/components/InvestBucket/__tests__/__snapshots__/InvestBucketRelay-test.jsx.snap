@@ -1848,6 +1848,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                       </withStyles(ListItemIcon)>
                                       <withStyles(ListItemText)
                                         autoFocus={true}
+                                        id="attr"
                                         key=".$2"
                                         onClick={[Function]}
                                         primary="my text"
@@ -1866,6 +1867,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                             }
                                           }
                                           disableTypography={false}
+                                          id="attr"
                                           inset={false}
                                           onClick={[Function]}
                                           primary="my text"
@@ -1874,6 +1876,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                           <div
                                             autoFocus={true}
                                             className="MuiListItemText-root-108"
+                                            id="attr"
                                             onClick={[Function]}
                                           >
                                             <withStyles(Typography)
@@ -2027,6 +2030,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                       </withStyles(ListItemIcon)>
                                       <withStyles(ListItemText)
                                         autoFocus={true}
+                                        id="attr"
                                         key=".$3"
                                         onClick={[Function]}
                                         primary="my bad text"
@@ -2045,6 +2049,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                             }
                                           }
                                           disableTypography={false}
+                                          id="attr"
                                           inset={false}
                                           onClick={[Function]}
                                           primary="my bad text"
@@ -2053,6 +2058,7 @@ exports[`InvestBucketRelay render owner 1`] = `
                                           <div
                                             autoFocus={true}
                                             className="MuiListItemText-root-108"
+                                            id="attr"
                                             onClick={[Function]}
                                           >
                                             <withStyles(Typography)

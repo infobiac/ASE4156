@@ -74,6 +74,7 @@ class InvestBucket extends React.Component <Props, State> {
         key={attr.id}
         primary={attr.shortDesc}
         autoFocus
+        id="attr"
         {...attr.text}
       />);
     }

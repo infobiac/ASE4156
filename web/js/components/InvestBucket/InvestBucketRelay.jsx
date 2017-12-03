@@ -212,10 +212,10 @@ class InvestBucketRelay extends React.Component<Props, State> {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={(() => this.setState(() => ({ deleteConfirm: false })))} color="primary">
+            <Button id="keep" onClick={(() => this.setState(() => ({ deleteConfirm: false })))} color="primary">
               Keep it
             </Button>
-            <Button onClick={this.deleteBucket} color="primary" autoFocus>
+            <Button id="delete2" onClick={this.deleteBucket} color="primary" autoFocus>
               Delete
             </Button>
           </DialogActions>
