@@ -1,6 +1,5 @@
 [ignore]
 .*/node_modules/jss/lib/utils/findRenderer.js.flow
-.*/node_modules/jss/lib/rules/.*
 .*/node_modules/jss/lib/renderers/DomRenderer.js.flow
 .*/node_modules/jss/lib/plugins/rules.js.flow
 .*/node_modules/jss/lib/types.js.flow
@@ -15,5 +14,7 @@
 [include]
 
 [libs]
+node_modules/jss/flow-typed
 
 [options]
+unsafe.enable_getters_and_setters=true

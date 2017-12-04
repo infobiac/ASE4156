@@ -108,11 +108,11 @@ exports[`SnackbarErrorContext reports 2`] = `
                 onMouseLeave={[Function]}
               >
                 <withTheme(Slide)
+                  appear={true}
                   direction="up"
                   in={true}
                   onExited={[Function]}
-                  transitionAppear={true}
-                  transitionDuration={
+                  timeout={
                     Object {
                       "enter": 225,
                       "exit": 195,
@@ -120,6 +120,7 @@ exports[`SnackbarErrorContext reports 2`] = `
                   }
                 >
                   <Slide
+                    appear={true}
                     direction="up"
                     in={true}
                     onExited={[Function]}
@@ -142,7 +143,7 @@ exports[`SnackbarErrorContext reports 2`] = `
                             "md": 960,
                             "sm": 600,
                             "xl": 1920,
-                            "xs": 360,
+                            "xs": 0,
                           },
                           "width": [Function],
                         },
@@ -225,6 +226,9 @@ exports[`SnackbarErrorContext reports 2`] = `
                             "inputText": "rgba(0, 0, 0, 0.87)",
                             "labelText": "rgba(0, 0, 0, 0.54)",
                           },
+                          "line": Object {
+                            "stepper": "#bdbdbd",
+                          },
                           "primary": Object {
                             "100": "#c5cae9",
                             "200": "#9fa8da",
@@ -278,6 +282,9 @@ exports[`SnackbarErrorContext reports 2`] = `
                                 "inputText": "rgba(255, 255, 255, 1)",
                                 "labelText": "rgba(255, 255, 255, 0.7)",
                               },
+                              "line": Object {
+                                "stepper": "#bdbdbd",
+                              },
                               "text": Object {
                                 "disabled": "rgba(255, 255, 255, 0.5)",
                                 "divider": "rgba(255, 255, 255, 0.12)",
@@ -305,6 +312,9 @@ exports[`SnackbarErrorContext reports 2`] = `
                                 "helperText": "rgba(0, 0, 0, 0.54)",
                                 "inputText": "rgba(0, 0, 0, 0.87)",
                                 "labelText": "rgba(0, 0, 0, 0.54)",
+                              },
+                              "line": Object {
+                                "stepper": "#bdbdbd",
                               },
                               "text": Object {
                                 "disabled": "rgba(0, 0, 0, 0.38)",
@@ -394,7 +404,7 @@ exports[`SnackbarErrorContext reports 2`] = `
                           },
                           "button": Object {
                             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-                            "fontSize": 14,
+                            "fontSize": "0.875rem",
                             "fontWeight": 500,
                             "textTransform": "uppercase",
                           },
@@ -451,6 +461,7 @@ exports[`SnackbarErrorContext reports 2`] = `
                             "fontWeight": 400,
                             "lineHeight": "1.35417em",
                           },
+                          "pxToRem": [Function],
                           "subheading": Object {
                             "color": "rgba(0, 0, 0, 0.87)",
                             "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
@@ -481,46 +492,40 @@ exports[`SnackbarErrorContext reports 2`] = `
                         },
                       }
                     }
-                    transitionAppear={true}
-                    transitionDuration={
+                    timeout={
                       Object {
                         "enter": 225,
                         "exit": 195,
                       }
                     }
                   >
-                    <Transition
-                      direction="up"
-                      in={true}
-                      onEnter={[Function]}
-                      onEntering={[Function]}
-                      onExit={[Function]}
-                      onExited={[Function]}
-                      timeout={
-                        Object {
-                          "enter": 225,
-                          "exit": 195,
-                        }
-                      }
-                      transitionAppear={true}
-                      unmountOnExit={false}
+                    <EventListener
+                      onResize={[Function]}
+                      target="window"
                     >
-                      <withStyles(SnackbarContent)
-                        action={
-                          <withStyles(Button)
-                            color="accent"
-                            dense={true}
-                            id="close"
-                            onClick={[Function]}
-                          >
-                            Close
-                          </withStyles(Button)>
-                        }
-                        className=""
+                      <Transition
+                        appear={true}
                         direction="up"
-                        message="test"
+                        enter={true}
+                        exit={true}
+                        in={true}
+                        mountOnEnter={false}
+                        onEnter={[Function]}
+                        onEntered={[Function]}
+                        onEntering={[Function]}
+                        onExit={[Function]}
+                        onExited={[Function]}
+                        onExiting={[Function]}
+                        style={Object {}}
+                        timeout={
+                          Object {
+                            "enter": 225,
+                            "exit": 195,
+                          }
+                        }
+                        unmountOnExit={false}
                       >
-                        <SnackbarContent
+                        <withStyles(SnackbarContent)
                           action={
                             <withStyles(Button)
                               color="accent"
@@ -531,63 +536,34 @@ exports[`SnackbarErrorContext reports 2`] = `
                               Close
                             </withStyles(Button)>
                           }
-                          className=""
-                          classes={
-                            Object {
-                              "action": "MuiSnackbarContent-action-10",
-                              "message": "MuiSnackbarContent-message-9",
-                              "root": "MuiSnackbarContent-root-8",
-                            }
-                          }
                           direction="up"
                           message="test"
+                          style={Object {}}
                         >
-                          <withStyles(Paper)
-                            className="MuiSnackbarContent-root-8"
-                            component={[Function]}
-                            direction="up"
-                            elevation={6}
-                            headlineMapping={
+                          <SnackbarContent
+                            action={
+                              <withStyles(Button)
+                                color="accent"
+                                dense={true}
+                                id="close"
+                                onClick={[Function]}
+                              >
+                                Close
+                              </withStyles(Button)>
+                            }
+                            classes={
                               Object {
-                                "body1": "div",
+                                "action": "MuiSnackbarContent-action-10",
+                                "message": "MuiSnackbarContent-message-9",
+                                "root": "MuiSnackbarContent-root-8",
                               }
                             }
-                            role="alertdialog"
-                            square={true}
+                            direction="up"
+                            message="test"
+                            style={Object {}}
                           >
-                            <Paper
+                            <withStyles(Paper)
                               className="MuiSnackbarContent-root-8"
-                              classes={
-                                Object {
-                                  "root": "MuiPaper-root-11",
-                                  "rounded": "MuiPaper-rounded-12",
-                                  "shadow0": "MuiPaper-shadow0-13",
-                                  "shadow1": "MuiPaper-shadow1-14",
-                                  "shadow10": "MuiPaper-shadow10-23",
-                                  "shadow11": "MuiPaper-shadow11-24",
-                                  "shadow12": "MuiPaper-shadow12-25",
-                                  "shadow13": "MuiPaper-shadow13-26",
-                                  "shadow14": "MuiPaper-shadow14-27",
-                                  "shadow15": "MuiPaper-shadow15-28",
-                                  "shadow16": "MuiPaper-shadow16-29",
-                                  "shadow17": "MuiPaper-shadow17-30",
-                                  "shadow18": "MuiPaper-shadow18-31",
-                                  "shadow19": "MuiPaper-shadow19-32",
-                                  "shadow2": "MuiPaper-shadow2-15",
-                                  "shadow20": "MuiPaper-shadow20-33",
-                                  "shadow21": "MuiPaper-shadow21-34",
-                                  "shadow22": "MuiPaper-shadow22-35",
-                                  "shadow23": "MuiPaper-shadow23-36",
-                                  "shadow24": "MuiPaper-shadow24-37",
-                                  "shadow3": "MuiPaper-shadow3-16",
-                                  "shadow4": "MuiPaper-shadow4-17",
-                                  "shadow5": "MuiPaper-shadow5-18",
-                                  "shadow6": "MuiPaper-shadow6-19",
-                                  "shadow7": "MuiPaper-shadow7-20",
-                                  "shadow8": "MuiPaper-shadow8-21",
-                                  "shadow9": "MuiPaper-shadow9-22",
-                                }
-                              }
                               component={[Function]}
                               direction="up"
                               elevation={6}
@@ -598,222 +574,257 @@ exports[`SnackbarErrorContext reports 2`] = `
                               }
                               role="alertdialog"
                               square={true}
+                              style={Object {}}
                             >
-                              <withStyles(Typography)
-                                className="MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                              <Paper
+                                className="MuiSnackbarContent-root-8"
+                                classes={
+                                  Object {
+                                    "root": "MuiPaper-root-11",
+                                    "rounded": "MuiPaper-rounded-12",
+                                    "shadow0": "MuiPaper-shadow0-13",
+                                    "shadow1": "MuiPaper-shadow1-14",
+                                    "shadow10": "MuiPaper-shadow10-23",
+                                    "shadow11": "MuiPaper-shadow11-24",
+                                    "shadow12": "MuiPaper-shadow12-25",
+                                    "shadow13": "MuiPaper-shadow13-26",
+                                    "shadow14": "MuiPaper-shadow14-27",
+                                    "shadow15": "MuiPaper-shadow15-28",
+                                    "shadow16": "MuiPaper-shadow16-29",
+                                    "shadow17": "MuiPaper-shadow17-30",
+                                    "shadow18": "MuiPaper-shadow18-31",
+                                    "shadow19": "MuiPaper-shadow19-32",
+                                    "shadow2": "MuiPaper-shadow2-15",
+                                    "shadow20": "MuiPaper-shadow20-33",
+                                    "shadow21": "MuiPaper-shadow21-34",
+                                    "shadow22": "MuiPaper-shadow22-35",
+                                    "shadow23": "MuiPaper-shadow23-36",
+                                    "shadow24": "MuiPaper-shadow24-37",
+                                    "shadow3": "MuiPaper-shadow3-16",
+                                    "shadow4": "MuiPaper-shadow4-17",
+                                    "shadow5": "MuiPaper-shadow5-18",
+                                    "shadow6": "MuiPaper-shadow6-19",
+                                    "shadow7": "MuiPaper-shadow7-20",
+                                    "shadow8": "MuiPaper-shadow8-21",
+                                    "shadow9": "MuiPaper-shadow9-22",
+                                  }
+                                }
+                                component={[Function]}
                                 direction="up"
+                                elevation={6}
                                 headlineMapping={
                                   Object {
                                     "body1": "div",
                                   }
                                 }
                                 role="alertdialog"
+                                square={true}
+                                style={Object {}}
                               >
-                                <Typography
-                                  align="inherit"
+                                <withStyles(Typography)
                                   className="MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
-                                  classes={
-                                    Object {
-                                      "alignCenter": "MuiTypography-alignCenter-51",
-                                      "alignJustify": "MuiTypography-alignJustify-53",
-                                      "alignLeft": "MuiTypography-alignLeft-50",
-                                      "alignRight": "MuiTypography-alignRight-52",
-                                      "body1": "MuiTypography-body1-47",
-                                      "body2": "MuiTypography-body2-46",
-                                      "button": "MuiTypography-button-49",
-                                      "caption": "MuiTypography-caption-48",
-                                      "colorAccent": "MuiTypography-colorAccent-60",
-                                      "colorError": "MuiTypography-colorError-61",
-                                      "colorInherit": "MuiTypography-colorInherit-57",
-                                      "colorPrimary": "MuiTypography-colorPrimary-58",
-                                      "colorSecondary": "MuiTypography-colorSecondary-59",
-                                      "display1": "MuiTypography-display1-42",
-                                      "display2": "MuiTypography-display2-41",
-                                      "display3": "MuiTypography-display3-40",
-                                      "display4": "MuiTypography-display4-39",
-                                      "gutterBottom": "MuiTypography-gutterBottom-55",
-                                      "headline": "MuiTypography-headline-43",
-                                      "noWrap": "MuiTypography-noWrap-54",
-                                      "paragraph": "MuiTypography-paragraph-56",
-                                      "root": "MuiTypography-root-38",
-                                      "subheading": "MuiTypography-subheading-45",
-                                      "title": "MuiTypography-title-44",
-                                    }
-                                  }
-                                  color="default"
                                   direction="up"
-                                  gutterBottom={false}
                                   headlineMapping={
                                     Object {
                                       "body1": "div",
                                     }
                                   }
-                                  noWrap={false}
-                                  paragraph={false}
                                   role="alertdialog"
-                                  type="body1"
+                                  style={Object {}}
                                 >
-                                  <div
-                                    className="MuiTypography-root-38 MuiTypography-body1-47 MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                  <Typography
+                                    align="inherit"
+                                    className="MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                    classes={
+                                      Object {
+                                        "alignCenter": "MuiTypography-alignCenter-51",
+                                        "alignJustify": "MuiTypography-alignJustify-53",
+                                        "alignLeft": "MuiTypography-alignLeft-50",
+                                        "alignRight": "MuiTypography-alignRight-52",
+                                        "body1": "MuiTypography-body1-47",
+                                        "body2": "MuiTypography-body2-46",
+                                        "button": "MuiTypography-button-49",
+                                        "caption": "MuiTypography-caption-48",
+                                        "colorAccent": "MuiTypography-colorAccent-60",
+                                        "colorError": "MuiTypography-colorError-61",
+                                        "colorInherit": "MuiTypography-colorInherit-57",
+                                        "colorPrimary": "MuiTypography-colorPrimary-58",
+                                        "colorSecondary": "MuiTypography-colorSecondary-59",
+                                        "display1": "MuiTypography-display1-42",
+                                        "display2": "MuiTypography-display2-41",
+                                        "display3": "MuiTypography-display3-40",
+                                        "display4": "MuiTypography-display4-39",
+                                        "gutterBottom": "MuiTypography-gutterBottom-55",
+                                        "headline": "MuiTypography-headline-43",
+                                        "noWrap": "MuiTypography-noWrap-54",
+                                        "paragraph": "MuiTypography-paragraph-56",
+                                        "root": "MuiTypography-root-38",
+                                        "subheading": "MuiTypography-subheading-45",
+                                        "title": "MuiTypography-title-44",
+                                      }
+                                    }
+                                    color="default"
                                     direction="up"
+                                    gutterBottom={false}
+                                    headlineMapping={
+                                      Object {
+                                        "body1": "div",
+                                      }
+                                    }
+                                    noWrap={false}
+                                    paragraph={false}
                                     role="alertdialog"
+                                    style={Object {}}
+                                    type="body1"
                                   >
                                     <div
-                                      className="MuiSnackbarContent-message-9"
+                                      className="MuiTypography-root-38 MuiTypography-body1-47 MuiPaper-root-11 MuiPaper-shadow6-19 MuiSnackbarContent-root-8"
+                                      direction="up"
+                                      role="alertdialog"
+                                      style={Object {}}
                                     >
-                                      test
-                                    </div>
-                                    <div
-                                      className="MuiSnackbarContent-action-10"
-                                    >
-                                      <withStyles(Button)
-                                        color="accent"
-                                        dense={true}
-                                        id="close"
-                                        onClick={[Function]}
+                                      <div
+                                        className="MuiSnackbarContent-message-9"
                                       >
-                                        <Button
-                                          classes={
-                                            Object {
-                                              ".MuiButton-fab-75:active": "MuiButton-fab-75:active",
-                                              ".MuiButton-flatAccent-66:hover": "MuiButton-flatAccent-66:hover",
-                                              ".MuiButton-flatContrast-67:hover": "MuiButton-flatContrast-67:hover",
-                                              ".MuiButton-flatPrimary-65:hover": "MuiButton-flatPrimary-65:hover",
-                                              ".MuiButton-raised-69.MuiButton-disabled-74": "MuiButton-raised-69.MuiButton-disabled-74",
-                                              ".MuiButton-raised-69.MuiButton-keyboardFocused-70": "MuiButton-raised-69.MuiButton-keyboardFocused-70",
-                                              ".MuiButton-raised-69:active": "MuiButton-raised-69:active",
-                                              ".MuiButton-raised-69:hover": "MuiButton-raised-69:hover",
-                                              ".MuiButton-raised-69:hover.MuiButton-disabled-74": "MuiButton-raised-69:hover.MuiButton-disabled-74",
-                                              ".MuiButton-raisedAccent-72:hover": "MuiButton-raisedAccent-72:hover",
-                                              ".MuiButton-raisedPrimary-71:hover": "MuiButton-raisedPrimary-71:hover",
-                                              ".MuiButton-root-62:hover": "MuiButton-root-62:hover",
-                                              ".MuiButton-root-62:hover.MuiButton-disabled-74": "MuiButton-root-62:hover.MuiButton-disabled-74",
-                                              "colorInherit": "MuiButton-colorInherit-68",
-                                              "dense": "MuiButton-dense-63",
-                                              "disabled": "MuiButton-disabled-74",
-                                              "fab": "MuiButton-fab-75",
-                                              "flatAccent": "MuiButton-flatAccent-66",
-                                              "flatContrast": "MuiButton-flatContrast-67",
-                                              "flatPrimary": "MuiButton-flatPrimary-65",
-                                              "keyboardFocused": "MuiButton-keyboardFocused-70",
-                                              "label": "MuiButton-label-64",
-                                              "raised": "MuiButton-raised-69",
-                                              "raisedAccent": "MuiButton-raisedAccent-72",
-                                              "raisedContrast": "MuiButton-raisedContrast-73",
-                                              "raisedPrimary": "MuiButton-raisedPrimary-71",
-                                              "root": "MuiButton-root-62",
-                                            }
-                                          }
+                                        test
+                                      </div>
+                                      <div
+                                        className="MuiSnackbarContent-action-10"
+                                      >
+                                        <withStyles(Button)
                                           color="accent"
                                           dense={true}
-                                          disableFocusRipple={false}
-                                          disableRipple={false}
-                                          disabled={false}
-                                          fab={false}
                                           id="close"
                                           onClick={[Function]}
-                                          raised={false}
-                                          type="button"
                                         >
-                                          <withStyles(ButtonBase)
-                                            className="MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                          <Button
+                                            classes={
+                                              Object {
+                                                "colorInherit": "MuiButton-colorInherit-68",
+                                                "dense": "MuiButton-dense-63",
+                                                "disabled": "MuiButton-disabled-74",
+                                                "fab": "MuiButton-fab-75",
+                                                "flatAccent": "MuiButton-flatAccent-66",
+                                                "flatContrast": "MuiButton-flatContrast-67",
+                                                "flatPrimary": "MuiButton-flatPrimary-65",
+                                                "keyboardFocused": "MuiButton-keyboardFocused-70",
+                                                "label": "MuiButton-label-64",
+                                                "raised": "MuiButton-raised-69",
+                                                "raisedAccent": "MuiButton-raisedAccent-72",
+                                                "raisedContrast": "MuiButton-raisedContrast-73",
+                                                "raisedPrimary": "MuiButton-raisedPrimary-71",
+                                                "root": "MuiButton-root-62",
+                                              }
+                                            }
+                                            color="accent"
+                                            dense={true}
+                                            disableFocusRipple={false}
                                             disableRipple={false}
                                             disabled={false}
-                                            focusRipple={true}
+                                            fab={false}
                                             id="close"
-                                            keyboardFocusedClassName="MuiButton-keyboardFocused-70"
                                             onClick={[Function]}
+                                            raised={false}
                                             type="button"
                                           >
-                                            <ButtonBase
-                                              centerRipple={false}
+                                            <withStyles(ButtonBase)
                                               className="MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
-                                              classes={
-                                                Object {
-                                                  "disabled": "MuiButtonBase-disabled-77",
-                                                  "root": "MuiButtonBase-root-76",
-                                                }
-                                              }
                                               disableRipple={false}
                                               disabled={false}
                                               focusRipple={true}
                                               id="close"
                                               keyboardFocusedClassName="MuiButton-keyboardFocused-70"
                                               onClick={[Function]}
-                                              tabIndex={0}
                                               type="button"
                                             >
-                                              <button
-                                                className="MuiButtonBase-root-76 MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                              <ButtonBase
+                                                centerRipple={false}
+                                                className="MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                                classes={
+                                                  Object {
+                                                    "disabled": "MuiButtonBase-disabled-77",
+                                                    "root": "MuiButtonBase-root-76",
+                                                  }
+                                                }
+                                                disableRipple={false}
                                                 disabled={false}
+                                                focusRipple={true}
                                                 id="close"
-                                                onBlur={[Function]}
+                                                keyboardFocusedClassName="MuiButton-keyboardFocused-70"
                                                 onClick={[Function]}
-                                                onFocus={[Function]}
-                                                onKeyDown={[Function]}
-                                                onKeyUp={[Function]}
-                                                onMouseDown={[Function]}
-                                                onMouseLeave={[Function]}
-                                                onMouseUp={[Function]}
-                                                onTouchEnd={[Function]}
-                                                onTouchStart={[Function]}
-                                                role="button"
                                                 tabIndex={0}
                                                 type="button"
                                               >
-                                                <span
-                                                  className="MuiButton-label-64"
+                                                <button
+                                                  className="MuiButtonBase-root-76 MuiButton-root-62 MuiButton-flatAccent-66 MuiButton-dense-63"
+                                                  disabled={false}
+                                                  id="close"
+                                                  onBlur={[Function]}
+                                                  onClick={[Function]}
+                                                  onFocus={[Function]}
+                                                  onKeyDown={[Function]}
+                                                  onKeyUp={[Function]}
+                                                  onMouseDown={[Function]}
+                                                  onMouseLeave={[Function]}
+                                                  onMouseUp={[Function]}
+                                                  onTouchEnd={[Function]}
+                                                  onTouchMove={[Function]}
+                                                  onTouchStart={[Function]}
+                                                  role="button"
+                                                  tabIndex={0}
+                                                  type="button"
                                                 >
-                                                  Close
-                                                </span>
-                                                <withStyles(TouchRipple)
-                                                  center={false}
-                                                  innerRef={[Function]}
-                                                >
-                                                  <TouchRipple
-                                                    center={false}
-                                                    classes={
-                                                      Object {
-                                                        "0%": "%",
-                                                        "100%": "00%",
-                                                        "50%": "0%",
-                                                        "ripple": "MuiTouchRipple-ripple-82",
-                                                        "rippleFast": "MuiTouchRipple-rippleFast-84",
-                                                        "rippleVisible": "MuiTouchRipple-rippleVisible-83",
-                                                        "root": "MuiTouchRipple-root-78",
-                                                        "wrapper": "MuiTouchRipple-wrapper-79",
-                                                        "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-80",
-                                                        "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-81",
-                                                      }
-                                                    }
+                                                  <span
+                                                    className="MuiButton-label-64"
                                                   >
-                                                    <TransitionGroup
-                                                      childFactory={[Function]}
-                                                      className="MuiTouchRipple-root-78"
-                                                      component="span"
-                                                      enter={true}
-                                                      exit={true}
+                                                    Close
+                                                  </span>
+                                                  <withStyles(TouchRipple)
+                                                    center={false}
+                                                    innerRef={[Function]}
+                                                  >
+                                                    <TouchRipple
+                                                      center={false}
+                                                      classes={
+                                                        Object {
+                                                          "ripple": "MuiTouchRipple-ripple-82",
+                                                          "rippleFast": "MuiTouchRipple-rippleFast-84",
+                                                          "rippleVisible": "MuiTouchRipple-rippleVisible-83",
+                                                          "root": "MuiTouchRipple-root-78",
+                                                          "wrapper": "MuiTouchRipple-wrapper-79",
+                                                          "wrapperLeaving": "MuiTouchRipple-wrapperLeaving-80",
+                                                          "wrapperPulsating": "MuiTouchRipple-wrapperPulsating-81",
+                                                        }
+                                                      }
                                                     >
-                                                      <span
+                                                      <TransitionGroup
+                                                        childFactory={[Function]}
                                                         className="MuiTouchRipple-root-78"
-                                                      />
-                                                    </TransitionGroup>
-                                                  </TouchRipple>
-                                                </withStyles(TouchRipple)>
-                                              </button>
-                                            </ButtonBase>
-                                          </withStyles(ButtonBase)>
-                                        </Button>
-                                      </withStyles(Button)>
+                                                        component="span"
+                                                        enter={true}
+                                                        exit={true}
+                                                      >
+                                                        <span
+                                                          className="MuiTouchRipple-root-78"
+                                                        />
+                                                      </TransitionGroup>
+                                                    </TouchRipple>
+                                                  </withStyles(TouchRipple)>
+                                                </button>
+                                              </ButtonBase>
+                                            </withStyles(ButtonBase)>
+                                          </Button>
+                                        </withStyles(Button)>
+                                      </div>
                                     </div>
-                                  </div>
-                                </Typography>
-                              </withStyles(Typography)>
-                            </Paper>
-                          </withStyles(Paper)>
-                        </SnackbarContent>
-                      </withStyles(SnackbarContent)>
-                    </Transition>
+                                  </Typography>
+                                </withStyles(Typography)>
+                              </Paper>
+                            </withStyles(Paper)>
+                          </SnackbarContent>
+                        </withStyles(SnackbarContent)>
+                      </Transition>
+                    </EventListener>
                   </Slide>
                 </withTheme(Slide)>
               </div>

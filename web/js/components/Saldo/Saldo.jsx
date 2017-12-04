@@ -28,7 +28,7 @@ class Saldo extends React.Component <*> {
   static defaultProps = {
     currency: '$',
     values: [],
-    t: w => w,
+    t: (w: string) => w,
     showTotal: true,
   };
   static propTypes = {

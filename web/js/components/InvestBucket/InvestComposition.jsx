@@ -52,7 +52,7 @@ class InvestComposition extends React.Component<Props, State> {
       </TableHead>
     );
   }
-  static renderActions(cancel, save) {
+  static renderActions(cancel: () => void, save: () => void) {
     return (
       <DialogActions>
         <Button onClick={cancel} color="primary">
@@ -64,7 +64,7 @@ class InvestComposition extends React.Component<Props, State> {
       </DialogActions>
     );
   }
-  static renderCurrentAvailable(available) {
+  static renderCurrentAvailable(available: number) {
     return (
       <TableRow>
         <TableCell padding="dense" />

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout renders 1`] = `
-<MuiThemeProvider
+<MuiThemeProviderWrapper
   theme={
     Object {
       "appBar": Object {
@@ -41,7 +41,7 @@ exports[`Layout renders 1`] = `
           "md": 960,
           "sm": 600,
           "xl": 1920,
-          "xs": 360,
+          "xs": 0,
         },
         "width": [Function],
       },
@@ -131,6 +131,9 @@ exports[`Layout renders 1`] = `
           "inputText": "rgba(0, 0, 0, 0.87)",
           "labelText": "rgba(0, 0, 0, 0.54)",
         },
+        "line": Object {
+          "stepper": "#bdbdbd",
+        },
         "primary": Object {
           "100": "#117ACA",
           "200": "#117ACA",
@@ -184,6 +187,9 @@ exports[`Layout renders 1`] = `
               "inputText": "rgba(255, 255, 255, 1)",
               "labelText": "rgba(255, 255, 255, 0.7)",
             },
+            "line": Object {
+              "stepper": "#bdbdbd",
+            },
             "text": Object {
               "disabled": "rgba(255, 255, 255, 0.5)",
               "divider": "rgba(255, 255, 255, 0.12)",
@@ -211,6 +217,9 @@ exports[`Layout renders 1`] = `
               "helperText": "rgba(0, 0, 0, 0.54)",
               "inputText": "rgba(0, 0, 0, 0.87)",
               "labelText": "rgba(0, 0, 0, 0.54)",
+            },
+            "line": Object {
+              "stepper": "#bdbdbd",
             },
             "text": Object {
               "disabled": "rgba(0, 0, 0, 0.38)",
@@ -321,7 +330,7 @@ exports[`Layout renders 1`] = `
         },
         "button": Object {
           "fontFamily": "Roboto",
-          "fontSize": 14,
+          "fontSize": "0.875rem",
           "fontWeight": 500,
           "textTransform": "uppercase",
         },
@@ -379,6 +388,7 @@ exports[`Layout renders 1`] = `
           "fontWeight": 400,
           "lineHeight": "1.35417em",
         },
+        "pxToRem": [Function],
         "subheading": Object {
           "color": "rgba(0, 0, 0, 0.87)",
           "fontFamily": "Roboto",
@@ -426,5 +436,5 @@ exports[`Layout renders 1`] = `
       </div>
     </div>
   </div>
-</MuiThemeProvider>
+</MuiThemeProviderWrapper>
 `;
