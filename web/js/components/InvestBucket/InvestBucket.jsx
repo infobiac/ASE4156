@@ -60,7 +60,7 @@ class InvestBucket extends React.Component <Props, State> {
   static renderAttr(attr : ItemObj, isGood : bool) {
     let indicator = null;
     if (attr.editMode) {
-      indicator = <DeleteIcon />;
+      indicator = <DeleteIcon id="delete-ico" />;
     } else if (isGood) {
       indicator = <TrendingUpIcon />;
     } else {
@@ -68,7 +68,7 @@ class InvestBucket extends React.Component <Props, State> {
     }
     let text = null;
     if (attr.editMode) {
-      text = <TextField value={attr.shortDesc} {...attr.text} />;
+      text = <TextField id="edit-text-field" value={attr.shortDesc} {...attr.text} />;
     } else {
       text = (<ListItemText
         key={attr.id}
@@ -162,7 +162,7 @@ class InvestBucket extends React.Component <Props, State> {
           }
         </CardContent>
         <CardActions>
-          <Button dense color="primary" onClick={this.props.investFunc}>
+          <Button id="invest" dense color="primary" onClick={this.props.investFunc}>
             Invest
           </Button>
           {

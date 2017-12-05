@@ -358,6 +358,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
           aria-hidden="true"
           className="MuiSvgIcon-root-78 MuiListItemIcon-root-377"
           focusable="false"
+          id="delete-ico"
           onClick={[Function]}
           viewBox="0 0 24 24"
         >
@@ -383,7 +384,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
               className="MuiInput-input-391 MuiInput-inputSingleline-394"
               defaultValue={undefined}
               disabled={false}
-              id={undefined}
+              id="edit-text-field"
               name={undefined}
               onChange={[Function]}
               onKeyDown={undefined}
@@ -472,6 +473,7 @@ exports[`Storyshots InvestBucket Playground 1`] = `
     <button
       className="MuiButtonBase-root-76 MuiButton-root-339 MuiButton-flatPrimary-342 MuiButton-dense-340 MuiCardActions-action-398"
       disabled={false}
+      id="invest"
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
@@ -906,6 +908,7 @@ exports[`Storyshots Page Test page 1`] = `
                 <button
                   className="MuiButtonBase-root-166 MuiButton-root-303 MuiButton-flatPrimary-306 MuiButton-dense-304 MuiCardActions-action-302"
                   disabled={false}
+                  id="invest"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -1047,6 +1050,7 @@ exports[`Storyshots Page Test page 1`] = `
                 <button
                   className="MuiButtonBase-root-166 MuiButton-root-303 MuiButton-flatPrimary-306 MuiButton-dense-304 MuiCardActions-action-302"
                   disabled={false}
+                  id="invest"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}
@@ -1188,6 +1192,7 @@ exports[`Storyshots Page Test page 1`] = `
                 <button
                   className="MuiButtonBase-root-166 MuiButton-root-303 MuiButton-flatPrimary-306 MuiButton-dense-304 MuiCardActions-action-302"
                   disabled={false}
+                  id="invest"
                   onBlur={[Function]}
                   onClick={[Function]}
                   onFocus={[Function]}

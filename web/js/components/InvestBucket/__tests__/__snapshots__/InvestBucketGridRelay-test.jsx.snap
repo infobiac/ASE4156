@@ -2467,6 +2467,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                               >
                                 <div>
                                   <withStyles(Dialog)
+                                    id="dialog1"
                                     onRequestClose={[Function]}
                                     open={false}
                                   >
@@ -2484,6 +2485,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                       }
                                       fullScreen={false}
                                       fullWidth={false}
+                                      id="dialog1"
                                       ignoreBackdropClick={false}
                                       ignoreEscapeKeyUp={false}
                                       maxWidth="sm"
@@ -2505,6 +2507,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                           }
                                         }
                                         className="MuiDialog-root-173"
+                                        id="dialog1"
                                         ignoreBackdropClick={false}
                                         ignoreEscapeKeyUp={false}
                                         onRequestClose={[Function]}
@@ -2527,6 +2530,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                             }
                                           }
                                           disableBackdrop={false}
+                                          id="dialog1"
                                           ignoreBackdropClick={false}
                                           ignoreEscapeKeyUp={false}
                                           keepMounted={false}
@@ -2816,6 +2820,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                                     className="MuiCardActions-action-149"
                                                     color="primary"
                                                     dense={true}
+                                                    id="invest"
                                                     key=".0"
                                                     onClick={[Function]}
                                                   >
@@ -2845,6 +2850,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                                       disableRipple={false}
                                                       disabled={false}
                                                       fab={false}
+                                                      id="invest"
                                                       onClick={[Function]}
                                                       raised={false}
                                                       type="button"
@@ -2854,6 +2860,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                                         disableRipple={false}
                                                         disabled={false}
                                                         focusRipple={true}
+                                                        id="invest"
                                                         keyboardFocusedClassName="MuiButton-keyboardFocused-158"
                                                         onClick={[Function]}
                                                         type="button"
@@ -2870,6 +2877,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                                           disableRipple={false}
                                                           disabled={false}
                                                           focusRipple={true}
+                                                          id="invest"
                                                           keyboardFocusedClassName="MuiButton-keyboardFocused-158"
                                                           onClick={[Function]}
                                                           tabIndex={0}
@@ -2878,6 +2886,7 @@ exports[`InvestBucketGridRelay renders 1`] = `
                                                           <button
                                                             className="MuiButtonBase-root-164 MuiButton-root-150 MuiButton-flatPrimary-153 MuiButton-dense-151 MuiCardActions-action-149"
                                                             disabled={false}
+                                                            id="invest"
                                                             onBlur={[Function]}
                                                             onClick={[Function]}
                                                             onFocus={[Function]}

@@ -202,6 +202,7 @@ class InvestBucketRelay extends React.Component<Props, State> {
     return (
       <div>
         <Dialog
+          id="dialog1"
           open={this.state.deleteConfirm}
           onRequestClose={(() => this.setState(() => ({ deleteConfirm: false })))}
         >
