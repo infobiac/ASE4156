@@ -1,5 +1,5 @@
 GraphQL
-======
+=======
 .. automodule:: trading.graphql
     :members:
 .. automodule:: authentication.graphql
