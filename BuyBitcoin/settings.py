@@ -26,7 +26,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True if os.environ.get('DEBUG') == "TRUE" else False
 
-ALLOWED_HOSTS = ['trading-stuff.herokuapp.com', '127.0.0.1', 'localhost', 'testserver']
+ALLOWED_HOSTS = [
+    'trading-stuff.herokuapp.com', '127.0.0.1', 'localhost', 'testserver'
+]
 
 # Application definition
 
@@ -37,13 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
-
     'django.contrib.staticfiles',
     'graphene_django',
     'social_django',
     'webpack_loader',
     'security',
-    'raven.contrib.django.raven_compat',
     # Our apps
     'authentication',
     'stocks',
@@ -74,9 +74,7 @@ LOGIN_REDIRECT_URL = '/home'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            './BuyBitcoin/templates'
-        ],
+        'DIRS': ['./BuyBitcoin/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,8 +91,7 @@ WSGI_APPLICATION = 'BuyBitcoin.wsgi.application'
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-)
+    'django.contrib.auth.backends.ModelBackend', )
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -107,35 +104,37 @@ DATABASES = {
 }
 if 'TRAVIS' in os.environ:
     DATABASES['default'] = {
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        'NAME':     'travis_ci_test',
-        'USER':     'postgres',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'travis_ci_test',
+        'USER': 'postgres',
         'PASSWORD': '',
-        'HOST':     'localhost',
-        'PORT':     '',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 else:
     DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
@@ -158,8 +157,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+    os.path.join(PROJECT_ROOT, 'static'), )
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': '',
@@ -180,9 +178,7 @@ if not DEBUG:
 WHITENOISE_ROOT = os.path.join(BASE_DIR, 'assets')
 # GraphQL
 
-GRAPHENE = {
-    'SCHEMA': 'BuyBitcoin.graphene_schema.SCHEMA'
-}
+GRAPHENE = {'SCHEMA': 'BuyBitcoin.graphene_schema.SCHEMA'}
 
 if os.environ.get('DEBUG') != "TRUE" and 'TRAVIS' not in os.environ:
     SECURE_SSL_REDIRECT = True
