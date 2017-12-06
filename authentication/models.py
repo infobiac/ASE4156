@@ -10,23 +10,22 @@ from authentication.plaid_wrapper import PlaidAPI
 
 class Profile(models.Model):
     """
-    Profile represents additional values for a user account
+    Profile is an extension of :py:class:`django.contrib.auth.models.User`, that
+    allows us to store additional values per User.
     """
     user = models.OneToOneField(
-        User,
-        on_delete=models.CASCADE,
-        related_name='profile'
-    )
+        User, on_delete=models.CASCADE, related_name='profile')
 
     def default_acc(self):
         """
-        Returns the default account for the profile
+        This method retrieves the default account for the profile. If none exists,
+        a new one will be created with the name 'default'.
+
+        :returns: The default :py:class:`trading.models.TradingAccount`.
         """
         acc = self.trading_accounts.all()[:1]
         if not acc:
-            acc = self.trading_accounts.create(
-                account_name='default'
-            )
+            acc = self.trading_accounts.create(account_name='default')
         else:
             acc = acc[0]
         return acc
@@ -35,7 +34,14 @@ class Profile(models.Model):
 @receiver(post_save, sender=User)
 def create_user_profile(instance, created, **_):
     """
-    Creates a linked profile when a user account is created
+    This method will be called every time a :py:class:`django.contrib.auth.models.User`
+    is saved. It will create a :py:class:`authentication.models.Profile` to associate
+    with the user.
+
+    :param instance: The User instance that was saved.
+    :type instance: :py:class:`django.contrib.auth.models.User`
+    :param created: True if the instance was just created.
+    :param type: bool
     """
     if created:
         Profile.objects.create(user=instance)
@@ -44,20 +50,22 @@ def create_user_profile(instance, created, **_):
 @receiver(post_save, sender=User)
 def save_user_profile(instance, **_):
     """
-    To be safe, whenever the user profile is saved, we also save the profile
+    This method ensures that the :py:class:`authentication.models.Profile` is kept
+    in sync with the User (:py:class:`django.contrib.auth.models.User`)
+
+    :param instance: The User instance that was saved.
+    :type instance: :py:class:`django.contrib.auth.models.User`
     """
     instance.profile.save()
 
 
 class UserBank(models.Model):
     """
-    Contains all the user's bank access data (via plaid)
+    The UserBank wraps a connection to Plaid. It stores the access token for the User.
+    At the same time it also caches past queries to reduce initial load time.
     """
     user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name='userbank'
-    )
+        User, on_delete=models.CASCADE, related_name='userbank')
     item_id = models.CharField(max_length=1000)
     access_token = models.CharField(max_length=1000)
     institution_name = models.CharField(max_length=1000)
@@ -68,19 +76,30 @@ class UserBank(models.Model):
 
     def plaid(self):
         """
-        Returns a new Plaid client
+        This method instanciates a new `authentication.plaid_wrapper.PlaidAPI` with
+        the stored access token.
+
+        :returns: `authentication.plaid_wrapper.PlaidAPI` for the User.
         """
         return PlaidAPI(self.access_token)
 
     def historical_data(self, *args, **kwargs):
         """
-        Returns the historical data
+        Fetches the historical data
+        (see :py:meth:`authentication.plaid_wrapper.PlaidAPI.historical_data`)
+
+        :returns: list of tuples for the historical data.
         """
         return self.plaid().historical_data(*args, **kwargs)
 
     def current_balance(self, update=True):
         """
-        Returns the current balance
+        Returns the latest balance for the bank account. If update is set, then
+        the balance will be synced with the original bank account.
+
+        :param update: Whether to sync with the remote bank account.
+        :type update: bool
+        :returns: float of the current balance for the account
         """
         if update:
             self.current_balance_field = self.plaid().current_balance()
