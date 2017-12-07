@@ -70,10 +70,10 @@ def fill():
     for stock in data:
         last_date = arrow.get(stock[date]).replace(days=+1)
         last_date = get_date_array_for_fetcher(last_date)
-        now = get_date_array_for_fetcher(now)
+        now_fetcher = get_date_array_for_fetcher(now)
         ticker = stock[stock_ticker]
         stock_id = stock[stock_id_field]
-        fetcher = Fetcher(ticker, last_date, now)
+        fetcher = Fetcher(ticker, last_date, now_fetcher)
         history = fetcher.getHistorical()
         save_stock_quote_from_fetcher(history, stock_id)
 
