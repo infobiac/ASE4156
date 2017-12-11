@@ -56,3 +56,27 @@ def test_access_token():
     false_get = test_client.get("/plaid/get_access_token/")
     response_code = false_get.status_code
     assert response_code == 403
+
+
+@pytest.mark.django_db(transaction=True)
+def test_get_reauth():
+    """
+    Test reauthentication procedure
+    """
+    test_client = Client()
+    user1 = User.objects.create(username='user', password="a")
+    test_client.force_login(user1)
+    check_none = test_client.get("/plaid/get_reauth/")
+    assert check_none.status_code == 302
+    url = check_none.url
+    assert url == "/setup_bank"
+    userbank = UserBank(
+        user=user1, item_id="hi",
+        access_token="access-sandbox-188618e4-e6a6-45ea-a117-a97b2f717478",
+        institution_name="bankofcool", current_balance_field=10,
+        account_name_field="coolaccount",
+        income_field=30, expenditure_field=5
+    )
+    userbank.save()
+    check_success = test_client.get("/plaid/get_reauth/")
+    assert check_success.status_code == 200

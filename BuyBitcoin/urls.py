@@ -38,5 +38,6 @@ urlpatterns = [
     url(r'^stocks/fill/', stocks.historical.fill_stocks),
     url(r'^setup_bank$', authentication.views.setup_bank),
     url(r'^plaid/get_access_token/$', authentication.views.get_access_token),
+    url(r'^plaid/get_reauth/$', authentication.views.get_reauth),
 ]
 # pylint: enable=invalid-name

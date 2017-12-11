@@ -63,3 +63,19 @@ def get_access_token(request):
         )
         return HttpResponse(status=201)
     return HttpResponse(status=403)
+
+
+@login_required
+def get_reauth(request):
+    """
+    Reauthenticates user if plaid detects change in user bank account info
+    """
+    client = PlaidAPI.client()
+    ubank = request.user.userbank.first()
+    if ubank is None:
+        return HttpResponseRedirect("/setup_bank")
+    access_token = ubank.access_token
+    get_pub = client.Item.public_token.create(access_token)
+    public_token = get_pub["public_token"]
+    cntxt = {"public_token": public_token}
+    return render(request, "reauth.html", cntxt)
