@@ -65,7 +65,7 @@ def test_signup(selenium, live_server, client):
     selenium.find_element_by_id("password").send_keys("pass_good")
     selenium.find_element_by_id("password").submit()
     elem = selenium.find_element_by_xpath("//button[contains(.,'Continue')]")
-    WebDriverWait(selenium, 30).until(
+    WebDriverWait(selenium, 60).until(
         EC.element_to_be_clickable((By.XPATH, "//button[contains(.,'Continue')]"))
     )
     elem.click()
@@ -155,7 +155,9 @@ def test_delete_bucket(selenium, live_server, client):
     delete_button.click()
     cancel_delete = selenium.find_element_by_id("keep")
     cancel_delete.click()
-    time.sleep(1)
+    WebDriverWait(selenium, 10).until(
+        EC.invisibility_of_element_located((By.ID, "keep"))
+    )
     assert user.profile.owned_bucket.count() == 1
     delete_button.click()
     confirm_delete = selenium.find_element_by_id("delete2")
