@@ -37,6 +37,9 @@ describe('PersonalStatusRelay', () => {
             balance: 100.0,
             income: 101.00,
             outcome: 30.0,
+            monthlyStart: '2017-06-06',
+            monthlyEnd: '2017-07-06',
+            balanceDate: '2017-07-06',
             __id: '1',
             __fragments: {
               PersonalStatusRelay_bank: {},

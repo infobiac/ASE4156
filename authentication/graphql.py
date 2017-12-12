@@ -1,6 +1,7 @@
 """
 GraphQL definitions for the Authentication App
 """
+import datetime
 from django.contrib.auth.models import User
 from graphene import Argument, Field, Float, Int, List, Mutation, \
     NonNull, String, relay
@@ -108,6 +109,9 @@ class GUserBank(DjangoObjectType):
     outcome = NonNull(Float)
     history = NonNull(
         List(NonNull(GDataPoint)), args={'start': Argument(NonNull(String))})
+    balance_date = NonNull(String)
+    monthly_start = NonNull(String)
+    monthly_end = NonNull(String)
 
     class Meta(object):
         """
@@ -148,6 +152,27 @@ class GUserBank(DjangoObjectType):
         :returns: The current balance of that the user has.
         """
         return data.current_balance(False)
+
+    @staticmethod
+    def resolve_balance_date(_data, _info):
+        """
+        Date of the balance
+        """
+        return str(datetime.date.today())
+
+    @staticmethod
+    def resolve_monthly_start(_data, _info):
+        """
+        Start date for measuring the monthly income/expenditure
+        """
+        return str(datetime.date.today() - datetime.timedelta(days=30))
+
+    @staticmethod
+    def resolve_monthly_end(_data, _info):
+        """
+        End date for measuring the monthly income/expenditure
+        """
+        return str(datetime.date.today())
 
     @staticmethod
     def resolve_name(data, _info, **_args):

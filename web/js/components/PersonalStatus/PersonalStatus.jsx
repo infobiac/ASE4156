@@ -21,14 +21,18 @@ export default class PersonalStatus extends React.Component < Props > {
       balance: PropTypes.number.isRequired,
       income: PropTypes.number.isRequired,
       outcome: PropTypes.number.isRequired,
+      monthlyStart: PropTypes.string.isRequired,
+      monthlyEnd: PropTypes.string.isRequired,
+      balanceDate: PropTypes.string.isRequired,
     }).isRequired,
   }
   render() {
+    const secondary = [{ text: 'Start', value: this.props.bank.monthlyStart }, { text: 'End', value: this.props.bank.monthlyEnd }];
     return (
       <Grid container spacing={16} align="stretch" id="personal-status">
         <Grid item {...spacing}>
           <HighlightBox
-            title="Current balance"
+            title={`Current balance (as of: ${this.props.bank.balanceDate})`}
             value={this.props.bank.balance.toFixed(2)}
             secondaryInfo={[{
               text: this.props.account.accountName,
@@ -37,14 +41,14 @@ export default class PersonalStatus extends React.Component < Props > {
           />
         </Grid>
         <Grid item {...spacing}>
-          <HighlightBox title="Total Income" value={this.props.bank.income.toFixed(2)} />
+          <HighlightBox title="Monthly Income" value={this.props.bank.income.toFixed(2)} secondaryInfo={secondary} />
         </Grid>
         <Grid item {...spacing}>
-          <HighlightBox title="Total Expenditures" value={this.props.bank.outcome.toFixed(2)} />
+          <HighlightBox title="Total Expenditures" value={this.props.bank.outcome.toFixed(2)} secondaryInfo={secondary} />
         </Grid>
         <Grid item {...spacing}>
           <HighlightBox
-            title="Available money"
+            title={`Available money (as of: ${this.props.bank.balanceDate})`}
             value={(this.props.bank.income + this.props.bank.outcome).toFixed(2)}
             secondaryInfo={[{
               text: this.props.account.accountName,

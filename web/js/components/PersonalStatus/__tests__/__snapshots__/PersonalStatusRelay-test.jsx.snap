@@ -20,7 +20,10 @@ exports[`PersonalStatusRelay renders 1`] = `
       },
       "__id": "1",
       "balance": 100,
+      "balanceDate": "2017-07-06",
       "income": 101,
+      "monthlyEnd": "2017-07-06",
+      "monthlyStart": "2017-06-06",
       "outcome": 30,
     }
   }
@@ -44,7 +47,10 @@ exports[`PersonalStatusRelay renders 1`] = `
         },
         "__id": "1",
         "balance": 100,
+        "balanceDate": "2017-07-06",
         "income": 101,
+        "monthlyEnd": "2017-07-06",
+        "monthlyStart": "2017-06-06",
         "outcome": 30,
       }
     }
@@ -96,6 +102,13 @@ exports[`PersonalStatusRelay renders 1`] = `
                           "alias": null,
                           "args": null,
                           "kind": "ScalarField",
+                          "name": "balanceDate",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
                           "name": "income",
                           "storageKey": null,
                         },
@@ -104,6 +117,20 @@ exports[`PersonalStatusRelay renders 1`] = `
                           "args": null,
                           "kind": "ScalarField",
                           "name": "outcome",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "monthlyStart",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "monthlyEnd",
                           "storageKey": null,
                         },
                       ],
@@ -188,6 +215,13 @@ exports[`PersonalStatusRelay renders 1`] = `
                         "alias": null,
                         "args": null,
                         "kind": "ScalarField",
+                        "name": "balanceDate",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
                         "name": "income",
                         "storageKey": null,
                       },
@@ -196,6 +230,20 @@ exports[`PersonalStatusRelay renders 1`] = `
                         "args": null,
                         "kind": "ScalarField",
                         "name": "outcome",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "monthlyStart",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "monthlyEnd",
                         "storageKey": null,
                       },
                     ],
@@ -708,7 +756,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                           },
                         ]
                       }
-                      title="Current balance"
+                      title="Current balance (as of: 2017-07-06)"
                       value="100.00"
                     >
                       <Card
@@ -757,7 +805,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                               className="MuiPaper-root-90 MuiPaper-shadow2-94 MuiPaper-rounded-91"
                             >
                               <withStyles(CardHeader)
-                                title="Current balance"
+                                title="Current balance (as of: 2017-07-06)"
                               >
                                 <CardHeader
                                   classes={
@@ -770,7 +818,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                       "title": "MuiCardHeader-title-121",
                                     }
                                   }
-                                  title="Current balance"
+                                  title="Current balance (as of: 2017-07-06)"
                                 >
                                   <withStyles(CardContent)
                                     className="MuiCardHeader-root-117"
@@ -848,7 +896,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                               <span
                                                 className="MuiTypography-root-124 MuiTypography-headline-129 MuiCardHeader-title-121"
                                               >
-                                                Current balance
+                                                Current balance (as of: 2017-07-06)
                                               </span>
                                             </Typography>
                                           </withStyles(Typography)>
@@ -1320,8 +1368,19 @@ exports[`PersonalStatusRelay renders 1`] = `
                     className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-37 MuiGrid-grid-sm-6-44 MuiGrid-grid-md-3-54"
                   >
                     <HighlightBox
-                      secondaryInfo={null}
-                      title="Total Income"
+                      secondaryInfo={
+                        Array [
+                          Object {
+                            "text": "Start",
+                            "value": "2017-06-06",
+                          },
+                          Object {
+                            "text": "End",
+                            "value": "2017-07-06",
+                          },
+                        ]
+                      }
+                      title="Monthly Income"
                       value="101.00"
                     >
                       <Card
@@ -1370,7 +1429,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                               className="MuiPaper-root-90 MuiPaper-shadow2-94 MuiPaper-rounded-91"
                             >
                               <withStyles(CardHeader)
-                                title="Total Income"
+                                title="Monthly Income"
                               >
                                 <CardHeader
                                   classes={
@@ -1383,7 +1442,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                       "title": "MuiCardHeader-title-121",
                                     }
                                   }
-                                  title="Total Income"
+                                  title="Monthly Income"
                                 >
                                   <withStyles(CardContent)
                                     className="MuiCardHeader-root-117"
@@ -1461,7 +1520,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                               <span
                                                 className="MuiTypography-root-124 MuiTypography-headline-129 MuiCardHeader-title-121"
                                               >
-                                                Total Income
+                                                Monthly Income
                                               </span>
                                             </Typography>
                                           </withStyles(Typography)>
@@ -1583,7 +1642,244 @@ exports[`PersonalStatusRelay renders 1`] = `
                                       >
                                         <ul
                                           className="MuiList-root-153 MuiList-padding-154"
-                                        />
+                                        >
+                                          <withStyles(ListItem)
+                                            key="Start"
+                                          >
+                                            <ListItem
+                                              button={false}
+                                              classes={
+                                                Object {
+                                                  "button": "MuiListItem-button-165",
+                                                  "container": "MuiListItem-container-158",
+                                                  "default": "MuiListItem-default-160",
+                                                  "dense": "MuiListItem-dense-161",
+                                                  "disabled": "MuiListItem-disabled-162",
+                                                  "divider": "MuiListItem-divider-163",
+                                                  "gutters": "MuiListItem-gutters-164",
+                                                  "keyboardFocused": "MuiListItem-keyboardFocused-159",
+                                                  "root": "MuiListItem-root-157",
+                                                  "secondaryAction": "MuiListItem-secondaryAction-166",
+                                                }
+                                              }
+                                              component="li"
+                                              dense={false}
+                                              disableGutters={false}
+                                              disabled={false}
+                                              divider={false}
+                                            >
+                                              <li
+                                                className="MuiListItem-root-157 MuiListItem-gutters-164 MuiListItem-default-160"
+                                                disabled={false}
+                                              >
+                                                <withStyles(ListItemText)
+                                                  key=".0"
+                                                  primary="2017-06-06 Start"
+                                                >
+                                                  <ListItemText
+                                                    classes={
+                                                      Object {
+                                                        "dense": "MuiListItemText-dense-169",
+                                                        "inset": "MuiListItemText-inset-168",
+                                                        "root": "MuiListItemText-root-167",
+                                                        "text": "MuiListItemText-text-170",
+                                                        "textDense": "MuiListItemText-textDense-171",
+                                                      }
+                                                    }
+                                                    disableTypography={false}
+                                                    inset={false}
+                                                    primary="2017-06-06 Start"
+                                                    secondary={false}
+                                                  >
+                                                    <div
+                                                      className="MuiListItemText-root-167"
+                                                    >
+                                                      <withStyles(Typography)
+                                                        className="MuiListItemText-text-170"
+                                                        type="subheading"
+                                                      >
+                                                        <Typography
+                                                          align="inherit"
+                                                          className="MuiListItemText-text-170"
+                                                          classes={
+                                                            Object {
+                                                              "alignCenter": "MuiTypography-alignCenter-137",
+                                                              "alignJustify": "MuiTypography-alignJustify-139",
+                                                              "alignLeft": "MuiTypography-alignLeft-136",
+                                                              "alignRight": "MuiTypography-alignRight-138",
+                                                              "body1": "MuiTypography-body1-133",
+                                                              "body2": "MuiTypography-body2-132",
+                                                              "button": "MuiTypography-button-135",
+                                                              "caption": "MuiTypography-caption-134",
+                                                              "colorAccent": "MuiTypography-colorAccent-146",
+                                                              "colorError": "MuiTypography-colorError-147",
+                                                              "colorInherit": "MuiTypography-colorInherit-143",
+                                                              "colorPrimary": "MuiTypography-colorPrimary-144",
+                                                              "colorSecondary": "MuiTypography-colorSecondary-145",
+                                                              "display1": "MuiTypography-display1-128",
+                                                              "display2": "MuiTypography-display2-127",
+                                                              "display3": "MuiTypography-display3-126",
+                                                              "display4": "MuiTypography-display4-125",
+                                                              "gutterBottom": "MuiTypography-gutterBottom-141",
+                                                              "headline": "MuiTypography-headline-129",
+                                                              "noWrap": "MuiTypography-noWrap-140",
+                                                              "paragraph": "MuiTypography-paragraph-142",
+                                                              "root": "MuiTypography-root-124",
+                                                              "subheading": "MuiTypography-subheading-131",
+                                                              "title": "MuiTypography-title-130",
+                                                            }
+                                                          }
+                                                          color="default"
+                                                          gutterBottom={false}
+                                                          headlineMapping={
+                                                            Object {
+                                                              "body1": "p",
+                                                              "body2": "aside",
+                                                              "display1": "h1",
+                                                              "display2": "h1",
+                                                              "display3": "h1",
+                                                              "display4": "h1",
+                                                              "headline": "h1",
+                                                              "subheading": "h3",
+                                                              "title": "h2",
+                                                            }
+                                                          }
+                                                          noWrap={false}
+                                                          paragraph={false}
+                                                          type="subheading"
+                                                        >
+                                                          <h3
+                                                            className="MuiTypography-root-124 MuiTypography-subheading-131 MuiListItemText-text-170"
+                                                          >
+                                                            2017-06-06 Start
+                                                          </h3>
+                                                        </Typography>
+                                                      </withStyles(Typography)>
+                                                    </div>
+                                                  </ListItemText>
+                                                </withStyles(ListItemText)>
+                                              </li>
+                                            </ListItem>
+                                          </withStyles(ListItem)>
+                                          <withStyles(ListItem)
+                                            key="End"
+                                          >
+                                            <ListItem
+                                              button={false}
+                                              classes={
+                                                Object {
+                                                  "button": "MuiListItem-button-165",
+                                                  "container": "MuiListItem-container-158",
+                                                  "default": "MuiListItem-default-160",
+                                                  "dense": "MuiListItem-dense-161",
+                                                  "disabled": "MuiListItem-disabled-162",
+                                                  "divider": "MuiListItem-divider-163",
+                                                  "gutters": "MuiListItem-gutters-164",
+                                                  "keyboardFocused": "MuiListItem-keyboardFocused-159",
+                                                  "root": "MuiListItem-root-157",
+                                                  "secondaryAction": "MuiListItem-secondaryAction-166",
+                                                }
+                                              }
+                                              component="li"
+                                              dense={false}
+                                              disableGutters={false}
+                                              disabled={false}
+                                              divider={false}
+                                            >
+                                              <li
+                                                className="MuiListItem-root-157 MuiListItem-gutters-164 MuiListItem-default-160"
+                                                disabled={false}
+                                              >
+                                                <withStyles(ListItemText)
+                                                  key=".0"
+                                                  primary="2017-07-06 End"
+                                                >
+                                                  <ListItemText
+                                                    classes={
+                                                      Object {
+                                                        "dense": "MuiListItemText-dense-169",
+                                                        "inset": "MuiListItemText-inset-168",
+                                                        "root": "MuiListItemText-root-167",
+                                                        "text": "MuiListItemText-text-170",
+                                                        "textDense": "MuiListItemText-textDense-171",
+                                                      }
+                                                    }
+                                                    disableTypography={false}
+                                                    inset={false}
+                                                    primary="2017-07-06 End"
+                                                    secondary={false}
+                                                  >
+                                                    <div
+                                                      className="MuiListItemText-root-167"
+                                                    >
+                                                      <withStyles(Typography)
+                                                        className="MuiListItemText-text-170"
+                                                        type="subheading"
+                                                      >
+                                                        <Typography
+                                                          align="inherit"
+                                                          className="MuiListItemText-text-170"
+                                                          classes={
+                                                            Object {
+                                                              "alignCenter": "MuiTypography-alignCenter-137",
+                                                              "alignJustify": "MuiTypography-alignJustify-139",
+                                                              "alignLeft": "MuiTypography-alignLeft-136",
+                                                              "alignRight": "MuiTypography-alignRight-138",
+                                                              "body1": "MuiTypography-body1-133",
+                                                              "body2": "MuiTypography-body2-132",
+                                                              "button": "MuiTypography-button-135",
+                                                              "caption": "MuiTypography-caption-134",
+                                                              "colorAccent": "MuiTypography-colorAccent-146",
+                                                              "colorError": "MuiTypography-colorError-147",
+                                                              "colorInherit": "MuiTypography-colorInherit-143",
+                                                              "colorPrimary": "MuiTypography-colorPrimary-144",
+                                                              "colorSecondary": "MuiTypography-colorSecondary-145",
+                                                              "display1": "MuiTypography-display1-128",
+                                                              "display2": "MuiTypography-display2-127",
+                                                              "display3": "MuiTypography-display3-126",
+                                                              "display4": "MuiTypography-display4-125",
+                                                              "gutterBottom": "MuiTypography-gutterBottom-141",
+                                                              "headline": "MuiTypography-headline-129",
+                                                              "noWrap": "MuiTypography-noWrap-140",
+                                                              "paragraph": "MuiTypography-paragraph-142",
+                                                              "root": "MuiTypography-root-124",
+                                                              "subheading": "MuiTypography-subheading-131",
+                                                              "title": "MuiTypography-title-130",
+                                                            }
+                                                          }
+                                                          color="default"
+                                                          gutterBottom={false}
+                                                          headlineMapping={
+                                                            Object {
+                                                              "body1": "p",
+                                                              "body2": "aside",
+                                                              "display1": "h1",
+                                                              "display2": "h1",
+                                                              "display3": "h1",
+                                                              "display4": "h1",
+                                                              "headline": "h1",
+                                                              "subheading": "h3",
+                                                              "title": "h2",
+                                                            }
+                                                          }
+                                                          noWrap={false}
+                                                          paragraph={false}
+                                                          type="subheading"
+                                                        >
+                                                          <h3
+                                                            className="MuiTypography-root-124 MuiTypography-subheading-131 MuiListItemText-text-170"
+                                                          >
+                                                            2017-07-06 End
+                                                          </h3>
+                                                        </Typography>
+                                                      </withStyles(Typography)>
+                                                    </div>
+                                                  </ListItemText>
+                                                </withStyles(ListItemText)>
+                                              </li>
+                                            </ListItem>
+                                          </withStyles(ListItem)>
+                                        </ul>
                                       </List>
                                     </withStyles(List)>
                                   </div>
@@ -1814,7 +2110,18 @@ exports[`PersonalStatusRelay renders 1`] = `
                     className="MuiGrid-typeItem-2 MuiGrid-grid-xs-12-37 MuiGrid-grid-sm-6-44 MuiGrid-grid-md-3-54"
                   >
                     <HighlightBox
-                      secondaryInfo={null}
+                      secondaryInfo={
+                        Array [
+                          Object {
+                            "text": "Start",
+                            "value": "2017-06-06",
+                          },
+                          Object {
+                            "text": "End",
+                            "value": "2017-07-06",
+                          },
+                        ]
+                      }
                       title="Total Expenditures"
                       value="30.00"
                     >
@@ -2077,7 +2384,244 @@ exports[`PersonalStatusRelay renders 1`] = `
                                       >
                                         <ul
                                           className="MuiList-root-153 MuiList-padding-154"
-                                        />
+                                        >
+                                          <withStyles(ListItem)
+                                            key="Start"
+                                          >
+                                            <ListItem
+                                              button={false}
+                                              classes={
+                                                Object {
+                                                  "button": "MuiListItem-button-165",
+                                                  "container": "MuiListItem-container-158",
+                                                  "default": "MuiListItem-default-160",
+                                                  "dense": "MuiListItem-dense-161",
+                                                  "disabled": "MuiListItem-disabled-162",
+                                                  "divider": "MuiListItem-divider-163",
+                                                  "gutters": "MuiListItem-gutters-164",
+                                                  "keyboardFocused": "MuiListItem-keyboardFocused-159",
+                                                  "root": "MuiListItem-root-157",
+                                                  "secondaryAction": "MuiListItem-secondaryAction-166",
+                                                }
+                                              }
+                                              component="li"
+                                              dense={false}
+                                              disableGutters={false}
+                                              disabled={false}
+                                              divider={false}
+                                            >
+                                              <li
+                                                className="MuiListItem-root-157 MuiListItem-gutters-164 MuiListItem-default-160"
+                                                disabled={false}
+                                              >
+                                                <withStyles(ListItemText)
+                                                  key=".0"
+                                                  primary="2017-06-06 Start"
+                                                >
+                                                  <ListItemText
+                                                    classes={
+                                                      Object {
+                                                        "dense": "MuiListItemText-dense-169",
+                                                        "inset": "MuiListItemText-inset-168",
+                                                        "root": "MuiListItemText-root-167",
+                                                        "text": "MuiListItemText-text-170",
+                                                        "textDense": "MuiListItemText-textDense-171",
+                                                      }
+                                                    }
+                                                    disableTypography={false}
+                                                    inset={false}
+                                                    primary="2017-06-06 Start"
+                                                    secondary={false}
+                                                  >
+                                                    <div
+                                                      className="MuiListItemText-root-167"
+                                                    >
+                                                      <withStyles(Typography)
+                                                        className="MuiListItemText-text-170"
+                                                        type="subheading"
+                                                      >
+                                                        <Typography
+                                                          align="inherit"
+                                                          className="MuiListItemText-text-170"
+                                                          classes={
+                                                            Object {
+                                                              "alignCenter": "MuiTypography-alignCenter-137",
+                                                              "alignJustify": "MuiTypography-alignJustify-139",
+                                                              "alignLeft": "MuiTypography-alignLeft-136",
+                                                              "alignRight": "MuiTypography-alignRight-138",
+                                                              "body1": "MuiTypography-body1-133",
+                                                              "body2": "MuiTypography-body2-132",
+                                                              "button": "MuiTypography-button-135",
+                                                              "caption": "MuiTypography-caption-134",
+                                                              "colorAccent": "MuiTypography-colorAccent-146",
+                                                              "colorError": "MuiTypography-colorError-147",
+                                                              "colorInherit": "MuiTypography-colorInherit-143",
+                                                              "colorPrimary": "MuiTypography-colorPrimary-144",
+                                                              "colorSecondary": "MuiTypography-colorSecondary-145",
+                                                              "display1": "MuiTypography-display1-128",
+                                                              "display2": "MuiTypography-display2-127",
+                                                              "display3": "MuiTypography-display3-126",
+                                                              "display4": "MuiTypography-display4-125",
+                                                              "gutterBottom": "MuiTypography-gutterBottom-141",
+                                                              "headline": "MuiTypography-headline-129",
+                                                              "noWrap": "MuiTypography-noWrap-140",
+                                                              "paragraph": "MuiTypography-paragraph-142",
+                                                              "root": "MuiTypography-root-124",
+                                                              "subheading": "MuiTypography-subheading-131",
+                                                              "title": "MuiTypography-title-130",
+                                                            }
+                                                          }
+                                                          color="default"
+                                                          gutterBottom={false}
+                                                          headlineMapping={
+                                                            Object {
+                                                              "body1": "p",
+                                                              "body2": "aside",
+                                                              "display1": "h1",
+                                                              "display2": "h1",
+                                                              "display3": "h1",
+                                                              "display4": "h1",
+                                                              "headline": "h1",
+                                                              "subheading": "h3",
+                                                              "title": "h2",
+                                                            }
+                                                          }
+                                                          noWrap={false}
+                                                          paragraph={false}
+                                                          type="subheading"
+                                                        >
+                                                          <h3
+                                                            className="MuiTypography-root-124 MuiTypography-subheading-131 MuiListItemText-text-170"
+                                                          >
+                                                            2017-06-06 Start
+                                                          </h3>
+                                                        </Typography>
+                                                      </withStyles(Typography)>
+                                                    </div>
+                                                  </ListItemText>
+                                                </withStyles(ListItemText)>
+                                              </li>
+                                            </ListItem>
+                                          </withStyles(ListItem)>
+                                          <withStyles(ListItem)
+                                            key="End"
+                                          >
+                                            <ListItem
+                                              button={false}
+                                              classes={
+                                                Object {
+                                                  "button": "MuiListItem-button-165",
+                                                  "container": "MuiListItem-container-158",
+                                                  "default": "MuiListItem-default-160",
+                                                  "dense": "MuiListItem-dense-161",
+                                                  "disabled": "MuiListItem-disabled-162",
+                                                  "divider": "MuiListItem-divider-163",
+                                                  "gutters": "MuiListItem-gutters-164",
+                                                  "keyboardFocused": "MuiListItem-keyboardFocused-159",
+                                                  "root": "MuiListItem-root-157",
+                                                  "secondaryAction": "MuiListItem-secondaryAction-166",
+                                                }
+                                              }
+                                              component="li"
+                                              dense={false}
+                                              disableGutters={false}
+                                              disabled={false}
+                                              divider={false}
+                                            >
+                                              <li
+                                                className="MuiListItem-root-157 MuiListItem-gutters-164 MuiListItem-default-160"
+                                                disabled={false}
+                                              >
+                                                <withStyles(ListItemText)
+                                                  key=".0"
+                                                  primary="2017-07-06 End"
+                                                >
+                                                  <ListItemText
+                                                    classes={
+                                                      Object {
+                                                        "dense": "MuiListItemText-dense-169",
+                                                        "inset": "MuiListItemText-inset-168",
+                                                        "root": "MuiListItemText-root-167",
+                                                        "text": "MuiListItemText-text-170",
+                                                        "textDense": "MuiListItemText-textDense-171",
+                                                      }
+                                                    }
+                                                    disableTypography={false}
+                                                    inset={false}
+                                                    primary="2017-07-06 End"
+                                                    secondary={false}
+                                                  >
+                                                    <div
+                                                      className="MuiListItemText-root-167"
+                                                    >
+                                                      <withStyles(Typography)
+                                                        className="MuiListItemText-text-170"
+                                                        type="subheading"
+                                                      >
+                                                        <Typography
+                                                          align="inherit"
+                                                          className="MuiListItemText-text-170"
+                                                          classes={
+                                                            Object {
+                                                              "alignCenter": "MuiTypography-alignCenter-137",
+                                                              "alignJustify": "MuiTypography-alignJustify-139",
+                                                              "alignLeft": "MuiTypography-alignLeft-136",
+                                                              "alignRight": "MuiTypography-alignRight-138",
+                                                              "body1": "MuiTypography-body1-133",
+                                                              "body2": "MuiTypography-body2-132",
+                                                              "button": "MuiTypography-button-135",
+                                                              "caption": "MuiTypography-caption-134",
+                                                              "colorAccent": "MuiTypography-colorAccent-146",
+                                                              "colorError": "MuiTypography-colorError-147",
+                                                              "colorInherit": "MuiTypography-colorInherit-143",
+                                                              "colorPrimary": "MuiTypography-colorPrimary-144",
+                                                              "colorSecondary": "MuiTypography-colorSecondary-145",
+                                                              "display1": "MuiTypography-display1-128",
+                                                              "display2": "MuiTypography-display2-127",
+                                                              "display3": "MuiTypography-display3-126",
+                                                              "display4": "MuiTypography-display4-125",
+                                                              "gutterBottom": "MuiTypography-gutterBottom-141",
+                                                              "headline": "MuiTypography-headline-129",
+                                                              "noWrap": "MuiTypography-noWrap-140",
+                                                              "paragraph": "MuiTypography-paragraph-142",
+                                                              "root": "MuiTypography-root-124",
+                                                              "subheading": "MuiTypography-subheading-131",
+                                                              "title": "MuiTypography-title-130",
+                                                            }
+                                                          }
+                                                          color="default"
+                                                          gutterBottom={false}
+                                                          headlineMapping={
+                                                            Object {
+                                                              "body1": "p",
+                                                              "body2": "aside",
+                                                              "display1": "h1",
+                                                              "display2": "h1",
+                                                              "display3": "h1",
+                                                              "display4": "h1",
+                                                              "headline": "h1",
+                                                              "subheading": "h3",
+                                                              "title": "h2",
+                                                            }
+                                                          }
+                                                          noWrap={false}
+                                                          paragraph={false}
+                                                          type="subheading"
+                                                        >
+                                                          <h3
+                                                            className="MuiTypography-root-124 MuiTypography-subheading-131 MuiListItemText-text-170"
+                                                          >
+                                                            2017-07-06 End
+                                                          </h3>
+                                                        </Typography>
+                                                      </withStyles(Typography)>
+                                                    </div>
+                                                  </ListItemText>
+                                                </withStyles(ListItemText)>
+                                              </li>
+                                            </ListItem>
+                                          </withStyles(ListItem)>
+                                        </ul>
                                       </List>
                                     </withStyles(List)>
                                   </div>
@@ -2316,7 +2860,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                           },
                         ]
                       }
-                      title="Available money"
+                      title="Available money (as of: 2017-07-06)"
                       value="131.00"
                     >
                       <Card
@@ -2365,7 +2909,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                               className="MuiPaper-root-90 MuiPaper-shadow2-94 MuiPaper-rounded-91"
                             >
                               <withStyles(CardHeader)
-                                title="Available money"
+                                title="Available money (as of: 2017-07-06)"
                               >
                                 <CardHeader
                                   classes={
@@ -2378,7 +2922,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                       "title": "MuiCardHeader-title-121",
                                     }
                                   }
-                                  title="Available money"
+                                  title="Available money (as of: 2017-07-06)"
                                 >
                                   <withStyles(CardContent)
                                     className="MuiCardHeader-root-117"
@@ -2456,7 +3000,7 @@ exports[`PersonalStatusRelay renders 1`] = `
                                               <span
                                                 className="MuiTypography-root-124 MuiTypography-headline-129 MuiCardHeader-title-121"
                                               >
-                                                Available money
+                                                Available money (as of: 2017-07-06)
                                               </span>
                                             </Typography>
                                           </withStyles(Typography)>

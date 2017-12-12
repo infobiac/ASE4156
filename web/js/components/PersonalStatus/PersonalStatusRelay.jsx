@@ -6,8 +6,11 @@ export default createFragmentContainer(PersonalStatus, {
   bank: graphql`
     fragment PersonalStatusRelay_bank on GUserBank {
       balance
+      balanceDate
       income
       outcome
+      monthlyStart
+      monthlyEnd
     }
 `,
   account: graphql`
