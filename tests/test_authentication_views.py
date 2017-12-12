@@ -80,3 +80,22 @@ def test_get_reauth():
     userbank.save()
     check_success = test_client.get("/plaid/get_reauth/")
     assert check_success.status_code == 200
+
+
+@pytest.mark.django_db(transaction=True)
+def test_delete_account():
+    """
+    Test the JPMorgan demo account delete mechanism
+    """
+    test_client = Client()
+    user1 = User.objects.create(username='user', password="a")
+    test_client.force_login(user1)
+    userbank = UserBank(
+        user=user1, item_id="hi",
+        access_token="Bye", institution_name="bankofcool",
+        current_balance_field=10, account_name_field="coolaccount",
+        income_field=30, expenditure_field=5
+    )
+    userbank.save()
+    check_success = test_client.get("/delete/")
+    assert check_success.status_code == 200

@@ -79,3 +79,18 @@ def get_reauth(request):
     public_token = get_pub["public_token"]
     cntxt = {"public_token": public_token}
     return render(request, "reauth.html", cntxt)
+
+
+@login_required
+def delete_account(request):
+    """
+    A method used during JPMorgan demo that allows us to delete/recreate accounts
+    on the fly
+    """
+    ubanks = request.user.userbank.all()
+    for ubank in ubanks:
+        ubank.delete()
+    user = request.user
+    log_out(request)
+    user.delete()
+    return HttpResponse("Account succesfully deleted")
