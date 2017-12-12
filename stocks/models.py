@@ -21,19 +21,16 @@ class Stock(models.Model):
     """
     name = models.CharField(
         max_length=255,
-        validators=[MinLengthValidator(
-            1,
-            message="The name should not be empty."
-        )],
-    )
+        validators=[
+            MinLengthValidator(1, message="The name should not be empty.")
+        ], )
     ticker = models.CharField(
         max_length=10,
         unique=True,
-        validators=[MinLengthValidator(
-            1,
-            message="The ticker should not be empty."
-        ), validate_ticker],
-    )
+        validators=[
+            MinLengthValidator(1, message="The ticker should not be empty."),
+            validate_ticker
+        ], )
 
     def latest_quote(self, date=None):
         """
@@ -98,12 +95,10 @@ class DailyStockQuote(models.Model):
     DailyStockQuote is one day in the performance of a stock,
     for example 2nd July GOOGL value is 281.31$
     """
-    value = models.FloatField(
-        validators=[MinValueValidator(
-            0.0,
-            message="Daily stock quote can not be negative"
-        )]
-    )
+    value = models.FloatField(validators=[
+        MinValueValidator(
+            0.0, message="Daily stock quote can not be negative")
+    ])
     date = models.DateField()
     stock = models.ForeignKey(Stock, related_name='daily_quote')
 
@@ -111,7 +106,9 @@ class DailyStockQuote(models.Model):
         """
         We use this to define our uniqueness constraint
         """
-        unique_together = ('stock', 'date',)
+        unique_together = (
+            'stock',
+            'date', )
 
 
 class InvestmentBucket(models.Model):
@@ -120,19 +117,15 @@ class InvestmentBucket(models.Model):
     """
     name = models.CharField(
         max_length=255,
-        validators=[MinLengthValidator(
-            1,
-            message="The name should not be empty."
-        )],
-    )
+        validators=[
+            MinLengthValidator(1, message="The name should not be empty.")
+        ], )
     owner = models.ForeignKey(Profile, related_name='owned_bucket')
     public = models.BooleanField()
-    available = models.FloatField(
-        validators=[MinValueValidator(
-            0.0,
-            message="The available money can not be negative."
-        )]
-    )
+    available = models.FloatField(validators=[
+        MinValueValidator(
+            0.0, message="The available money can not be negative.")
+    ])
 
     class Meta(object):
         unique_together = ('name', 'owner')
@@ -142,14 +135,16 @@ class InvestmentBucket(models.Model):
         """
         Finds all buckets that the user could view
         """
-        return InvestmentBucket.objects.filter(Q(owner=profile) | Q(public=True))
+        return InvestmentBucket.objects.filter(
+            Q(owner=profile) | Q(public=True))
 
     @staticmethod
     def create_new_bucket(name, public, owner, available=1000.0):
         """
         Creates a new InvestmentBucket
         """
-        bucket = InvestmentBucket(name=name, public=public, owner=owner, available=available)
+        bucket = InvestmentBucket(
+            name=name, public=public, owner=owner, available=available)
         bucket.save()
         return bucket
 
@@ -159,8 +154,7 @@ class InvestmentBucket(models.Model):
         """
         attribute = self.description.create(
             text=text,
-            is_good=is_good,
-        )
+            is_good=is_good, )
         return attribute
 
     def get_stock_configs(self, date=None):
@@ -169,7 +163,8 @@ class InvestmentBucket(models.Model):
         """
         if not date:
             return self.stocks.filter(end=None)
-        return self.stocks.filter(start__lte=date).filter(Q(end__gte=date) | Q(end=None))
+        return self.stocks.filter(
+            start__lte=date).filter(Q(end__gte=date) | Q(end=None))
 
     def _sell_all(self):
         """
@@ -181,7 +176,8 @@ class InvestmentBucket(models.Model):
             for conf in current_configs:
                 balance_change += conf.value_on()
             self.available += balance_change
-            current_configs.update(end=datetime.datetime.now())
+            current_configs.update(
+                end=datetime.datetime.now() - datetime.timedelta(days=31))
             self.save()
 
     def change_config(self, new_config):
@@ -197,8 +193,8 @@ class InvestmentBucket(models.Model):
                 self.stocks.create(
                     stock=stock,
                     quantity=conf.quantity,
-                    start=datetime.datetime.now(),
-                )
+                    start=datetime.datetime.now() - datetime.timedelta(
+                        days=31), )
             if self.available < 0:
                 raise Exception("Not enough money available")
             self.save()
@@ -236,11 +232,12 @@ class InvestmentBucketDescription(models.Model):
     """
     text = models.CharField(
         max_length=255,
-        validators=[MinLengthValidator(
-            3,
-            message="The description should at least be 3 characters long."
-        )]
-    )
+        validators=[
+            MinLengthValidator(
+                3,
+                message="The description should at least be 3 characters long."
+            )
+        ])
     bucket = models.ForeignKey(InvestmentBucket, related_name='description')
     is_good = models.BooleanField()
 
@@ -259,12 +256,9 @@ class InvestmentStockConfiguration(models.Model):
     """
     Represents the configuration of how much of a stock to invest for a bucket
     """
-    quantity = models.FloatField(
-        validators=[MinValueValidator(
-            0.0,
-            message="The quantity can not be negative."
-        )]
-    )
+    quantity = models.FloatField(validators=[
+        MinValueValidator(0.0, message="The quantity can not be negative.")
+    ])
     stock = models.ForeignKey(Stock, related_name='bucket')
     bucket = models.ForeignKey(InvestmentBucket, related_name='stocks')
     start = models.DateField(default=os_date.today, blank=True)
