@@ -1,0 +1,1084 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvestPanelRelay renders 1`] = `
+<CtxProvider
+  ctx={
+    Object {
+      "errorDisplay": [Function],
+      "relay": Object {
+        "environment": RelayModernEnvironment {
+          "__setNet": [Function],
+          "_debugger": EnvironmentDebugger {
+            "_envIsDirty": false,
+            "_environment": [Circular],
+            "_id": "RelayModernEnvironment1",
+            "_isRecordingMutationEvents": false,
+            "_recordedMutationEvents": Array [],
+          },
+          "_network": [Function],
+          "_publishQueue": RelayPublishQueue {
+            "_appliedOptimisticUpdates": Set {},
+            "_backup": Object {},
+            "_handlerProvider": [Function],
+            "_pendingBackupRebase": false,
+            "_pendingData": Set {},
+            "_pendingOptimisticUpdates": Set {},
+            "_pendingUpdaters": Set {},
+            "_store": RelayMarkSweepStore {
+              "_hasScheduledGC": false,
+              "_index": 0,
+              "_recordSource": Object {},
+              "_roots": Map {},
+              "_subscriptions": Set {
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "1",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestPanelRelay_bucket",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "id",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "name",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "value",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "ownedAmount",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": Array [
+                            Object {
+                              "kind": "Literal",
+                              "name": "count",
+                              "type": "Int",
+                              "value": 30,
+                            },
+                          ],
+                          "concreteType": "GDataPoint",
+                          "kind": "LinkedField",
+                          "name": "history",
+                          "plural": true,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "date",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "value",
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": "history{\\"count\\":30}",
+                        },
+                      ],
+                      "type": "GInvestmentBucket",
+                    },
+                    "seenRecords": Object {
+                      "1": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "2",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestPanelRelay_profile",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "GTradingAccount",
+                          "kind": "LinkedField",
+                          "name": "selectedAcc",
+                          "plural": false,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "availableCash",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GProfile",
+                    },
+                    "seenRecords": Object {
+                      "2": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+              },
+              "_updatedRecordIDs": Object {},
+            },
+          },
+          "_store": RelayMarkSweepStore {
+            "_hasScheduledGC": false,
+            "_index": 0,
+            "_recordSource": Object {},
+            "_roots": Map {},
+            "_subscriptions": Set {
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "1",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestPanelRelay_bucket",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "name",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "value",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "ownedAmount",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": Array [
+                          Object {
+                            "kind": "Literal",
+                            "name": "count",
+                            "type": "Int",
+                            "value": 30,
+                          },
+                        ],
+                        "concreteType": "GDataPoint",
+                        "kind": "LinkedField",
+                        "name": "history",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "date",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "value",
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": "history{\\"count\\":30}",
+                      },
+                    ],
+                    "type": "GInvestmentBucket",
+                  },
+                  "seenRecords": Object {
+                    "1": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "2",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestPanelRelay_profile",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GTradingAccount",
+                        "kind": "LinkedField",
+                        "name": "selectedAcc",
+                        "plural": false,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "availableCash",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GProfile",
+                  },
+                  "seenRecords": Object {
+                    "2": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+            },
+            "_updatedRecordIDs": Object {},
+          },
+          "configName": undefined,
+          "unstable_internal": Object {
+            "areEqualSelectors": [Function],
+            "createFragmentSpecResolver": [Function],
+            "createOperationSelector": [Function],
+            "getDataIDsFromObject": [Function],
+            "getFragment": [Function],
+            "getOperation": [Function],
+            "getSelector": [Function],
+            "getSelectorList": [Function],
+            "getSelectorsFromObject": [Function],
+            "getVariablesFromObject": [Function],
+          },
+        },
+        "variables": Object {},
+      },
+      "router": Object {
+        "addTransitionHook": [Function],
+        "createHref": [Function],
+        "createLocation": [Function],
+        "go": [Function],
+        "isActive": [Function],
+        "matcher": Object {
+          "format": [Function],
+          "getRoutes": [Function],
+          "isActive": [Function],
+          "match": [Function],
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    }
+  }
+>
+  <div>
+    <Relay(InvestPanelRelay)
+      bucket={
+        Object {
+          "__fragments": Object {
+            "InvestPanelRelay_bucket": Object {},
+          },
+          "__id": "1",
+          "history": Array [
+            Object {
+              "date": "2017-07-07",
+              "value": 55.3,
+            },
+          ],
+          "id": "1",
+          "name": "Some name",
+          "ownedAmount": 7,
+          "value": 33.3,
+        }
+      }
+      id="panel"
+      profile={
+        Object {
+          "__fragments": Object {
+            "InvestPanelRelay_profile": Object {},
+          },
+          "__id": "2",
+          "id": "2",
+          "selectedAcc": Object {
+            "availableCash": 1234.56,
+            "id": "3",
+          },
+        }
+      }
+    >
+      <InvestPanelRelay
+        bucket={
+          Object {
+            "__fragments": Object {
+              "InvestPanelRelay_bucket": Object {},
+            },
+            "__id": "1",
+            "history": Array [
+              Object {
+                "date": "2017-07-07",
+                "value": 55.3,
+              },
+            ],
+            "id": "1",
+            "name": "Some name",
+            "ownedAmount": 7,
+            "value": 33.3,
+          }
+        }
+        id="panel"
+        profile={
+          Object {
+            "__fragments": Object {
+              "InvestPanelRelay_profile": Object {},
+            },
+            "__id": "2",
+            "id": "2",
+            "selectedAcc": Object {
+              "availableCash": 1234.56,
+              "id": "3",
+            },
+          }
+        }
+        relay={
+          Object {
+            "environment": RelayModernEnvironment {
+              "__setNet": [Function],
+              "_debugger": EnvironmentDebugger {
+                "_envIsDirty": false,
+                "_environment": [Circular],
+                "_id": "RelayModernEnvironment1",
+                "_isRecordingMutationEvents": false,
+                "_recordedMutationEvents": Array [],
+              },
+              "_network": [Function],
+              "_publishQueue": RelayPublishQueue {
+                "_appliedOptimisticUpdates": Set {},
+                "_backup": Object {},
+                "_handlerProvider": [Function],
+                "_pendingBackupRebase": false,
+                "_pendingData": Set {},
+                "_pendingOptimisticUpdates": Set {},
+                "_pendingUpdaters": Set {},
+                "_store": RelayMarkSweepStore {
+                  "_hasScheduledGC": false,
+                  "_index": 0,
+                  "_recordSource": Object {},
+                  "_roots": Map {},
+                  "_subscriptions": Set {
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "1",
+                        "node": Object {
+                          "argumentDefinitions": Array [],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestPanelRelay_bucket",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "name",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "value",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "ownedAmount",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": Array [
+                                Object {
+                                  "kind": "Literal",
+                                  "name": "count",
+                                  "type": "Int",
+                                  "value": 30,
+                                },
+                              ],
+                              "concreteType": "GDataPoint",
+                              "kind": "LinkedField",
+                              "name": "history",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "date",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "value",
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": "history{\\"count\\":30}",
+                            },
+                          ],
+                          "type": "GInvestmentBucket",
+                        },
+                        "seenRecords": Object {
+                          "1": undefined,
+                        },
+                        "variables": Object {},
+                      },
+                    },
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "2",
+                        "node": Object {
+                          "argumentDefinitions": Array [],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestPanelRelay_profile",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GTradingAccount",
+                              "kind": "LinkedField",
+                              "name": "selectedAcc",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "availableCash",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GProfile",
+                        },
+                        "seenRecords": Object {
+                          "2": undefined,
+                        },
+                        "variables": Object {},
+                      },
+                    },
+                  },
+                  "_updatedRecordIDs": Object {},
+                },
+              },
+              "_store": RelayMarkSweepStore {
+                "_hasScheduledGC": false,
+                "_index": 0,
+                "_recordSource": Object {},
+                "_roots": Map {},
+                "_subscriptions": Set {
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "1",
+                      "node": Object {
+                        "argumentDefinitions": Array [],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestPanelRelay_bucket",
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "name",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "value",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "ownedAmount",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": Array [
+                              Object {
+                                "kind": "Literal",
+                                "name": "count",
+                                "type": "Int",
+                                "value": 30,
+                              },
+                            ],
+                            "concreteType": "GDataPoint",
+                            "kind": "LinkedField",
+                            "name": "history",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "date",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "value",
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": "history{\\"count\\":30}",
+                          },
+                        ],
+                        "type": "GInvestmentBucket",
+                      },
+                      "seenRecords": Object {
+                        "1": undefined,
+                      },
+                      "variables": Object {},
+                    },
+                  },
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "2",
+                      "node": Object {
+                        "argumentDefinitions": Array [],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestPanelRelay_profile",
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GTradingAccount",
+                            "kind": "LinkedField",
+                            "name": "selectedAcc",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "availableCash",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "id",
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GProfile",
+                      },
+                      "seenRecords": Object {
+                        "2": undefined,
+                      },
+                      "variables": Object {},
+                    },
+                  },
+                },
+                "_updatedRecordIDs": Object {},
+              },
+              "configName": undefined,
+              "unstable_internal": Object {
+                "areEqualSelectors": [Function],
+                "createFragmentSpecResolver": [Function],
+                "createOperationSelector": [Function],
+                "getDataIDsFromObject": [Function],
+                "getFragment": [Function],
+                "getOperation": [Function],
+                "getSelector": [Function],
+                "getSelectorList": [Function],
+                "getSelectorsFromObject": [Function],
+                "getVariablesFromObject": [Function],
+              },
+            },
+          }
+        }
+      >
+        <mockConstructor
+          available={1234.56}
+          bucket={
+            Object {
+              "history": Array [
+                Object {
+                  "date": 2017-07-07T00:00:00.000Z,
+                  "value": 55.3,
+                },
+              ],
+              "name": "Some name",
+              "ownedAmount": 7,
+              "value": 33.3,
+            }
+          }
+          cancelFunc={[Function]}
+          investFunc={[Function]}
+        >
+          <div />
+        </mockConstructor>
+      </InvestPanelRelay>
+    </Relay(InvestPanelRelay)>
+  </div>
+</CtxProvider>
+`;
+
+exports[`InvestPanelRelay renders 2`] = `
+Array [
+  null,
+  null,
+  [Function],
+]
+`;
+
+exports[`InvestPanelRelay renders 3`] = `
+Array [
+  RelayModernEnvironment {
+    "__setNet": [Function],
+    "_debugger": EnvironmentDebugger {
+      "_envIsDirty": false,
+      "_environment": [Circular],
+      "_id": "RelayModernEnvironment1",
+      "_isRecordingMutationEvents": false,
+      "_recordedMutationEvents": Array [],
+    },
+    "_network": [Function],
+    "_publishQueue": RelayPublishQueue {
+      "_appliedOptimisticUpdates": Set {},
+      "_backup": Object {},
+      "_handlerProvider": [Function],
+      "_pendingBackupRebase": false,
+      "_pendingData": Set {},
+      "_pendingOptimisticUpdates": Set {},
+      "_pendingUpdaters": Set {},
+      "_store": RelayMarkSweepStore {
+        "_hasScheduledGC": false,
+        "_index": 0,
+        "_recordSource": Object {},
+        "_roots": Map {},
+        "_subscriptions": Set {
+          Object {
+            "callback": [Function],
+            "snapshot": Object {
+              "data": undefined,
+              "dataID": "1",
+              "node": Object {
+                "argumentDefinitions": Array [],
+                "kind": "Fragment",
+                "metadata": null,
+                "name": "InvestPanelRelay_bucket",
+                "selections": Array [
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "id",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "name",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "value",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "ownedAmount",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": Array [
+                      Object {
+                        "kind": "Literal",
+                        "name": "count",
+                        "type": "Int",
+                        "value": 30,
+                      },
+                    ],
+                    "concreteType": "GDataPoint",
+                    "kind": "LinkedField",
+                    "name": "history",
+                    "plural": true,
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "date",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "value",
+                        "storageKey": null,
+                      },
+                    ],
+                    "storageKey": "history{\\"count\\":30}",
+                  },
+                ],
+                "type": "GInvestmentBucket",
+              },
+              "seenRecords": Object {
+                "1": undefined,
+              },
+              "variables": Object {},
+            },
+          },
+          Object {
+            "callback": [Function],
+            "snapshot": Object {
+              "data": undefined,
+              "dataID": "2",
+              "node": Object {
+                "argumentDefinitions": Array [],
+                "kind": "Fragment",
+                "metadata": null,
+                "name": "InvestPanelRelay_profile",
+                "selections": Array [
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "GTradingAccount",
+                    "kind": "LinkedField",
+                    "name": "selectedAcc",
+                    "plural": false,
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "availableCash",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                    ],
+                    "storageKey": null,
+                  },
+                ],
+                "type": "GProfile",
+              },
+              "seenRecords": Object {
+                "2": undefined,
+              },
+              "variables": Object {},
+            },
+          },
+        },
+        "_updatedRecordIDs": Object {},
+      },
+    },
+    "_store": RelayMarkSweepStore {
+      "_hasScheduledGC": false,
+      "_index": 0,
+      "_recordSource": Object {},
+      "_roots": Map {},
+      "_subscriptions": Set {
+        Object {
+          "callback": [Function],
+          "snapshot": Object {
+            "data": undefined,
+            "dataID": "1",
+            "node": Object {
+              "argumentDefinitions": Array [],
+              "kind": "Fragment",
+              "metadata": null,
+              "name": "InvestPanelRelay_bucket",
+              "selections": Array [
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "id",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "name",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "value",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "ownedAmount",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": Array [
+                    Object {
+                      "kind": "Literal",
+                      "name": "count",
+                      "type": "Int",
+                      "value": 30,
+                    },
+                  ],
+                  "concreteType": "GDataPoint",
+                  "kind": "LinkedField",
+                  "name": "history",
+                  "plural": true,
+                  "selections": Array [
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "date",
+                      "storageKey": null,
+                    },
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "value",
+                      "storageKey": null,
+                    },
+                  ],
+                  "storageKey": "history{\\"count\\":30}",
+                },
+              ],
+              "type": "GInvestmentBucket",
+            },
+            "seenRecords": Object {
+              "1": undefined,
+            },
+            "variables": Object {},
+          },
+        },
+        Object {
+          "callback": [Function],
+          "snapshot": Object {
+            "data": undefined,
+            "dataID": "2",
+            "node": Object {
+              "argumentDefinitions": Array [],
+              "kind": "Fragment",
+              "metadata": null,
+              "name": "InvestPanelRelay_profile",
+              "selections": Array [
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "concreteType": "GTradingAccount",
+                  "kind": "LinkedField",
+                  "name": "selectedAcc",
+                  "plural": false,
+                  "selections": Array [
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "availableCash",
+                      "storageKey": null,
+                    },
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "id",
+                      "storageKey": null,
+                    },
+                  ],
+                  "storageKey": null,
+                },
+              ],
+              "type": "GProfile",
+            },
+            "seenRecords": Object {
+              "2": undefined,
+            },
+            "variables": Object {},
+          },
+        },
+      },
+      "_updatedRecordIDs": Object {},
+    },
+    "configName": undefined,
+    "unstable_internal": Object {
+      "areEqualSelectors": [Function],
+      "createFragmentSpecResolver": [Function],
+      "createOperationSelector": [Function],
+      "getDataIDsFromObject": [Function],
+      "getFragment": [Function],
+      "getOperation": [Function],
+      "getSelector": [Function],
+      "getSelectorList": [Function],
+      "getSelectorsFromObject": [Function],
+      "getVariablesFromObject": [Function],
+    },
+  },
+]
+`;
+
+exports[`InvestPanelRelay renders 4`] = `
+Array [
+  Object {
+    "bucketId": "1",
+    "quantity": 3,
+    "tradingAccId": "3",
+  },
+  Object {
+    "invest": Object {
+      "bucket": Object {
+        "id": "1",
+        "ownedAmount": 10,
+      },
+      "tradingAccount": Object {
+        "availableCash": 1134.6599999999999,
+        "id": "3",
+      },
+    },
+  },
+]
+`;
+
+exports[`InvestPanelRelay renders 5`] = `
+Array [
+  Array [
+    Object {
+      "message": "Successfully bought the bucket!",
+    },
+  ],
+  Array [
+    Object {
+      "message": "Successfully sold the bucket!",
+    },
+  ],
+  Array [
+    Object {
+      "message": "Test",
+    },
+  ],
+]
+`;

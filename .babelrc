@@ -1,0 +1,14 @@
+{
+  "presets":[
+    "env",
+    "react",
+    "stage-0",
+    "flow",
+  ],
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-es2015-spread",
+    "transform-object-rest-spread",
+    ["relay", {"schema": "./schema.json"}],
+  ],
+}

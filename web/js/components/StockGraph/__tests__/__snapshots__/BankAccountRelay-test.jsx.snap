@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BankAccountRelay renders 1`] = `
+<Relay(BankAccountRelay)
+  bank={
+    Object {
+      "__fragments": Object {
+        "BankAccountRelay_bank": Object {},
+      },
+      "__id": "1",
+      "history": Array [
+        Object {
+          "date": "2017-06-06",
+          "value": 0.33,
+        },
+      ],
+      "name": "Test Name",
+    }
+  }
+>
+  <BankAccountRelay
+    bank={
+      Object {
+        "__fragments": Object {
+          "BankAccountRelay_bank": Object {},
+        },
+        "__id": "1",
+        "history": Array [
+          Object {
+            "date": "2017-06-06",
+            "value": 0.33,
+          },
+        ],
+        "name": "Test Name",
+      }
+    }
+    relay={
+      Object {
+        "environment": RelayModernEnvironment {
+          "__setNet": [Function],
+          "_debugger": EnvironmentDebugger {
+            "_envIsDirty": false,
+            "_environment": [Circular],
+            "_id": "RelayModernEnvironment1",
+            "_isRecordingMutationEvents": false,
+            "_recordedMutationEvents": Array [],
+          },
+          "_network": [Function],
+          "_publishQueue": RelayPublishQueue {
+            "_appliedOptimisticUpdates": Set {},
+            "_backup": Object {},
+            "_handlerProvider": [Function],
+            "_pendingBackupRebase": false,
+            "_pendingData": Set {},
+            "_pendingOptimisticUpdates": Set {},
+            "_pendingUpdaters": Set {},
+            "_store": RelayMarkSweepStore {
+              "_hasScheduledGC": false,
+              "_index": 0,
+              "_recordSource": Object {},
+              "_roots": Map {},
+              "_subscriptions": Set {
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "1",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "BankAccountRelay_bank",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "name",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": Array [
+                            Object {
+                              "kind": "Literal",
+                              "name": "start",
+                              "type": "String!",
+                              "value": "2017-09-10",
+                            },
+                          ],
+                          "concreteType": "GDataPoint",
+                          "kind": "LinkedField",
+                          "name": "history",
+                          "plural": true,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "date",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "value",
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": "history{\\"start\\":\\"2017-09-10\\"}",
+                        },
+                      ],
+                      "type": "GUserBank",
+                    },
+                    "seenRecords": Object {
+                      "1": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+              },
+              "_updatedRecordIDs": Object {},
+            },
+          },
+          "_store": RelayMarkSweepStore {
+            "_hasScheduledGC": false,
+            "_index": 0,
+            "_recordSource": Object {},
+            "_roots": Map {},
+            "_subscriptions": Set {
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "1",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "BankAccountRelay_bank",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "name",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": Array [
+                          Object {
+                            "kind": "Literal",
+                            "name": "start",
+                            "type": "String!",
+                            "value": "2017-09-10",
+                          },
+                        ],
+                        "concreteType": "GDataPoint",
+                        "kind": "LinkedField",
+                        "name": "history",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "date",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "value",
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": "history{\\"start\\":\\"2017-09-10\\"}",
+                      },
+                    ],
+                    "type": "GUserBank",
+                  },
+                  "seenRecords": Object {
+                    "1": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+            },
+            "_updatedRecordIDs": Object {},
+          },
+          "configName": undefined,
+          "unstable_internal": Object {
+            "areEqualSelectors": [Function],
+            "createFragmentSpecResolver": [Function],
+            "createOperationSelector": [Function],
+            "getDataIDsFromObject": [Function],
+            "getFragment": [Function],
+            "getOperation": [Function],
+            "getSelector": [Function],
+            "getSelectorList": [Function],
+            "getSelectorsFromObject": [Function],
+            "getVariablesFromObject": [Function],
+          },
+        },
+      }
+    }
+  >
+    <StockGraph
+      compare="ABSOLUTE"
+      height="400px"
+      id="BAR"
+      quotes={
+        Array [
+          Object {
+            "data": Array [
+              Object {
+                "date": 2017-06-06T00:00:00.000Z,
+                "value": 0.33,
+              },
+            ],
+            "name": "Test Name",
+          },
+        ]
+      }
+      title="Your account history"
+    >
+      <div
+        className="my-pretty-chart-container"
+      >
+        <Chart
+          allowEmptyRows={false}
+          chartActions={null}
+          chartEvents={Array []}
+          chartPackages={
+            Array [
+              "corechart",
+            ]
+          }
+          chartType="LineChart"
+          chartVersion="current"
+          columns={Array []}
+          data={
+            Array [
+              Array [
+                "Date",
+                "Test Name",
+              ],
+              Array [
+                2017-06-06T00:00:00.000Z,
+                0.33,
+              ],
+            ]
+          }
+          dateFormat={null}
+          diffdata={null}
+          graph_id="BAR"
+          height="400px"
+          legend_toggle={true}
+          loadCharts={true}
+          loader={
+            <div>
+              Rendering Chart
+            </div>
+          }
+          numberFormat={null}
+          options={
+            Object {
+              "curveType": "function",
+              "interpolateNulls": true,
+              "title": "Your account history",
+            }
+          }
+          rows={Array []}
+          width="100%"
+        >
+          <div
+            id="BAR"
+            style={
+              Object {
+                "height": "400px",
+                "width": "100%",
+              }
+            }
+          >
+            <div>
+              Rendering Chart
+            </div>
+          </div>
+        </Chart>
+      </div>
+    </StockGraph>
+  </BankAccountRelay>
+</Relay(BankAccountRelay)>
+`;

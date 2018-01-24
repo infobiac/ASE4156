@@ -1,0 +1,3449 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvestCompositionRelay fails render without data 1`] = `
+<CtxProvider
+  ctx={
+    Object {
+      "errorDisplay": [Function],
+      "network": [Function],
+      "relay": Object {
+        "environment": RelayModernEnvironment {
+          "__setNet": [Function],
+          "_debugger": EnvironmentDebugger {
+            "_envIsDirty": false,
+            "_environment": [Circular],
+            "_id": "RelayModernEnvironment7",
+            "_isRecordingMutationEvents": false,
+            "_recordedMutationEvents": Array [],
+          },
+          "_network": Object {
+            "execute": [Function],
+          },
+          "_publishQueue": RelayPublishQueue {
+            "_appliedOptimisticUpdates": Set {},
+            "_backup": Object {},
+            "_handlerProvider": [Function],
+            "_pendingBackupRebase": false,
+            "_pendingData": Set {},
+            "_pendingOptimisticUpdates": Set {},
+            "_pendingUpdaters": Set {},
+            "_store": RelayMarkSweepStore {
+              "_hasScheduledGC": false,
+              "_index": 0,
+              "_recordSource": Object {},
+              "_roots": Map {},
+              "_subscriptions": Set {
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "1",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_bucket",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "id",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "available",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "GInvestmentStockConfigurationConnection",
+                          "kind": "LinkedField",
+                          "name": "stocks",
+                          "plural": false,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationEdge",
+                              "kind": "LinkedField",
+                              "name": "edges",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfiguration",
+                                  "kind": "LinkedField",
+                                  "name": "node",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "quantity",
+                                      "storageKey": null,
+                                    },
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GStock",
+                                      "kind": "LinkedField",
+                                      "name": "stock",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "id",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "name",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GDailyStockQuote",
+                                          "kind": "LinkedField",
+                                          "name": "latestQuote",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "value",
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GInvestmentBucket",
+                    },
+                    "seenRecords": Object {
+                      "1": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "2",
+                    "node": Object {
+                      "argumentDefinitions": Array [
+                        Object {
+                          "defaultValue": "",
+                          "kind": "LocalArgument",
+                          "name": "text",
+                          "type": "String!",
+                        },
+                      ],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_profile",
+                      "selections": Array [
+                        Object {
+                          "alias": "investSearch",
+                          "args": Array [
+                            Object {
+                              "kind": "Literal",
+                              "name": "first",
+                              "type": "Int",
+                              "value": 4,
+                            },
+                            Object {
+                              "kind": "Variable",
+                              "name": "text",
+                              "type": "String!",
+                              "variableName": "text",
+                            },
+                          ],
+                          "concreteType": "GStock",
+                          "kind": "LinkedField",
+                          "name": "stockFind",
+                          "plural": true,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "name",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GDailyStockQuote",
+                              "kind": "LinkedField",
+                              "name": "latestQuote",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "value",
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GProfile",
+                    },
+                    "seenRecords": Object {
+                      "2": undefined,
+                    },
+                    "variables": Object {
+                      "text": "",
+                    },
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "1",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_bucket",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "id",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "available",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "GInvestmentStockConfigurationConnection",
+                          "kind": "LinkedField",
+                          "name": "stocks",
+                          "plural": false,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationEdge",
+                              "kind": "LinkedField",
+                              "name": "edges",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfiguration",
+                                  "kind": "LinkedField",
+                                  "name": "node",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "quantity",
+                                      "storageKey": null,
+                                    },
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GStock",
+                                      "kind": "LinkedField",
+                                      "name": "stock",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "id",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "name",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GDailyStockQuote",
+                                          "kind": "LinkedField",
+                                          "name": "latestQuote",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "value",
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GInvestmentBucket",
+                    },
+                    "seenRecords": Object {
+                      "1": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "2",
+                    "node": Object {
+                      "argumentDefinitions": Array [
+                        Object {
+                          "defaultValue": "",
+                          "kind": "LocalArgument",
+                          "name": "text",
+                          "type": "String!",
+                        },
+                      ],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_profile",
+                      "selections": Array [
+                        Object {
+                          "alias": "investSearch",
+                          "args": Array [
+                            Object {
+                              "kind": "Literal",
+                              "name": "first",
+                              "type": "Int",
+                              "value": 4,
+                            },
+                            Object {
+                              "kind": "Variable",
+                              "name": "text",
+                              "type": "String!",
+                              "variableName": "text",
+                            },
+                          ],
+                          "concreteType": "GStock",
+                          "kind": "LinkedField",
+                          "name": "stockFind",
+                          "plural": true,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "name",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GDailyStockQuote",
+                              "kind": "LinkedField",
+                              "name": "latestQuote",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "value",
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GProfile",
+                    },
+                    "seenRecords": Object {
+                      "2": undefined,
+                    },
+                    "variables": Object {
+                      "text": "",
+                    },
+                  },
+                },
+              },
+              "_updatedRecordIDs": Object {},
+            },
+          },
+          "_store": RelayMarkSweepStore {
+            "_hasScheduledGC": false,
+            "_index": 0,
+            "_recordSource": Object {},
+            "_roots": Map {},
+            "_subscriptions": Set {
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "1",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_bucket",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "available",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GInvestmentStockConfigurationConnection",
+                        "kind": "LinkedField",
+                        "name": "stocks",
+                        "plural": false,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationEdge",
+                            "kind": "LinkedField",
+                            "name": "edges",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfiguration",
+                                "kind": "LinkedField",
+                                "name": "node",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "quantity",
+                                    "storageKey": null,
+                                  },
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GStock",
+                                    "kind": "LinkedField",
+                                    "name": "stock",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "id",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "name",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GDailyStockQuote",
+                                        "kind": "LinkedField",
+                                        "name": "latestQuote",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "value",
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GInvestmentBucket",
+                  },
+                  "seenRecords": Object {
+                    "1": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "2",
+                  "node": Object {
+                    "argumentDefinitions": Array [
+                      Object {
+                        "defaultValue": "",
+                        "kind": "LocalArgument",
+                        "name": "text",
+                        "type": "String!",
+                      },
+                    ],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_profile",
+                    "selections": Array [
+                      Object {
+                        "alias": "investSearch",
+                        "args": Array [
+                          Object {
+                            "kind": "Literal",
+                            "name": "first",
+                            "type": "Int",
+                            "value": 4,
+                          },
+                          Object {
+                            "kind": "Variable",
+                            "name": "text",
+                            "type": "String!",
+                            "variableName": "text",
+                          },
+                        ],
+                        "concreteType": "GStock",
+                        "kind": "LinkedField",
+                        "name": "stockFind",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "name",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GDailyStockQuote",
+                            "kind": "LinkedField",
+                            "name": "latestQuote",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "value",
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GProfile",
+                  },
+                  "seenRecords": Object {
+                    "2": undefined,
+                  },
+                  "variables": Object {
+                    "text": "",
+                  },
+                },
+              },
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "1",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_bucket",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "available",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GInvestmentStockConfigurationConnection",
+                        "kind": "LinkedField",
+                        "name": "stocks",
+                        "plural": false,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationEdge",
+                            "kind": "LinkedField",
+                            "name": "edges",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfiguration",
+                                "kind": "LinkedField",
+                                "name": "node",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "quantity",
+                                    "storageKey": null,
+                                  },
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GStock",
+                                    "kind": "LinkedField",
+                                    "name": "stock",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "id",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "name",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GDailyStockQuote",
+                                        "kind": "LinkedField",
+                                        "name": "latestQuote",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "value",
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GInvestmentBucket",
+                  },
+                  "seenRecords": Object {
+                    "1": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "2",
+                  "node": Object {
+                    "argumentDefinitions": Array [
+                      Object {
+                        "defaultValue": "",
+                        "kind": "LocalArgument",
+                        "name": "text",
+                        "type": "String!",
+                      },
+                    ],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_profile",
+                    "selections": Array [
+                      Object {
+                        "alias": "investSearch",
+                        "args": Array [
+                          Object {
+                            "kind": "Literal",
+                            "name": "first",
+                            "type": "Int",
+                            "value": 4,
+                          },
+                          Object {
+                            "kind": "Variable",
+                            "name": "text",
+                            "type": "String!",
+                            "variableName": "text",
+                          },
+                        ],
+                        "concreteType": "GStock",
+                        "kind": "LinkedField",
+                        "name": "stockFind",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "name",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GDailyStockQuote",
+                            "kind": "LinkedField",
+                            "name": "latestQuote",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "value",
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GProfile",
+                  },
+                  "seenRecords": Object {
+                    "2": undefined,
+                  },
+                  "variables": Object {
+                    "text": "",
+                  },
+                },
+              },
+            },
+            "_updatedRecordIDs": Object {},
+          },
+          "configName": undefined,
+          "unstable_internal": Object {
+            "areEqualSelectors": [Function],
+            "createFragmentSpecResolver": [Function],
+            "createOperationSelector": [Function],
+            "getDataIDsFromObject": [Function],
+            "getFragment": [Function],
+            "getOperation": [Function],
+            "getSelector": [Function],
+            "getSelectorList": [Function],
+            "getSelectorsFromObject": [Function],
+            "getVariablesFromObject": [Function],
+          },
+        },
+        "variables": Object {},
+      },
+      "router": Object {
+        "addTransitionHook": [Function],
+        "createHref": [Function],
+        "createLocation": [Function],
+        "go": [Function],
+        "isActive": [Function],
+        "matcher": Object {
+          "format": [Function],
+          "getRoutes": [Function],
+          "isActive": [Function],
+          "match": [Function],
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    }
+  }
+>
+  <div>
+    <Relay(InvestCompositionRelay)
+      bucket={
+        Object {
+          "__fragments": Object {
+            "InvestCompositionRelay_bucket": Object {},
+          },
+          "__id": "1",
+          "available": 30,
+          "id": "1",
+          "stocks": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "quantity": 3,
+                  "stock": Object {
+                    "id": "4",
+                    "latestQuote": Object {
+                      "value": 44.4,
+                    },
+                    "name": "Stock",
+                  },
+                },
+              },
+            ],
+          },
+        }
+      }
+      profile={
+        Object {
+          "__fragments": Object {
+            "InvestCompositionRelay_profile": Object {},
+          },
+          "__id": "2",
+          "investSearch": null,
+        }
+      }
+    >
+      <InvestCompositionRelay
+        bucket={
+          Object {
+            "__fragments": Object {
+              "InvestCompositionRelay_bucket": Object {},
+            },
+            "__id": "1",
+            "available": 30,
+            "id": "1",
+            "stocks": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "quantity": 3,
+                    "stock": Object {
+                      "id": "4",
+                      "latestQuote": Object {
+                        "value": 44.4,
+                      },
+                      "name": "Stock",
+                    },
+                  },
+                },
+              ],
+            },
+          }
+        }
+        profile={
+          Object {
+            "__fragments": Object {
+              "InvestCompositionRelay_profile": Object {},
+            },
+            "__id": "2",
+            "investSearch": null,
+          }
+        }
+        relay={
+          Object {
+            "environment": RelayModernEnvironment {
+              "__setNet": [Function],
+              "_debugger": EnvironmentDebugger {
+                "_envIsDirty": false,
+                "_environment": [Circular],
+                "_id": "RelayModernEnvironment7",
+                "_isRecordingMutationEvents": false,
+                "_recordedMutationEvents": Array [],
+              },
+              "_network": Object {
+                "execute": [Function],
+              },
+              "_publishQueue": RelayPublishQueue {
+                "_appliedOptimisticUpdates": Set {},
+                "_backup": Object {},
+                "_handlerProvider": [Function],
+                "_pendingBackupRebase": false,
+                "_pendingData": Set {},
+                "_pendingOptimisticUpdates": Set {},
+                "_pendingUpdaters": Set {},
+                "_store": RelayMarkSweepStore {
+                  "_hasScheduledGC": false,
+                  "_index": 0,
+                  "_recordSource": Object {},
+                  "_roots": Map {},
+                  "_subscriptions": Set {
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "1",
+                        "node": Object {
+                          "argumentDefinitions": Array [],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_bucket",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "available",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationConnection",
+                              "kind": "LinkedField",
+                              "name": "stocks",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfigurationEdge",
+                                  "kind": "LinkedField",
+                                  "name": "edges",
+                                  "plural": true,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GInvestmentStockConfiguration",
+                                      "kind": "LinkedField",
+                                      "name": "node",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "quantity",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GStock",
+                                          "kind": "LinkedField",
+                                          "name": "stock",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "id",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "name",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "concreteType": "GDailyStockQuote",
+                                              "kind": "LinkedField",
+                                              "name": "latestQuote",
+                                              "plural": false,
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": null,
+                                                  "args": null,
+                                                  "kind": "ScalarField",
+                                                  "name": "value",
+                                                  "storageKey": null,
+                                                },
+                                              ],
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GInvestmentBucket",
+                        },
+                        "seenRecords": Object {
+                          "1": undefined,
+                        },
+                        "variables": Object {},
+                      },
+                    },
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "2",
+                        "node": Object {
+                          "argumentDefinitions": Array [
+                            Object {
+                              "defaultValue": "",
+                              "kind": "LocalArgument",
+                              "name": "text",
+                              "type": "String!",
+                            },
+                          ],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_profile",
+                          "selections": Array [
+                            Object {
+                              "alias": "investSearch",
+                              "args": Array [
+                                Object {
+                                  "kind": "Literal",
+                                  "name": "first",
+                                  "type": "Int",
+                                  "value": 4,
+                                },
+                                Object {
+                                  "kind": "Variable",
+                                  "name": "text",
+                                  "type": "String!",
+                                  "variableName": "text",
+                                },
+                              ],
+                              "concreteType": "GStock",
+                              "kind": "LinkedField",
+                              "name": "stockFind",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "name",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GDailyStockQuote",
+                                  "kind": "LinkedField",
+                                  "name": "latestQuote",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "value",
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GProfile",
+                        },
+                        "seenRecords": Object {
+                          "2": undefined,
+                        },
+                        "variables": Object {
+                          "text": "",
+                        },
+                      },
+                    },
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "1",
+                        "node": Object {
+                          "argumentDefinitions": Array [],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_bucket",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "available",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationConnection",
+                              "kind": "LinkedField",
+                              "name": "stocks",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfigurationEdge",
+                                  "kind": "LinkedField",
+                                  "name": "edges",
+                                  "plural": true,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GInvestmentStockConfiguration",
+                                      "kind": "LinkedField",
+                                      "name": "node",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "quantity",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GStock",
+                                          "kind": "LinkedField",
+                                          "name": "stock",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "id",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "name",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "concreteType": "GDailyStockQuote",
+                                              "kind": "LinkedField",
+                                              "name": "latestQuote",
+                                              "plural": false,
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": null,
+                                                  "args": null,
+                                                  "kind": "ScalarField",
+                                                  "name": "value",
+                                                  "storageKey": null,
+                                                },
+                                              ],
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GInvestmentBucket",
+                        },
+                        "seenRecords": Object {
+                          "1": undefined,
+                        },
+                        "variables": Object {},
+                      },
+                    },
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "2",
+                        "node": Object {
+                          "argumentDefinitions": Array [
+                            Object {
+                              "defaultValue": "",
+                              "kind": "LocalArgument",
+                              "name": "text",
+                              "type": "String!",
+                            },
+                          ],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_profile",
+                          "selections": Array [
+                            Object {
+                              "alias": "investSearch",
+                              "args": Array [
+                                Object {
+                                  "kind": "Literal",
+                                  "name": "first",
+                                  "type": "Int",
+                                  "value": 4,
+                                },
+                                Object {
+                                  "kind": "Variable",
+                                  "name": "text",
+                                  "type": "String!",
+                                  "variableName": "text",
+                                },
+                              ],
+                              "concreteType": "GStock",
+                              "kind": "LinkedField",
+                              "name": "stockFind",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "name",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GDailyStockQuote",
+                                  "kind": "LinkedField",
+                                  "name": "latestQuote",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "value",
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GProfile",
+                        },
+                        "seenRecords": Object {
+                          "2": undefined,
+                        },
+                        "variables": Object {
+                          "text": "",
+                        },
+                      },
+                    },
+                  },
+                  "_updatedRecordIDs": Object {},
+                },
+              },
+              "_store": RelayMarkSweepStore {
+                "_hasScheduledGC": false,
+                "_index": 0,
+                "_recordSource": Object {},
+                "_roots": Map {},
+                "_subscriptions": Set {
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "1",
+                      "node": Object {
+                        "argumentDefinitions": Array [],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_bucket",
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "available",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationConnection",
+                            "kind": "LinkedField",
+                            "name": "stocks",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfigurationEdge",
+                                "kind": "LinkedField",
+                                "name": "edges",
+                                "plural": true,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GInvestmentStockConfiguration",
+                                    "kind": "LinkedField",
+                                    "name": "node",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "quantity",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GStock",
+                                        "kind": "LinkedField",
+                                        "name": "stock",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "id",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "name",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "concreteType": "GDailyStockQuote",
+                                            "kind": "LinkedField",
+                                            "name": "latestQuote",
+                                            "plural": false,
+                                            "selections": Array [
+                                              Object {
+                                                "alias": null,
+                                                "args": null,
+                                                "kind": "ScalarField",
+                                                "name": "value",
+                                                "storageKey": null,
+                                              },
+                                            ],
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GInvestmentBucket",
+                      },
+                      "seenRecords": Object {
+                        "1": undefined,
+                      },
+                      "variables": Object {},
+                    },
+                  },
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "2",
+                      "node": Object {
+                        "argumentDefinitions": Array [
+                          Object {
+                            "defaultValue": "",
+                            "kind": "LocalArgument",
+                            "name": "text",
+                            "type": "String!",
+                          },
+                        ],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_profile",
+                        "selections": Array [
+                          Object {
+                            "alias": "investSearch",
+                            "args": Array [
+                              Object {
+                                "kind": "Literal",
+                                "name": "first",
+                                "type": "Int",
+                                "value": 4,
+                              },
+                              Object {
+                                "kind": "Variable",
+                                "name": "text",
+                                "type": "String!",
+                                "variableName": "text",
+                              },
+                            ],
+                            "concreteType": "GStock",
+                            "kind": "LinkedField",
+                            "name": "stockFind",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "name",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "id",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GDailyStockQuote",
+                                "kind": "LinkedField",
+                                "name": "latestQuote",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "value",
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GProfile",
+                      },
+                      "seenRecords": Object {
+                        "2": undefined,
+                      },
+                      "variables": Object {
+                        "text": "",
+                      },
+                    },
+                  },
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "1",
+                      "node": Object {
+                        "argumentDefinitions": Array [],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_bucket",
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "available",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationConnection",
+                            "kind": "LinkedField",
+                            "name": "stocks",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfigurationEdge",
+                                "kind": "LinkedField",
+                                "name": "edges",
+                                "plural": true,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GInvestmentStockConfiguration",
+                                    "kind": "LinkedField",
+                                    "name": "node",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "quantity",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GStock",
+                                        "kind": "LinkedField",
+                                        "name": "stock",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "id",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "name",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "concreteType": "GDailyStockQuote",
+                                            "kind": "LinkedField",
+                                            "name": "latestQuote",
+                                            "plural": false,
+                                            "selections": Array [
+                                              Object {
+                                                "alias": null,
+                                                "args": null,
+                                                "kind": "ScalarField",
+                                                "name": "value",
+                                                "storageKey": null,
+                                              },
+                                            ],
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GInvestmentBucket",
+                      },
+                      "seenRecords": Object {
+                        "1": undefined,
+                      },
+                      "variables": Object {},
+                    },
+                  },
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "2",
+                      "node": Object {
+                        "argumentDefinitions": Array [
+                          Object {
+                            "defaultValue": "",
+                            "kind": "LocalArgument",
+                            "name": "text",
+                            "type": "String!",
+                          },
+                        ],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_profile",
+                        "selections": Array [
+                          Object {
+                            "alias": "investSearch",
+                            "args": Array [
+                              Object {
+                                "kind": "Literal",
+                                "name": "first",
+                                "type": "Int",
+                                "value": 4,
+                              },
+                              Object {
+                                "kind": "Variable",
+                                "name": "text",
+                                "type": "String!",
+                                "variableName": "text",
+                              },
+                            ],
+                            "concreteType": "GStock",
+                            "kind": "LinkedField",
+                            "name": "stockFind",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "name",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "id",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GDailyStockQuote",
+                                "kind": "LinkedField",
+                                "name": "latestQuote",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "value",
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GProfile",
+                      },
+                      "seenRecords": Object {
+                        "2": undefined,
+                      },
+                      "variables": Object {
+                        "text": "",
+                      },
+                    },
+                  },
+                },
+                "_updatedRecordIDs": Object {},
+              },
+              "configName": undefined,
+              "unstable_internal": Object {
+                "areEqualSelectors": [Function],
+                "createFragmentSpecResolver": [Function],
+                "createOperationSelector": [Function],
+                "getDataIDsFromObject": [Function],
+                "getFragment": [Function],
+                "getOperation": [Function],
+                "getSelector": [Function],
+                "getSelectorList": [Function],
+                "getSelectorsFromObject": [Function],
+                "getVariablesFromObject": [Function],
+              },
+            },
+            "refetch": [Function],
+          }
+        }
+      />
+    </Relay(InvestCompositionRelay)>
+  </div>
+</CtxProvider>
+`;
+
+exports[`InvestCompositionRelay renders 1`] = `
+<CtxProvider
+  ctx={
+    Object {
+      "errorDisplay": [Function],
+      "network": [Function],
+      "relay": Object {
+        "environment": RelayModernEnvironment {
+          "__setNet": [Function],
+          "_debugger": EnvironmentDebugger {
+            "_envIsDirty": false,
+            "_environment": [Circular],
+            "_id": "RelayModernEnvironment2",
+            "_isRecordingMutationEvents": false,
+            "_recordedMutationEvents": Array [],
+          },
+          "_network": Object {
+            "execute": [Function],
+          },
+          "_publishQueue": RelayPublishQueue {
+            "_appliedOptimisticUpdates": Set {},
+            "_backup": Object {},
+            "_handlerProvider": [Function],
+            "_pendingBackupRebase": false,
+            "_pendingData": Set {},
+            "_pendingOptimisticUpdates": Set {},
+            "_pendingUpdaters": Set {},
+            "_store": RelayMarkSweepStore {
+              "_hasScheduledGC": false,
+              "_index": 0,
+              "_recordSource": Object {},
+              "_roots": Map {},
+              "_subscriptions": Set {
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "1",
+                    "node": Object {
+                      "argumentDefinitions": Array [],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_bucket",
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "id",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "available",
+                          "storageKey": null,
+                        },
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "GInvestmentStockConfigurationConnection",
+                          "kind": "LinkedField",
+                          "name": "stocks",
+                          "plural": false,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationEdge",
+                              "kind": "LinkedField",
+                              "name": "edges",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfiguration",
+                                  "kind": "LinkedField",
+                                  "name": "node",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "quantity",
+                                      "storageKey": null,
+                                    },
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GStock",
+                                      "kind": "LinkedField",
+                                      "name": "stock",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "id",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "name",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GDailyStockQuote",
+                                          "kind": "LinkedField",
+                                          "name": "latestQuote",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "value",
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GInvestmentBucket",
+                    },
+                    "seenRecords": Object {
+                      "1": undefined,
+                    },
+                    "variables": Object {},
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "snapshot": Object {
+                    "data": undefined,
+                    "dataID": "2",
+                    "node": Object {
+                      "argumentDefinitions": Array [
+                        Object {
+                          "defaultValue": "",
+                          "kind": "LocalArgument",
+                          "name": "text",
+                          "type": "String!",
+                        },
+                      ],
+                      "kind": "Fragment",
+                      "metadata": null,
+                      "name": "InvestCompositionRelay_profile",
+                      "selections": Array [
+                        Object {
+                          "alias": "investSearch",
+                          "args": Array [
+                            Object {
+                              "kind": "Literal",
+                              "name": "first",
+                              "type": "Int",
+                              "value": 4,
+                            },
+                            Object {
+                              "kind": "Variable",
+                              "name": "text",
+                              "type": "String!",
+                              "variableName": "text",
+                            },
+                          ],
+                          "concreteType": "GStock",
+                          "kind": "LinkedField",
+                          "name": "stockFind",
+                          "plural": true,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "name",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GDailyStockQuote",
+                              "kind": "LinkedField",
+                              "name": "latestQuote",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "value",
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "type": "GProfile",
+                    },
+                    "seenRecords": Object {
+                      "2": undefined,
+                    },
+                    "variables": Object {
+                      "text": "",
+                    },
+                  },
+                },
+              },
+              "_updatedRecordIDs": Object {},
+            },
+          },
+          "_store": RelayMarkSweepStore {
+            "_hasScheduledGC": false,
+            "_index": 0,
+            "_recordSource": Object {},
+            "_roots": Map {},
+            "_subscriptions": Set {
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "1",
+                  "node": Object {
+                    "argumentDefinitions": Array [],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_bucket",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "available",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GInvestmentStockConfigurationConnection",
+                        "kind": "LinkedField",
+                        "name": "stocks",
+                        "plural": false,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationEdge",
+                            "kind": "LinkedField",
+                            "name": "edges",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfiguration",
+                                "kind": "LinkedField",
+                                "name": "node",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "quantity",
+                                    "storageKey": null,
+                                  },
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GStock",
+                                    "kind": "LinkedField",
+                                    "name": "stock",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "id",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "name",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GDailyStockQuote",
+                                        "kind": "LinkedField",
+                                        "name": "latestQuote",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "value",
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GInvestmentBucket",
+                  },
+                  "seenRecords": Object {
+                    "1": undefined,
+                  },
+                  "variables": Object {},
+                },
+              },
+              Object {
+                "callback": [Function],
+                "snapshot": Object {
+                  "data": undefined,
+                  "dataID": "2",
+                  "node": Object {
+                    "argumentDefinitions": Array [
+                      Object {
+                        "defaultValue": "",
+                        "kind": "LocalArgument",
+                        "name": "text",
+                        "type": "String!",
+                      },
+                    ],
+                    "kind": "Fragment",
+                    "metadata": null,
+                    "name": "InvestCompositionRelay_profile",
+                    "selections": Array [
+                      Object {
+                        "alias": "investSearch",
+                        "args": Array [
+                          Object {
+                            "kind": "Literal",
+                            "name": "first",
+                            "type": "Int",
+                            "value": 4,
+                          },
+                          Object {
+                            "kind": "Variable",
+                            "name": "text",
+                            "type": "String!",
+                            "variableName": "text",
+                          },
+                        ],
+                        "concreteType": "GStock",
+                        "kind": "LinkedField",
+                        "name": "stockFind",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "name",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GDailyStockQuote",
+                            "kind": "LinkedField",
+                            "name": "latestQuote",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "value",
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "type": "GProfile",
+                  },
+                  "seenRecords": Object {
+                    "2": undefined,
+                  },
+                  "variables": Object {
+                    "text": "",
+                  },
+                },
+              },
+            },
+            "_updatedRecordIDs": Object {},
+          },
+          "configName": undefined,
+          "unstable_internal": Object {
+            "areEqualSelectors": [Function],
+            "createFragmentSpecResolver": [Function],
+            "createOperationSelector": [Function],
+            "getDataIDsFromObject": [Function],
+            "getFragment": [Function],
+            "getOperation": [Function],
+            "getSelector": [Function],
+            "getSelectorList": [Function],
+            "getSelectorsFromObject": [Function],
+            "getVariablesFromObject": [Function],
+          },
+        },
+        "variables": Object {},
+      },
+      "router": Object {
+        "addTransitionHook": [Function],
+        "createHref": [Function],
+        "createLocation": [Function],
+        "go": [Function],
+        "isActive": [Function],
+        "matcher": Object {
+          "format": [Function],
+          "getRoutes": [Function],
+          "isActive": [Function],
+          "match": [Function],
+        },
+        "push": [Function],
+        "replace": [Function],
+      },
+    }
+  }
+>
+  <div>
+    <Relay(InvestCompositionRelay)
+      bucket={
+        Object {
+          "__fragments": Object {
+            "InvestCompositionRelay_bucket": Object {},
+          },
+          "__id": "1",
+          "available": 30,
+          "id": "1",
+          "stocks": Object {
+            "edges": Array [
+              Object {
+                "node": Object {
+                  "quantity": 3,
+                  "stock": Object {
+                    "id": "4",
+                    "latestQuote": Object {
+                      "value": 44.4,
+                    },
+                    "name": "Stock",
+                  },
+                },
+              },
+              null,
+            ],
+          },
+        }
+      }
+      profile={
+        Object {
+          "__fragments": Object {
+            "InvestCompositionRelay_profile": Object {},
+          },
+          "__id": "2",
+          "investSearch": Array [
+            Object {
+              "id": "3",
+              "latestQuote": Object {
+                "value": 3.3,
+              },
+              "name": "Name",
+            },
+            null,
+          ],
+        }
+      }
+    >
+      <InvestCompositionRelay
+        bucket={
+          Object {
+            "__fragments": Object {
+              "InvestCompositionRelay_bucket": Object {},
+            },
+            "__id": "1",
+            "available": 30,
+            "id": "1",
+            "stocks": Object {
+              "edges": Array [
+                Object {
+                  "node": Object {
+                    "quantity": 3,
+                    "stock": Object {
+                      "id": "4",
+                      "latestQuote": Object {
+                        "value": 44.4,
+                      },
+                      "name": "Stock",
+                    },
+                  },
+                },
+                null,
+              ],
+            },
+          }
+        }
+        profile={
+          Object {
+            "__fragments": Object {
+              "InvestCompositionRelay_profile": Object {},
+            },
+            "__id": "2",
+            "investSearch": Array [
+              Object {
+                "id": "3",
+                "latestQuote": Object {
+                  "value": 3.3,
+                },
+                "name": "Name",
+              },
+              null,
+            ],
+          }
+        }
+        relay={
+          Object {
+            "environment": RelayModernEnvironment {
+              "__setNet": [Function],
+              "_debugger": EnvironmentDebugger {
+                "_envIsDirty": false,
+                "_environment": [Circular],
+                "_id": "RelayModernEnvironment2",
+                "_isRecordingMutationEvents": false,
+                "_recordedMutationEvents": Array [],
+              },
+              "_network": Object {
+                "execute": [Function],
+              },
+              "_publishQueue": RelayPublishQueue {
+                "_appliedOptimisticUpdates": Set {},
+                "_backup": Object {},
+                "_handlerProvider": [Function],
+                "_pendingBackupRebase": false,
+                "_pendingData": Set {},
+                "_pendingOptimisticUpdates": Set {},
+                "_pendingUpdaters": Set {},
+                "_store": RelayMarkSweepStore {
+                  "_hasScheduledGC": false,
+                  "_index": 0,
+                  "_recordSource": Object {},
+                  "_roots": Map {},
+                  "_subscriptions": Set {
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "1",
+                        "node": Object {
+                          "argumentDefinitions": Array [],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_bucket",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "id",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "available",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GInvestmentStockConfigurationConnection",
+                              "kind": "LinkedField",
+                              "name": "stocks",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GInvestmentStockConfigurationEdge",
+                                  "kind": "LinkedField",
+                                  "name": "edges",
+                                  "plural": true,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "concreteType": "GInvestmentStockConfiguration",
+                                      "kind": "LinkedField",
+                                      "name": "node",
+                                      "plural": false,
+                                      "selections": Array [
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "kind": "ScalarField",
+                                          "name": "quantity",
+                                          "storageKey": null,
+                                        },
+                                        Object {
+                                          "alias": null,
+                                          "args": null,
+                                          "concreteType": "GStock",
+                                          "kind": "LinkedField",
+                                          "name": "stock",
+                                          "plural": false,
+                                          "selections": Array [
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "id",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "kind": "ScalarField",
+                                              "name": "name",
+                                              "storageKey": null,
+                                            },
+                                            Object {
+                                              "alias": null,
+                                              "args": null,
+                                              "concreteType": "GDailyStockQuote",
+                                              "kind": "LinkedField",
+                                              "name": "latestQuote",
+                                              "plural": false,
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": null,
+                                                  "args": null,
+                                                  "kind": "ScalarField",
+                                                  "name": "value",
+                                                  "storageKey": null,
+                                                },
+                                              ],
+                                              "storageKey": null,
+                                            },
+                                          ],
+                                          "storageKey": null,
+                                        },
+                                      ],
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GInvestmentBucket",
+                        },
+                        "seenRecords": Object {
+                          "1": undefined,
+                        },
+                        "variables": Object {},
+                      },
+                    },
+                    Object {
+                      "callback": [Function],
+                      "snapshot": Object {
+                        "data": undefined,
+                        "dataID": "2",
+                        "node": Object {
+                          "argumentDefinitions": Array [
+                            Object {
+                              "defaultValue": "",
+                              "kind": "LocalArgument",
+                              "name": "text",
+                              "type": "String!",
+                            },
+                          ],
+                          "kind": "Fragment",
+                          "metadata": null,
+                          "name": "InvestCompositionRelay_profile",
+                          "selections": Array [
+                            Object {
+                              "alias": "investSearch",
+                              "args": Array [
+                                Object {
+                                  "kind": "Literal",
+                                  "name": "first",
+                                  "type": "Int",
+                                  "value": 4,
+                                },
+                                Object {
+                                  "kind": "Variable",
+                                  "name": "text",
+                                  "type": "String!",
+                                  "variableName": "text",
+                                },
+                              ],
+                              "concreteType": "GStock",
+                              "kind": "LinkedField",
+                              "name": "stockFind",
+                              "plural": true,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "name",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GDailyStockQuote",
+                                  "kind": "LinkedField",
+                                  "name": "latestQuote",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "value",
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "type": "GProfile",
+                        },
+                        "seenRecords": Object {
+                          "2": undefined,
+                        },
+                        "variables": Object {
+                          "text": "",
+                        },
+                      },
+                    },
+                  },
+                  "_updatedRecordIDs": Object {},
+                },
+              },
+              "_store": RelayMarkSweepStore {
+                "_hasScheduledGC": false,
+                "_index": 0,
+                "_recordSource": Object {},
+                "_roots": Map {},
+                "_subscriptions": Set {
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "1",
+                      "node": Object {
+                        "argumentDefinitions": Array [],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_bucket",
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "id",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "available",
+                            "storageKey": null,
+                          },
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfigurationConnection",
+                            "kind": "LinkedField",
+                            "name": "stocks",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GInvestmentStockConfigurationEdge",
+                                "kind": "LinkedField",
+                                "name": "edges",
+                                "plural": true,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GInvestmentStockConfiguration",
+                                    "kind": "LinkedField",
+                                    "name": "node",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "quantity",
+                                        "storageKey": null,
+                                      },
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "concreteType": "GStock",
+                                        "kind": "LinkedField",
+                                        "name": "stock",
+                                        "plural": false,
+                                        "selections": Array [
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "id",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "kind": "ScalarField",
+                                            "name": "name",
+                                            "storageKey": null,
+                                          },
+                                          Object {
+                                            "alias": null,
+                                            "args": null,
+                                            "concreteType": "GDailyStockQuote",
+                                            "kind": "LinkedField",
+                                            "name": "latestQuote",
+                                            "plural": false,
+                                            "selections": Array [
+                                              Object {
+                                                "alias": null,
+                                                "args": null,
+                                                "kind": "ScalarField",
+                                                "name": "value",
+                                                "storageKey": null,
+                                              },
+                                            ],
+                                            "storageKey": null,
+                                          },
+                                        ],
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GInvestmentBucket",
+                      },
+                      "seenRecords": Object {
+                        "1": undefined,
+                      },
+                      "variables": Object {},
+                    },
+                  },
+                  Object {
+                    "callback": [Function],
+                    "snapshot": Object {
+                      "data": undefined,
+                      "dataID": "2",
+                      "node": Object {
+                        "argumentDefinitions": Array [
+                          Object {
+                            "defaultValue": "",
+                            "kind": "LocalArgument",
+                            "name": "text",
+                            "type": "String!",
+                          },
+                        ],
+                        "kind": "Fragment",
+                        "metadata": null,
+                        "name": "InvestCompositionRelay_profile",
+                        "selections": Array [
+                          Object {
+                            "alias": "investSearch",
+                            "args": Array [
+                              Object {
+                                "kind": "Literal",
+                                "name": "first",
+                                "type": "Int",
+                                "value": 4,
+                              },
+                              Object {
+                                "kind": "Variable",
+                                "name": "text",
+                                "type": "String!",
+                                "variableName": "text",
+                              },
+                            ],
+                            "concreteType": "GStock",
+                            "kind": "LinkedField",
+                            "name": "stockFind",
+                            "plural": true,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "name",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "id",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GDailyStockQuote",
+                                "kind": "LinkedField",
+                                "name": "latestQuote",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "value",
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "type": "GProfile",
+                      },
+                      "seenRecords": Object {
+                        "2": undefined,
+                      },
+                      "variables": Object {
+                        "text": "",
+                      },
+                    },
+                  },
+                },
+                "_updatedRecordIDs": Object {},
+              },
+              "configName": undefined,
+              "unstable_internal": Object {
+                "areEqualSelectors": [Function],
+                "createFragmentSpecResolver": [Function],
+                "createOperationSelector": [Function],
+                "getDataIDsFromObject": [Function],
+                "getFragment": [Function],
+                "getOperation": [Function],
+                "getSelector": [Function],
+                "getSelectorList": [Function],
+                "getSelectorsFromObject": [Function],
+                "getVariablesFromObject": [Function],
+              },
+            },
+            "refetch": [Function],
+          }
+        }
+      >
+        <mockConstructor
+          cancelFunc={[Function]}
+          chunkUpdate={[Function]}
+          chunks={
+            Array [
+              Object {
+                "id": "4",
+                "name": "Stock",
+                "quantity": 3,
+                "value": 44.4,
+              },
+            ]
+          }
+          saveFunc={[Function]}
+          suggestionFieldChange={[Function]}
+          suggestions={
+            Array [
+              Object {
+                "id": "3",
+                "latestQuote": Object {
+                  "value": 3.3,
+                },
+                "name": "Name",
+                "value": 3.3,
+              },
+              Object {
+                "value": 0,
+              },
+            ]
+          }
+          total={163.2}
+        >
+          <div />
+        </mockConstructor>
+      </InvestCompositionRelay>
+    </Relay(InvestCompositionRelay)>
+  </div>
+</CtxProvider>
+`;
+
+exports[`InvestCompositionRelay saves 1`] = `
+Array [
+  [Function],
+  null,
+  [Function],
+]
+`;
+
+exports[`InvestCompositionRelay saves 2`] = `
+Array [
+  RelayModernEnvironment {
+    "__setNet": [Function],
+    "_debugger": EnvironmentDebugger {
+      "_envIsDirty": false,
+      "_environment": [Circular],
+      "_id": "RelayModernEnvironment6",
+      "_isRecordingMutationEvents": false,
+      "_recordedMutationEvents": Array [],
+    },
+    "_network": Object {
+      "execute": [Function],
+    },
+    "_publishQueue": RelayPublishQueue {
+      "_appliedOptimisticUpdates": Set {},
+      "_backup": Object {},
+      "_handlerProvider": [Function],
+      "_pendingBackupRebase": false,
+      "_pendingData": Set {},
+      "_pendingOptimisticUpdates": Set {},
+      "_pendingUpdaters": Set {},
+      "_store": RelayMarkSweepStore {
+        "_hasScheduledGC": false,
+        "_index": 0,
+        "_recordSource": Object {},
+        "_roots": Map {},
+        "_subscriptions": Set {
+          Object {
+            "callback": [Function],
+            "snapshot": Object {
+              "data": undefined,
+              "dataID": "1",
+              "node": Object {
+                "argumentDefinitions": Array [],
+                "kind": "Fragment",
+                "metadata": null,
+                "name": "InvestCompositionRelay_bucket",
+                "selections": Array [
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "id",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "available",
+                    "storageKey": null,
+                  },
+                  Object {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "GInvestmentStockConfigurationConnection",
+                    "kind": "LinkedField",
+                    "name": "stocks",
+                    "plural": false,
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GInvestmentStockConfigurationEdge",
+                        "kind": "LinkedField",
+                        "name": "edges",
+                        "plural": true,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "concreteType": "GInvestmentStockConfiguration",
+                            "kind": "LinkedField",
+                            "name": "node",
+                            "plural": false,
+                            "selections": Array [
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "kind": "ScalarField",
+                                "name": "quantity",
+                                "storageKey": null,
+                              },
+                              Object {
+                                "alias": null,
+                                "args": null,
+                                "concreteType": "GStock",
+                                "kind": "LinkedField",
+                                "name": "stock",
+                                "plural": false,
+                                "selections": Array [
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "id",
+                                    "storageKey": null,
+                                  },
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "kind": "ScalarField",
+                                    "name": "name",
+                                    "storageKey": null,
+                                  },
+                                  Object {
+                                    "alias": null,
+                                    "args": null,
+                                    "concreteType": "GDailyStockQuote",
+                                    "kind": "LinkedField",
+                                    "name": "latestQuote",
+                                    "plural": false,
+                                    "selections": Array [
+                                      Object {
+                                        "alias": null,
+                                        "args": null,
+                                        "kind": "ScalarField",
+                                        "name": "value",
+                                        "storageKey": null,
+                                      },
+                                    ],
+                                    "storageKey": null,
+                                  },
+                                ],
+                                "storageKey": null,
+                              },
+                            ],
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "storageKey": null,
+                  },
+                ],
+                "type": "GInvestmentBucket",
+              },
+              "seenRecords": Object {
+                "1": undefined,
+              },
+              "variables": Object {},
+            },
+          },
+          Object {
+            "callback": [Function],
+            "snapshot": Object {
+              "data": undefined,
+              "dataID": "2",
+              "node": Object {
+                "argumentDefinitions": Array [
+                  Object {
+                    "defaultValue": "",
+                    "kind": "LocalArgument",
+                    "name": "text",
+                    "type": "String!",
+                  },
+                ],
+                "kind": "Fragment",
+                "metadata": null,
+                "name": "InvestCompositionRelay_profile",
+                "selections": Array [
+                  Object {
+                    "alias": "investSearch",
+                    "args": Array [
+                      Object {
+                        "kind": "Literal",
+                        "name": "first",
+                        "type": "Int",
+                        "value": 4,
+                      },
+                      Object {
+                        "kind": "Variable",
+                        "name": "text",
+                        "type": "String!",
+                        "variableName": "text",
+                      },
+                    ],
+                    "concreteType": "GStock",
+                    "kind": "LinkedField",
+                    "name": "stockFind",
+                    "plural": true,
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "name",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "kind": "ScalarField",
+                        "name": "id",
+                        "storageKey": null,
+                      },
+                      Object {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "GDailyStockQuote",
+                        "kind": "LinkedField",
+                        "name": "latestQuote",
+                        "plural": false,
+                        "selections": Array [
+                          Object {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "value",
+                            "storageKey": null,
+                          },
+                        ],
+                        "storageKey": null,
+                      },
+                    ],
+                    "storageKey": null,
+                  },
+                ],
+                "type": "GProfile",
+              },
+              "seenRecords": Object {
+                "2": undefined,
+              },
+              "variables": Object {
+                "text": "",
+              },
+            },
+          },
+        },
+        "_updatedRecordIDs": Object {},
+      },
+    },
+    "_store": RelayMarkSweepStore {
+      "_hasScheduledGC": false,
+      "_index": 0,
+      "_recordSource": Object {},
+      "_roots": Map {},
+      "_subscriptions": Set {
+        Object {
+          "callback": [Function],
+          "snapshot": Object {
+            "data": undefined,
+            "dataID": "1",
+            "node": Object {
+              "argumentDefinitions": Array [],
+              "kind": "Fragment",
+              "metadata": null,
+              "name": "InvestCompositionRelay_bucket",
+              "selections": Array [
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "id",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "kind": "ScalarField",
+                  "name": "available",
+                  "storageKey": null,
+                },
+                Object {
+                  "alias": null,
+                  "args": null,
+                  "concreteType": "GInvestmentStockConfigurationConnection",
+                  "kind": "LinkedField",
+                  "name": "stocks",
+                  "plural": false,
+                  "selections": Array [
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "concreteType": "GInvestmentStockConfigurationEdge",
+                      "kind": "LinkedField",
+                      "name": "edges",
+                      "plural": true,
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "concreteType": "GInvestmentStockConfiguration",
+                          "kind": "LinkedField",
+                          "name": "node",
+                          "plural": false,
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "kind": "ScalarField",
+                              "name": "quantity",
+                              "storageKey": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "args": null,
+                              "concreteType": "GStock",
+                              "kind": "LinkedField",
+                              "name": "stock",
+                              "plural": false,
+                              "selections": Array [
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "id",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "kind": "ScalarField",
+                                  "name": "name",
+                                  "storageKey": null,
+                                },
+                                Object {
+                                  "alias": null,
+                                  "args": null,
+                                  "concreteType": "GDailyStockQuote",
+                                  "kind": "LinkedField",
+                                  "name": "latestQuote",
+                                  "plural": false,
+                                  "selections": Array [
+                                    Object {
+                                      "alias": null,
+                                      "args": null,
+                                      "kind": "ScalarField",
+                                      "name": "value",
+                                      "storageKey": null,
+                                    },
+                                  ],
+                                  "storageKey": null,
+                                },
+                              ],
+                              "storageKey": null,
+                            },
+                          ],
+                          "storageKey": null,
+                        },
+                      ],
+                      "storageKey": null,
+                    },
+                  ],
+                  "storageKey": null,
+                },
+              ],
+              "type": "GInvestmentBucket",
+            },
+            "seenRecords": Object {
+              "1": undefined,
+            },
+            "variables": Object {},
+          },
+        },
+        Object {
+          "callback": [Function],
+          "snapshot": Object {
+            "data": undefined,
+            "dataID": "2",
+            "node": Object {
+              "argumentDefinitions": Array [
+                Object {
+                  "defaultValue": "",
+                  "kind": "LocalArgument",
+                  "name": "text",
+                  "type": "String!",
+                },
+              ],
+              "kind": "Fragment",
+              "metadata": null,
+              "name": "InvestCompositionRelay_profile",
+              "selections": Array [
+                Object {
+                  "alias": "investSearch",
+                  "args": Array [
+                    Object {
+                      "kind": "Literal",
+                      "name": "first",
+                      "type": "Int",
+                      "value": 4,
+                    },
+                    Object {
+                      "kind": "Variable",
+                      "name": "text",
+                      "type": "String!",
+                      "variableName": "text",
+                    },
+                  ],
+                  "concreteType": "GStock",
+                  "kind": "LinkedField",
+                  "name": "stockFind",
+                  "plural": true,
+                  "selections": Array [
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "name",
+                      "storageKey": null,
+                    },
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "kind": "ScalarField",
+                      "name": "id",
+                      "storageKey": null,
+                    },
+                    Object {
+                      "alias": null,
+                      "args": null,
+                      "concreteType": "GDailyStockQuote",
+                      "kind": "LinkedField",
+                      "name": "latestQuote",
+                      "plural": false,
+                      "selections": Array [
+                        Object {
+                          "alias": null,
+                          "args": null,
+                          "kind": "ScalarField",
+                          "name": "value",
+                          "storageKey": null,
+                        },
+                      ],
+                      "storageKey": null,
+                    },
+                  ],
+                  "storageKey": null,
+                },
+              ],
+              "type": "GProfile",
+            },
+            "seenRecords": Object {
+              "2": undefined,
+            },
+            "variables": Object {
+              "text": "",
+            },
+          },
+        },
+      },
+      "_updatedRecordIDs": Object {},
+    },
+    "configName": undefined,
+    "unstable_internal": Object {
+      "areEqualSelectors": [Function],
+      "createFragmentSpecResolver": [Function],
+      "createOperationSelector": [Function],
+      "getDataIDsFromObject": [Function],
+      "getFragment": [Function],
+      "getOperation": [Function],
+      "getSelector": [Function],
+      "getSelectorList": [Function],
+      "getSelectorsFromObject": [Function],
+      "getVariablesFromObject": [Function],
+    },
+  },
+]
+`;
+
+exports[`InvestCompositionRelay saves 3`] = `
+Array [
+  Object {
+    "config": Array [
+      Object {
+        "idValue": "4",
+        "quantity": 3,
+      },
+    ],
+    "id": "1",
+  },
+]
+`;
+
+exports[`InvestCompositionRelay saves 4`] = `
+Array [
+  Array [
+    Object {
+      "message": "EEE",
+    },
+  ],
+  Array [
+    Object {
+      "message": "Composition successfully changed",
+    },
+  ],
+]
+`;
+
+exports[`InvestCompositionRelay updates Chunk 1`] = `
+Array [
+  Object {
+    "cancelFunc": [Function],
+    "chunkUpdate": [Function],
+    "chunks": Array [
+      Object {
+        "id": "5",
+        "name": "Testy McTestface",
+        "quantity": 2,
+        "value": 77,
+      },
+    ],
+    "saveFunc": [Function],
+    "suggestionFieldChange": [Function],
+    "suggestions": Array [
+      Object {
+        "id": "3",
+        "latestQuote": Object {
+          "value": 3.3,
+        },
+        "name": "Name",
+        "value": 3.3,
+      },
+      Object {
+        "value": 0,
+      },
+    ],
+    "total": 163.2,
+  },
+  Object {},
+]
+`;

@@ -1,0 +1,497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvestPanel change amount (buy) 1`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Invest into bucket
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <StockGraph
+      compare="ABSOLUTE"
+      height="400px"
+      id="chart"
+      quotes={
+        Array [
+          Object {
+            "data": Array [],
+            "name": "Some bucket",
+          },
+        ]
+      }
+      title="Test Chart"
+    />
+    <ComponentEnhancer(undefined)
+      activeDotStyle={Object {}}
+      className=""
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="invest-amount-slider"
+      included={true}
+      marks={Object {}}
+      max={106}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={15}
+      vertical={false}
+    />
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+             (Owned)
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            2.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            6.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+            <span>
+              (
+              Buy
+              )
+            </span>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            9.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            91.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      id="save"
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`InvestPanel renders 1`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Invest into bucket
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <StockGraph
+      compare="ABSOLUTE"
+      height="400px"
+      id="chart"
+      quotes={
+        Array [
+          Object {
+            "data": Array [],
+            "name": "Some bucket",
+          },
+        ]
+      }
+      title="Test Chart"
+    />
+    <ComponentEnhancer(undefined)
+      activeDotStyle={Object {}}
+      className=""
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="invest-amount-slider"
+      included={true}
+      marks={Object {}}
+      max={106}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={6}
+      vertical={false}
+    />
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+             (Owned)
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            2.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            6.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            100.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      id="save"
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`InvestPanel save (sell) 1`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Invest into bucket
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <StockGraph
+      compare="ABSOLUTE"
+      height="400px"
+      id="chart"
+      quotes={
+        Array [
+          Object {
+            "data": Array [],
+            "name": "Some bucket",
+          },
+        ]
+      }
+      title="Test Chart"
+    />
+    <ComponentEnhancer(undefined)
+      activeDotStyle={Object {}}
+      className=""
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="invest-amount-slider"
+      included={true}
+      marks={Object {}}
+      max={106}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={0}
+      vertical={false}
+    />
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+             (Owned)
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            2.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            6.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Some bucket
+            <span>
+              (
+              Sell
+              )
+            </span>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            -2.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            -6.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            106.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      id="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      id="save"
+      onClick={[Function]}
+    >
+      Invest
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;

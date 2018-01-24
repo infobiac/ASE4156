@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+Transactions:<br>
+	{% for transaction in tx %}
+		<p>
+			{{transaction.name}}: ${{transaction.amount}}
+		</p>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,40 @@
+language: python
+cache:
+  - pip
+  - yarn
+python:
+  - "3.6"
+branches:
+  only: 
+    - master
+
+addons:
+  firefox: "latest"
+  apt:
+    packages:
+      - libssl-dev
+      - build-essential
+services:
+  - postgresql
+
+before_install:
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.19.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - ./manage.py migrate
+  - nvm install node && nvm use node && npm i -g yarn
+install:
+  - pip install -r requirements.txt
+  - pip install flake8 pylint pylint_django codecov pytest-cov
+  - yarn install
+script:
+  - flake8 .
+  - find . ! -path "./doc/*" ! -path "./node_modules/*" ! -path "./env/*" ! -path "*/migrations/*" ! -path "*/snapshots/*" -iname "*.py" | xargs pylint --load-plugins pylint_django
+  - yarn run test -- --ci
+  - pytest --driver Firefox --reuse-db --cov=.
+  - codecov

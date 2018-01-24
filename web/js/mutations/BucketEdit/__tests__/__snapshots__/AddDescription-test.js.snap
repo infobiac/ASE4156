@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddDescription mutates 1`] = `
+Array [
+  Array [
+    RelayModernEnvironment {
+      "__setNet": [Function],
+      "_debugger": EnvironmentDebugger {
+        "_envIsDirty": false,
+        "_environment": [Circular],
+        "_id": "RelayModernEnvironment1",
+        "_isRecordingMutationEvents": false,
+        "_recordedMutationEvents": Array [],
+      },
+      "_network": [Function],
+      "_publishQueue": RelayPublishQueue {
+        "_appliedOptimisticUpdates": Set {},
+        "_backup": Object {},
+        "_handlerProvider": [Function],
+        "_pendingBackupRebase": false,
+        "_pendingData": Set {},
+        "_pendingOptimisticUpdates": Set {},
+        "_pendingUpdaters": Set {},
+        "_store": RelayMarkSweepStore {
+          "_hasScheduledGC": false,
+          "_index": 0,
+          "_recordSource": Object {},
+          "_roots": Map {},
+          "_subscriptions": Set {},
+          "_updatedRecordIDs": Object {},
+        },
+      },
+      "_store": RelayMarkSweepStore {
+        "_hasScheduledGC": false,
+        "_index": 0,
+        "_recordSource": Object {},
+        "_roots": Map {},
+        "_subscriptions": Set {},
+        "_updatedRecordIDs": Object {},
+      },
+      "configName": undefined,
+      "unstable_internal": Object {
+        "areEqualSelectors": [Function],
+        "createFragmentSpecResolver": [Function],
+        "createOperationSelector": [Function],
+        "getDataIDsFromObject": [Function],
+        "getFragment": [Function],
+        "getOperation": [Function],
+        "getSelector": [Function],
+        "getSelectorList": [Function],
+        "getSelectorsFromObject": [Function],
+        "getVariablesFromObject": [Function],
+      },
+    },
+    Object {
+      "mutation": [Function],
+      "onCompleted": null,
+      "optimisticResponse": Object {
+        "addAttributeToBucket": Object {
+          "bucketAttr": Object {
+            "isGood": false,
+            "text": "My text",
+          },
+        },
+      },
+      "optimisticUpdater": null,
+      "updater": null,
+      "variables": Object {
+        "isGood": false,
+        "text": "My text",
+      },
+    },
+  ],
+]
+`;

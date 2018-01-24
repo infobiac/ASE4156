@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+Select a bank:
+	{% for bank in userbank %}
+		<form method="post">
+			{% csrf_token %}
+			<input type="hidden" name="id" value="{{bank.id}}">
+			<input id="submit" type="submit" value="{{bank.institution_name}}" />
+		</form>
+	{% endfor %}
+<a href="/setup_bank"> Add a new one </a>
+{% endblock %}

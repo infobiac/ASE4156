@@ -1,0 +1,625 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InvestComposition add stock 1`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Edit Composition
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Delete
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <withStyles(IconButton)
+              id="add-stock"
+              onClick={[Function]}
+            >
+              <pure(Add) />
+            </withStyles(IconButton)>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <Autocomplete
+              autoHighlight={true}
+              getItemValue={[Function]}
+              id="select-stock"
+              inputProps={Object {}}
+              items={
+                Array [
+                  Object {
+                    "id": 1,
+                    "name": "AAA",
+                    "value": 3,
+                  },
+                ]
+              }
+              menuStyle={
+                Object {
+                  "background": "rgba(255, 255, 255, 0.9)",
+                  "borderRadius": "3px",
+                  "boxShadow": "0 2px 12px rgba(0, 0, 0, 0.1)",
+                  "fontSize": "90%",
+                  "maxHeight": "50%",
+                  "overflow": "auto",
+                  "padding": "2px 0",
+                  "position": "fixed",
+                }
+              }
+              onChange={[Function]}
+              onMenuVisibilityChange={[Function]}
+              onSelect={[Function]}
+              renderInput={[Function]}
+              renderItem={[Function]}
+              renderMenu={[Function]}
+              selectOnBlur={false}
+              value="AAA"
+              wrapperProps={Object {}}
+              wrapperStyle={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            />
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            3
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+    <ComponentEnhancer(Range)
+      activeDotStyle={Object {}}
+      allowCross={true}
+      className=""
+      count={0}
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="range"
+      included={true}
+      marks={Object {}}
+      max={0}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      pushable={false}
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={
+        Array [
+          0,
+        ]
+      }
+      vertical={false}
+    />
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`InvestComposition add stock 2`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Edit Composition
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Delete
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)
+          key="1"
+        >
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <withStyles(IconButton)
+              id="delete-chunk-1"
+              onClick={[Function]}
+            >
+              <pure(DeleteForever) />
+            </withStyles(IconButton)>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            AAA
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            3
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <withStyles(IconButton)
+              id="add-stock"
+              onClick={[Function]}
+            >
+              <pure(Add) />
+            </withStyles(IconButton)>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <Autocomplete
+              autoHighlight={true}
+              getItemValue={[Function]}
+              id="select-stock"
+              inputProps={Object {}}
+              items={
+                Array [
+                  Object {
+                    "id": 1,
+                    "name": "AAA",
+                    "value": 3,
+                  },
+                ]
+              }
+              menuStyle={
+                Object {
+                  "background": "rgba(255, 255, 255, 0.9)",
+                  "borderRadius": "3px",
+                  "boxShadow": "0 2px 12px rgba(0, 0, 0, 0.1)",
+                  "fontSize": "90%",
+                  "maxHeight": "50%",
+                  "overflow": "auto",
+                  "padding": "2px 0",
+                  "position": "fixed",
+                }
+              }
+              onChange={[Function]}
+              onMenuVisibilityChange={[Function]}
+              onSelect={[Function]}
+              renderInput={[Function]}
+              renderItem={[Function]}
+              renderMenu={[Function]}
+              selectOnBlur={false}
+              value=""
+              wrapperProps={Object {}}
+              wrapperStyle={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            />
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+    <ComponentEnhancer(Range)
+      activeDotStyle={Object {}}
+      allowCross={true}
+      className=""
+      count={1}
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="range"
+      included={true}
+      marks={Object {}}
+      max={0}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      pushable={false}
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={
+        Array [
+          0,
+          0,
+        ]
+      }
+      vertical={false}
+    />
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;
+
+exports[`InvestComposition assert suggestion render 1`] = `
+<TextField
+  id="stockname"
+  inputRef={null}
+  required={false}
+  select={false}
+/>
+`;
+
+exports[`InvestComposition assert text render 1`] = `
+<withStyles(Paper)
+  style={
+    Object {
+      "background": "lightgray",
+    }
+  }
+>
+  testname
+</withStyles(Paper)>
+`;
+
+exports[`InvestComposition assert text render 2`] = `
+<withStyles(Paper)
+  style={
+    Object {
+      "background": "white",
+    }
+  }
+>
+  testname
+</withStyles(Paper)>
+`;
+
+exports[`InvestComposition render 1`] = `
+<withStyles(Dialog)
+  open={true}
+>
+  <withStyles(DialogTitle)>
+    Edit Composition
+  </withStyles(DialogTitle)>
+  <withStyles(DialogContent)>
+    <withStyles(Table)>
+      <withStyles(TableHead)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Delete
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Name
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Quantity
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Value
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Total Value
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableHead)>
+      <withStyles(TableBody)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <withStyles(IconButton)
+              id="add-stock"
+              onClick={[Function]}
+            >
+              <pure(Add) />
+            </withStyles(IconButton)>
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            <Autocomplete
+              autoHighlight={true}
+              getItemValue={[Function]}
+              id="select-stock"
+              inputProps={Object {}}
+              items={Array []}
+              menuStyle={
+                Object {
+                  "background": "rgba(255, 255, 255, 0.9)",
+                  "borderRadius": "3px",
+                  "boxShadow": "0 2px 12px rgba(0, 0, 0, 0.1)",
+                  "fontSize": "90%",
+                  "maxHeight": "50%",
+                  "overflow": "auto",
+                  "padding": "2px 0",
+                  "position": "fixed",
+                }
+              }
+              onChange={[Function]}
+              onMenuVisibilityChange={[Function]}
+              onSelect={[Function]}
+              renderInput={[Function]}
+              renderItem={[Function]}
+              renderMenu={[Function]}
+              selectOnBlur={false}
+              value=""
+              wrapperProps={Object {}}
+              wrapperStyle={
+                Object {
+                  "display": "inline-block",
+                }
+              }
+            />
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+        </withStyles(TableRow)>
+        <withStyles(TableRow)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          >
+            Available
+          </withStyles(TableCell)>
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            padding="dense"
+          />
+          <withStyles(TableCell)
+            numeric={true}
+            padding="dense"
+          >
+            0.00
+          </withStyles(TableCell)>
+        </withStyles(TableRow)>
+      </withStyles(TableBody)>
+    </withStyles(Table)>
+    <ComponentEnhancer(Range)
+      activeDotStyle={Object {}}
+      allowCross={true}
+      className=""
+      count={0}
+      disabled={false}
+      dotStyle={Object {}}
+      dots={false}
+      handle={[Function]}
+      handleStyle={
+        Array [
+          Object {},
+        ]
+      }
+      id="range"
+      included={true}
+      marks={Object {}}
+      max={0}
+      min={0}
+      onAfterChange={[Function]}
+      onBeforeChange={[Function]}
+      onChange={[Function]}
+      prefixCls="rc-slider"
+      pushable={false}
+      railStyle={Object {}}
+      step={0.01}
+      trackStyle={
+        Array [
+          Object {},
+        ]
+      }
+      value={
+        Array [
+          0,
+        ]
+      }
+      vertical={false}
+    />
+  </withStyles(DialogContent)>
+  <withStyles(DialogActions)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Cancel
+    </withStyles(Button)>
+    <withStyles(Button)
+      color="primary"
+      onClick={[Function]}
+    >
+      Save
+    </withStyles(Button)>
+  </withStyles(DialogActions)>
+</withStyles(Dialog)>
+`;

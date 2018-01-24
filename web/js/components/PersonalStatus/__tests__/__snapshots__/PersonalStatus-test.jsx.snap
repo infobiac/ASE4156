@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PersonalStatus renders 1`] = `
+<withStyles(GridWrapper)
+  align="stretch"
+  container={true}
+  id="personal-status"
+  spacing={16}
+>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "test",
+            "value": "100.00",
+          },
+        ]
+      }
+      title="Current balance (as of: 2016-02-01)"
+      value="1.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "Start",
+            "value": "2016-01-01",
+          },
+          Object {
+            "text": "End",
+            "value": "2016-02-01",
+          },
+        ]
+      }
+      title="Monthly Income"
+      value="2.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "Start",
+            "value": "2016-01-01",
+          },
+          Object {
+            "text": "End",
+            "value": "2016-02-01",
+          },
+        ]
+      }
+      title="Total Expenditures"
+      value="4.00"
+    />
+  </withStyles(GridWrapper)>
+  <withStyles(GridWrapper)
+    item={true}
+    md={3}
+    sm={6}
+    xs={12}
+  >
+    <HighlightBox
+      secondaryInfo={
+        Array [
+          Object {
+            "text": "test",
+            "value": "200.00",
+          },
+        ]
+      }
+      title="Available money (as of: 2016-02-01)"
+      value="6.00"
+    />
+  </withStyles(GridWrapper)>
+</withStyles(GridWrapper)>
+`;

@@ -1,0 +1,8 @@
+[run]
+omit =
+    BuyBitcoin/*
+    manage.py
+    */migrations/*
+    env/*
+    */apps.py
+    tests/*

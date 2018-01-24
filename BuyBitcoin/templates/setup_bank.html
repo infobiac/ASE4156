@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block extra_headers %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<style>
+  .demo-card-wide.mdl-card {
+    width: 100%;
+  }
+  body {
+    background-color: lightgrey;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col"></div>
+  <div class="mdl-cell mdl-cell--6-col">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Looks like you haven't set up a bank yet!</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        No problem, we can get you set up with that in no time. Click the button below to get started.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <button id="link-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Connect bank account</button>
+      </div>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col"></div>
+</div>
+
+<form>
+  {% csrf_token %}
+</form>
+<script>
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+
+var linkHandler = Plaid.create({
+ env: 'sandbox',
+ clientName: 'Motivating Investment',
+ key: '2aa70186194f3a8d2038d989715a32',
+ product: ['transactions'],
+ onSuccess: function(public_token, metadata) {
+ 	$.ajax({
+ 		url:'/plaid/get_access_token/',
+ 		method:'POST',
+ 		headers:{'X-CSRFToken':csrftoken},
+ 		data:{public_token: public_token},
+    success: function() {
+      window.location="/home";
+    }
+  });
+ },
+ onExit: function(err, metadata) {
+   if (err != null) {
+     console.log(err);
+   }
+ }
+});
+document.getElementById('link-button').onclick = function() {
+ linkHandler.open();
+};
+</script>
+
+
+{% endblock %}
